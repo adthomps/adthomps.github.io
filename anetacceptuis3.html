@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Accept UI Example</title>
+<script src="https://jstest.authorize.net/v2/Accept.js" charset="utf-8"></script>
 
 </head>
 
@@ -46,6 +47,7 @@ Using The Payment Nonce On Your Server
 </ul>
 </div>
 </div>
+
 <script type="text/javascript">
 var blob = "";
 function getSecureData(button) {
@@ -63,24 +65,24 @@ function getSecureData(button) {
 }
 
 function populateErrorMessage(response) {
-		var text = '';
-		for (var i = 0; i < response.messages.message.length; i++) {
-		  text = text + response.messages.message[i].code + ':' + response.messages.message[i].text + '\n';
-		}
-		console.log(text);
-	  };
+    var text = '';
+    for (var i = 0; i < response.messages.message.length; i++) {
+      text = text + response.messages.message[i].code + ':' + response.messages.message[i].text + '\n';
+    }
+    console.log(text);
+    };
    
 function callbackMerchant(response) {
     if (response.messages.resultCode === 'Error') {
       populateErrorMessage(response);
     } else {
-		  var msg01 = '<b> PAYMENT NONCE (Data Value) : </b> ' + response.opaqueData.dataValue;
-	          var msg02 = '<b> TYPE (Data Descriptor) : </b> ' + response.opaqueData.dataDescriptor;
-		  var msg03 = '<b>CARD NUMBER</b> : ' + response.encryptedCardData.cardNumber + '<br/>' + '<b>EXPIRATION DATE</b> : ' + response.encryptedCardData.expDate + '<br/>' + '<b>BIN</b> : '+ response.encryptedCardData.bin;
-		  if ($('#paymentReceipt').length == 0) {
+      var msg01 = '<b> PAYMENT NONCE (Data Value) : </b> ' + response.opaqueData.dataValue;
+            var msg02 = '<b> TYPE (Data Descriptor) : </b> ' + response.opaqueData.dataDescriptor;
+      var msg03 = '<b>CARD NUMBER</b> : ' + response.encryptedCardData.cardNumber + '<br/>' + '<b>EXPIRATION DATE</b> : ' + response.encryptedCardData.expDate + '<br/>' + '<b>BIN</b> : '+ response.encryptedCardData.bin;
+      if ($('#paymentReceipt').length == 0) {
             $('body').append($('<br/><br/><div id = "paymentReceipt" style="margin: auto;border: 1px solid black;padding: 15px;width: 50%;"></div>'));
-		  }
-		  $('#paymentReceipt').html(msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03);
+      }
+      $('#paymentReceipt').html(msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03);
     }
   }
    
