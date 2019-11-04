@@ -1,133 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <script type="text/javascript" src="https://jstest.authorize.net/v2/Accept.js" charset="utf-8"> </script>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <script src="https://jstest.authorize.net/v1/Accept.js" charset="utf-8"></script>
     <title>APT Portfolio - API Testing</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.3.1.css" rel="stylesheet">
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="index.html">APT</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Tests
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="anetsimple.html">ANET Simple Checkout</a>
-              <a class="dropdown-item" href="anetvms.html">ANET VMS</a>
-              <!--<a class="dropdown-item" href="anetoauth.html">ANET OAuth</a>-->
-              <a class="dropdown-item" href="anetaccept.html">ANET Accept</a>
-              <!--<div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="cybsapi.html">CYBS API</a>
-            </div>-->
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://developer.authorize.net" target="_blank">ANET Dev</a>
-          </li>
-          <!--<li class="nav-item">
-            <a class="nav-link" href="https://developer.cybersource.com" target="_blank">CYBS Dev</a>
-          </li>-->
-      <!--
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-      -->
-        </ul>
-      <!--
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      -->
-      </div>
-    </nav>
-    <section>
-      <div class="jumbotron text-center mt-2">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <h1>APT API Tests</h1>
-              <p>This is my portfolio site that includes Authorize.Net<!--, Cybersource--> API tests and monitoring in various forms.</p>
-              <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more Â»</a></p> -->
-            </div>
-          </div>
+  
+  <body data-gr-c-s-loaded="true">
+    <div class="container panel panel-default" style="margin-top:20px">
+      <div class="form-group" style="margin-left: 0px; margin-right: 0px;">
+        <div class="col-md-offset-3 col-sm-offset-3 col-lg-offset-3 col-md-8 col-lg-8 col-sm-8">
+          <button type="submit" id="pay" class="btn btn-primary btn-lg btn-block" onclick="getSecureData(this)">Get Payment Nonce (with UI)</button>
         </div>
       </div>
-    </section>
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <h1>Accept UI Test</h1>
-            <p>Payment Nonce Generator Test via Accept UI</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+  
+  <script type="text/javascript">
+  var blob = "";
+  function getSecureData(button) {
+        var parameters = {};
+        parameters.showBilling = true;
+        parameters.apiLoginID = '5KP3u95bQpv';
+        parameters.clientKey = '5FcB6WrfHGS76gHW3v7btBCE3HuuBuke9Pj96Ztfn5R32G5ep42vne7MCWZtAucY';
+        callbackFn = 'callbackMerchant';
+                                  
+        parameters.buttonText = 'Pay';
+        parameters.headerText = 'Payment Details';
+           
+        Accept.showForm(button, parameters, callbackFn);
+  
+  }
+  
+  function populateErrorMessage(response) {
+      var text = '';
+      for (var i = 0; i < response.messages.message.length; i++) {
+        text = text + response.messages.message[i].code + ':' + response.messages.message[i].text + '\n';
+      }
+      console.log(text);
+      };
+     
+  function callbackMerchant(response) {
+      if (response.messages.resultCode === 'Error') {
+        populateErrorMessage(response);
+      } else {
+        var msg01 = '<b> PAYMENT NONCE (Data Value) : </b> ' + response.opaqueData.dataValue;
+              var msg02 = '<b> TYPE (Data Descriptor) : </b> ' + response.opaqueData.dataDescriptor;
+        var msg03 = '<b>CARD NUMBER</b> : ' + response.encryptedCardData.cardNumber + '<br/>' + '<b>EXPIRATION DATE</b> : ' + response.encryptedCardData.expDate + '<br/>' + '<b>BIN</b> : '+ response.encryptedCardData.bin;
+        if ($('#paymentReceipt').length == 0) {
+              $('body').append($('<br/><br/><div id = "paymentReceipt" style="margin: auto;border: 1px solid black;padding: 15px;width: 50%;"></div>'));
+        }
+        $('#paymentReceipt').html(msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03);
+      }
+    }
+     
+  
+  </script>
 
-    <section>
- 
-        <div class="container panel panel-default" style="margin-top:20px">
-            <div class="form-group" style="margin-left: 0px; margin-right: 0px;">
-              <div class="col-md-offset-3 col-sm-offset-3 col-lg-offset-3 col-md-8 col-lg-8 col-sm-8">
-                <button type="submit" id="pay" class="btn btn-primary btn-lg btn-block" onclick="getSecureData(this)">Get Payment Nonce (with UI)</button>
-              </div>
-            </div>
-          </div>
-        
-          <script type="text/javascript">
-            var blob = "";
-        
-            function getSecureData(button) {
-              var parameters = {};
-              parameters.showBilling = true;
-              parameters.apiLoginID = '5KP3u95bQpv';
-              parameters.clientKey = '5FcB6WrfHGS76gHW3v7btBCE3HuuBuke9Pj96Ztfn5R32G5ep42vne7MCWZtAucY';
-              callbackFn = 'callbackMerchant';
-              parameters.buttonText = 'Pay';
-              parameters.headerText = 'Payment Details';
-              Accept.showForm(button, parameters, callbackFn);
-            }
-        
-            function populateErrorMessage(response) {
-              var text = '';
-              for (var i = 0; i < response.messages.message.length; i++) {
-                text = text + response.messages.message[i].code + ':' + response.messages.message[i].text + '\n';
-              }
-              console.log(text);
-            };
-        
-            function callbackMerchant(response) {
-              if (response.messages.resultCode === 'Error') {
-                populateErrorMessage(response);
-              } else {
-                var msg01 = '<b> PAYMENT NONCE (Data Value) : </b> ' + response.opaqueData.dataValue;
-                var msg02 = '<b> TYPE (Data Descriptor) : </b> ' + response.opaqueData.dataDescriptor;
-                var msg03 = '<b>CARD NUMBER</b> : ' + response.encryptedCardData.cardNumber + '<br/>' + '<b>EXPIRATION DATE</b> : ' + response.encryptedCardData.expDate + '<br/>' + '<b>BIN</b> : ' + response.encryptedCardData.bin;
-                if ($('#paymentReceipt').length == 0) {
-                  $('body').append($('<br/><br/><div id = "paymentReceipt" style="margin: auto;border: 1px solid black;padding: 15px;width: 50%;"></div>'));
-                }
-                $('#paymentReceipt').html(msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03);
-              }
-            }
-          </script>
-
-<div style="display: none;"></div>
-    
 <hr>
 
     <footer class="text-center">
