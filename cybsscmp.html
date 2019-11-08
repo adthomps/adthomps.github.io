@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>APT Portfolio - API Testing</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.3.1.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html">APT</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Tests
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="anetsimple.html">ANET Simple Checkout</a>
+              <a class="dropdown-item" href="anetvms.html">ANET VMS</a>
+              <!--<a class="dropdown-item" href="anetoauth.html">ANET OAuth</a>-->
+              <a class="dropdown-item" href="anetaccept.html">ANET Accept</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="cybsapievolution.html">CYBS API Mock</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://developer.authorize.net" target="_blank">ANET Dev</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://developer.cybersource.com" target="_blank">CYBS Dev</a>
+          </li>
+      <!--
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+      -->
+        </ul>
+      <!--
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      -->
+      </div>
+    </nav>
+
+  <section>
+    <div class="jumbotron text-center mt-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1>APT API Tests</h1>
+            <p>This is my portfolio site that includes Authorize.Net
+              <!--, Cybersource-->API tests and monitoring in various forms.</p>
+            <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container panel panel-default" style="margin-top:20px">
+      <div class="column wrapper">
+        <div class="column one">
+          <div class="par1 parsys">
+            <div class="intro parbase section">
+
+              <div class="column_replace">
+                <!---->
+
+                <h1>SCMP (Simple Commerce Message Protocol)</h1>
+
+                <div class="intro">
+
+                  <p>SCMP (Simple Commerce Message Protocol) is a legacy name-value pair API that is supported only for existing merchants who have already implemented it. These resources are for merchants who want to download the latest SCMP API client version for their existing implementations.</p>
+
+                  <p><b>Secure Acceptance Checkout API</b> option is ideal for Web merchants who prefer to host their own order page, perhaps for greater customization, and simply need a method of transferring payment data for processing.</p>
+
+                  <p><b>Status:</b> Deprecated</p>
+
+                  <p><b>Alternative Solution:</b> <a href="https://developer.cybersource.com/api/developer-guides.html">Rest API</a></p>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+            <h2 class="subtitle">Implementation Guides & Source Code</h2>
+            <div>
+              <p>Documentation: <a href="http://apps.cybersource.com/library/documentation/dev_guides/SCMP_API_Clients/html/">HTML</a> | <a href="http://apps.cybersource.com/library/documentation/dev_guides/SCMP_API_Clients/Client_SDK_SCMP_API.pdf">PDF</a></p>
+
+            </div>
+            <div class="grouplc">
+              <ul class="disc">
+                <li>Java</li>
+                    <ul>
+                      <li>Source Code: <a href="http://apps.cybersource.com/library/downloads/cybersource_developer_kits/_SCMP_Clients/Java/Java_1_2_to_1_4/sdkjava--ics5.3.0.zip">Java SCMP Clients v.ics5.3.0</a></li>
+                      <li>Other Documents:</li>
+                        <ul>
+                          <li><a href="http://apps.cybersource.com/library/downloads/cybersource_developer_kits/_SCMP_Clients/Java/Java_1_2_to_1_4/readme">ReadMe for Java</a></li>
+                          <li><a href="http://apps.cybersource.com/library/downloads/cybersource_developer_kits/_SCMP_Clients/Java/Java_1_2_to_1_4/changes">Changes History for Java</a></li>
+                        </ul>
+                    </ul>
+                <li>C/C++</li>
+                    <ul>
+                      <li>Source Code:</li>
+                        <ul>
+                          <li><a href="http://apps.cybersource.com/library/downloads/cybersource_developer_kits/_SCMP_Clients/C/Linux/sdkc-linux-ics5.1.1.tar.gz">Linux - C SCMP Clients v.ics5.1.1</a></li>
+                          <li><a href="http://apps.cybersource.com/library/downloads/cybersource_developer_kits/_SCMP_Clients/C/Solaris/sdkc-sol26-ics5.0.0.tar.gz">Solaris - C SCMP Clients v.ics5.0.0</a></li>
+                          <li><a href="http://apps.cybersource.com/library/downloads/cybersource_developer_kits/_SCMP_Clients/C/Windows/sdkc-nt-ics5.1.1.zip">Windows - C SCMP NT Clients v.ics5.1.1</a></li>
+                        </ul>
+                      <li>Other Documents:</li>
+                        <ul>
+                          <li><a href="http://apps.cybersource.com/library/downloads/cybersource_developer_kits/_SCMP_Clients/C/Solaris/readme">ReadMe for C</a></li>
+                          <li><a href="http://apps.cybersource.com/library/downloads/cybersource_developer_kits/_SCMP_Clients/C/Solaris/changes">Changes History for C</a></li>
+                        </ul>
+                    </ul>
+              </ul>
+            </div>
+          </div>
+
+      </div>
+
+    </div>
+    </div>
+    </div>
+
+    </div>
+
+    </div>
+    </div>
+    </div>
+  </section>
+
+    <footer class="text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p>Copyright © MyCompany. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.3.1.js"></script>
+  </body>
+</html>
