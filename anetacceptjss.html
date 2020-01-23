@@ -128,40 +128,40 @@
     </section>
 
 <script type="text/javascript">
-  var blob = "";
+var blob = "";
+function getSecureData() {
+var secureData = {},
+authData = {},
+cardData = {};
+cardData.cardNumber = document.getElementById('CARDNUMBER_ID').value;
+cardData.month = document.getElementById('EXPIRY_MONTH_ID').value;
+cardData.year = document.getElementById('EXPIRY_YEAR_ID').value;
+cardData.zip  = document.getElementById('ZIP_CODE').value;
+cardData.cardCode  = document.getElementById('CARD_CODE').value;
+   
+secureData.cardData = cardData;
+authData.clientKey = '4abK6fG25BtW9QF3LZUN84FsmvQh47bpdm8FJ2yA28r9p5WPB34H8N6n7whjUsBu';
+authData.apiLoginID = '62W3Efur';
+secureData.authData = authData;
+Accept.dispatchData(secureData, 'responseHandler');
+}
+function responseHandler(response) {
+if (response.messages.resultCode === 'Error') {
+for (var i = 0; i < response.messages.message.length; i++) {
+console.log(response.messages.message[i].code + ':' + response.messages.message[i].text);
+$("#blob").val(response.messages.message[i].code + ':' + response.messages.message[i].text);
+}
+} else {
+   useOpaqueData(response.opaqueData)
+}
+}
 
-  function getSecureData() {
-    var secureData = {},
-      authData = {},
-      cardData = {};
-    cardData.cardNumber = document.getElementById('CARDNUMBER_ID').value;
-    cardData.month = document.getElementById('EXPIRY_MONTH_ID').value;
-    cardData.year = document.getElementById('EXPIRY_YEAR_ID').value;
-    cardData.zip = document.getElementById('ZIP_CODE').value;
-    cardData.cardCode = document.getElementById('CARD_CODE').value;
-    secureData.cardData = cardData;
-    authData.clientKey = '4abK6fG25BtW9QF3LZUN84FsmvQh47bpdm8FJ2yA28r9p5WPB34H8N6n7whjUsBu';
-    authData.apiLoginID = '62W3Efur';
-    secureData.authData = authData;
-    Accept.dispatchData(secureData, 'responseHandler');
-  }
-  
-  function responseHandler(response) {
-    if (response.messages.resultCode === 'Error') {
-      for (var i = 0; i < response.messages.message.length; i++) {
-        console.log(response.messages.message[i].code + ':' + response.messages.message[i].text);
-        $("#blob").val(response.messages.message[i].code + ':' + response.messages.message[i].text);
-      }
-    } else {
-      useOpaqueData(response.opaqueData)
-    }
-  }
+function useOpaqueData(responseData) {
+console.log(responseData.dataDescriptor);
+console.log(responseData.dataValue);
+$("#blob").val(responseData.dataValue);
+}
 
-  function useOpaqueData(responseData) {
-    console.log(responseData.dataDescriptor);
-    console.log(responseData.dataValue);
-    $("#blob").val(responseData.dataValue);
-  }
 </script>
 
 <div style="display: none;"></div>
