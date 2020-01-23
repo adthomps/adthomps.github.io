@@ -145,7 +145,7 @@
     secureData.authData = authData;
     Accept.dispatchData(secureData, 'responseHandler');
   }
-
+  
   function responseHandler(response) {
     if (response.messages.resultCode === 'Error') {
       for (var i = 0; i < response.messages.message.length; i++) {
