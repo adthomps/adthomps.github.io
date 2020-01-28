@@ -79,51 +79,7 @@
         </div>
       </div>
     </section>
-    <section>
-      <div class="container mt-2">
-        <div class="row">
-          <div class="col-md-4 col-12">
-            <ul class="list-unstyled">
-              <li class="media">
-                <img class="mr-3" src="images/icon-api.jpg" alt="icon-api">
-                <div class="media-body">
-                  <!--<h5 class="mt-0 mb-1">Production - Simple Checkout Test - OCC</h5>-->
-                  <form action="https://aptaccept.foxycart.com/cart" method="post">
-                    <input type="hidden" name="name" value="A great product" />
-                    <input type="hidden" name="price" value="5.00" />
-                    <input type="hidden" name="size" value="small" />
-                    <input type="submit" value="Small -- Buy It Now!" />
-                  </form>
-				</div>				  
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-12">
-            <ul class="list-unstyled">
-              <li class="media">
-                <img class="mr-3" src="images/icon-api.jpg" alt="icon-api">
-                <div class="media-body">
-                  <a href="https://codepen.io/Sanchito84/pen/dOmbXq/"><h5 class="mt-0 mb-1">Sample Simple Checkout Code</h5></a>
-                  Sample code hosted on CodePen.
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-12">
-            <ul class="list-unstyled">
-              <li class="media">
-                <img class="mr-3" src="images/icon-api.jpg" alt="icon-api">
-                <div class="media-body">
-                  <!--<h5 class="mt-0 mb-1">Production -  Simple Checkout Test - OCE</h5>-->
-                  <form name="PrePage" method = "post" action = "https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx"> <input type = "hidden" name = "LinkId" value ="c00e0880-2888-4f20-8753-b963f3645972" /> <input type = "submit" value = "Prod - OCE - Buy" /> </form>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-	  
+    
     <section>
       <div class="container mt-2">
         <div class="row">
@@ -133,7 +89,14 @@
                 <img class="mr-3" src="images/icon-api.jpg" alt="icon-api">
                 <div class="media-body">
                   <!--<h5 class="mt-0 mb-1">Sandbox - Simple Checkout Test - OCC</h5>-->
-                  <form name="PrePage" method = "post" action = "https://scotest.authorize.net/payment/CatalogPayment.aspx"> <input type = "hidden" name = "LinkId" value ="a6247877-00b6-4ea6-b5a6-028025000d15" /> <input type = "submit" value = "Sandbox - OCC - Buy" /> </form>				</div>	
+                  <form action="https://aptaccept.foxycart.com/cart" method="post">
+                    <input type="hidden" name="name" value="Simple Smartphone" />
+                    <input type="hidden" name="price" value="99.99" />
+                    <input type="hidden" name="2:name" value="Leather Case for Smartphone" />
+                    <input type="hidden" name="2:price" value="9.99" />
+                    <input type="submit" value="CAS - Simple Smartphone and a Leather Case!" />
+                  </form>
+                </div>
               </li>
             </ul>
           </div>
@@ -147,9 +110,15 @@
                 <img class="mr-3" src="images/icon-api.jpg" alt="icon-api">
                 <div class="media-body">
                   <!--<h5 class="mt-0 mb-1">Sandbox -  Simple Checkout Test - OCE</h5>-->
-                  <form name="PrePage" method = "post" action = "https://scotest.authorize.net/payment/CatalogPayment.aspx"> <input type = "hidden" name = "LinkId" value ="c0f4d56f-971d-4245-b659-5707758f389f" /> <input type = "submit" value = "Sandbox - OCE - Buy" /> </form>
-				</div>	
-              </li>
+                  <form action="https://aptaccept.foxycart.com/cart" method="post">
+                    <input type="hidden" name="name" value="Fancy Smartphone" />
+                    <input type="hidden" name="price" value="199.99" />
+                    <input type="hidden" name="2:name" value="Leather Case for Smartphone" />
+                    <input type="hidden" name="2:price" value="9.99" />
+                    <input type="submit" value="CAS - Fancy Smartphone and a Leather Case!" />
+                  </form>
+                </div>
+                </li>
             </ul>
           </div>
         </div>
