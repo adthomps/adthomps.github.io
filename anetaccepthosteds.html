@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#btnContinue").click(function () {
+        $("#redirectToken").val($("#inputtoken").val());
+        });
+      });
+  </script>
+</head>
+<body>
+  <input type="text" id="inputtoken" value="" />
+  <br />
+  <form method="post" action="https://test.authorize.net/payment/payment" id="formAuthorizeNetTestPage" name="formAuthorizeNetTestPage">
+    <input type="hidden" id="redirectToken" name="token" value="" />
+    Redirect-Continue to Authorize.Net to Payment Page
+    <button id="btnContinue" onclick="">Continue to next page</button>
+  </form>
+</body>
+</html>
