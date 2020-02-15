@@ -194,8 +194,12 @@ function selContentType_onChange(obj) {
     <form method="post" action="https://authnettest622.github.io/AcceptPaymentSandbox/AcceptPaymentSandbox.html">
         <div><span class="header">API Url:</span></div>
     <p>
-      <input type="text" id="txtUrl" name="txtUrl" size="55" value="https://apitest.authorize.net/xml/v1/request.api">
-    
+      <input type="text" id="txtUrl" name="txtUrl" size="55" value="request.api">
+      &nbsp;&nbsp;<select name="selUrls" id="selUrls" onchange="selUrls_onChange(this)" onblur="selUrls_onChange(this)">
+        <option value="">--Alternate Url--</option>
+        <option value="request.api">ANetApi</option>
+        <option value="reseller.api">ANetApi for resellers</option>
+      </select>
       &nbsp;&nbsp;<select name="selContentType" id="selContentType" onchange="selContentType_onChange(this)">
         <option value="xml">XML</option>
         <option value="json">JSON</option>
