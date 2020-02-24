@@ -12,7 +12,7 @@
         $("#btnOpenAuthorizeNetIFrame").click(function () {
             $("#add_payment").show();
             $("#embeddedToken").val($("#inputtoken").val());
-            $("#send_token").attr({ "action": "https://api2.authorize.net/payment/Payment", "target": "add_payment" }).submit();
+            $("#send_token").attr({ "action": "https://test.authorize.net/payment/Payment", "target": "add_payment" }).submit();
             $(window).scrollTop($('#add_payment').offset().top - 50);
         });
 
@@ -92,7 +92,7 @@ function btnSend_onclick() {
 
 function selUrls_onChange(obj) {
     if (document.getElementById("selUrls").value) {
-        document.getElementById("txtUrl").value = "https://api2.authorize.net/xml/v1/" + document.getElementById("selUrls").value;
+        document.getElementById("txtUrl").value = "https://test.authorize.net/xml/v1/" + document.getElementById("selUrls").value;
   }
 }
 
@@ -159,7 +159,7 @@ function selContentType_onChange(obj) {
 
         </form>
    
-       <form method="post" action="https://api2.authorize.net/payment/payment" id="formAuthorizeNetTestPage" name="formAuthorizeNetTestPage">
+       <form method="post" action="https://test.authorize.net/payment/payment" id="formAuthorizeNetTestPage" name="formAuthorizeNetTestPage">
         <input type="hidden" id="redirectToken" name="token" value="">
         Redirect-Continue to Authorize.Net to Payment Page
         <button id="btnContinue" onclick="">Continue to next page</button>
@@ -169,7 +169,7 @@ function selContentType_onChange(obj) {
 
 <textarea class="code-mirror-textarea" cols="145" id="code-xml-getHostedPaymentPageRequest" rows="16" spellcheck="false">&lt;getHostedPaymentPageRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"&gt;
 	&lt;merchantAuthentication&gt;
-		&lt;name&gt;59DhDt5HRM&lt;/name&gt;
+		&lt;name&gt;62W3Efur&lt;/name&gt;
 		&lt;transactionKey&gt;API_TRANSACTION_KEY&lt;/transactionKey&gt;
 	&lt;/merchantAuthentication&gt;
 	&lt;transactionRequest&gt;
