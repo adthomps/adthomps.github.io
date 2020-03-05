@@ -215,12 +215,10 @@ function selContentType_onChange(obj) {
   }
 }
 // ]]>
-</script>
-
+</script>
 </head>
 <body>
-    <form method="post" action="">
-        <div><span class="header">API Url:</span></div>
+    <form method="post" action="">        <div><span class="header">API Url:</span></div>
     <p>
       <input type="text" id="txtUrl" name="txtUrl" size="55" value="request.api" />
       &nbsp;&nbsp;<select name="selUrls" id="selUrls" onchange="selUrls_onChange(this)" onblur="selUrls_onChange(this)">
@@ -233,22 +231,18 @@ function selContentType_onChange(obj) {
         <option value="json">JSON</option>
         <!-- <option value="json2">JSON (via Xml)</option> -->
       </select>
-    </p>
-
+    </p>
    <p>
       <textarea id="txtReqXml" name="txtReqXml" cols="80" rows="16" style="">
 </textarea>
-    </p>
-
+    </p>
     <p>
       <input type="button" id="btnSend" name="btnSend" value="Send" onclick="return btnSend_onclick()" />
       <span style="font-size:smaller;" Id="typeIdentifierMessageId">Click here to send the request.</span>
-    </p>
-    <div><span class="header">Response:</span> <span id="spnStatusCode" class="error"></span></div>
+    </p>    <div><span class="header">Response:</span> <span id="spnStatusCode" class="error"></span></div>
     <p>
       <textarea id="inputtoken" name="txtRespXml" cols="80" rows="10"></textarea>
-    </p>
-
+    </p>
         </form>
    
        <form method="post" action="https://test.authorize.net/payment/payment" id="formAuthorizeNetTestPage" name="formAuthorizeNetTestPage">
@@ -286,140 +280,6 @@ function selContentType_onChange(obj) {
     <div>
     Embedded IFrame
     <button id="btnOpenAuthorizeNetIFrame" onclick="">Show Payment Form</button>
-    
-    <textarea cols="145" rows="16" spellcheck="false">{
-        "getHostedPaymentPageRequest": {
-            "merchantAuthentication": {
-                "name": "API_LOGIN_ID",
-                "transactionKey": "API_TRANSACTION_KEY"
-            },
-            "transactionRequest": {
-                "transactionType": "authCaptureTransaction",
-                "amount": "20.00",
-                "profile": {
-                    "customerProfileId": "123456789"
-                },
-                "customer": {
-                    "email": "ellen@mail.com"
-                },
-                "billTo": {
-                    "firstName": "Ellen",
-                    "lastName": "Johnson",
-                    "company": "Souveniropolis",
-                    "address": "14 Main Street",
-                    "city": "Pecan Springs",
-                    "state": "TX",
-                    "zip": "44628",
-                    "country": "USA"
-                }
-            },
-            "hostedPaymentSettings": {
-                "setting": [{
-                    "settingName": "hostedPaymentReturnOptions",
-                    "settingValue": "{\"showReceipt\": true, \"url\": \"https://mysite.com/receipt\", \"urlText\": \"Continue\", \"cancelUrl\": \"https://mysite.com/cancel\", \"cancelUrlText\": \"Cancel\"}"
-                }, {
-                    "settingName": "hostedPaymentButtonOptions",
-                    "settingValue": "{\"text\": \"Pay\"}"
-                }, {
-                    "settingName": "hostedPaymentStyleOptions",
-                    "settingValue": "{\"bgColor\": \"blue\"}"
-                }, {
-                    "settingName": "hostedPaymentPaymentOptions",
-                    "settingValue": "{\"cardCodeRequired\": false, \"showCreditCard\": true, \"showBankAccount\": true}"
-                }, {
-                    "settingName": "hostedPaymentSecurityOptions",
-                    "settingValue": "{\"captcha\": false}"
-                }, {
-                    "settingName": "hostedPaymentShippingAddressOptions",
-                    "settingValue": "{\"show\": false, \"required\": false}"
-                }, {
-                    "settingName": "hostedPaymentBillingAddressOptions",
-                    "settingValue": "{\"show\": true, \"required\": false}"
-                }, {
-                    "settingName": "hostedPaymentCustomerOptions",
-                    "settingValue": "{\"showEmail\": false, \"requiredEmail\": false, \"addPaymentProfile\": true}"
-                }, {
-                    "settingName": "hostedPaymentOrderOptions",
-                    "settingValue": "{\"show\": true, \"merchantName\": \"G and S Questions Inc.\"}"
-                }, {
-                    "settingName": "hostedPaymentIFrameCommunicatorUrl",
-                    "settingValue": "{\"url\": \"https://mysite.com/iFrameCommunicator.html\"}"
-                }]
-            }
-        }
-    }</textarea>
-    
-    <textarea cols="145" rows="16" spellcheck="false">
-        &lt;getHostedPaymentPageRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"&gt;
-        &lt;merchantAuthentication&gt;
-            &lt;name&gt;API_LOGIN_ID&lt;/name&gt;
-            &lt;transactionKey&gt;API_TRANSACTION_KEY&lt;/transactionKey&gt;
-        &lt;/merchantAuthentication&gt;
-        &lt;transactionRequest&gt;
-            &lt;transactionType&gt;authCaptureTransaction&lt;/transactionType&gt;
-            &lt;amount&gt;20.00&lt;/amount&gt;
-            &lt;profile&gt;
-                &lt;customerProfileId&gt;123456789&lt;/customerProfileId&gt;
-            &lt;/profile&gt;
-            &lt;customer&gt;
-                &lt;email&gt;ellen@mail.com&lt;/email&gt;
-            &lt;/customer&gt;
-            &lt;billTo&gt;
-                    &lt;firstName&gt;Ellen&lt;/firstName&gt;
-                    &lt;lastName&gt;Johnson&lt;/lastName&gt;
-                    &lt;company&gt;Souveniropolis&lt;/company&gt;
-                    &lt;address&gt;14 Main Street&lt;/address&gt;
-                    &lt;city&gt;Pecan Springs&lt;/city&gt;
-                    &lt;state&gt;TX&lt;/state&gt;
-                    &lt;zip&gt;44628&lt;/zip&gt;
-                    &lt;country&gt;USA&lt;/country&gt;
-            &lt;/billTo&gt;
-        &lt;/transactionRequest&gt;
-        &lt;hostedPaymentSettings&gt;
-            &lt;setting&gt;
-                &lt;settingName&gt;hostedPaymentReturnOptions&lt;/settingName&gt;
-                &lt;settingValue&gt;{"showReceipt": true, "url": "https://mysite.com/receipt", "urlText": "Continue", "cancelUrl": "https://mysite.com/cancel", "cancelUrlText": "Cancel"}&lt;/settingValue&gt;
-            &lt;/setting&gt;
-            &lt;setting&gt;
-                &lt;settingName&gt;hostedPaymentButtonOptions&lt;/settingName&gt;
-                &lt;settingValue&gt;{"text": "Pay"}&lt;/settingValue&gt;
-            &lt;/setting&gt;
-            &lt;setting&gt;
-                &lt;settingName&gt;hostedPaymentStyleOptions&lt;/settingName&gt;
-                &lt;settingValue&gt;{"bgColor": "blue"}&lt;/settingValue&gt;
-            &lt;/setting&gt;
-            &lt;setting&gt;
-                &lt;settingName&gt;hostedPaymentPaymentOptions&lt;/settingName&gt;
-                &lt;settingValue&gt;{"cardCodeRequired": false, "showCreditCard": true, "showBankAccount": true}&lt;/settingValue&gt;
-            &lt;/setting&gt;
-            &lt;setting&gt;
-                &lt;settingName&gt;hostedPaymentSecurityOptions&lt;/settingName&gt;
-                &lt;settingValue&gt;{"captcha": false}&lt;/settingValue&gt;
-            &lt;/setting&gt;
-            &lt;setting&gt;
-                &lt;settingName&gt;hostedPaymentShippingAddressOptions&lt;/settingName&gt;
-                &lt;settingValue&gt;{"show": false, "required": false}&lt;/settingValue&gt;
-            &lt;/setting&gt;
-            &lt;setting&gt;
-                &lt;settingName&gt;hostedPaymentBillingAddressOptions&lt;/settingName&gt;
-                &lt;settingValue&gt;{"show": true, "required":false}&lt;/settingValue&gt;
-            &lt;/setting&gt;
-            &lt;setting&gt;
-                &lt;settingName&gt;hostedPaymentCustomerOptions&lt;/settingName&gt;
-                &lt;settingValue&gt;{"showEmail": false, "requiredEmail": false, "addPaymentProfile": true}&lt;/settingValue&gt;
-            &lt;/setting&gt;
-            &lt;setting&gt;
-                &lt;settingName&gt;hostedPaymentOrderOptions&lt;/settingName&gt;
-                &lt;settingValue&gt;{"show": true, "merchantName": "G and S Questions Inc."}&lt;/settingValue&gt;
-            &lt;/setting&gt;
-            &lt;setting&gt;
-                &lt;settingName&gt;hostedPaymentIFrameCommunicatorUrl&lt;/settingName&gt;
-                &lt;settingValue&gt;{"url": "https://mysite.com/IFrameCommunicator.html"}&lt;/settingValue&gt;
-            &lt;/setting&gt;
-        &lt;/hostedPaymentSettings&gt;
-    &lt;/getHostedPaymentPageRequest&gt;
-    </textarea>
-
     </div>
             <div  id="iframe_holder" class="center-block" style="width:90%;max-width: 1000px">
 			<iframe id="add_payment" class="embed-responsive-item panel" name="add_payment" scrolling="no" style="height:100%;width:100%;border:none;overflow:hidden;">
@@ -429,7 +289,6 @@ function selContentType_onChange(obj) {
 				<input type="hidden" id="embeddedToken" name="token" value=""                    
                     >
 			</form>
-    
     <script type="text/javascript">
         (function () {
             if (!window.AuthorizeNetPopup) window.AuthorizeNetPopup = {};
@@ -586,10 +445,6 @@ function selContentType_onChange(obj) {
          }());
 
   </script>
-
-
-
 </body>
-
 </html>
 
