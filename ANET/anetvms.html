@@ -1,29 +1,22 @@
 <!DOCTYPE html>
-
 <html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Standard Meta -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../images/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../images/icons/favicon.ico" type="image/x-icon">
+    <!-- Site Properties -->
+    <title>APT API Examples &amp; Tests via Semantic/Fomantic UI</title>
+    <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 
-<head>
-
-  <!-- Standard Meta -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="../images/icons/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="../images/icons/favicon.ico" type="image/x-icon">
-
-  <!-- Site Properties -->
-  <title>APT API Examples & Tests via Semantic/Fomantic UI</title>
-  <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
-  <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
-  <script src="../semantic/dist/semantic.min.js"></script>
-
-  <!-- CSS Stylings -->
-  <style type="text/css">
+crossorigin="anonymous"></script>
+    <script src="../semantic/dist/semantic.min.js"></script>
+    <!-- CSS Stylings -->
+    <style type="text/css">
 
     .hidden.menu {
       display: none;
@@ -114,9 +107,8 @@
     }
 
   </style>
-
-  <!-- JavaScript -->
-  <script>
+    <!-- JavaScript -->
+    <script>
   $(document)
     .ready(function() {
 
@@ -141,181 +133,163 @@
     })
   ;
   </script>
+  </head>
+  <body>
+    <!-- Following Menu -->
+    <div class="ui large top fixed hidden menu">
+      <div class="ui container"> <a href="../index.html" class="item">Home</a>
+        <a href="../anet.html" class="active item">ANET Examples</a> <a href="../cybs.html"
 
-</head>
-
-<body>
-
-<!-- Following Menu -->
-<div class="ui large top fixed hidden menu">
-  <div class="ui container">
-    <a href="../index.html" href="#"class="item">Home</a>
-    <a href="../anet.html" class="active item">ANET Examples</a>
-    <a href="../cybs.html" class="item">CYBS Examples</a>
-    <!--<a class="item">Careers</a>-->
-    <div class="right menu">
-      <div class="item">
-        <a href="https://developer.authorize.net" target="_blank" class="ui button">ANET Dev Center</a>
-      </div>
-      <div class="item">
-        <a href="https://developer.cybersource.com" target="_blank" class="ui button">CYBS Dev Center</a>
-        <!--<a class="ui primary button">CYBS Dev Center</a>-->
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Sidebar Menu -->
-<div class="ui vertical inverted sidebar menu">
-  <a href="../index.html" class="item">Home</a>
-  <a href="../anet.html" class="active item">ANET Examples</a>
-  <a href="../cybs.html" class="item">CYBS Examples</a>
-  <!--<a class="item">Careers</a>-->
-  <a href="https://developer.authorize.net" target="_blank" class="item">ANET Dev Center</a>
-  <a href="https://developer.cybersource.com" target="_blank" class="item">CYBS Dev Center</a>
-</div>
-
-<!-- Page Contents -->
-<div class="pusher">
-  <div class="ui inverted vertical masthead center aligned segment">
-
-    <div class="ui container">
-      <div class="ui large secondary inverted pointing menu">
-        <a class="toc item">
-          <i class="sidebar icon"></i>
-        </a>
-        <a href="../index.html"class="item">Home</a>
-        <a href="../anet.html" class="active item">ANET Examples</a>
-        <a href="../cybs.html" class="item">CYBS Examples</a>
+          class="item">CYBS Examples</a>
         <!--<a class="item">Careers</a>-->
-        <div class="right item">
-          <a href="https://developer.authorize.net" target="_blank" class="ui inverted button">ANET Dev Center</a>
-          <a href="https://developer.cybersource.com" target="_blank" class="ui inverted button">CYBS Dev Center</a>
+        <div class="right menu">
+          <div class="item"> <a href="https://developer.authorize.net" target="_blank"
+
+              class="ui button">ANET Dev Center</a> </div>
+          <div class="item"> <a href="https://developer.cybersource.com" target="_blank"
+
+              class="ui button">CYBS Dev Center</a>
+            <!--<a class="ui primary button">CYBS Dev Center</a>--> </div>
         </div>
       </div>
     </div>
+    <!-- Sidebar Menu -->
+    <div class="ui vertical inverted sidebar menu"> <a href="../index.html" class="item">Home</a>
+      <a href="../anet.html" class="active item">ANET Examples</a> <a href="../cybs.html"
 
-    <div class="ui text container">
-      <h1 class="ui inverted header">
-        APT API Examples
-      </h1>
-      <h2>Authorize.Net Verified Merchant Seal tests.</h2>
-      <!--<div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>-->
+        class="item">CYBS Examples</a>
+      <!--<a class="item">Careers</a>--> <a href="https://developer.authorize.net"
+
+        target="_blank" class="item">ANET Dev Center</a> <a href="https://developer.cybersource.com"
+
+        target="_blank" class="item">CYBS Dev Center</a>
     </div>
+    <!-- Page Contents -->
+    <div class="pusher">
+      <div class="ui inverted vertical masthead center aligned segment">
+        <div class="ui container">
+          <div class="ui large secondary inverted pointing menu"> <a class="toc item">
+            </a> <a href="../index.html" class="item">Home</a> <a href="../anet.html"
 
-  </div>
+              class="active item">ANET Examples</a> <a href="../cybs.html" class="item">CYBS
+              Examples</a>
+            <!--<a class="item">Careers</a>-->
+            <div class="right item"> <a href="https://developer.authorize.net"
 
-  <h4 class="ui horizontal header divider">
-      ANET VMS Tests - Production
-  </h4>
+                target="_blank" class="ui inverted button">ANET Dev Center</a> <a
 
-  <div class="ui vertical stripe quote segment">
-    <div class="ui equal width stackable internally celled grid">
-      <div class="center aligned row">
-
-        <div class="column">
-          <h4>Merchant OCC - Production</h4>
-          <p>
-            <img src="../images/icons/icon-url.jpg" class="ui mini spaced image">
-          <!-- (c) 2005, 2019. Authorize.Net is a registered trademark of CyberSource Corporation --> 
-          <div style="text-align:center" class="AuthorizeNetSeal">
-            <script type="text/javascript" language="javascript">var ANS_customer_id="555df64a-3d16-4837-aa70-21c451154de0";</script> <script type="text/javascript" language="javascript" src="//verify.authorize.net:443/anetseal/seal.js" ></script>
+                href="https://developer.cybersource.com" target="_blank" class="ui inverted button">CYBS
+                Dev Center</a> </div>
           </div>
-          </p>
         </div>
-
-        <div class="column">
-          <h4>Merchant OCE - Production</h4>
-          <p>
-            <img src="../images/icons/icon-url.jpg" class="ui mini spaced image">
-          <!-- (c) 2005, 2019. Authorize.Net is a registered trademark of CyberSource Corporation --> <div class="AuthorizeNetSeal"> <script type="text/javascript" language="javascript">var ANS_customer_id="14e323d6-04a5-42e8-bfa1-a113a0f6b7b2";</script> <script type="text/javascript" language="javascript" src="//verify.authorize.net:443/anetseal/seal.js" ></script> </div>
-          </p>
+        <div class="ui text container">
+          <h1 class="ui inverted header"> APT API Examples </h1>
+          <h2>Authorize.Net Verified Merchant Seal tests.</h2>
+          <!--<div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>-->
         </div>
+      </div>
+      <h4 class="ui horizontal header divider"> ANET VMS Tests - Production </h4>
+      <div class="ui vertical stripe quote segment">
+        <div class="ui equal width stackable internally celled grid">
+          <div class="center aligned row">
+            <div class="column">
+              <h4 style="text-align: center;">Merchant OCC - Production</h4>
+              <p style="text-align: center;"> <img src="../images/icons/icon-url.jpg"
 
+                  class="ui mini spaced image">
+                <!-- (c) 2005, 2019. Authorize.Net is a registered trademark of CyberSource Corporation -->
+              </p>
+              <div style="text-align:center" class="AuthorizeNetSeal">
+                <script type="text/javascript" language="javascript">var ANS_customer_id="555df64a-3d16-4837-aa70-21c451154de0";</script>
+                <script type="text/javascript" language="javascript" src="//verify.authorize.net:443/anetseal/seal.js"></script>
+              </div>
+              <p></p>
+            </div>
+            <div class="column">
+              <h4>Merchant OCE - Production</h4>
+              <p> <img src="../images/icons/icon-url.jpg" class="ui mini spaced image">
+                <!-- (c) 2005, 2019. Authorize.Net is a registered trademark of CyberSource Corporation -->
+              </p>
+              <div class="AuthorizeNetSeal">
+                <script type="text/javascript" language="javascript">var ANS_customer_id="14e323d6-04a5-42e8-bfa1-a113a0f6b7b2";</script>
+                <script type="text/javascript" language="javascript" src="//verify.authorize.net:443/anetseal/seal.js"></script>
+              </div>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h4 class="ui horizontal header divider"> ANET VMS Tests - Sandbox </h4>
+      <div class="ui vertical stripe quote segment">
+        <div class="ui equal width stackable internally celled grid">
+          <div class="center aligned row">
+            <div class="column">
+              <h4>Merchant OCC - Sandbox</h4>
+              <p> <img src="../images/icons/icon-url.jpg" class="ui mini spaced image">
+                <!-- (c) 2005, 2019. Authorize.Net is a registered trademark of CyberSource Corporation -->
+              </p>
+              <div class="AuthorizeNetSeal">
+                <script type="text/javascript" language="javascript">var ANS_customer_id="b03783d9-2057-4a94-b645-6714feee2c7b";</script>
+                <script type="text/javascript" language="javascript" src="https://testverify.authorize.net:443/anetseal/seal.js"></script>
+              </div>
+              <p></p>
+            </div>
+            <div class="column">
+              <h4>Merchant OCE - Sandbox</h4>
+              <p> <img src="../images/icons/icon-url.jpg" class="ui mini spaced image">
+                <!-- (c) 2005, 2019. Authorize.Net is a registered trademark of CyberSource Corporation -->
+              </p>
+              <div class="AuthorizeNetSeal">
+                <script type="text/javascript" language="javascript">var ANS_customer_id="19a0dfde-0654-48fa-b42d-293bb37c0e45";</script>
+                <script type="text/javascript" language="javascript" src="https://testverify.authorize.net:443/anetseal/seal.js"></script>
+              </div>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h4 class="ui horizontal header divider"> </h4>
+      <!-- Footer -->
+      <div class="ui inverted vertical footer segment">
+        <div class="ui container">
+          <div class="ui stackable inverted divided equal height stackable grid">
+            <div class="three wide column">
+              <h4 class="ui inverted header">About</h4>
+              <div class="ui inverted link list"> <a href="#" class="item">Sitemap</a>
+                <a href="#" class="item">LinkedIn</a>
+                <!--<a href="#" class="item">Religious Ceremonies</a>-->
+                <!--<a href="#" class="item">Gazebo Plans</a>--> </div>
+            </div>
+            <div class="three wide column">
+              <h4 class="ui inverted header">ANET Tests</h4>
+              <div class="ui inverted link list"> <a href="../ANET/anetvms.html"
+
+                  class="item">ANET VMS</a> <a href="../ANET/anetsimple.html" class="item">ANET
+                  Simple Checkout</a> <a href="../ANET/anetaccept.html" class="item">ANET
+                  Accept</a> <a href="../ANET/anetoauth.html" class="item">ANET
+                  OAuth</a> </div>
+            </div>
+            <div class="three wide column">
+              <h4 class="ui inverted header">CYBS Tests</h4>
+              <div class="ui inverted link list"> <a href="../CYBS/anetcybsbridge.html"
+
+                  class="item">ANET Bridge to CYBS</a> <a href="../CYBS/cybsflexmicro.html"
+
+                  class="item">CYBS Flex Micro Form</a> <a href="../CYBS/cybsscmp.html"
+
+                  class="item">CYBS SCMP</a> <a href="../CYBS/cybssimpleorder.html"
+
+                  class="item">CYBS Simple Order</a> <a href="../CYBS/cybssecureaccept.html"
+
+                  class="item">CYBS Secure Acceptance</a> </div>
+            </div>
+            <div class="seven wide column">
+              <h4 class="ui inverted header">Footer Header</h4>
+              <p>Copyright © MyCompany. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-
-  <h4 class="ui horizontal header divider">
-      ANET VMS Tests - Sandbox
-  </h4>
-
-  <div class="ui vertical stripe quote segment">
-    <div class="ui equal width stackable internally celled grid">
-      <div class="center aligned row">
-
-        <div class="column">
-          <h4>Merchant OCC - Sandbox</h4>
-          <p>
-            <img src="../images/icons/icon-url.jpg" class="ui mini spaced image">
-          <!-- (c) 2005, 2019. Authorize.Net is a registered trademark of CyberSource Corporation --> <div class="AuthorizeNetSeal"> <script type="text/javascript" language="javascript">var ANS_customer_id="b03783d9-2057-4a94-b645-6714feee2c7b";</script> <script type="text/javascript" language="javascript" src="https://testverify.authorize.net:443/anetseal/seal.js" ></script> </div>
-          </p>
-        </div>
-
-        <div class="column">
-          <h4>Merchant OCE - Sandbox</h4>
-          <p>
-            <img src="../images/icons/icon-url.jpg" class="ui mini spaced image">
-          <!-- (c) 2005, 2019. Authorize.Net is a registered trademark of CyberSource Corporation --> <div class="AuthorizeNetSeal"> <script type="text/javascript" language="javascript">var ANS_customer_id="19a0dfde-0654-48fa-b42d-293bb37c0e45";</script> <script type="text/javascript" language="javascript" src="https://testverify.authorize.net:443/anetseal/seal.js" ></script> </div>
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <h4 class="ui horizontal header divider">
-  </h4>
-
-  <!-- Footer -->
-  <div class="ui inverted vertical footer segment">
-    <div class="ui container">
-      <div class="ui stackable inverted divided equal height stackable grid">
-        <div class="three wide column">
-          <h4 class="ui inverted header">About</h4>
-          <div class="ui inverted link list">
-            <a href="#" class="item">Sitemap</a>
-            <a href="#" class="item">LinkedIn</a>
-            <!--<a href="#" class="item">Religious Ceremonies</a>-->
-            <!--<a href="#" class="item">Gazebo Plans</a>-->
-          </div>
-        </div>
-
-        <div class="three wide column">
-          <h4 class="ui inverted header">ANET Tests</h4>
-          <div class="ui inverted link list">
-            <a href="../ANET/anetvms.html" class="item">ANET VMS</a>
-            <a href="../ANET/anetsimple.html" class="item">ANET Simple Checkout</a>
-            <a href="../ANET/anetaccept.html" class="item">ANET Accept</a>
-            <a href="../ANET/anetoauth.html" class="item">ANET OAuth</a>
-          </div>
-        </div>
-
-        <div class="three wide column">
-          <h4 class="ui inverted header">CYBS Tests</h4>
-          <div class="ui inverted link list">
-            <a href="../CYBS/anetcybsbridge.html" class="item">ANET Bridge to CYBS</a>
-            <a href="../CYBS/cybsflexmicro.html" class="item">CYBS Flex Micro Form</a>
-            <a href="../CYBS/cybsscmp.html" class="item">CYBS SCMP</a>
-            <a href="../CYBS/cybssimpleorder.html" class="item">CYBS Simple Order</a>
-            <a href="../CYBS/cybssecureaccept.html" class="item">CYBS Secure Acceptance</a>
-          </div>
-        </div>
-
-        <div class="seven wide column">
-          <h4 class="ui inverted header">Footer Header</h4>
-          <p>Copyright © MyCompany. All rights reserved.</p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-</body>
-
+  </body>
 </html>
