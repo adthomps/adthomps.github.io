@@ -261,6 +261,121 @@
       });
   </script>
 
+  <script type="text/javascript">
+    $(function() {
+      $("#btnOpenAuthorizeNetIFrame").click(function() {
+        $("#add_payment").show();
+        $("#embeddedToken").val($("#inputtoken").val());
+        $("#send_token").attr({
+          "action": "https://secure.authorize.net/payment/Payment",
+          "target": "add_payment"
+        }).submit();
+        $(window).scrollTop($('#add_payment').offset().top - 50);
+      });
+    });
+    $(function() {
+      $("#btnContinue").click(function() {
+        $("#redirectToken").val($("#inputtoken").val());
+      });
+    });
+  </script>
+  <script language="javascript" type="text/javascript">
+    // <!CDATA[
+    function XHConn() {
+      var xmlhttp, bComplete = false;
+      try {
+        xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+      } catch (e) {
+        try {
+          xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        } catch (e) {
+          try {
+            xmlhttp = new XMLHttpRequest();
+          } catch (e) {
+            xmlhttp = false;
+          }
+        }
+      }
+      if (!xmlhttp) return null;
+      this.connect = function(sURL, sPostData, fnDone) {
+        if (!xmlhttp) return false;
+        bComplete = false;
+        try {
+          xmlhttp.open("POST", sURL, true);
+          xmlhttp.setRequestHeader("Method", "POST " + sURL + " HTTP/1.1");
+          xmlhttp.setRequestHeader("Content-Type", "application/" + document.getElementById("selContentType").value);
+          xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && !bComplete) {
+              bComplete = true;
+              fnDone(xmlhttp);
+            }
+          };
+          xmlhttp.send(sPostData);
+        } catch (z) {
+          alert(z);
+          return false;
+        }
+        return true;
+      };
+      return this;
+    }
+    var g_xc = new XHConn();
+
+    function btnSend_onclick() {
+      document.getElementById("btnSend").disabled = true;
+      document.getElementById("inputtoken").innerHTML = "";
+      document.getElementById("spnStatusCode").innerHTML = "";
+      var fnWhenDone = function(oXML) {
+        if (oXML.status && oXML.status != "200") {
+          document.getElementById("spnStatusCode").innerHTML = "HTTP status code: " + oXML.status.toString().replace(
+            /</g, "&lt;");
+        }
+        var txt = oXML.responseText;
+        var result = $(txt).find("token").text();
+        alert(result);
+        txt = txt.replace(/></g, "> <");
+        txt = txt.replace(/</g, "&lt;");
+        txt = txt.replace(/>/g, "&gt;");
+        document.getElementById("inputtoken").innerHTML = result;
+        document.getElementById("btnSend").disabled = false;
+      };
+      g_xc.connect(document.getElementById("txtUrl").value, document.getElementById("txtReqXml").value, fnWhenDone);
+    }
+
+    function selUrls_onChange(obj) {
+      if (document.getElementById("selUrls").value) {
+        document.getElementById("txtUrl").value = "https://api.authorize.net/xml/v1/" + document.getElementById(
+          "selUrls").value;
+      }
+    }
+    var xmlRequestStr =
+      '&lt;?xml version="1.0" encoding="utf-8"?&gt;' + '\n' +
+      '&lt;isAliveRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"&gt;' + '\n' +
+      '\t' + '&lt;refId&gt;refid1&lt;/refId&gt;' + '\n' +
+      '&lt;/isAliveRequest&gt;';
+    var jsonRequestStr =
+      '{' + '\n' +
+      ' "isAliveRequest":' + '\n' +
+      ' {' + '\n' +
+      '   "@xmlns":"AnetApi/xml/v1/schema/AnetApiSchema.xsd",' + '\n' +
+      '   "refId":"1234"' + '\n' +
+      ' }' + '\n' +
+      '}';
+
+    function selContentType_onChange(obj) {
+      if (document.getElementById("selContentType").value) {
+        document.getElementById("typeIdentifierMessageId").innerHTML = "Click here to send the request of type: " +
+          document.getElementById("selContentType")[obj.selectedIndex].innerHTML;
+        if (document.getElementById("selContentType")[obj.selectedIndex].innerHTML == "JSON") {
+          document.getElementById("txtReqXml").innerHTML = jsonRequestStr;
+        } else {
+          document.getElementById("txtReqXml").innerHTML = xmlRequestStr;
+        }
+      }
+    }
+    // ]]>
+  </script>
+
 </head>
 
 <body>
@@ -334,66 +449,80 @@
       <div class="ui text container">
 
         <form class="ui form" method="post" action="">
-            <h4 class="ui dividing header">Accept Hosted</h4>
-<div class="ui form">
-  <div class="fields">
-    <div class="six wide field">
-      <label>Url:</label>
-      <input type="text" id="txtUrl" name="txtUrl" size="55" placeholder="Endpoint"/>
-    </div>
-    <div class="four wide field">
-      <label>Domain:</label>
-      <select name="selUrls" id="selUrls" onchange="selUrls_onChange(this)" onblur="selUrls_onChange(this)">
-        <option value="">--Select Url--</option>
-        <option value="request.api">Production API</option>
-        <option value="request.api">Production API2</option>
-      </select>
-    </div>
-    <div class="four wide field">
-      <label>XML/JSON</label>
-      <select name="selContentType" id="selContentType" onchange="selContentType_onChange(this)">
-        <option value="">--Select Type--</option>
-        <option value="xml">XML</option>
-        <option value="json">JSON</option>
-      </select>
-    </div>
-  </div>
-  <div class="fields">
-    <div class="twelve wide field">
-      <label>Code:</label>
-          <textarea id="txtReqXml" name="txtReqXml" cols="80" rows="16" style="" placeholder="getHostedPaymentPageRequest"></textarea>
-    </div>
-    <div>
-      <input class="ui button" type="button" id="btnSend" name="btnSend" value="Send" onclick="return btnSend_onclick()" />
-            <span style="font-size:smaller;" Id="typeIdentifierMessageId">Click here to send the request.</span>
-    </div>
-    <div><span class="header">Response:</span> <span id="spnStatusCode" class="error"></span></div>
-    <div>
-      <textarea id="inputtoken" name="txtRespXml" cols="80" rows="10"></textarea>
-    </div>
-  </div>
-</div>
-</form>
+          <div class="ui equal width form">
+            <div class="fields">
+              <div class="field">
+                <label>Url:</label>
+                <input type="text" id="txtUrl" name="txtUrl" size="55" placeholder="Endpoint" />
+              </div>
+              <div class="field">
+                <label>Domain:</label>
+                <select name="selUrls" id="selUrls" onchange="selUrls_onChange(this)" onblur="selUrls_onChange(this)">
+                  <option value="">--Select Url--</option>
+                  <option value="request.api">Production API</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>XML/JSON</label>
+                <select name="selContentType" id="selContentType" onchange="selContentType_onChange(this)">
+                  <option value="">--Select Type--</option>
+                  <option value="xml">XML</option>
+                  <option value="json">JSON</option>
+                </select>
+              </div>
+            </div>
+            <div class="fields">
+              <div class="field">
+                <label>Code:</label>
+                <textarea id="txtReqXml" name="txtReqXml" cols="80" rows="16" style="" placeholder="Code"></textarea>
+              </div>
+              <div class="field">
+              </div>
+              <div class="field">
+                <label>Response:</label>
+                <div><span id="spnStatusCode" class="error"></span></div>
+                <div>
+                  <textarea id="inputtoken" name="txtRespXml" cols="80" rows="16"></textarea>
+                </div>
+              </div>
+            </div>
 
+            <!------------------------->
+
+            <div class="fields">
+              <div class="field">
+                <input class="ui button" type="button" id="btnSend" name="btnSend" value="Send"
+                  onclick="return btnSend_onclick()" />
+                <span style="font-size:smaller;" Id="typeIdentifierMessageId">Click here to send the request.</span>
+              </div>
+            </div>
+
+          </div>
+        </form>
+
+        <h4 class="ui horizontal header divider">
+          Follow On Buttons
+        </h4>
 
         <form method="post" action="https://secure.authorize.net/payment/Payment" id="formAuthorizeNetTestPage"
           name="formAuthorizeNetTestPage">
-                    <button class="ui button" id="btnContinue" onclick="">Continue to next page</button>
+          <button class="ui button" id="btnContinue" onclick="">Continue to next page</button>
           <input type="hidden" id="redirectToken" name="token" value="" />
-          (Redirect-Continue to Authorize.Net to Payment Page)
+          (Use Redirect to continue to Hosted Payment Page)
         </form>
+
+        <br>
 
         <form method="post" id="formAuthorizeNetPopup" name="formAuthorizeNetPopup" target="iframeAuthorizeNet"
           style="display:none;">
           <input type="text" id="popupToken" name="token" value="" />
         </form>
-              <div>
-        <button class="ui button" id="btnOpenAuthorizeNetIFrame" onclick="">Show Payment Form</button>
-        (Embedded IFrame)
+        <div>
+          <button class="ui button" id="btnOpenAuthorizeNetIFrame" onclick="">Show Payment Form</button>
+          (Use Embedded IFrame to continue to Hosted Payment Form)
+        </div>
       </div>
     </div>
-  </div>
-
     <h4 class="ui horizontal header divider">
       ANET Accept Hosted iFrame Production Test
     </h4>
@@ -401,66 +530,66 @@
     <div class="ui vertical stripe segment">
       <div class="ui text container">
 
-      <div id="iframe_holder" class="center-block" style="width:90%;max-width: 1000px">
-        <iframe id="add_payment" class="embed-responsive-item panel" name="add_payment" scrolling="no"
-          style="height:100%;width:100%;border:none;overflow:hidden;">
-        </iframe>
-      </div>
-      <form id="send_token" method="post" target="add_payment">
-        <input type="hidden" id="embeddedToken" name="token" value="">
-      </form>
-
-    </div>
-  </div>
-
-  <h4 class="ui horizontal header divider">
-  </h4>
-
-  <!-- Footer -->
-  <div class="ui inverted vertical footer segment">
-    <div class="ui container">
-      <div class="ui stackable inverted divided equal height stackable grid">
-        <div class="three wide column">
-          <h4 class="ui inverted header">About</h4>
-          <div class="ui inverted link list">
-            <a href="#" class="item">Sitemap</a>
-            <a href="#" class="item">LinkedIn</a>
-            <!--<a href="#" class="item">Religious Ceremonies</a>-->
-            <!--<a href="#" class="item">Gazebo Plans</a>-->
-          </div>
+        <div id="iframe_holder" class="center-block" style="width:90%;max-width: 1000px">
+          <iframe id="add_payment" class="embed-responsive-item panel" name="add_payment" scrolling="no"
+            style="height:100%;width:100%;border:none;overflow:hidden;">
+          </iframe>
         </div>
-
-        <div class="three wide column">
-          <h4 class="ui inverted header">ANET Tests</h4>
-          <div class="ui inverted link list">
-            <a href="../../../ANET/anetvms.html" class="item">ANET VMS</a>
-            <a href="../../../ANET/anetsimple.html" class="item">ANET Simple Checkout</a>
-            <a href="../../../ANET/anetaccept.html" class="item">ANET Accept</a>
-            <a href="../../../ANET/anetoauth.html" class="item">ANET OAuth</a>
-          </div>
-        </div>
-
-        <div class="three wide column">
-          <h4 class="ui inverted header">CYBS Tests</h4>
-          <div class="ui inverted link list">
-            <a href="../../../CYBS/anetcybsbridge.html" class="item">ANET Bridge to CYBS</a>
-            <a href="../../../CYBS/cybsflexmicro.html" class="item">CYBS Flex Micro Form</a>
-            <a href="../../../CYBS/cybsscmp.html" class="item">CYBS SCMP</a>
-            <a href="../../../CYBS/cybssimpleorder.html" class="item">CYBS Simple Order</a>
-            <a href="../../../CYBS/cybssecureaccept.html" class="item">CYBS Secure Acceptance</a>
-          </div>
-        </div>
-
-        <div class="seven wide column">
-          <h4 class="ui inverted header">Footer Header</h4>
-          <p>Copyright © MyCompany. All rights reserved.</p>
-        </div>
+        <form id="send_token" method="post" target="add_payment">
+          <input type="hidden" id="embeddedToken" name="token" value="">
+        </form>
 
       </div>
-
     </div>
 
-  </div>
+    <h4 class="ui horizontal header divider">
+    </h4>
+
+    <!-- Footer -->
+    <div class="ui inverted vertical footer segment">
+      <div class="ui container">
+        <div class="ui stackable inverted divided equal height stackable grid">
+          <div class="three wide column">
+            <h4 class="ui inverted header">About</h4>
+            <div class="ui inverted link list">
+              <a href="#" class="item">Sitemap</a>
+              <a href="#" class="item">LinkedIn</a>
+              <!--<a href="#" class="item">Religious Ceremonies</a>-->
+              <!--<a href="#" class="item">Gazebo Plans</a>-->
+            </div>
+          </div>
+
+          <div class="three wide column">
+            <h4 class="ui inverted header">ANET Tests</h4>
+            <div class="ui inverted link list">
+              <a href="../../../ANET/anetvms.html" class="item">ANET VMS</a>
+              <a href="../../../ANET/anetsimple.html" class="item">ANET Simple Checkout</a>
+              <a href="../../../ANET/anetaccept.html" class="item">ANET Accept</a>
+              <a href="../../../ANET/anetoauth.html" class="item">ANET OAuth</a>
+            </div>
+          </div>
+
+          <div class="three wide column">
+            <h4 class="ui inverted header">CYBS Tests</h4>
+            <div class="ui inverted link list">
+              <a href="../../../CYBS/anetcybsbridge.html" class="item">ANET Bridge to CYBS</a>
+              <a href="../../../CYBS/cybsflexmicro.html" class="item">CYBS Flex Micro Form</a>
+              <a href="../../../CYBS/cybsscmp.html" class="item">CYBS SCMP</a>
+              <a href="../../../CYBS/cybssimpleorder.html" class="item">CYBS Simple Order</a>
+              <a href="../../../CYBS/cybssecureaccept.html" class="item">CYBS Secure Acceptance</a>
+            </div>
+          </div>
+
+          <div class="seven wide column">
+            <h4 class="ui inverted header">Footer Header</h4>
+            <p>Copyright © MyCompany. All rights reserved.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
 
