@@ -95,34 +95,7 @@
       display: none;
     }
 
-    @media only screen and (max-width: 700px) {
-      .ui.fixed.menu {
-        display: none !important;
-      }
-
-      .secondary.pointing.menu .item,
-      .secondary.pointing.menu .menu {
-        display: none;
-      }
-
-      .secondary.pointing.menu .toc.item {
-        display: block;
-      }
-
-      .masthead.segment {
-        min-height: 350px;
-      }
-
-      .masthead h1.ui.header {
-        font-size: 2em;
-        margin-top: 1.5em;
-      }
-
-      .masthead h2 {
-        margin-top: 0.5em;
-        font-size: 1.5em;
-      }
-              #divAuthorizeNetPopupScreen {
+            #divAuthorizeNetPopupScreen {
             left: 0px;
             top: 0px;
             width: 100%;
@@ -202,6 +175,34 @@
             border: 1px solid #585858;
             background-color: #ffffff;
         }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+
+      .masthead.segment {
+        min-height: 350px;
+      }
+
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
     }
   </style>
 
@@ -480,15 +481,6 @@ function selContentType_onChange(obj) {
           (Use Redirect to continue to Hosted Payment Page)
         </form>
 
-        <br>
-
-        <form method="post" id="formAuthorizeNetPopup" name="formAuthorizeNetPopup" target="iframeAuthorizeNet" style="display:none;">
-            <input type="text" id="popupToken" name="token" value="" />
-        </form>
-        <div>
-            Trigger Accept Transaction
-            <button id="btnOpenAuthorizeNetPopup" onclick="AuthorizeNetPopup.openPopup()">Open AuthorizeNetPopup</button>
-        </div>
     </div>
     <!--Add the below div section in your page to establish Iframe communication. This is a must if you choose Popup style. This will have a close button and a frame to the payment page.you can customize the styles of this popup.-->
     <div id="divAuthorizeNetPopup" style="display:none;" class="AuthorizeNetPopupGrayFrameTheme">
