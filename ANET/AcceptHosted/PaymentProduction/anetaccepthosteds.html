@@ -402,23 +402,36 @@ function selContentType_onChange(obj) {
 
         <br>
 
-        <form method="post" id="formAuthorizeNetPopup" name="formAuthorizeNetPopup" target="iframeAuthorizeNet"
-          style="display:none;">
-          <input type="text" id="popupToken" name="token" value="" />
+        <form method="post" id="formAuthorizeNetPopup" name="formAuthorizeNetPopup" target="iframeAuthorizeNet" style="display:none;">
+            <input type="text" id="popupToken" name="token" value="" />
         </form>
         <div>
-          <button class="ui button" id="btnOpenAuthorizeNetIFrame" onclick="">Show Payment Form</button>
-          (Use Embedded IFrame to continue to Hosted Payment Form)
+            Trigger Accept Transaction
+            <button id="btnOpenAuthorizeNetPopup" onclick="AuthorizeNetPopup.openPopup()">Open AuthorizeNetPopup</button>
         </div>
-      </div>
     </div>
-    <h4 class="ui horizontal header divider">
-      ANET Accept Hosted iFrame Production Test
-    </h4>
-
-    <div class="ui vertical stripe segment">
-      <div class="ui text container">
-
+    <!--Add the below div section in your page to establish Iframe communication. This is a must if you choose Popup style. This will have a close button and a frame to the payment page.you can customize the styles of this popup.-->
+    <div id="divAuthorizeNetPopup" style="display:none;" class="AuthorizeNetPopupGrayFrameTheme">
+        <div class="AuthorizeNetPopupOuter">
+            <div class="AuthorizeNetPopupTop">
+                <div class="AuthorizeNetPopupClose">
+                    <a href="javascript:;" onclick="AuthorizeNetPopup.closePopup();" title="Close"> </a>
+                </div>
+            </div>
+            <div class="AuthorizeNetPopupInner">
+                <iframe name="iframeAuthorizeNet" id="iframeAuthorizeNet" src="empty.html" frameborder="0" scrolling="no"></iframe>
+            </div>
+            <div class="AuthorizeNetPopupBottom">
+                <div class="AuthorizeNetPopupLogo" title="Powered by Authorize.Net"></div>
+            </div>
+            <div id="divAuthorizeNetPopupScreen" style="display:none;"></div>
+        </div>
+    </div>
+    <br />
+    <div>
+    Embedded IFrame
+    <button id="btnOpenAuthorizeNetIFrame" onclick="">Show Payment Form</button>
+    </div>
             <div  id="iframe_holder" class="center-block" style="width:90%;max-width: 1000px">
       <iframe id="add_payment" class="embed-responsive-item panel" name="add_payment" scrolling="no" style="height:100%;width:100%;border:none;overflow:hidden;">
       </iframe>
