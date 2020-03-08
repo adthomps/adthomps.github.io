@@ -153,7 +153,7 @@
         $("#btnOpenAuthorizeNetIFrame").click(function () {
             $("#add_payment").show();
             $("#embeddedToken").val($("#inputtoken").val());
-            $("#send_token").attr({ "action": "https://accept.authorize.net/payment/Payment", "target": "add_payment" }).submit();
+            $("#send_token").attr({ "action": "https://test.authorize.net/payment/Payment", "target": "add_payment" }).submit();
             $(window).scrollTop($('#add_payment').offset().top - 50);
         });
 
@@ -393,7 +393,7 @@ function selContentType_onChange(obj) {
           Follow On Buttons
         </h4>
 
-        <form method="post" action="https://accept.authorize.net/payment/Payment" id="formAuthorizeNetTestPage"
+        <form method="post" action="https://test.authorize.net/payment/Payment" id="formAuthorizeNetTestPage"
           name="formAuthorizeNetTestPage">
           <button class="ui button" id="btnContinue" onclick="">Continue to next page</button>
           <input type="hidden" id="redirectToken" name="token" value="" />
@@ -419,69 +419,14 @@ function selContentType_onChange(obj) {
     <div class="ui vertical stripe segment">
       <div class="ui text container">
 
-        <div id="iframe_holder" class="center-block" style="width:90%;max-width: 1000px">
-          <iframe id="add_payment" class="embed-responsive-item panel" name="add_payment" scrolling="no"
-            style="height:100%;width:100%;border:none;overflow:hidden;">
-          </iframe>
-        </div>
-        <form id="send_token" method="post" target="add_payment">
-          <input type="hidden" id="embeddedToken" name="token" value="">
-        </form>
-
-      </div>
-    </div>
-
-    <h4 class="ui horizontal header divider">
-    </h4>
-
-    <!-- Footer -->
-    <div class="ui inverted vertical footer segment">
-      <div class="ui container">
-        <div class="ui stackable inverted divided equal height stackable grid">
-          <div class="three wide column">
-            <h4 class="ui inverted header">About</h4>
-            <div class="ui inverted link list">
-              <a href="#" class="item">Sitemap</a>
-              <a href="#" class="item">LinkedIn</a>
-              <!--<a href="#" class="item">Religious Ceremonies</a>-->
-              <!--<a href="#" class="item">Gazebo Plans</a>-->
+            <div  id="iframe_holder" class="center-block" style="width:90%;max-width: 1000px">
+      <iframe id="add_payment" class="embed-responsive-item panel" name="add_payment" scrolling="no" style="height:100%;width:100%;border:none;overflow:hidden;">
+      </iframe>
             </div>
-          </div>
-
-          <div class="three wide column">
-            <h4 class="ui inverted header">ANET Tests</h4>
-            <div class="ui inverted link list">
-              <a href="../../../ANET/anetvms.html" class="item">ANET VMS</a>
-              <a href="../../../ANET/anetsimple.html" class="item">ANET Simple Checkout</a>
-              <a href="../../../ANET/anetaccept.html" class="item">ANET Accept</a>
-              <a href="../../../ANET/anetoauth.html" class="item">ANET OAuth</a>
-            </div>
-          </div>
-
-          <div class="three wide column">
-            <h4 class="ui inverted header">CYBS Tests</h4>
-            <div class="ui inverted link list">
-              <a href="../../../CYBS/anetcybsbridge.html" class="item">ANET Bridge to CYBS</a>
-              <a href="../../../CYBS/cybsflexmicro.html" class="item">CYBS Flex Micro Form</a>
-              <a href="../../../CYBS/cybsscmp.html" class="item">CYBS SCMP</a>
-              <a href="../../../CYBS/cybssimpleorder.html" class="item">CYBS Simple Order</a>
-              <a href="../../../CYBS/cybssecureaccept.html" class="item">CYBS Secure Acceptance</a>
-            </div>
-          </div>
-
-          <div class="seven wide column">
-            <h4 class="ui inverted header">Footer Header</h4>
-            <p>Copyright © MyCompany. All rights reserved.</p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
+      <form id="send_token"  method="post" target="add_payment" >
+        <input type="hidden" id="embeddedToken" name="token" value=""                    
+                    >
+      </form>
     <script type="text/javascript">
         (function () {
             if (!window.AuthorizeNetPopup) window.AuthorizeNetPopup = {};
@@ -505,7 +450,7 @@ function selContentType_onChange(obj) {
                 var ifrm = document.getElementById("iframeAuthorizeNet");
                 var form = document.forms["formAuthorizeNetPopup"];
                 $("#popupToken").val($("#inputtoken").val());
-                form.action = "https://accept.authorize.net/payment/Payment";
+                form.action = "https://test.authorize.net/payment/payment";
                 ifrm.style.width = "442px";
                 ifrm.style.height = "578px";
 
@@ -638,6 +583,60 @@ function selContentType_onChange(obj) {
          }());
 
   </script>
+
+      </div>
+    </div>
+
+    <h4 class="ui horizontal header divider">
+    </h4>
+
+    <!-- Footer -->
+    <div class="ui inverted vertical footer segment">
+      <div class="ui container">
+        <div class="ui stackable inverted divided equal height stackable grid">
+          <div class="three wide column">
+            <h4 class="ui inverted header">About</h4>
+            <div class="ui inverted link list">
+              <a href="#" class="item">Sitemap</a>
+              <a href="#" class="item">LinkedIn</a>
+              <!--<a href="#" class="item">Religious Ceremonies</a>-->
+              <!--<a href="#" class="item">Gazebo Plans</a>-->
+            </div>
+          </div>
+
+          <div class="three wide column">
+            <h4 class="ui inverted header">ANET Tests</h4>
+            <div class="ui inverted link list">
+              <a href="../../../ANET/anetvms.html" class="item">ANET VMS</a>
+              <a href="../../../ANET/anetsimple.html" class="item">ANET Simple Checkout</a>
+              <a href="../../../ANET/anetaccept.html" class="item">ANET Accept</a>
+              <a href="../../../ANET/anetoauth.html" class="item">ANET OAuth</a>
+            </div>
+          </div>
+
+          <div class="three wide column">
+            <h4 class="ui inverted header">CYBS Tests</h4>
+            <div class="ui inverted link list">
+              <a href="../../../CYBS/anetcybsbridge.html" class="item">ANET Bridge to CYBS</a>
+              <a href="../../../CYBS/cybsflexmicro.html" class="item">CYBS Flex Micro Form</a>
+              <a href="../../../CYBS/cybsscmp.html" class="item">CYBS SCMP</a>
+              <a href="../../../CYBS/cybssimpleorder.html" class="item">CYBS Simple Order</a>
+              <a href="../../../CYBS/cybssecureaccept.html" class="item">CYBS Secure Acceptance</a>
+            </div>
+          </div>
+
+          <div class="seven wide column">
+            <h4 class="ui inverted header">Footer Header</h4>
+            <p>Copyright © MyCompany. All rights reserved.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </body>
 
