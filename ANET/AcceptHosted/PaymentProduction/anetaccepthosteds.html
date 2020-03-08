@@ -18,7 +18,7 @@
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="../../../semantic/dist/semantic.min.js"></script>
-  
+
   <!-- CSS Stylings -->
   <style type="text/css">
     .hidden.menu {
@@ -153,7 +153,7 @@
         $("#btnOpenAuthorizeNetIFrame").click(function () {
             $("#add_payment").show();
             $("#embeddedToken").val($("#inputtoken").val());
-            $("#send_token").attr({ "action": "https://secure.authorize.net/payment/Payment", "target": "add_payment" }).submit();
+            $("#send_token").attr({ "action": "https://accept.authorize.net/payment/Payment", "target": "add_payment" }).submit();
             $(window).scrollTop($('#add_payment').offset().top - 50);
         });
 
@@ -343,7 +343,7 @@ function selContentType_onChange(obj) {
             <div class="fields">
               <div class="field">
                 <label>Url:</label>
-                <input type="text" id="txtUrl" name="txtUrl" size="55" placeholder="Endpoint" />
+                <input type="text" id="txtUrl" name="txtUrl" size="55" placeholder="Endpoint"/>
               </div>
               <div class="field">
                 <label>Domain:</label>
@@ -357,7 +357,7 @@ function selContentType_onChange(obj) {
                 <select name="selContentType" id="selContentType" onchange="selContentType_onChange(this)">
                   <option value="">--Select Type--</option>
                   <option value="xml">XML</option>
-                  <option value="json">JSON</option>
+                  <!--<option value="json">JSON</option>-->
                 </select>
               </div>
             </div>
@@ -393,7 +393,7 @@ function selContentType_onChange(obj) {
           Follow On Buttons
         </h4>
 
-        <form method="post" action="https://secure.authorize.net/payment/Payment" id="formAuthorizeNetTestPage"
+        <form method="post" action="https://accept.authorize.net/payment/Payment" id="formAuthorizeNetTestPage"
           name="formAuthorizeNetTestPage">
           <button class="ui button" id="btnContinue" onclick="">Continue to next page</button>
           <input type="hidden" id="redirectToken" name="token" value="" />
@@ -505,7 +505,7 @@ function selContentType_onChange(obj) {
                 var ifrm = document.getElementById("iframeAuthorizeNet");
                 var form = document.forms["formAuthorizeNetPopup"];
                 $("#popupToken").val($("#inputtoken").val());
-                form.action = "https://secure.authorize.net/payment/Payment";
+                form.action = "https://accept.authorize.net/payment/Payment";
                 ifrm.style.width = "442px";
                 ifrm.style.height = "578px";
 
