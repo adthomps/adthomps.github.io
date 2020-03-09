@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>APT Portfolio - API Testing</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.3.1.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html">APT</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Tests
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="anetsimple.html">ANET Simple Checkout</a>
+              <a class="dropdown-item" href="anetvms.html">ANET VMS</a>
+              <!--<a class="dropdown-item" href="anetoauth.html">ANET OAuth</a>-->
+              <a class="dropdown-item" href="anetaccept.html">ANET Accept</a>
+              <a class="dropdown-item" href="foxycart.html">ANET Bridge</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="cybsapievolution.html">CYBS API Mock<span class="sr-only">(current)</span></a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://developer.authorize.net" target="_blank">ANET Dev</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://developer.cybersource.com" target="_blank">CYBS Dev</a>
+          </li>
+      <!--
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+      -->
+        </ul>
+      <!--
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      -->
+      </div>
+    </nav>
+  
+  <section>
+    <div class="jumbotron text-center mt-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1>APT API Tests</h1>
+            <p>This is my portfolio site that includes Authorize.Net
+              <!--, Cybersource-->API tests and monitoring in various forms.</p>
+            <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more Â»</a></p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1>API Evolution Guide</h1>
+          <p>Guide to legacy apis and new rest api option.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+
+    <div class="container panel panel-default" style="margin-top:20px">
+      <h4>API Support Status</h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">API</th>
+            <th scope="col">Status</th>
+            <th scope="col">Alternative Solution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><a href ="https://developer.cybersource.com/api/developer-guides.html">REST API</a></th>
+            <td>Supported</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="cybssimpleorder.html">Simple Order & SOAP Toolkit API</a></th>
+            <td>Supported</td>
+            <td>Alt</td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="cybssecureaccept.html">Secure Acceptance API & Hosted Checkout</a></th>
+            <td>Supported</td>
+            <td>Alt</td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="cybsscmp.html">SCMP</a></th>
+            <td>Deprecated</td>
+            <td>Alt</td>
+          </tr>
+
+        </tbody>
+      </table>
+      <p>&nbsp;</p>
+      <p><b>Supported </b>- The API is fully supported and actively updated.</p>
+      <p><b>Deprecated </b>- The API is now obsolete and in&nbsp;the process&nbsp;of&nbsp;being&nbsp;phased&nbsp;out. An alternative solution is suggested.</p>
+      <p><b>End of Life</b> - The API is no longer supported and will return an error if used after specified date. Use the alternative solution.</p>
+    
+    </div>
+
+  </section>
+
+  <script type="text/javascript">
+    var blob = "";
+
+    function getSecureData() {
+      var secureData = {},
+        authData = {},
+        cardData = {};
+      cardData.cardNumber = document.getElementById('CARDNUMBER_ID').value;
+      cardData.month = document.getElementById('EXPIRY_MONTH_ID').value;
+      cardData.year = document.getElementById('EXPIRY_YEAR_ID').value;
+      cardData.zip = document.getElementById('ZIP_CODE').value;
+      cardData.cardCode = document.getElementById('CARD_CODE').value;
+      secureData.cardData = cardData;
+      authData.clientKey = '4q78p92CdLnjVV3nK36DpjMH6MfN44tPxL6u2Xyj53sz4dADAH4kEV49CKaSt8k7';
+      authData.apiLoginID = '59DhDt5HRM';
+      secureData.authData = authData;
+      Accept.dispatchData(secureData, 'responseHandler');
+    }
+
+    function responseHandler(response) {
+      if (response.messages.resultCode === 'Error') {
+        for (var i = 0; i < response.messages.message.length; i++) {
+          console.log(response.messages.message[i].code + ':' + response.messages.message[i].text);
+          $("#blob").val(response.messages.message[i].code + ':' + response.messages.message[i].text);
+        }
+      } else {
+        useOpaqueData(response.opaqueData)
+      }
+    }
+
+    function useOpaqueData(responseData) {
+      console.log(responseData.dataDescriptor);
+      console.log(responseData.dataValue);
+      $("#blob").val(responseData.dataValue);
+    }
+  </script>
+
+    <footer class="text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p>Copyright © MyCompany. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.3.1.js"></script>
+  </body>
+</html>
