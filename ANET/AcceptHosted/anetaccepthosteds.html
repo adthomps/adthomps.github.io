@@ -249,6 +249,31 @@
     });
     
 </script>
+
+    <script type="text/javascript">
+
+    $(function () {
+
+        $("#btnOpenAuthorizeNetIFrame").click(function () {
+            $("#add_payment").show();
+            $("#embeddedToken").val($("#inputtoken").val());
+            $("#send_token").attr({ "action": "https://test.authorize.net/payment/Payment", "target": "add_payment" }).submit();
+            $(window).scrollTop($('#add_payment').offset().top - 50);
+        });
+
+    });
+
+    $(function () {
+
+        $("#btnContinue").click(function () {
+            
+            $("#redirectToken").val($("#inputtoken").val());
+           
+        });
+
+    });
+    
+</script>
         <script language="javascript" type="text/javascript">
 // <!CDATA[
 function XHConn()
@@ -602,7 +627,7 @@ function selContentType_onChange(obj) {
                 var ifrm = document.getElementById("iframeAuthorizeNet");
                 var form = document.forms["formAuthorizeNetPopup"];
                 $("#popupToken").val($("#inputtoken").val());
-                form.action = "https://accept.authorize.net/payment/payment";
+                form.action = "https://test.authorize.net/payment/payment";
                 ifrm.style.width = "442px";
                 ifrm.style.height = "578px";
 
@@ -735,7 +760,5 @@ function selContentType_onChange(obj) {
          }());
 
   </script>
-
 </body>
-
 </html>
