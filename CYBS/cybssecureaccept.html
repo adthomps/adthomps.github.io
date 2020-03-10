@@ -146,160 +146,177 @@
 
 <body>
 
-<!-- Following Menu -->
-<div class="ui large top fixed hidden menu">
-  <div class="ui container">
-    <a href="../index.html" href="#"class="item">Home</a>
-    <a href="../anet.html" class="item">ANET Examples</a>
-    <a href="../cybs.html" class="active item">CYBS Examples</a>
-    <!--<a class="item">Careers</a>-->
-    <div class="right menu">
-      <div class="item">
-        <a href="https://developer.authorize.net" target="_blank" class="ui button">ANET Dev Center</a>
-      </div>
-      <div class="item">
-        <a href="https://developer.cybersource.com" target="_blank" class="ui button">CYBS Dev Center</a>
-        <!--<a class="ui primary button">CYBS Dev Center</a>-->
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Sidebar Menu -->
-<div class="ui vertical inverted sidebar menu">
-  <a href="../index.html" class="item">Home</a>
-  <a href="../anet.html" class="item">ANET Examples</a>
-  <a href="../cybs.html" class="active item">CYBS Examples</a>
-  <!--<a class="item">Careers</a>-->
-  <a href="https://developer.authorize.net" target="_blank" class="item">ANET Dev Center</a>
-  <a href="https://developer.cybersource.com" target="_blank" class="item">CYBS Dev Center</a>
-</div>
-
-<!-- Page Contents -->
-<div class="pusher">
-  <div class="ui inverted vertical masthead center aligned segment">
-
+  <!-- Following Menu -->
+  <div class="ui large top fixed hidden menu">
     <div class="ui container">
-      <div class="ui large secondary inverted pointing menu">
-        <a class="toc item">
-          <i class="sidebar icon"></i>
-        </a>
-        <a href="../index.html"class="item">Home</a>
-        <a href="../anet.html" class="item">ANET Examples</a>
-        <a href="../cybs.html" class="active item">CYBS Examples</a>
-        <!--<a class="item">Careers</a>-->
-        <div class="right item">
-          <a href="https://developer.authorize.net" target="_blank" class="ui inverted button">ANET Dev Center</a>
-          <a href="https://developer.cybersource.com" target="_blank" class="ui inverted button">CYBS Dev Center</a>
+      <a href="../index.html" href="#" class="active item">Home</a>
+      <a href="../anet.html" class="item">ANET Examples</a>
+      <a href="../cybs.html" class="item">CYBS Examples</a>
+      <a href="../cybsdocs.html" class="item">CYBS API Docs</a>
+      <div class="right menu">
+        <div class="item">
+          <a href="https://developer.authorize.net" target="_blank" class="ui button">ANET Dev Center</a>
+        </div>
+        <div class="item">
+          <a href="https://developer.cybersource.com" target="_blank" class="ui button">CYBS Dev Center</a>
+          <!--<a class="ui primary button">CYBS Dev Center</a>-->
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Sidebar Menu -->
+  <div class="ui vertical inverted sidebar menu">
+    <a href="../index.html" class="active item">Home</a>
+    <a href="../anet.html" class="item">ANET Examples</a>
+    <a href="../cybs.html" class="item">CYBS Examples</a>
+    <a href="../cybsdocs.html" class="item">CYBS API Docs</a>
+    <a href="https://developer.authorize.net" target="_blank" class="item">ANET Dev Center</a>
+    <a href="https://developer.cybersource.com" target="_blank" class="item">CYBS Dev Center</a>
+  </div>
+
+  <!-- Page Contents -->
+  <div class="pusher">
+    <div class="ui inverted vertical masthead center aligned segment">
+
+      <div class="ui container">
+        <div class="ui large secondary inverted pointing menu">
+          <a class="toc item">
+            <i class="sidebar icon"></i>
+          </a>
+          <a href="../index.html" class="active item">Home</a>
+          <a href="../anet.html" class="item">ANET Examples</a>
+          <a href="../cybs.html" class="item">CYBS Examples</a>
+          <a href="../cybsdocs.html" class="item">CYBS API Docs</a>
+          <div class="right item">
+            <a href="https://developer.authorize.net" target="_blank" class="ui inverted button">ANET Dev Center</a>
+            <a href="https://developer.cybersource.com" target="_blank" class="ui inverted button">CYBS Dev Center</a>
+          </div>
+        </div>
+      </div>
 
     <div class="ui text container">
       <h1 class="ui inverted header">
         APT API Examples
       </h1>
-      <h2>CyberSource Secure Acceptance tests.</h2>
+      <h2>Authorize.Net/CyberSource API Bridge tests.</h2>
       <!--<div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>-->
     </div>
 
   </div>
 
-  <h4 class="ui horizontal header divider">
-      ANET VMS Tests - Production
-  </h4>
+  <div class="ui vertical stripe segment">
+    <div class="ui text container">
 
-  <div class="ui vertical stripe quote segment">
-    <div class="ui equal width stackable internally celled grid">
-      <div class="center aligned row">
+<!------------------------------------------------->
 
-        <div class="column">
-          <h4>Merchant OCC - Production</h4>
-          <p>
-            <img src="../images/icons/icon-url.jpg" class="ui mini spaced image">
-          </p>
-        </div>
+      <h4 class="ui horizontal header divider">
+        ANET/CYBS API Bridge Tests - Production
+      </h4>
 
-        <div class="column">
-          <h4>Merchant OCE - Production</h4>
-          <p>
-            <img src="../images/icons/icon-url.jpg" class="ui mini spaced image">
-          </p>
-        </div>
+      <h3 class="ui header">ANET/CYBS API Bridge - Production</h3>
+      <p>Test example showing the Authorize.Net API Bridge to CyberSource functioning and allow Authorize.Net API calls to create transactions on the CyberSource platform in Production.</p>
 
+      <div class="ui large buttons">
+        <form action="https://aptaccept.foxycart.com/cart" method="post">
+            <input type="hidden" name="name" value="Simple Smartphone" />
+            <input type="hidden" name="price" value="99.99" />
+            <input type="hidden" name="2:name" value="Leather Case for Smartphone" />
+            <input type="hidden" name="2:price" value="9.99" />
+            <input class="ui button" type="submit" value="Production - Simple Smartphone" />
+          </form>
+
+          <div class="or"></div>
+
+        <form action="https://aptaccept.foxycart.com/cart" method="post">
+            <input type="hidden" name="name" value="Fancy Smartphone" />
+            <input type="hidden" name="price" value="199.99" />
+            <input type="hidden" name="2:name" value="Leather Case for Smartphone" />
+            <input type="hidden" name="2:price" value="9.99" />
+            <input class="ui button" type="submit" value="Production - Fancy Smartphone" />
+          </form>
       </div>
+
+<!------------------------------------------------->
+
+      <h4 class="ui horizontal header divider">
+        ANET/CYBS API Bridge Tests - Sandbox
+      </h4>
+
+      <h3 class="ui header">ANET/CYBS API Bridge - Sandbox/CAS</h3>
+      <p>Test example showing the Authorize.Net API Bridge to CyberSource functioning and allow Authorize.Net API calls to create transactions on the CyberSource platform in Sandbox/CAS. This test uses Foxy Cart (foxy.io) which utlizes the Authorize.Net AIM API.</p>
+
+      <div class="ui large buttons">
+        <form action="https://aptaccept.foxycart.com/cart" method="post">
+            <input type="hidden" name="name" value="Simple Smartphone" />
+            <input type="hidden" name="price" value="99.99" />
+            <input type="hidden" name="2:name" value="Leather Case for Smartphone" />
+            <input type="hidden" name="2:price" value="9.99" />
+            <input class="ui button" type="submit" value="CAS - Simple Smartphone" />
+          </form>
+
+          <div class="or"></div>
+
+        <form action="https://aptaccept.foxycart.com/cart" method="post">
+            <input type="hidden" name="name" value="Fancy Smartphone" />
+            <input type="hidden" name="price" value="199.99" />
+            <input type="hidden" name="2:name" value="Leather Case for Smartphone" />
+            <input type="hidden" name="2:price" value="9.99" />
+            <input class="ui button" type="submit" value="CAS - Fancy Smartphone" />
+          </form>
+      </div>
+
     </div>
+
   </div>
 
+    <h4 class="ui horizontal header divider">
+    </h4>
 
-  <h4 class="ui horizontal header divider">
-      ANET VMS Tests - Sandbox
-  </h4>
-
-  <div class="ui vertical stripe quote segment">
-    <div class="ui equal width stackable internally celled grid">
-      <div class="center aligned row">
-
-        <div class="column">
-          <h4>Merchant OCC - Prod</h4>
-          <p>
-            <img src="../images/icons/icon-url.jpg" class="ui mini spaced image">
-          </p>
-        </div>
-
-        <div class="column">
-          <h4>Merchant OCE - Prod</h4>
-          <p>
-            <img src="../images/icons/icon-url.jpg" class="ui mini spaced image">
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <h4 class="ui horizontal header divider">
-  </h4>
-
-  <!-- Footer -->
-  <div class="ui inverted vertical footer segment">
-    <div class="ui container">
-      <div class="ui stackable inverted divided equal height stackable grid">
-        <div class="three wide column">
-          <h4 class="ui inverted header">About</h4>
-          <div class="ui inverted link list">
-            <a href="../sitemap.html" class="item">Sitemap</a>
-            <a href="#" class="item">LinkedIn</a>
-            <!--<a href="#" class="item">Religious Ceremonies</a>-->
-            <!--<a href="#" class="item">Gazebo Plans</a>-->
+    <!-- Footer -->
+    <div class="ui inverted vertical footer segment">
+      <div class="ui container">
+        <div class="ui stackable inverted divided equal height stackable grid">
+          <div class="three wide column">
+            <h4 class="ui inverted header">About</h4>
+            <div class="ui inverted link list">
+              <a href="../sitemap.html" class="item">Sitemap</a>
+              <a href="#" class="item">LinkedIn</a>
+            </div>
           </div>
-        </div>
 
-        <div class="three wide column">
-          <h4 class="ui inverted header">ANET Tests</h4>
-          <div class="ui inverted link list">
-            <a href="../ANET/anetvms.html" class="item">ANET VMS</a>
-            <a href="../ANET/anetsimple.html" class="item">ANET Simple Checkout</a>
-            <a href="../ANET/anetaccept.html" class="item">ANET Accept</a>
-            <a href="../ANET/anetoauth.html" class="item">ANET OAuth</a>
+          <div class="three wide column">
+            <h4 class="ui inverted header">ANET Tests</h4>
+            <div class="ui inverted link list">
+              <a href="../ANET/anetvms.html" class="item">ANET VMS</a>
+              <a href="../ANET/anetsimple.html" class="item">ANET Simple Checkout</a>
+              <a href="../ANET/anetaccept.html" class="item">ANET Accept</a>
+              <a href="../ANET/anetoauth.html" class="item">ANET OAuth</a>
+            </div>
           </div>
-        </div>
 
-        <div class="three wide column">
-          <h4 class="ui inverted header">CYBS Tests</h4>
-          <div class="ui inverted link list">
-            <a href="../CYBS/anetcybsbridge.html" class="item">ANET Bridge to CYBS</a>
-            <a href="../CYBS/cybsflexmicro.html" class="item">CYBS Flex Micro Form</a>
-            <a href="../CYBS/cybsscmp.html" class="item">CYBS SCMP</a>
-            <a href="../CYBS/cybssimpleorder.html" class="item">CYBS Simple Order</a>
-            <a href="../CYBS/cybssecureaccept.html" class="item">CYBS Secure Acceptance</a>
+          <div class="three wide column">
+            <h4 class="ui inverted header">CYBS Tests</h4>
+            <div class="ui inverted link list">
+              <a href="CYBS/anetcybsbridge.html" class="item">ANET Bridge to CYBS</a>
+              <a href="CYBS/cybsflexmicro.html" class="item">CYBS Flex Micro Form</a>
+            </div>
           </div>
-        </div>
 
-        <div class="seven wide column">
-          <h4 class="ui inverted header">Footer Header</h4>
-          <p>Copyright © MyCompany. All rights reserved.</p>
-        </div>
+          <div class="three wide column">
+            <h4 class="ui inverted header">CYBS API Doc</h4>
+            <div class="ui inverted link list">
+              <a href="CYBS/cybsapievolution.html" class="item">CYBS API Evolution</a>
+              <a href="CYBS/cybsscmp.html" class="item">CYBS SCMP</a>
+              <a href="CYBS/cybssimpleorder.html" class="item">CYBS Simple Order</a>
+              <a href="CYBS/cybssecureaccept.html" class="item">CYBS Secure Acceptance</a>
+            </div>
+          </div>
+
+          <div class="three wide column">
+            <h4 class="ui inverted header">Footer Header</h4>
+            <p>Copyright © MyCompany. All rights reserved.</p>
+          </div>
 
       </div>
 

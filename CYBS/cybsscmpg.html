@@ -22,8 +22,6 @@
     crossorigin="anonymous"></script>
   <script src="../semantic/dist/semantic.min.js"></script>
 
-  <script src="https://testflex.cybersource.com/cybersource/assets/microform/0.1.0/flex-microform.min.js"></script>
-
   <!-- CSS Stylings -->
   <style type="text/css">
 
@@ -201,7 +199,7 @@
       <h1 class="ui inverted header">
         APT API Examples
       </h1>
-      <h2>Authorize.Net/CyberSource API Bridge tests.</h2>
+      <h2>Legacy CYBS API</h2>
       <!--<div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>-->
     </div>
 
@@ -212,20 +210,56 @@
 
 <!------------------------------------------------->
 
-      <h4 class="ui horizontal header divider">
-        ANET/CYBS API Bridge Tests - Sandbox
-      </h4>
+    <div class="ui text container">
+      <h3 class="ui header">SCMP (Simple Commerce Message Protocol)</h3>
 
-    <form action="/payment/complete" id="my-sample-form" method="post">
-      <label id="cardNumber-label">Card Number</label>
-      <div id="cardNumber-container"></div>
+                <div class="intro">
 
-      <!--
-        All the other fields comprising the form post to your server
-      -->
+                  <p>SCMP (Simple Commerce Message Protocol) is a legacy name-value pair API that is supported only for existing merchants who have already implemented it. These resources are for merchants who want to download the latest SCMP API client version for their existing implementations.</p>
 
-      <button type="button" id="pay-button">Pay</button>
-    </form>
+                  <p><b>Secure Acceptance Checkout API</b> option is ideal for Web merchants who prefer to host their own order page, perhaps for greater customization, and simply need a method of transferring payment data for processing.</p>
+
+                  <p><b>Status:</b> Deprecated</p>
+
+                  <p><b>Alternative Solution:</b> <a href="https://developer.cybersource.com/api/developer-guides.html">Rest API</a></p>
+
+                </div>
+    </div>
+
+            <h3 class="subtitle">Implementation Guides & Source Code</h3>
+            <div>
+              <p>Documentation: <a href="http://apps.cybersource.com/library/documentation/dev_guides/SCMP_API_Clients/html/">HTML</a> | <a href="http://apps.cybersource.com/library/documentation/dev_guides/SCMP_API_Clients/Client_SDK_SCMP_API.pdf">PDF</a></p>
+
+            </div>
+            <div class="grouplc">
+              <ul class="disc">
+                <li>Java</li>
+                    <ul>
+                      <li>Source Code: <a href="http://apps.cybersource.com/library/downloads/cybersource_developer_kits/_SCMP_Clients/Java/Java_1_2_to_1_4/sdkjava--ics5.3.0.zip">Java SCMP Clients v.ics5.3.0</a></li>
+                      <li>Other Documents:</li>
+                        <ul>
+                          <li><a href="http://apps.cybersource.com/library/downloads/cybersource_developer_kits/_SCMP_Clients/Java/Java_1_2_to_1_4/readme">ReadMe for Java</a></li>
+                          <li><a href="http://apps.cybersource.com/library/downloads/cybersource_developer_kits/_SCMP_Clients/Java/Java_1_2_to_1_4/changes">Changes History for Java</a></li>
+                        </ul>
+                    </ul>
+                <li>C/C++</li>
+                    <ul>
+                      <li>Source Code:</li>
+                        <ul>
+                          <li><a href="http://apps.cybersource.com/library/downloads/cybersource_developer_kits/_SCMP_Clients/C/Linux/sdkc-linux-ics5.1.1.tar.gz">Linux - C SCMP Clients v.ics5.1.1</a></li>
+                          <li><a href="http://apps.cybersource.com/library/downloads/cybersource_developer_kits/_SCMP_Clients/C/Solaris/sdkc-sol26-ics5.0.0.tar.gz">Solaris - C SCMP Clients v.ics5.0.0</a></li>
+                          <li><a href="http://apps.cybersource.com/library/downloads/cybersource_developer_kits/_SCMP_Clients/C/Windows/sdkc-nt-ics5.1.1.zip">Windows - C SCMP NT Clients v.ics5.1.1</a></li>
+                        </ul>
+                      <li>Other Documents:</li>
+                        <ul>
+                          <li><a href="http://apps.cybersource.com/library/downloads/cybersource_developer_kits/_SCMP_Clients/C/Solaris/readme">ReadMe for C</a></li>
+                          <li><a href="http://apps.cybersource.com/library/downloads/cybersource_developer_kits/_SCMP_Clients/C/Solaris/changes">Changes History for C</a></li>
+                        </ul>
+                    </ul>
+              </ul>
+            </div>
+
+<!------------------------------------------------->
 
     </div>
 
@@ -286,60 +320,6 @@
   </div>
 
 </div>
-
-    <script>
-      var keystore = { /* jwk fetched on the server side */ };
-
-      var form = document.querySelector('#my-sample-form');
-      var payButton = document.querySelector('#pay-button');
-
-      // SETUP MICROFORM
-      FLEX.microform(
-        keystore,
-        {
-          container: '#cardNumber-container',
-          label: '#cardNumber-label',
-          placeholder: 'Your custom placeholder text',
-          styles: {
-            'input': {
-              'font-size': '14px',
-              'font-family': 'helvetica, tahoma, calibri, sans-serif',
-              'color': '#555',
-            },
-            ':focus': { 'color': 'blue' },
-            ':disabled': { 'cursor': 'not-allowed' },
-            'valid': { 'color': '#3c763d' },
-            'invalid': { 'color': '#a94442' },
-          },
-          encryptionType: 'rsaoaep256'
-        },
-        function (setupError, microformInstance) {
-          if (setupError) {
-            // handle error
-            return;
-          }
-
-          // intercept the form submission and make a tokenize request instead
-          payButton.addEventListener('click', function () {
-
-            microformInstance.createToken(function(err, response) {
-              if (err) {
-                // handle error
-                return;
-              }
-
-              console.log('Token generated: ');
-              console.log(JSON.stringify(response));
-
-              // At this point the token may be added to the form
-              // as hidden fields and the submission continued
-              form.submit();
-            });
-          });
-
-        }
-      );
-    </script>
 
 </body>
 
