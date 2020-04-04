@@ -16,10 +16,8 @@
   <!-- Site Properties -->
   <title>APT API Examples & Tests via Semantic/Fomantic UI</title>
   <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
-  <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="../semantic/dist/semantic.min.js"></script>
 
   <!-- CSS Stylings -->
@@ -142,11 +140,35 @@
   ;
   </script>
 
+<script>
+
+  $( document ).ready(function() {
+
+    $('.ui.card .image').dimmer({on: 'hover'});
+    $('.ui.rating').rating({maxRating: 5});
+    $('.ui.button').popup();
+
+
+
+    $('.button.view').on('click', (function() {
+      $('#album').fadeOut("slow", function () {
+        $('#album_items').fadeIn("slow");
+      });
+    }));
+
+    $('.button.back').on('click', (function() {
+      $('#album_items').fadeOut("slow", function () {
+        $('#album').fadeIn("slow");
+      });
+    }));
+
+  });
+
+</script>
+
 </head>
 
 <body>
-
-<!----------------Header Start-------------->
 
   <!-- Following Menu -->
   <div class="ui large top fixed hidden menu">
@@ -200,14 +222,12 @@
         </div>
       </div>
 
-<!----------------End Header---------------------->
+<!------------------Header------------------------------->
 
     <div class="ui text container">
       <h1 class="ui inverted header">
-        APT API Examples
+        Semantic Gallery 2
       </h1>
-      <h2>Authorize.Net API Accept tests. (Work In Progress)</h2>
-      <!--<div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>-->
     </div>
 
   </div>
@@ -215,60 +235,165 @@
   <div class="ui vertical stripe segment">
     <div class="ui text container">
 
-<!------------------------------------------------->
+<!-------------------------------------------->
 
-      <h4 class="ui horizontal header divider">
-        ANET Verified Merchant Seal Tests - Production
-      </h4>
-
-      <h3 class="ui header">VMS - Production</h3>
-      <p>This tests displaying the seal for a merchant with with OCC or OCE affinity in Production.</p>
-
-      <div class="ui large buttons">
-        <div class="ui button">
-          <h4>Production - OCC</h4>
-          <script type="text/javascript" language="javascript">var ANS_customer_id="555df64a-3d16-4837-aa70-21c451154de0";</script> <script type="text/javascript" language="javascript" src="https://verify.authorize.net:443/anetseal/seal.js" ></script>
-        </div>
-
-          <div class="or"></div>
-
-        <div class="ui button">
-          <h4>Production - OCE</h4>
-          <script type="text/javascript" language="javascript">var ANS_customer_id="14e323d6-04a5-42e8-bfa1-a113a0f6b7b2";</script> <script type="text/javascript" language="javascript" src="https://verify.authorize.net:443/anetseal/seal.js" ></script>
-        </div>
-
-      </div>
-
-<!------------------------------------------------->
-
-      <h4 class="ui horizontal header divider">
-        ANET Verified Merchant Seal Tests - Sandbox
-      </h4>
-
-      <h3 class="ui header">VMS - Sandbox</h3>
-      <p>This tests displaying the seal for a merchant with with OCC or OCE affinity in Sandbox.</p>
-
-      <div class="ui large buttons">
-        <div class="ui button">
-          <h4>Sandbox - OCC</h4>
-          <script type="text/javascript" language="javascript">var ANS_customer_id="b03783d9-2057-4a94-b645-6714feee2c7b";</script> <script type="text/javascript" language="javascript" src="https://testverify.authorize.net:443/anetseal/seal.js" ></script>
-        </div>
-
-          <div class="or"></div>
-
-        <div class="ui button">
-          <h4>Sandbox - OCE</h4>
-          <script type="text/javascript" language="javascript">var ANS_customer_id="19a0dfde-0654-48fa-b42d-293bb37c0e45";</script> <script type="text/javascript" language="javascript" src="https://testverify.authorize.net:443/anetseal/seal.js" ></script>
-        </div>
-
-      </div>
-
+<div class="ui four cards">
+  <div class="card">
+    <div class="image">
+      <img src="../images/gallery/drop1.jpg">
     </div>
-
+    <div class="extra">
+      Rating:
+      <div class="ui star rating" data-rating="4"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="../images/gallery/drop2.jpg">
+    </div>
+    <div class="extra">
+      Rating:
+      <div class="ui star rating" data-rating="2"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="../images/gallery/drop3.jpg">
+    </div>
+    <div class="extra">
+      Rating:
+      <div class="ui star rating" data-rating="3"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="../images/gallery/drop4.jpg">
+    </div>
+    <div class="extra">
+      Rating:
+      <div class="ui star rating" data-rating="4"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="../images/gallery/drop5.jpg">
+    </div>
+    <div class="extra">
+      Rating:
+      <div class="ui star rating" data-rating="3"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="../images/gallery/drop6.jpg">
+    </div>
+    <div class="extra">
+      Rating:
+      <div class="ui star rating" data-rating="3"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="../images/gallery/drop7.jpg">
+    </div>
+    <div class="extra">
+      Rating:
+      <div class="ui star rating" data-rating="4"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="../images/gallery/drop8.jpg">
+    </div>
+    <div class="extra">
+      Rating:
+      <div class="ui star rating" data-rating="4"></div>
+    </div>
   </div>
 
-    <h4 class="ui horizontal header divider">
-    </h4>
+<!----------------------->
+
+  <div class="card">
+    <div class="image">
+      <img src="../images/gallery/drop9.jpg">
+    </div>
+    <div class="extra">
+      Rating:
+      <div class="ui star rating" data-rating="4"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="../images/gallery/drop10.jpg">
+    </div>
+    <div class="extra">
+      Rating:
+      <div class="ui star rating" data-rating="2"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="../images/gallery/drop11.jpg">
+    </div>
+    <div class="extra">
+      Rating:
+      <div class="ui star rating" data-rating="3"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="../images/gallery/drop12.jpg">
+    </div>
+    <div class="extra">
+      Rating:
+      <div class="ui star rating" data-rating="4"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="../images/gallery/drop13.jpg">
+    </div>
+    <div class="extra">
+      Rating:
+      <div class="ui star rating" data-rating="3"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="../images/gallery/drop14.jpg">
+    </div>
+    <div class="extra">
+      Rating:
+      <div class="ui star rating" data-rating="3"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="../images/gallery/drop15.jpg">
+    </div>
+    <div class="extra">
+      Rating:
+      <div class="ui star rating" data-rating="4"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="../images/gallery/drop16.jpg">
+    </div>
+    <div class="extra">
+      Rating:
+      <div class="ui star rating" data-rating="4"></div>
+    </div>
+  </div>
+
+<!--------------------->
+
+</div>
+</div>
+</div>
+</div>
+
+<!--------------------------->
 
   <!-- Footer -->
   <div class="ui inverted vertical footer segment">
@@ -287,21 +412,21 @@
         <div class="three wide column">
           <h4 class="ui inverted header">ANET Tests</h4>
           <div class="ui inverted link list">
-            <a href="../ANET/anetvms.html" class="item">ANET VMS</a>
-            <a href="../ANET/anetsimple.html" class="item">ANET Simple Checkout</a>
-            <a href="../ANET/anetaccept.html" class="item">ANET Accept</a>
-            <a href="../ANET/anetoauth.html" class="item">ANET OAuth</a>
+            <a href="ANET/anetvms.html" class="item">ANET VMS</a>
+            <a href="ANET/anetsimple.html" class="item">ANET Simple Checkout</a>
+            <a href="anet/anetaccept.html" class="item">ANET Accept</a>
+            <a href="anet/anetoauth.html" class="item">ANET OAuth</a>
           </div>
         </div>
 
         <div class="three wide column">
           <h4 class="ui inverted header">CYBS Tests</h4>
           <div class="ui inverted link list">
-            <a href="../CYBS/anetcybsbridge.html" class="item">ANET Bridge to CYBS</a>
-            <a href="../CYBS/cybsflexmicro.html" class="item">CYBS Flex Micro Form</a>
-            <a href="../CYBS/cybsscmp.html" class="item">CYBS SCMP</a>
-            <a href="../CYBS/cybssimpleorder.html" class="item">CYBS Simple Order</a>
-            <a href="../CYBS/cybssecureaccept.html" class="item">CYBS Secure Acceptance</a>
+            <a href="CYBS/anetcybsbridge.html" class="item">ANET Bridge to CYBS</a>
+            <a href="CYBS/cybsflexmicro.html" class="item">CYBS Flex Micro Form</a>
+            <a href="CYBS/cybsscmp.html" class="item">CYBS SCMP</a>
+            <a href="CYBS/cybssimpleorder.html" class="item">CYBS Simple Order</a>
+            <a href="CYBS/cybssecureaccept.html" class="item">CYBS Secure Acceptance</a>
           </div>
         </div>
 
