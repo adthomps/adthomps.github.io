@@ -146,6 +146,43 @@
       });
   </script>
 
+  <script type="text/javascript">
+    var blob = "";
+
+    function getSecureData() {
+      var secureData = {},
+        authData = {},
+        cardData = {};
+      cardData.cardNumber = document.getElementById('CARDNUMBER_ID').value;
+      cardData.month = document.getElementById('EXPIRY_MONTH_ID').value;
+      cardData.year = document.getElementById('EXPIRY_YEAR_ID').value;
+      cardData.zip = document.getElementById('ZIP_CODE').value;
+      cardData.cardCode = document.getElementById('CARD_CODE').value;
+      secureData.cardData = cardData;
+      authData.clientKey = 'W/nQQBWr7WsRRWbDv9Grg4le/fQW0tZZeHLLNPyfD2Ow9bDwDF7AFfcniaFdigq=';
+      authData.apiLoginID = '5844755557680177037345';
+      secureData.authData = authData;
+      Accept.dispatchData(secureData, 'responseHandler');
+    }
+
+    function responseHandler(response) {
+      if (response.messages.resultCode === 'Error') {
+        for (var i = 0; i < response.messages.message.length; i++) {
+          console.log(response.messages.message[i].code + ':' + response.messages.message[i].text);
+          $("#blob").val(response.messages.message[i].code + ':' + response.messages.message[i].text);
+        }
+      } else {
+        useOpaqueData(response.opaqueData)
+      }
+    }
+
+    function useOpaqueData(responseData) {
+      console.log(responseData.dataDescriptor);
+      console.log(responseData.dataValue);
+      $("#blob").val(responseData.dataValue);
+    }
+  </script>
+
 </head>
 
 <body>
@@ -157,7 +194,7 @@
       <a href="../../anet.html" class="item">ANET Examples</a>
       <a href="../../cybs.html" class="active item">CYBS Examples</a>
       <a href="../../cybsdocs.html" class="item">CYBS API Docs</a>
-      <a href="../../gallery.html" class="item">Photo Gallery</a>
+      <a href="../../gallery.html" class="item">Photo Galleries</a>
       <div class="right menu">
         <div class="item">
           <a href="https://developer.authorize.net" target="_blank" class="ui button">ANET Dev Center</a>
@@ -176,7 +213,7 @@
     <a href="../../anet.html" class="item">ANET Examples</a>
     <a href="../../cybs.html" class="active item">CYBS Examples</a>
     <a href="../../cybsdocs.html" class="item">CYBS API Docs</a>
-    <a href="../../gallery.html" class="item">Photo Gallery</a>
+    <a href="../../gallery.html" class="item">Photo Galleries</a>
     <a href="https://developer.authorize.net" target="_blank" class="item">ANET Dev Center</a>
     <a href="https://developer.cybersource.com" target="_blank" class="item">CYBS Dev Center</a>
   </div>
@@ -194,7 +231,7 @@
           <a href="../../anet.html" class="item">ANET Examples</a>
           <a href="../../cybs.html" class="active item">CYBS Examples</a>
           <a href="../../cybsdocs.html" class="item">CYBS API Docs</a>
-          <a href="../../gallery.html" class="item">Photo Gallery</a>
+          <a href="../../gallery.html" class="item">Photo Galleries</a>
           <div class="right item">
             <a href="https://developer.authorize.net" target="_blank" class="ui inverted button">ANET Dev Center</a>
             <a href="https://developer.cybersource.com" target="_blank" class="ui inverted button">CYBS Dev Center</a>
@@ -206,7 +243,7 @@
         <h1 class="ui inverted header">
           APT API Examples
         </h1>
-        <h2>Authorize.Net API Accept tests. (Work In Progress)</h2>
+        <h2>ANET Bridge to CYBS API Tests</h2>
         <!--<div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>-->
       </div>
 
@@ -215,7 +252,7 @@
     <!----------------------------------->
 
     <h4 class="ui horizontal header divider">
-      ANET Acceptjs Production Test
+      Acceptjs - Bridge - Production Test
     </h4>
 
     <div class="ui vertical stripe segment">
@@ -266,45 +303,60 @@
   <h4 class="ui horizontal header divider">
   </h4>
 
-  <!-- Footer -->
-  <div class="ui inverted vertical footer segment">
-    <div class="ui container">
-      <div class="ui stackable inverted divided equal height stackable grid">
-        <div class="three wide column">
-          <h4 class="ui inverted header">About</h4>
-          <div class="ui inverted link list">
-            <a href="../sitemap.html" class="item">Sitemap</a>
-            <a href="#" class="item">LinkedIn</a>
-            <!--<a href="#" class="item">Religious Ceremonies</a>-->
-            <!--<a href="#" class="item">Gazebo Plans</a>-->
-          </div>
-        </div>
+    <!-- Footer -->
+    <div class="ui inverted vertical footer segment">
+      <div class="ui container">
+          <div class="ui stackable inverted divided equal height stackable grid">
+              <div class="three wide column">
+                  <h4 class="ui inverted header">About</h4>
+                  <div class="ui inverted link list">
+                      <a href="../../sitemap.html" class="item">Sitemap</a>
+                      <a href="https://www.linkedin.com/in/adam-thompson-a547468/" class="item" target="_blank">LinkedIn</a>
+                  </div>
+              </div>
 
-        <div class="three wide column">
-          <h4 class="ui inverted header">ANET Tests</h4>
-          <div class="ui inverted link list">
-            <a href="../../ANET/anetvms.html" class="item">ANET VMS</a>
-            <a href="../../ANET/anetsimple.html" class="item">ANET Simple Checkout</a>
-            <a href="../../ANET/anetaccept.html" class="item">ANET Accept</a>
-            <a href="../../ANET/anetoauth.html" class="item">ANET OAuth</a>
-          </div>
-        </div>
+              <div class="three wide column">
+                  <h4 class="ui inverted header">ANET Tests</h4>
+                  <div class="ui inverted link list">
+                      <a href="../../ANET/anetvms.html" class="item">ANET VMS</a>
+                      <a href="../../ANET/anetsimple.html" class="item">ANET Simple Checkout</a>
+                      <a href="../../ANET/anetaccept.html" class="item">ANET Accept</a>
+                      <a href="../../ANET/anetoauth.html" class="item">ANET OAuth</a>
+                  </div>
+              </div>
 
-        <div class="three wide column">
-          <h4 class="ui inverted header">CYBS Tests</h4>
-          <div class="ui inverted link list">
-            <a href="../../CYBS/anetcybsbridge.html" class="item">ANET Bridge to CYBS</a>
-            <a href="../../CYBS/cybsflexmicro.html" class="item">CYBS Flex Micro Form</a>
-            <a href="../../CYBS/cybsscmp.html" class="item">CYBS SCMP</a>
-            <a href="../../CYBS/cybssimpleorder.html" class="item">CYBS Simple Order</a>
-            <a href="../../CYBS/cybssecureaccept.html" class="item">CYBS Secure Acceptance</a>
-          </div>
-        </div>
+              <div class="three wide column">
+                  <h4 class="ui inverted header">CYBS Tests</h4>
+                  <div class="ui inverted link list">
+                      <a href="../../CYBS/anetcybsbridge.html" class="item">ANET Bridge to CYBS</a>
+                      <a href="../../CYBS/cybsflexmicro.html" class="item">CYBS Flex Micro Form</a>
+                  </div>
+              </div>
 
-        <div class="seven wide column">
-          <h4 class="ui inverted header">Footer Header</h4>
-          <p>Copyright © MyCompany. All rights reserved.</p>
-        </div>
+              <div class="three wide column">
+                  <h4 class="ui inverted header">CYBS API Doc Examples</h4>
+                  <div class="ui inverted link list">
+                      <a href="../../CYBS/cybsapievolution.html" class="item">CYBS API Evolution</a>
+                      <a href="../../CYBS/cybsscmpg.html" class="item">CYBS SCMP</a>
+                      <a href="../../CYBS/cybssimpleorderg.html" class="item">CYBS Simple Order</a>
+                      <a href="../../CYBS/cybssecureacceptg.html" class="item">CYBS Secure Acceptance</a>
+                  </div>
+              </div>
+
+              <div class="three wide column">
+                  <h4 class="ui inverted header">Photo Galleries</h4>
+                  <div class="ui inverted link list">
+                      <a href="../../Gallery/gallery1.html" class="item">Semantic 1</a>
+                      <a href="../../Gallery/gallery2.html" class="item">Semantic 2</a>
+                      <a href="https://www.flickr.com/photos/adam-p-thompson/albums" class="item" target="_blank">Flickr</a>
+                      <a href="https://adthomps.myportfolio.com/projects" class="item" target="_blank">Adobe Portfolio</a>
+                  </div>
+              </div>
+
+              <div class="three wide column">
+                  <h4 class="ui inverted header">Footer Header</h4>
+                  <p>Copyright © MyCompany. All rights reserved.</p>
+              </div>
 
       </div>
 
@@ -314,42 +366,6 @@
 
   </div>
 
-  <script type="text/javascript">
-    var blob = "";
-
-    function getSecureData() {
-      var secureData = {},
-        authData = {},
-        cardData = {};
-      cardData.cardNumber = document.getElementById('CARDNUMBER_ID').value;
-      cardData.month = document.getElementById('EXPIRY_MONTH_ID').value;
-      cardData.year = document.getElementById('EXPIRY_YEAR_ID').value;
-      cardData.zip = document.getElementById('ZIP_CODE').value;
-      cardData.cardCode = document.getElementById('CARD_CODE').value;
-      secureData.cardData = cardData;
-      authData.clientKey = 'W/nQQBWr7WsRRWbDv9Grg4le/fQW0tZZeHLLNPyfD2Ow9bDwDF7AFfcniaFdigq=';
-      authData.apiLoginID = '5844755557680177037345';
-      secureData.authData = authData;
-      Accept.dispatchData(secureData, 'responseHandler');
-    }
-
-    function responseHandler(response) {
-      if (response.messages.resultCode === 'Error') {
-        for (var i = 0; i < response.messages.message.length; i++) {
-          console.log(response.messages.message[i].code + ':' + response.messages.message[i].text);
-          $("#blob").val(response.messages.message[i].code + ':' + response.messages.message[i].text);
-        }
-      } else {
-        useOpaqueData(response.opaqueData)
-      }
-    }
-
-    function useOpaqueData(responseData) {
-      console.log(responseData.dataDescriptor);
-      console.log(responseData.dataValue);
-      $("#blob").val(responseData.dataValue);
-    }
-  </script>
 </body>
 
 </html>
