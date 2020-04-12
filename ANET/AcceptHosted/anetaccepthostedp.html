@@ -1,351 +1,154 @@
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
 
-  <!-- Standard Meta -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Favicon -->
-  <link rel="shortcut icon" href="../../images/icons/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="../../images/icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../images/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../images/icons/favicon.ico" type="image/x-icon">
 
-  <!-- Site Properties -->
-  <title>APT API Examples & Tests via Semantic/Fomantic UI</title>
-  <link rel="stylesheet" type="text/css" href="../../semantic/dist/semantic.min.css">
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <script src="../../semantic/dist/semantic.min.js"></script>
+    <!-- Site Properties -->
+    <title>APT Portfolio API Examples & Tests via Semantic/Fomantic UI</title>
 
-  <!-- CSS Stylings -->
-  <style type="text/css">
-    .hidden.menu {
-      display: none;
-    }
+    <!-- Resource Files - CSS -->
+    <link rel="stylesheet" type="text/css" href="../../semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="../../stylescripts/acceptcust.css">
 
-    .masthead.segment {
-      /* min-height: 700px; */
-      min-height: 350px;
-      padding: 1em 0em;
-    }
+    <!-- Resource Files - JS -->
+    <script src="../../semantic/dist/semantic.min.js"></script>
+    <script src="../../stylescripts/basic.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
 
-    .masthead .logo.item img {
-      margin-right: 1em;
-    }
-
-    .masthead .ui.menu .ui.button {
-      margin-left: 0.5em;
-    }
-
-    .masthead h1.ui.header {
-      /* margin-top: 3em; */
-      margin-top: 1em;
-      margin-bottom: 0em;
-      font-size: 4em;
-      font-weight: normal;
-    }
-
-    .masthead h2 {
-      font-size: 1.7em;
-      font-weight: normal;
-    }
-
-    .ui.vertical.stripe {
-      /* padding: 8em 0em; */
-      padding: 4em 0em;
-    }
-
-    .ui.vertical.stripe h3 {
-      font-size: 2em;
-    }
-
-    .ui.vertical.stripe .button+h3,
-    .ui.vertical.stripe p+h3 {
-      margin-top: 3em;
-    }
-
-    .ui.vertical.stripe .floated.image {
-      clear: both;
-    }
-
-    .ui.vertical.stripe p {
-      font-size: 1.33em;
-    }
-
-    .ui.vertical.stripe .horizontal.divider {
-      margin: 3em 0em;
-    }
-
-    .quote.stripe.segment {
-      padding: 0em;
-    }
-
-    .quote.stripe.segment .grid .column {
-      padding-top: 5em;
-      padding-bottom: 5em;
-    }
-
-    .footer.segment {
-      padding: 5em 0em;
-    }
-
-    .secondary.pointing.menu .toc.item {
-      display: none;
-    }
-
-        #divAuthorizeNetPopupScreen {
-            left: 0px;
-            top: 0px;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            background-color: #808080;
-            opacity: 0.5;
-            -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)';
-            filter: alpha(opacity=50);
-        }
-
-        #divAuthorizeNetPopup {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            margin-left: -200px;
-            margin-top: -200px;
-            z-index: 2;
-            overflow: visible;
-        }
-
-        .AuthorizeNetPopupGrayFrameTheme .AuthorizeNetPopupOuter {
-            background-color: #dddddd;
-            border-width: 1px;
-            border-style: solid;
-            border-color: #a0a0a0 #909090 #909090 #a0a0a0;
-            padding: 4px;
-        }
-
-        .AuthorizeNetPopupGrayFrameTheme .AuthorizeNetPopupTop {
-            height: 23px;
-        }
-
-        .AuthorizeNetPopupGrayFrameTheme .AuthorizeNetPopupClose {
-            position: absolute;
-            right: 7px;
-            top: 7px;
-        }
-
-            .AuthorizeNetPopupGrayFrameTheme .AuthorizeNetPopupClose a {
-                background-image: url('../../images/icons/closeButton1.png');
-                background-repeat: no-repeat;
-                height: 16px;
-                width: 16px;
-                display: inline-block;
-            }
-
-                .AuthorizeNetPopupGrayFrameTheme .AuthorizeNetPopupClose a:hover {
-                    background-image: url('../../images/icons/closeButton1h.png');
-                }
-
-               .AuthorizeNetPopupGrayFrameTheme .AuthorizeNetPopupClose a:active {
-                    background-image: url('../../images/icons/closeButton1a.png');
-                }
-
-        .AuthorizeNetPopupGrayFrameTheme .AuthorizeNetPopupInner {
-            background-color: #ffffff;
-            border-width: 2px;
-            border-style: solid;
-            border-color: #cfcfcf #ebebeb #ebebeb #cfcfcf;
-        }
-
-        .AuthorizeNetPopupGrayFrameTheme .AuthorizeNetPopupBottom {
-            height: 30px;
-        }
-
-        .AuthorizeNetPopupGrayFrameTheme .AuthorizeNetPopupLogo {
-            position: absolute;
-            right: 9px;
-            bottom: 4px;
-            width: 200px;
-            height: 25px;
-            background-image: url('../../images/icons/powered_simple.png');
-        }
-
-        .AuthorizeNetPopupSimpleTheme .AuthorizeNetPopupOuter {
-            border: 1px solid #585858;
-            background-color: #ffffff;
-        }
-
-    @media only screen and (max-width: 700px) {
-      .ui.fixed.menu {
-        display: none !important;
-      }
-
-      .secondary.pointing.menu .item,
-      .secondary.pointing.menu .menu {
-        display: none;
-      }
-
-      .secondary.pointing.menu .toc.item {
-        display: block;
-      }
-
-      .masthead.segment {
-        min-height: 350px;
-      }
-
-      .masthead h1.ui.header {
-        font-size: 2em;
-        margin-top: 1.5em;
-      }
-
-      .masthead h2 {
-        margin-top: 0.5em;
-        font-size: 1.5em;
-      }
-    }
-  </style>
-
-  <!-- JavaScript -->
-  <script>
-    $(document)
-      .ready(function() {
-        // fix menu when passed
-        $('.masthead')
-          .visibility({
-            once: false,
-            onBottomPassed: function() {
-              $('.fixed.menu').transition('fade in');
-            },
-            onBottomPassedReverse: function() {
-              $('.fixed.menu').transition('fade out');
-            }
-          });
-        // create sidebar and attach to menu open
-        $('.ui.sidebar')
-          .sidebar('attach events', '.toc.item');
-      });
-  </script>
-
+    <!-- JavaScript -->
     <script type="text/javascript">
 
-    $(function () {
+        $(function () {
 
-        $("#btnOpenAuthorizeNetIFrame").click(function () {
-            $("#add_payment").show();
-            $("#embeddedToken").val($("#inputtoken").val());
-            $("#send_token").attr({ "action": "https://accept.authorize.net/payment/Payment", "target": "add_payment" }).submit();
-            $(window).scrollTop($('#add_payment').offset().top - 50);
+            $("#btnOpenAuthorizeNetIFrame").click(function () {
+                $("#add_payment").show();
+                $("#embeddedToken").val($("#inputtoken").val());
+                $("#send_token").attr({ "action": "https://accept.authorize.net/payment/Payment", "target": "add_payment" }).submit();
+                $(window).scrollTop($('#add_payment').offset().top - 50);
+            });
+
         });
 
-    });
+        $(function () {
 
-    $(function () {
+            $("#btnContinue").click(function () {
 
-        $("#btnContinue").click(function () {
-            
-            $("#redirectToken").val($("#inputtoken").val());
-           
+                $("#redirectToken").val($("#inputtoken").val());
+
+            });
+
         });
 
-    });
-    
-</script>
-        <script language="javascript" type="text/javascript">
-// <!CDATA[
-function XHConn()
-{
-  var xmlhttp, bComplete = false;
-  try { xmlhttp = new ActiveXObject("Msxml2.XMLHTTP"); }
-  catch (e) { try { xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); }
-  catch (e) { try { xmlhttp = new XMLHttpRequest(); }
-  catch (e) { xmlhttp = false; }}}
-  if (!xmlhttp) return null;
- 
-  this.connect = function(sURL, sPostData, fnDone)
-  {
-    if (!xmlhttp) return false;
-    bComplete = false;
+    </script>
+    <script language="javascript" type="text/javascript">
+        // <!CDATA[
+        function XHConn() {
+            var xmlhttp, bComplete = false;
+            try { xmlhttp = new ActiveXObject("Msxml2.XMLHTTP"); }
+            catch (e) {
+                try { xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); }
+                catch (e) {
+                    try { xmlhttp = new XMLHttpRequest(); }
+                    catch (e) { xmlhttp = false; }
+                }
+            }
+            if (!xmlhttp) return null;
 
-    try {
-      xmlhttp.open("POST", sURL, true);
-      xmlhttp.setRequestHeader("Method", "POST " + sURL + " HTTP/1.1");
-      xmlhttp.setRequestHeader("Content-Type", "application/"+document.getElementById("selContentType").value);
-      xmlhttp.onreadystatechange = function(){
-        if (xmlhttp.readyState == 4 && !bComplete)
-        {
-          bComplete = true;
-          fnDone(xmlhttp);
+            this.connect = function (sURL, sPostData, fnDone) {
+                if (!xmlhttp) return false;
+                bComplete = false;
+
+                try {
+                    xmlhttp.open("POST", sURL, true);
+                    xmlhttp.setRequestHeader("Method", "POST " + sURL + " HTTP/1.1");
+                    xmlhttp.setRequestHeader("Content-Type", "application/" + document.getElementById("selContentType").value);
+                    xmlhttp.onreadystatechange = function () {
+                        if (xmlhttp.readyState == 4 && !bComplete) {
+                            bComplete = true;
+                            fnDone(xmlhttp);
+                        }
+                    };
+                    xmlhttp.send(sPostData);
+                }
+                catch (z) {
+                    alert(z);
+                    return false;
+                }
+                return true;
+            };
+            return this;
         }
-      };
-      xmlhttp.send(sPostData);
-    }
-    catch(z) {
-      alert(z);
-      return false;
-    }
-    return true;
-  };
-  return this;
-}
 
-var g_xc = new XHConn();
+        var g_xc = new XHConn();
 
-function btnSend_onclick() {
-  document.getElementById("btnSend").disabled = true;
-  document.getElementById("inputtoken").innerHTML = "";
-  document.getElementById("spnStatusCode").innerHTML = "";
-  var fnWhenDone = function (oXML) {
-      if (oXML.status && oXML.status != "200") {
-          document.getElementById("spnStatusCode").innerHTML = "HTTP status code: " + oXML.status.toString().replace(/</g, "&lt;");
-      }
-      
-      var txt = oXML.responseText;
-      var result = $(txt).find("token").text();
-      alert(result);
-      txt = txt.replace(/></g, "> <");
-      txt = txt.replace(/</g, "&lt;");
-      txt = txt.replace(/>/g, "&gt;");
-      document.getElementById("inputtoken").innerHTML = result;
-      document.getElementById("btnSend").disabled = false;
-  };
-  g_xc.connect(document.getElementById("txtUrl").value, document.getElementById("txtReqXml").value, fnWhenDone);
-}
+        function btnSend_onclick() {
+            document.getElementById("btnSend").disabled = true;
+            document.getElementById("inputtoken").innerHTML = "";
+            document.getElementById("spnStatusCode").innerHTML = "";
+            var fnWhenDone = function (oXML) {
+                if (oXML.status && oXML.status != "200") {
+                    document.getElementById("spnStatusCode").innerHTML = "HTTP status code: " + oXML.status.toString().replace(/</g, "&lt;");
+                }
 
-function selUrls_onChange(obj) {
-    if (document.getElementById("selUrls").value) {
-        document.getElementById("txtUrl").value = "https://api.authorize.net/xml/v1/" + document.getElementById("selUrls").value;
-  }
-}
+                var txt = oXML.responseText;
+                var result = $(txt).find("token").text();
+                alert(result);
+                txt = txt.replace(/></g, "> <");
+                txt = txt.replace(/</g, "&lt;");
+                txt = txt.replace(/>/g, "&gt;");
+                document.getElementById("inputtoken").innerHTML = result;
+                document.getElementById("btnSend").disabled = false;
+            };
+            g_xc.connect(document.getElementById("txtUrl").value, document.getElementById("txtReqXml").value, fnWhenDone);
+        }
 
-/*
-var xmlRequestStr =
-        '&lt;?xml version="1.0" encoding="utf-8"?&gt;' + '\n' +
-        '&lt;isAliveRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"&gt;'  +'\n' +
-        '\t' + '&lt;refId&gt;refid1&lt;/refId&gt;' + '\n' +
-         '&lt;/isAliveRequest&gt;';
+        function selUrls_onChange(obj) {
+            if (document.getElementById("selUrls").value) {
+                document.getElementById("txtUrl").value = "https://api.authorize.net/xml/v1/" + document.getElementById("selUrls").value;
+            }
+        }
 
-var jsonRequestStr =
-    '{' + '\n' +
-        ' "isAliveRequest":' + '\n' +
-        ' {' + '\n' +
-        '   "@xmlns":"AnetApi/xml/v1/schema/AnetApiSchema.xsd",' + '\n' +
-        '   "refId":"1234"' + '\n' +
-        ' }' + '\n' +
-        '}';
-*/
+        /*
+        var xmlRequestStr =
+                '&lt;?xml version="1.0" encoding="utf-8"?&gt;' + '\n' +
+                '&lt;isAliveRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"&gt;'  +'\n' +
+                '\t' + '&lt;refId&gt;refid1&lt;/refId&gt;' + '\n' +
+                 '&lt;/isAliveRequest&gt;';
 
-function selContentType_onChange(obj) {
-  if (document.getElementById("selContentType").value) {
-      document.getElementById("typeIdentifierMessageId").innerHTML = "Click here to send the request of type: " + document.getElementById("selContentType")[obj.selectedIndex].innerHTML;
+        var jsonRequestStr =
+            '{' + '\n' +
+                ' "isAliveRequest":' + '\n' +
+                ' {' + '\n' +
+                '   "@xmlns":"AnetApi/xml/v1/schema/AnetApiSchema.xsd",' + '\n' +
+                '   "refId":"1234"' + '\n' +
+                ' }' + '\n' +
+                '}';
+        */
 
-      if (document.getElementById("selContentType")[obj.selectedIndex].innerHTML == "JSON") {
-        document.getElementById("txtReqXml").innerHTML = jsonRequestStr;
-      } else {
-        document.getElementById("txtReqXml").innerHTML = xmlRequestStr;
-      }
-  }
-}
-// ]]>
-</script>
+        function selContentType_onChange(obj) {
+            if (document.getElementById("selContentType").value) {
+                document.getElementById("typeIdentifierMessageId").innerHTML = "Click here to send the request of type: " + document.getElementById("selContentType")[obj.selectedIndex].innerHTML;
+
+                if (document.getElementById("selContentType")[obj.selectedIndex].innerHTML == "JSON") {
+                    document.getElementById("txtReqXml").innerHTML = jsonRequestStr;
+                } else {
+                    document.getElementById("txtReqXml").innerHTML = xmlRequestStr;
+                }
+            }
+        }
+        // ]]>
+    </script>
 
     <script type="text/javascript">
         (function () {
@@ -465,143 +268,143 @@ function selContentType_onChange(obj) {
     </script>
     <script type="text/javascript">
 
-         (function () {
-             if (!window.AuthorizeNetIFrame) window.AuthorizeNetIFrame = {};
+        (function () {
+            if (!window.AuthorizeNetIFrame) window.AuthorizeNetIFrame = {};
 
-             AuthorizeNetIFrame.onReceiveCommunication = function (querystr) {
-                 var params = parseQueryString(querystr);
-                 switch (params["action"]) {
-                     case "successfulSave":
-                         break;
-                     case "cancel":
+            AuthorizeNetIFrame.onReceiveCommunication = function (querystr) {
+                var params = parseQueryString(querystr);
+                switch (params["action"]) {
+                    case "successfulSave":
+                        break;
+                    case "cancel":
 
-                         break;
-                     case "resizeWindow":
-                         var w = parseInt(params["width"]);
-                         var h = parseInt(params["height"]);
-                         var ifrm = document.getElementById("add_payment");
-                         ifrm.style.width = w.toString() + "px";
-                         ifrm.style.height = h.toString() + "px";
-                         break;
-                     case "transactResponse":
-                         var ifrm = document.getElementById("add_payment");
-                         ifrm.style.display = 'none';
-                 }
-             };
+                        break;
+                    case "resizeWindow":
+                        var w = parseInt(params["width"]);
+                        var h = parseInt(params["height"]);
+                        var ifrm = document.getElementById("add_payment");
+                        ifrm.style.width = w.toString() + "px";
+                        ifrm.style.height = h.toString() + "px";
+                        break;
+                    case "transactResponse":
+                        var ifrm = document.getElementById("add_payment");
+                        ifrm.style.display = 'none';
+                }
+            };
 
-             function parseQueryString(str) {
-                 var vars = [];
-                 var arr = str.split('&');
-                 var pair;
-                 for (var i = 0; i < arr.length; i++) {
-                     pair = arr[i].split('=');
-                     vars.push(pair[0]);
-                     vars[pair[0]] = unescape(pair[1]);
-                 }
-                 return vars;
-             }
-         }());
+            function parseQueryString(str) {
+                var vars = [];
+                var arr = str.split('&');
+                var pair;
+                for (var i = 0; i < arr.length; i++) {
+                    pair = arr[i].split('=');
+                    vars.push(pair[0]);
+                    vars[pair[0]] = unescape(pair[1]);
+                }
+                return vars;
+            }
+        }());
 
-  </script>
+    </script>
 
 </head>
 
 <body>
 
-  <!-- Following Menu -->
-  <div class="ui large top fixed hidden menu">
-    <div class="ui container">
-      <a href="../../index.html" class="item">Home</a>
-      <a href="../../anet.html" class="active item">ANET Examples</a>
-      <a href="../../cybs.html" class="item">CYBS Examples</a>
-      <a href="../../cybsdocs.html" class="item">CYBS API Docs</a>
-      <a href="../../gallery.html" class="item">Photo Galleries</a>
-      <div class="right menu">
-        <div class="item">
-          <a href="https://developer.authorize.net" target="_blank" class="ui button">ANET Dev Center</a>
-        </div>
-        <div class="item">
-          <a href="https://developer.cybersource.com" target="_blank" class="ui button">CYBS Dev Center</a>
-          <!--<a class="ui primary button">CYBS Dev Center</a>-->
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Sidebar Menu -->
-  <div class="ui vertical inverted sidebar menu">
-    <a href="../../index.html" class="item">Home</a>
-    <a href="../../anet.html" class="active item">ANET Examples</a>
-    <a href="../../cybs.html" class="item">CYBS Examples</a>
-    <a href="../../cybsdocs.html" class="item">CYBS API Docs</a>
-    <a href="../../gallery.html" class="item">Photo Galleries</a>
-    <a href="https://developer.authorize.net" target="_blank" class="item">ANET Dev Center</a>
-    <a href="https://developer.cybersource.com" target="_blank" class="item">CYBS Dev Center</a>
-  </div>
-
-  <!-- Page Contents -->
-  <div class="pusher">
-    <div class="ui inverted vertical masthead center aligned segment">
-
-      <div class="ui container">
-        <div class="ui large secondary inverted pointing menu">
-          <a class="toc item">
-            <i class="sidebar icon"></i>
-          </a>
-          <a href="../../index.html" class="item">Home</a>
-          <a href="../../anet.html" class="active item">ANET Examples</a>
-          <a href="../../cybs.html" class="item">CYBS Examples</a>
-          <a href="../../cybsdocs.html" class="item">CYBS API Docs</a>
-          <a href="../../gallery.html" class="item">Photo Galleries</a>
-          <div class="right item">
-            <a href="https://developer.authorize.net" target="_blank" class="ui inverted button">ANET Dev Center</a>
-            <a href="https://developer.cybersource.com" target="_blank" class="ui inverted button">CYBS Dev Center</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="ui text container">
-        <h1 class="ui inverted header">
-          APT API Examples
-        </h1>
-        <h2>Authorize.Net API Accept tests.</h2>
-        <!--<div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>-->
-      </div>
-
-    </div>
-
-    <!----------------------------------->
-
-    <div class="ui vertical stripe segment">
-      <div class="ui text container">
-
-        <form class="ui form" method="post" action="">
-          <div class="ui equal width form">
-            <div class="fields">
-              <div class="field">
-                <label>Url:</label>
-                <input type="text" id="txtUrl" name="txtUrl" size="55" placeholder="Endpoint"/>
-              </div>
-              <div class="field">
-                <label>Domain:</label>
-                <select name="selUrls" id="selUrls" onchange="selUrls_onChange(this)" onblur="selUrls_onChange(this)">
-                  <option value="">--Select Url--</option>
-                  <option value="request.api">Production API</option>
-                </select>
-              </div>
-              <div class="field">
-                <label>XML/JSON</label>
-                <select name="selContentType" id="selContentType" onchange="selContentType_onChange(this)">
-                  <option value="">--Select Type--</option>
-                  <option value="xml">XML</option>
-                  <!--<option value="json">JSON</option>-->
-                </select>
-              </div>
+    <!-- Following Menu -->
+    <div class="ui large top fixed hidden menu">
+        <div class="ui container">
+            <a href="../../index.html" class="item">Home</a>
+            <a href="../../anet.html" class="active item">ANET Examples</a>
+            <a href="../../cybs.html" class="item">CYBS Examples</a>
+            <a href="../../cybsdocs.html" class="item">CYBS API Docs</a>
+            <a href="../../gallery.html" class="item">Photo Galleries</a>
+            <div class="right menu">
+                <div class="item">
+                    <a href="https://developer.authorize.net" target="_blank" class="ui button">ANET Dev Center</a>
+                </div>
+                <div class="item">
+                    <a href="https://developer.cybersource.com" target="_blank" class="ui button">CYBS Dev Center</a>
+                    <!--<a class="ui primary button">CYBS Dev Center</a>-->
+                </div>
             </div>
-            <div class="fields">
-              <div class="field">
-                <label>Code:</label>
-                <textarea id="txtReqXml" name="txtReqXml" cols="80" rows="16" style="" placeholder="Code">
+        </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div class="ui vertical inverted sidebar menu">
+        <a href="../../index.html" class="item">Home</a>
+        <a href="../../anet.html" class="active item">ANET Examples</a>
+        <a href="../../cybs.html" class="item">CYBS Examples</a>
+        <a href="../../cybsdocs.html" class="item">CYBS API Docs</a>
+        <a href="../../gallery.html" class="item">Photo Galleries</a>
+        <a href="https://developer.authorize.net" target="_blank" class="item">ANET Dev Center</a>
+        <a href="https://developer.cybersource.com" target="_blank" class="item">CYBS Dev Center</a>
+    </div>
+
+    <!-- Page Contents -->
+    <div class="pusher">
+        <div class="ui inverted vertical masthead center aligned segment">
+
+            <div class="ui container">
+                <div class="ui large secondary inverted pointing menu">
+                    <a class="toc item">
+                        <i class="sidebar icon"></i>
+                    </a>
+                    <a href="../../index.html" class="item">Home</a>
+                    <a href="../../anet.html" class="active item">ANET Examples</a>
+                    <a href="../../cybs.html" class="item">CYBS Examples</a>
+                    <a href="../../cybsdocs.html" class="item">CYBS API Docs</a>
+                    <a href="../../gallery.html" class="item">Photo Galleries</a>
+                    <div class="right item">
+                        <a href="https://developer.authorize.net" target="_blank" class="ui inverted button">ANET Dev Center</a>
+                        <a href="https://developer.cybersource.com" target="_blank" class="ui inverted button">CYBS Dev Center</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui text container">
+                <h1 class="ui inverted header">
+                    APT API Examples
+                </h1>
+                <h2>Authorize.Net API Accept tests.</h2>
+                <!--<div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>-->
+            </div>
+
+        </div>
+
+        <!----------------------------------->
+
+        <div class="ui vertical stripe segment">
+            <div class="ui text container">
+
+                <form class="ui form" method="post" action="">
+                    <div class="ui equal width form">
+                        <div class="fields">
+                            <div class="field">
+                                <label>Url:</label>
+                                <input type="text" id="txtUrl" name="txtUrl" size="55" placeholder="Endpoint" />
+                            </div>
+                            <div class="field">
+                                <label>Domain:</label>
+                                <select name="selUrls" id="selUrls" onchange="selUrls_onChange(this)" onblur="selUrls_onChange(this)">
+                                    <option value="">--Select Url--</option>
+                                    <option value="request.api">Production API</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label>XML/JSON</label>
+                                <select name="selContentType" id="selContentType" onchange="selContentType_onChange(this)">
+                                    <option value="">--Select Type--</option>
+                                    <option value="xml">XML</option>
+                                    <!--<option value="json">JSON</option>-->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="fields">
+                            <div class="field">
+                                <label>Code:</label>
+                                <textarea id="txtReqXml" name="txtReqXml" cols="80" rows="16" style="" placeholder="Code">
 &#x3C;getHostedPaymentPageRequest xmlns=&#x22;AnetApi/xml/v1/schema/AnetApiSchema.xsd&#x22;&#x3E;
   &#x3C;merchantAuthentication&#x3E;
     &#x3C;name&#x3E;QOAA0OCC$aP94Nn8t528&#x3C;/name&#x3E;
@@ -671,160 +474,154 @@ function selContentType_onChange(obj) {
   &#x3C;/hostedPaymentSettings&#x3E;
 &#x3C;/getHostedPaymentPageRequest&#x3E;
                 </textarea>
-              </div>
-              <div class="field">
-              </div>
-              <div class="field">
-                <label>Response:</label>
-                <div><span id="spnStatusCode" class="error"></span></div>
-                <div>
-                  <textarea id="inputtoken" name="txtRespXml" cols="80" rows="16"></textarea>
+                            </div>
+                            <div class="field">
+                            </div>
+                            <div class="field">
+                                <label>Response:</label>
+                                <div><span id="spnStatusCode" class="error"></span></div>
+                                <div>
+                                    <textarea id="inputtoken" name="txtRespXml" cols="80" rows="16"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fields">
+                            <div class="field">
+                                <input class="ui button" type="button" id="btnSend" name="btnSend" value="Send" onclick="return btnSend_onclick()" />
+                                <span style="font-size:smaller;" Id="typeIdentifierMessageId">Click here to send the request.</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+
+                <!------------------------->
+                <!--Add the below div section in your page to establish Iframe communication. This is a must if you choose Popup style. This will have a close button and a frame to the payment page.you can customize the styles of this popup.-->
+                <div id="divAuthorizeNetPopup" style="display:none;" class="AuthorizeNetPopupGrayFrameTheme">
+                    <div class="AuthorizeNetPopupOuter">
+                        <div class="AuthorizeNetPopupTop">
+                            <div class="AuthorizeNetPopupClose">
+                                <a href="javascript:;" onclick="AuthorizeNetPopup.closePopup();" title="Close"> </a>
+                            </div>
+                        </div>
+                        <div class="AuthorizeNetPopupInner">
+                            <iframe name="iframeAuthorizeNet" id="iframeAuthorizeNet" src="empty.html" frameborder="0" scrolling="no"></iframe>
+                        </div>
+                        <div class="AuthorizeNetPopupBottom">
+                            <div class="AuthorizeNetPopupLogo" title="Powered by Authorize.Net"></div>
+                        </div>
+                        <div id="divAuthorizeNetPopupScreen" style="display:none;"></div>
+                    </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="fields">
-              <div class="field">
-                <input class="ui button" type="button" id="btnSend" name="btnSend" value="Send" onclick="return btnSend_onclick()" />
-                <span style="font-size:smaller;" Id="typeIdentifierMessageId">Click here to send the request.</span>
-              </div>
-            </div>
-
-          </div>
-        </form>
-
-<!------------------------->
-
-    <!--Add the below div section in your page to establish Iframe communication. This is a must if you choose Popup style. This will have a close button and a frame to the payment page.you can customize the styles of this popup.-->
-    <div id="divAuthorizeNetPopup" style="display:none;" class="AuthorizeNetPopupGrayFrameTheme">
-        <div class="AuthorizeNetPopupOuter">
-            <div class="AuthorizeNetPopupTop">
-                <div class="AuthorizeNetPopupClose">
-                    <a href="javascript:;" onclick="AuthorizeNetPopup.closePopup();" title="Close"> </a>
-                </div>
-            </div>
-            <div class="AuthorizeNetPopupInner">
-                <iframe name="iframeAuthorizeNet" id="iframeAuthorizeNet" src="empty.html" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="AuthorizeNetPopupBottom">
-                <div class="AuthorizeNetPopupLogo" title="Powered by Authorize.Net"></div>
-            </div>
-            <div id="divAuthorizeNetPopupScreen" style="display:none;"></div>
-        </div>
-    </div>
 
 
-        <h4 class="ui horizontal header divider">
-          Follow On Buttons
-        </h4>
+                <h4 class="ui horizontal header divider">
+                    Follow On Buttons
+                </h4>
 
                 <form method="post" action="https://accept.authorize.net/payment/Payment" id="formAuthorizeNetTestPage"
-          name="formAuthorizeNetTestPage">
-          <button class="ui button" id="btnContinue" onclick="">Continue to next page</button>
-          <input type="hidden" id="redirectToken" name="token" value="" />
-          (Use Redirect to continue to Hosted Payment Page)
-        </form>
+                      name="formAuthorizeNetTestPage">
+                    <button class="ui button" id="btnContinue" onclick="">Continue to next page</button>
+                    <input type="hidden" id="redirectToken" name="token" value="" />
+                    (Use Redirect to continue to Hosted Payment Page)
+                </form>
 
-        <form method="post" id="formAuthorizeNetPopup" name="formAuthorizeNetPopup" target="iframeAuthorizeNet" style="display:none;">
-            <input type="text" id="popupToken" name="token" value="" />
-        </form>
-        <div>
-            <button class="ui button" id="btnOpenAuthorizeNetPopup" onclick="AuthorizeNetPopup.openPopup()">Open Authorize.Net Popup</button>
-            Continue using Popup Window
-        </div>
+                <form method="post" id="formAuthorizeNetPopup" name="formAuthorizeNetPopup" target="iframeAuthorizeNet" style="display:none;">
+                    <input type="text" id="popupToken" name="token" value="" />
+                </form>
+                <div>
+                    <button class="ui button" id="btnOpenAuthorizeNetPopup" onclick="AuthorizeNetPopup.openPopup()">Open Authorize.Net Popup</button>
+                    Continue using Popup Window
+                </div>
 
-<br>
+                <br>
 
-    <div>
-    <button class="ui button" id="btnOpenAuthorizeNetIFrame" onclick="">Embedded IFrame - Show Payment Form</button>
-    </div>
+                <div>
+                    <button class="ui button" id="btnOpenAuthorizeNetIFrame" onclick="">Embedded IFrame - Show Payment Form</button>
+                </div>
 
-    <div class="ui vertical stripe segment">
-      <div class="ui text container">
+                <div class="ui vertical stripe segment">
+                    <div class="ui text container">
 
-        <h4 class="ui horizontal header divider">
-          Embedded IFrame - Hosted Payment Page
-        </h4>
+                        <h4 class="ui horizontal header divider">
+                            Embedded IFrame - Hosted Payment Page
+                        </h4>
 
-            <div  id="iframe_holder" class="center-block" style="width:90%;max-width: 1000px">
-      <iframe id="add_payment" class="embed-responsive-item panel" name="add_payment" scrolling="no" style="height:100%;width:100%;border:none;overflow:hidden;">
-      </iframe>
+                        <div id="iframe_holder" class="center-block" style="width:90%;max-width: 1000px">
+                            <iframe id="add_payment" class="embed-responsive-item panel" name="add_payment" scrolling="no" style="height:100%;width:100%;border:none;overflow:hidden;">
+                            </iframe>
+                        </div>
+                        <form id="send_token" method="post" target="add_payment">
+                            <input type="hidden" id="embeddedToken" name="token" value="">
+                        </form>
+
+                    </div>
+                </div>
             </div>
-      <form id="send_token"  method="post" target="add_payment" >
-        <input type="hidden" id="embeddedToken" name="token" value="">
-      </form>
-
-</div>
-</div>
-</div>
-</div>
-</div>
-
-      </div>
+        </div>
     </div>
 
     <!-- Footer -->
     <div class="ui inverted vertical footer segment">
-      <div class="ui container">
-          <div class="ui stackable inverted divided equal height stackable grid">
-              <div class="three wide column">
-                  <h4 class="ui inverted header">About</h4>
-                  <div class="ui inverted link list">
-                      <a href="../../sitemap.html" class="item">Sitemap</a>
-                      <a href="https://www.linkedin.com/in/adam-thompson-a547468/" class="item" target="_blank">LinkedIn</a>
-                  </div>
-              </div>
+        <div class="ui container">
+            <div class="ui stackable inverted divided equal height stackable grid">
+                <div class="three wide column">
+                    <h4 class="ui inverted header">About</h4>
+                    <div class="ui inverted link list">
+                        <a href="../../sitemap.html" class="item">Sitemap</a>
+                        <a href="https://www.linkedin.com/in/adam-thompson-a547468/" class="item" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
 
-              <div class="three wide column">
-                  <h4 class="ui inverted header">ANET Tests</h4>
-                  <div class="ui inverted link list">
-                      <a href="../../ANET/anetvms.html" class="item">ANET VMS</a>
-                      <a href="../../ANET/anetsimple.html" class="item">ANET Simple Checkout</a>
-                      <a href="../../ANET/anetaccept.html" class="item">ANET Accept</a>
-                      <a href="../../ANET/anetoauth.html" class="item">ANET OAuth</a>
-                  </div>
-              </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">ANET Tests</h4>
+                    <div class="ui inverted link list">
+                        <a href="../../ANET/anetvms.html" class="item">ANET VMS</a>
+                        <a href="../../ANET/anetsimple.html" class="item">ANET Simple Checkout</a>
+                        <a href="../../ANET/anetaccept.html" class="item">ANET Accept</a>
+                        <a href="../../ANET/anetoauth.html" class="item">ANET OAuth</a>
+                    </div>
+                </div>
 
-              <div class="three wide column">
-                  <h4 class="ui inverted header">CYBS Tests</h4>
-                  <div class="ui inverted link list">
-                      <a href="../../CYBS/anetcybsbridge.html" class="item">ANET Bridge to CYBS</a>
-                      <a href="../../CYBS/cybsflexmicro.html" class="item">CYBS Flex Micro Form</a>
-                  </div>
-              </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">CYBS Tests</h4>
+                    <div class="ui inverted link list">
+                        <a href="../../CYBS/anetcybsbridge.html" class="item">ANET Bridge to CYBS</a>
+                        <a href="../../CYBS/cybsflexmicro.html" class="item">CYBS Flex Micro Form</a>
+                    </div>
+                </div>
 
-              <div class="three wide column">
-                  <h4 class="ui inverted header">CYBS API Doc Examples</h4>
-                  <div class="ui inverted link list">
-                      <a href="../../CYBS/cybsapievolution.html" class="item">CYBS API Evolution</a>
-                      <a href="../../CYBS/cybsscmpg.html" class="item">CYBS SCMP</a>
-                      <a href="../../CYBS/cybssimpleorderg.html" class="item">CYBS Simple Order</a>
-                      <a href="../../CYBS/cybssecureacceptg.html" class="item">CYBS Secure Acceptance</a>
-                  </div>
-              </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">CYBS API Doc Examples</h4>
+                    <div class="ui inverted link list">
+                        <a href="../../CYBS/cybsapievolution.html" class="item">CYBS API Evolution</a>
+                        <a href="../../CYBS/cybsscmpg.html" class="item">CYBS SCMP</a>
+                        <a href="../../CYBS/cybssimpleorderg.html" class="item">CYBS Simple Order</a>
+                        <a href="../../CYBS/cybssecureacceptg.html" class="item">CYBS Secure Acceptance</a>
+                    </div>
+                </div>
 
-              <div class="three wide column">
-                  <h4 class="ui inverted header">Photo Galleries</h4>
-                  <div class="ui inverted link list">
-                      <a href="../../Gallery/gallery1.html" class="item">Semantic 1</a>
-                      <a href="../../Gallery/gallery2.html" class="item">Semantic 2</a>
-                      <a href="https://www.flickr.com/photos/adam-p-thompson/albums" class="item" target="_blank">Flickr</a>
-                      <a href="https://adthomps.myportfolio.com/projects" class="item" target="_blank">Adobe Portfolio</a>
-                  </div>
-              </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">Photo Galleries</h4>
+                    <div class="ui inverted link list">
+                        <a href="../../Gallery/gallery1.html" class="item">Semantic 1</a>
+                        <a href="../../Gallery/gallery2.html" class="item">Semantic 2</a>
+                        <a href="https://www.flickr.com/photos/adam-p-thompson/albums" class="item" target="_blank">Flickr</a>
+                        <a href="https://adthomps.myportfolio.com/projects" class="item" target="_blank">Adobe Portfolio</a>
+                    </div>
+                </div>
 
-              <div class="three wide column">
-                  <h4 class="ui inverted header">Footer Header</h4>
-                  <p>Copyright © MyCompany. All rights reserved.</p>
-              </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">Footer Header</h4>
+                    <p>Copyright © MyCompany. All rights reserved.</p>
+                </div>
+
+            </div>
 
         </div>
 
-      </div>
-
     </div>
-
-  </div>
 
 </body>
 
