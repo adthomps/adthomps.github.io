@@ -123,19 +123,19 @@
 
         /*
         var xmlRequestStr =
-                '&lt;?xml version="1.0" encoding="utf-8"?&gt;' + '\n' +
-                '&lt;isAliveRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"&gt;'  +'\n' +
-                '\t' + '&lt;refId&gt;refid1&lt;/refId&gt;' + '\n' +
-                 '&lt;/isAliveRequest&gt;';
+        '&lt;?xml version="1.0" encoding="utf-8"?&gt;' + '\n' +
+        '&lt;isAliveRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"&gt;'  +'\n' +
+        '\t' + '&lt;refId&gt;refid1&lt;/refId&gt;' + '\n' +
+        '&lt;/isAliveRequest&gt;';
 
         var jsonRequestStr =
-            '{' + '\n' +
-                ' "isAliveRequest":' + '\n' +
-                ' {' + '\n' +
-                '   "@xmlns":"AnetApi/xml/v1/schema/AnetApiSchema.xsd",' + '\n' +
-                '   "refId":"1234"' + '\n' +
-                ' }' + '\n' +
-                '}';
+        '{' + '\n' +
+        ' "isAliveRequest":' + '\n' +
+        ' {' + '\n' +
+        '   "@xmlns":"AnetApi/xml/v1/schema/AnetApiSchema.xsd",' + '\n' +
+        '   "refId":"1234"' + '\n' +
+        ' }' + '\n' +
+        '}';
         */
 
         function selContentType_onChange(obj) {
@@ -406,76 +406,76 @@
                         <div class="fields">
                             <div class="field">
                                 <label>Code:</label>
-                                <textarea id="txtReqXml" name="txtReqXml" cols="80" rows="16" style="" placeholder="Code">
+<textarea id="txtReqXml" name="txtReqXml" cols="80" rows="16" style="" placeholder="Code">
 &#x3C;getHostedPaymentPageRequest xmlns=&#x22;AnetApi/xml/v1/schema/AnetApiSchema.xsd&#x22;&#x3E;
-  &#x3C;merchantAuthentication&#x3E;
-    &#x3C;name&#x3E;QOAA0OCC$aP94Nn8t528&#x3C;/name&#x3E;
-    &#x3C;transactionKey&#x3E;5zdZ9X9sra6e2G29&#x3C;/transactionKey&#x3E;
-  &#x3C;/merchantAuthentication&#x3E;
-  &#x3C;transactionRequest&#x3E;
-    &#x3C;transactionType&#x3E;authCaptureTransaction&#x3C;/transactionType&#x3E;
-    &#x3C;amount&#x3E;20.00&#x3C;/amount&#x3E;
-    &#x3C;profile&#x3E;
-      &#x3C;customerProfileId&#x3E;123456789&#x3C;/customerProfileId&#x3E;
-    &#x3C;/profile&#x3E;
-    &#x3C;customer&#x3E;
-      &#x3C;email&#x3E;ellen@mail.com&#x3C;/email&#x3E;
-    &#x3C;/customer&#x3E;
-    &#x3C;billTo&#x3E;
-        &#x3C;firstName&#x3E;Test First&#x3C;/firstName&#x3E;
-        &#x3C;lastName&#x3E;Test Last&#x3C;/lastName&#x3E;
-        &#x3C;company&#x3E;APT Test&#x3C;/company&#x3E;
-        &#x3C;address&#x3E;123 Test&#x3C;/address&#x3E;
-        &#x3C;city&#x3E;Bellevue&#x3C;/city&#x3E;
-        &#x3C;state&#x3E;WA&#x3C;/state&#x3E;
-        &#x3C;zip&#x3E;98004&#x3C;/zip&#x3E;
-        &#x3C;country&#x3E;USA&#x3C;/country&#x3E;
-    &#x3C;/billTo&#x3E;
-  &#x3C;/transactionRequest&#x3E;
-  &#x3C;hostedPaymentSettings&#x3E;
-    &#x3C;setting&#x3E;
-      &#x3C;settingName&#x3E;hostedPaymentReturnOptions&#x3C;/settingName&#x3E;
-      &#x3C;settingValue&#x3E;{&#x22;showReceipt&#x22;: true, &#x22;url&#x22;: &#x22;https://adthomps.github.io/index.html&#x22;, &#x22;urlText&#x22;: &#x22;Continue&#x22;, &#x22;cancelUrl&#x22;: &#x22;https://adthomps.github.io/ANET/anetaccept.html&#x22;, &#x22;cancelUrlText&#x22;: &#x22;Cancel&#x22;}&#x3C;/settingValue&#x3E;
-    &#x3C;/setting&#x3E;
-    &#x3C;setting&#x3E;
-      &#x3C;settingName&#x3E;hostedPaymentButtonOptions&#x3C;/settingName&#x3E;
-      &#x3C;settingValue&#x3E;{&#x22;text&#x22;: &#x22;Pay&#x22;}&#x3C;/settingValue&#x3E;
-    &#x3C;/setting&#x3E;
-    &#x3C;setting&#x3E;
-      &#x3C;settingName&#x3E;hostedPaymentStyleOptions&#x3C;/settingName&#x3E;
-      &#x3C;settingValue&#x3E;{&#x22;bgColor&#x22;: &#x22;blue&#x22;}&#x3C;/settingValue&#x3E;
-    &#x3C;/setting&#x3E;
-    &#x3C;setting&#x3E;
-      &#x3C;settingName&#x3E;hostedPaymentPaymentOptions&#x3C;/settingName&#x3E;
-      &#x3C;settingValue&#x3E;{&#x22;cardCodeRequired&#x22;: false, &#x22;showCreditCard&#x22;: true, &#x22;showBankAccount&#x22;: true}&#x3C;/settingValue&#x3E;
-    &#x3C;/setting&#x3E;
-    &#x3C;setting&#x3E;
-      &#x3C;settingName&#x3E;hostedPaymentSecurityOptions&#x3C;/settingName&#x3E;
-      &#x3C;settingValue&#x3E;{&#x22;captcha&#x22;: false}&#x3C;/settingValue&#x3E;
-    &#x3C;/setting&#x3E;
-    &#x3C;setting&#x3E;
-      &#x3C;settingName&#x3E;hostedPaymentShippingAddressOptions&#x3C;/settingName&#x3E;
-      &#x3C;settingValue&#x3E;{&#x22;show&#x22;: false, &#x22;required&#x22;: false}&#x3C;/settingValue&#x3E;
-    &#x3C;/setting&#x3E;
-    &#x3C;setting&#x3E;
-      &#x3C;settingName&#x3E;hostedPaymentBillingAddressOptions&#x3C;/settingName&#x3E;
-      &#x3C;settingValue&#x3E;{&#x22;show&#x22;: true, &#x22;required&#x22;:false}&#x3C;/settingValue&#x3E;
-    &#x3C;/setting&#x3E;
-    &#x3C;setting&#x3E;
-      &#x3C;settingName&#x3E;hostedPaymentCustomerOptions&#x3C;/settingName&#x3E;
-      &#x3C;settingValue&#x3E;{&#x22;showEmail&#x22;: false, &#x22;requiredEmail&#x22;: false, &#x22;addPaymentProfile&#x22;: false}&#x3C;/settingValue&#x3E;
-    &#x3C;/setting&#x3E;
-    &#x3C;setting&#x3E;
-      &#x3C;settingName&#x3E;hostedPaymentOrderOptions&#x3C;/settingName&#x3E;
-      &#x3C;settingValue&#x3E;{&#x22;show&#x22;: true, &#x22;merchantName&#x22;: &#x22;APT Test&#x22;}&#x3C;/settingValue&#x3E;
-    &#x3C;/setting&#x3E;
-    &#x3C;setting&#x3E;
-      &#x3C;settingName&#x3E;hostedPaymentIFrameCommunicatorUrl&#x3C;/settingName&#x3E;
-      &#x3C;settingValue&#x3E;{&#x22;url&#x22;: &#x22;https://adthomps.github.io/ANET/AcceptHosted/HostedIframeCommunicator.html&#x22;}&#x3C;/settingValue&#x3E;
-    &#x3C;/setting&#x3E;
-  &#x3C;/hostedPaymentSettings&#x3E;
+&#x3C;merchantAuthentication&#x3E;
+&#x3C;name&#x3E;QOAA0OCC$aP94Nn8t528&#x3C;/name&#x3E;
+&#x3C;transactionKey&#x3E;5zdZ9X9sra6e2G29&#x3C;/transactionKey&#x3E;
+&#x3C;/merchantAuthentication&#x3E;
+&#x3C;transactionRequest&#x3E;
+&#x3C;transactionType&#x3E;authCaptureTransaction&#x3C;/transactionType&#x3E;
+&#x3C;amount&#x3E;20.00&#x3C;/amount&#x3E;
+&#x3C;profile&#x3E;
+&#x3C;customerProfileId&#x3E;123456789&#x3C;/customerProfileId&#x3E;
+&#x3C;/profile&#x3E;
+&#x3C;customer&#x3E;
+&#x3C;email&#x3E;ellen@mail.com&#x3C;/email&#x3E;
+&#x3C;/customer&#x3E;
+&#x3C;billTo&#x3E;
+&#x3C;firstName&#x3E;Test First&#x3C;/firstName&#x3E;
+&#x3C;lastName&#x3E;Test Last&#x3C;/lastName&#x3E;
+&#x3C;company&#x3E;APT Test&#x3C;/company&#x3E;
+&#x3C;address&#x3E;123 Test&#x3C;/address&#x3E;
+&#x3C;city&#x3E;Bellevue&#x3C;/city&#x3E;
+&#x3C;state&#x3E;WA&#x3C;/state&#x3E;
+&#x3C;zip&#x3E;98004&#x3C;/zip&#x3E;
+&#x3C;country&#x3E;USA&#x3C;/country&#x3E;
+&#x3C;/billTo&#x3E;
+&#x3C;/transactionRequest&#x3E;
+&#x3C;hostedPaymentSettings&#x3E;
+&#x3C;setting&#x3E;
+&#x3C;settingName&#x3E;hostedPaymentReturnOptions&#x3C;/settingName&#x3E;
+&#x3C;settingValue&#x3E;{&#x22;showReceipt&#x22;: true, &#x22;url&#x22;: &#x22;https://adthomps.github.io/index.html&#x22;, &#x22;urlText&#x22;: &#x22;Continue&#x22;, &#x22;cancelUrl&#x22;: &#x22;https://adthomps.github.io/ANET/anetaccept.html&#x22;, &#x22;cancelUrlText&#x22;: &#x22;Cancel&#x22;}&#x3C;/settingValue&#x3E;
+&#x3C;/setting&#x3E;
+&#x3C;setting&#x3E;
+&#x3C;settingName&#x3E;hostedPaymentButtonOptions&#x3C;/settingName&#x3E;
+&#x3C;settingValue&#x3E;{&#x22;text&#x22;: &#x22;Pay&#x22;}&#x3C;/settingValue&#x3E;
+&#x3C;/setting&#x3E;
+&#x3C;setting&#x3E;
+&#x3C;settingName&#x3E;hostedPaymentStyleOptions&#x3C;/settingName&#x3E;
+&#x3C;settingValue&#x3E;{&#x22;bgColor&#x22;: &#x22;blue&#x22;}&#x3C;/settingValue&#x3E;
+&#x3C;/setting&#x3E;
+&#x3C;setting&#x3E;
+&#x3C;settingName&#x3E;hostedPaymentPaymentOptions&#x3C;/settingName&#x3E;
+&#x3C;settingValue&#x3E;{&#x22;cardCodeRequired&#x22;: false, &#x22;showCreditCard&#x22;: true, &#x22;showBankAccount&#x22;: true}&#x3C;/settingValue&#x3E;
+&#x3C;/setting&#x3E;
+&#x3C;setting&#x3E;
+&#x3C;settingName&#x3E;hostedPaymentSecurityOptions&#x3C;/settingName&#x3E;
+&#x3C;settingValue&#x3E;{&#x22;captcha&#x22;: false}&#x3C;/settingValue&#x3E;
+&#x3C;/setting&#x3E;
+&#x3C;setting&#x3E;
+&#x3C;settingName&#x3E;hostedPaymentShippingAddressOptions&#x3C;/settingName&#x3E;
+&#x3C;settingValue&#x3E;{&#x22;show&#x22;: false, &#x22;required&#x22;: false}&#x3C;/settingValue&#x3E;
+&#x3C;/setting&#x3E;
+&#x3C;setting&#x3E;
+&#x3C;settingName&#x3E;hostedPaymentBillingAddressOptions&#x3C;/settingName&#x3E;
+&#x3C;settingValue&#x3E;{&#x22;show&#x22;: true, &#x22;required&#x22;:false}&#x3C;/settingValue&#x3E;
+&#x3C;/setting&#x3E;
+&#x3C;setting&#x3E;
+&#x3C;settingName&#x3E;hostedPaymentCustomerOptions&#x3C;/settingName&#x3E;
+&#x3C;settingValue&#x3E;{&#x22;showEmail&#x22;: false, &#x22;requiredEmail&#x22;: false, &#x22;addPaymentProfile&#x22;: false}&#x3C;/settingValue&#x3E;
+&#x3C;/setting&#x3E;
+&#x3C;setting&#x3E;
+&#x3C;settingName&#x3E;hostedPaymentOrderOptions&#x3C;/settingName&#x3E;
+&#x3C;settingValue&#x3E;{&#x22;show&#x22;: true, &#x22;merchantName&#x22;: &#x22;APT Test&#x22;}&#x3C;/settingValue&#x3E;
+&#x3C;/setting&#x3E;
+&#x3C;setting&#x3E;
+&#x3C;settingName&#x3E;hostedPaymentIFrameCommunicatorUrl&#x3C;/settingName&#x3E;
+&#x3C;settingValue&#x3E;{&#x22;url&#x22;: &#x22;https://adthomps.github.io/ANET/AcceptHosted/HostedIframeCommunicator.html&#x22;}&#x3C;/settingValue&#x3E;
+&#x3C;/setting&#x3E;
+&#x3C;/hostedPaymentSettings&#x3E;
 &#x3C;/getHostedPaymentPageRequest&#x3E;
-                </textarea>
+</textarea>
                             </div>
                             <div class="field">
                             </div>
@@ -483,7 +483,7 @@
                                 <label>Response:</label>
                                 <div><span id="spnStatusCode" class="error"></span></div>
                                 <div>
-                                    <textarea id="inputtoken" name="txtRespXml" cols="80" rows="16"></textarea>
+<textarea id="inputtoken" name="txtRespXml" cols="80" rows="16"></textarea>
                                 </div>
                             </div>
                         </div>
