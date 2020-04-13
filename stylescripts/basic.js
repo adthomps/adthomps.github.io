@@ -1,6 +1,3 @@
-$(document)
-.ready(function () {
-
 // fix menu when passed
 $('.masthead')
     .visibility({
@@ -18,6 +15,3 @@ $('.masthead')
 $('.ui.sidebar')
     .sidebar('attach events', '.toc.item')
     ;
-
-})
-;
