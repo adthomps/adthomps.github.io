@@ -13,7 +13,7 @@
     <link rel="icon" href="../images/icons/favicon.ico" type="image/x-icon">
 
     <!-- Site Properties -->
-    <title>APT Portfolio Semantic/Fomantic UI - Gallery 3</title>
+    <title>APT Portfolio Semantic/Fomantic UI - Gallery 4</title>
 
     <!-- Resource Files - CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/semantic-ui@2/dist/semantic.min.css,npm/semantic-ui@2/dist/semantic.min.css">
@@ -21,6 +21,46 @@
 
     <link rel="stylesheet" type="text/css" href="../stylescripts/basic.css">
 
+<style>
+* {box-sizing: border-box}
+.mySlides1, .mySlides2 {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+</style>
 
     <!-- Resource Files - JS -->
     <script src='https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js'></script>
@@ -94,8 +134,8 @@
 <!-- Header -->
 
 <div class="ui text container">
-    <h1 class="ui inverted header">
-        Semantic Gallery 3
+    <h1 class="ui blue inverted header">
+       Carousel Gallery
     </h1>
 </div>
 
@@ -105,116 +145,77 @@
     <div class="ui text container">
 
         <section id="photos" class="ui basic segment show">
-            <h2 class="ui header">Semantic UI Lightbox Example</h2>
-            <p>Click any of the cards below to activate the modal-based lightbox.</p>
-            <section class="ui four stackable cards">
-                <article class="PhotoCard ui card">
-                    <img src="../images/gallery/drop1.jpg" class="ui fluid image" alt="water drop 1">
-                    <div class="content">
-                        Drop 1
-                    </div>
-                </article>
-                <article class="PhotoCard ui card">
-                    <img src="../images/gallery/drop2.jpg" class="ui fluid image" alt="water drop 2">
-                    <div class="content">
-                        Drop 2
-                    </div>
-                </article>
-                <article class="PhotoCard ui card">
-                    <img src="../images/gallery/drop3.jpg" class="ui fluid image" alt="water drop 3">
-                    <div class="content">
-                        Drop 3
-                    </div>
-                </article>
-                <article class="PhotoCard ui card">
-                    <img src="../images/gallery/drop4.jpg" class="ui fluid image" alt="water drop 4">
-                    <div class="content">
-                        Drop 4
-                    </div>
-                </article>
-            </section>
-            <section class="ui four stackable cards">
-                <article class="PhotoCard ui card">
-                    <img src="../images/gallery/drop5.jpg" class="ui fluid image" alt="water drop 5">
-                    <div class="content">
-                        Drop 5
-                    </div>
-                </article>
-                <article class="PhotoCard ui card">
-                    <img src="../images/gallery/drop6.jpg" class="ui fluid image" alt="water drop 6">
-                    <div class="content">
-                        Drop 6
-                    </div>
-                </article>
-                <article class="PhotoCard ui card">
-                    <img src="../images/gallery/drop7.jpg" class="ui fluid image" alt="water drop 7">
-                    <div class="content">
-                        Drop 7
-                    </div>
-                </article>
-                <article class="PhotoCard ui card">
-                    <img src="../images/gallery/drop8.jpg" class="ui fluid image" alt="water drop 8">
-                    <div class="content">
-                        Drop 8
-                    </div>
-                </article>
-            </section>
-            <section class="ui four stackable cards">
-                <article class="PhotoCard ui card">
-                    <img src="../images/gallery/drop9.jpg" class="ui fluid image" alt="water drop 9">
-                    <div class="content">
-                        Drop 9
-                    </div>
-                </article>
-                <article class="PhotoCard ui card">
-                    <img src="../images/gallery/drop10.jpg" class="ui fluid image" alt="water drop 10">
-                    <div class="content">
-                        Drop 10
-                    </div>
-                </article>
-                <article class="PhotoCard ui card">
-                    <img src="../images/gallery/drop11.jpg" class="ui fluid image" alt="water drop 11">
-                    <div class="content">
-                        Drop 11
-                    </div>
-                </article>
-                <article class="PhotoCard ui card">
-                    <img src="../images/gallery/drop12.jpg" class="ui fluid image" alt="water drop 12">
-                    <div class="content">
-                        Drop 12
-                    </div>
-                </article>
-            </section>
-            <section class="ui four stackable cards">
-                <article class="PhotoCard ui card">
-                    <img src="../images/gallery/drop13.jpg" class="ui fluid image" alt="water drop 13">
-                    <div class="content">
-                        Drop 13
-                    </div>
-                </article>
-                <article class="PhotoCard ui card">
-                    <img src="../images/gallery/drop14.jpg" class="ui fluid image" alt="water drop 14">
-                    <div class="content">
-                        Drop 14
-                    </div>
-                </article>
-                <article class="PhotoCard ui card">
-                    <img src="../images/gallery/drop15.jpg" class="ui fluid image" alt="water drop 15">
-                    <div class="content">
-                        Drop 15
-                    </div>
-                </article>
-                <article class="PhotoCard ui card">
-                    <img src="../images/gallery/drop16.jpg" class="ui fluid image" alt="water drop 16">
-                    <div class="content">
-                        Drop 16
-                    </div>
-                </article>
-            </section>
-        </section>
+            <h2 class="ui header">Carousel Gallery Example</h2>
+            <p>Use the arrows below to navigate the carousel.</p>
 
-    </div>
+<p>Slideshow 1:</p>
+<div class="slideshow-container">
+  <div class="mySlides1">
+    <img src="../images/gallery/drop4.jpg" style="width:100%">
+  </div>
 
+  <div class="mySlides1">
+    <img src="../images/gallery/drop5.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+    <img src="../images/gallery/drop6.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+</div>
+
+</section>
+
+<section>
+
+<p>Slideshow 2:</p>
+<div class="slideshow-container">
+  <div class="mySlides2">
+    <img src="../images/gallery/drop1.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="../images/gallery/drop7.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="../images/gallery/drop8.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="../images/gallery/drop9.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="../images/gallery/drop10.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="../images/gallery/drop11.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="../images/gallery/drop12.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="../images/gallery/drop13.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="../images/gallery/drop16.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+</div>
+
+</section>
+
+</div>
+</div>
 </div>
 
 <!-- Footer -->
@@ -269,7 +270,6 @@
                 </div>
             </div>
 
-
             <div class="three wide column">
                 <h4 class="ui inverted header">Footer Header</h4>
                 <p>Copyright © MyCompany. All rights reserved.</p>
@@ -282,15 +282,25 @@
 </div>
 
 <script>
-    // Lightbox for photos using Semantic UI
+var slideIndex = [1,1];
+var slideId = ["mySlides1", "mySlides2"]
+showSlides(1, 0);
+showSlides(1, 1);
 
-    $('.PhotoCard').click(function () {
-        var image = $(this).children('img').attr('src');
-        $('body').append('<div class="ui basic modal"><div class="content"><img src="' + image + '" width="100%" /></div></div>');
-        $('.ui.basic.modal')
-            .remove()
-            .modal('show');
-    })
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  var i;
+  var x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}    
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex[no]-1].style.display = "block";  
+}
 </script>
 
 </body>
