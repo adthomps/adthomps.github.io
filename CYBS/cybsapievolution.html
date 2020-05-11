@@ -16,17 +16,24 @@
     <title>APT Portfolio Semantic/Fomantic UI - CYBS API Evolution Guide</title>
 
     <!-- Resource Files - CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <!--<link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">-->
-    <link rel="stylesheet" type="text/css" href="../stylescripts/basic.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/semantic-ui@2/dist/semantic.min.css,npm/semantic-ui@2/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2/dist/semantic.min.css">
+
+    <link rel="stylesheet" href="../stylescripts/basic.css">
 
     <!-- Resource Files - JS -->
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-    <!--<script src="../semantic/dist/semantic.min.js"></script>-->
+    <script src='https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js'></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/combine/npm/semantic-ui@2/dist/semantic.min.js,npm/semantic-ui@2/dist/semantic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2/dist/semantic.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> -->
+
     <script src="../stylescripts/basic.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-            crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -37,14 +44,14 @@
             <a href="../index.html" class="item">Home</a>
             <a href="../anet.html" class="item">ANET Examples</a>
             <a href="../cybs.html" class="item">CYBS Examples</a>
-            <a href="../cybsdocs.html" class="active item">CYBS API Docs</a>
+            <a href="../cybsdocs.html" class="violet active item">CYBS API Docs</a>
             <a href="../gallery.html" class="item">Photo Galleries</a>
             <div class="right menu">
                 <div class="item">
-                    <a href="https://developer.authorize.net" target="_blank" class="ui button">ANET Dev Center</a>
+                    <a href="https://developer.authorize.net" target="_blank" class="ui inverted blue button">ANET Dev Center</a>
                 </div>
                 <div class="item">
-                    <a href="https://developer.cybersource.com" target="_blank" class="ui button">CYBS Dev Center</a>
+                    <a href="https://developer.cybersource.com" target="_blank" class="ui inverted teal button">CYBS Dev Center</a>
                     <!--<a class="ui primary button">CYBS Dev Center</a>-->
                 </div>
             </div>
@@ -56,10 +63,10 @@
         <a href="../index.html" class="item">Home</a>
         <a href="../anet.html" class="item">ANET Examples</a>
         <a href="../cybs.html" class="item">CYBS Examples</a>
-        <a href="../cybsdocs.html" class="active item">CYBS API Docs</a>
+        <a href="../cybsdocs.html" class="violet active item">CYBS API Docs</a>
         <a href="../gallery.html" class="item">Photo Galleries</a>
-        <a href="https://developer.authorize.net" target="_blank" class="item">ANET Dev Center</a>
-        <a href="https://developer.cybersource.com" target="_blank" class="item">CYBS Dev Center</a>
+        <a href="https://developer.authorize.net" target="_blank" class="ui inverted blue button">ANET Dev Center</a>
+        <a href="https://developer.cybersource.com" target="_blank" class="ui inverted teal button">CYBS Dev Center</a>
     </div>
 
     <!-- Page Contents -->
@@ -74,20 +81,20 @@
                     <a href="../index.html" class="item">Home</a>
                     <a href="../anet.html" class="item">ANET Examples</a>
                     <a href="../cybs.html" class="item">CYBS Examples</a>
-                    <a href="../cybsdocs.html" class="active item">CYBS API Docs</a>
+                    <a href="../cybsdocs.html" class="violet active item">CYBS API Docs</a>
                     <a href="../gallery.html" class="item">Photo Galleries</a>
                     <div class="right item">
-                        <a href="https://developer.authorize.net" target="_blank" class="ui inverted button">ANET Dev Center</a>
-                        <a href="https://developer.cybersource.com" target="_blank" class="ui inverted button">CYBS Dev Center</a>
+                        <a href="https://developer.authorize.net" target="_blank" class="ui inverted blue button">ANET Dev Center</a>
+                        <a href="https://developer.cybersource.com" target="_blank" class="ui inverted teal button">CYBS Dev Center</a>
                     </div>
                 </div>
             </div>
 
             <div class="ui text container">
-                <h1 class="ui inverted header">
-                    APT API Examples
+                <h1 class="ui violet inverted header">
+                    API Examples
                 </h1>
-                <h2>CYBS API Evolution Guide</h2>
+                <!-- <h2>CYBS API Evolution Guide</h2> -->
                 <!--<div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>-->
             </div>
 
@@ -96,6 +103,9 @@
         <div class="ui vertical stripe segment">
             <div class="ui text container">
 
+                <h4 class="ui violet horizontal header divider">
+                    CYBS API Evolution Guide
+                </h4>
 
                 <table class="ui celled table">
                     <thead>
@@ -123,8 +133,8 @@
                         </tr>
                         <tr>
                             <td><a href="cybsscmp.html">SCMP</a></td>
-                            <td class="orange" style="text-align:center"><i class="attention icon"></i></td>
-                            <td>Simple Order & SOAP OR REST API</td>
+                            <td class="warning" style="text-align:center"><i class="attention icon"></i></td>
+                            <td>REST API</td>
                         </tr>
                     </tbody>
                 </table>
@@ -144,7 +154,7 @@
                             <td>The API is fully supported and actively updated.</td>
                         </tr>
                         <tr>
-                            <td class="orange" style="text-align:center"><i class="attention icon"></i><br>Sun Set</td>
+                            <td class="warning" style="text-align:center"><i class="attention icon"></i><br>Sun Set</td>
                             <td>The API is now obsolete and in the process of being phased out. An alternative solution is suggested.</td>
                         </tr>
                         <tr>
@@ -171,7 +181,7 @@
                     </div>
 
                     <div class="three wide column">
-                        <h4 class="ui inverted header">ANET Tests</h4>
+                        <h4 class="ui blue inverted header">ANET Tests</h4>
                         <div class="ui inverted link list">
                             <a href="../ANET/anetvms.html" class="item">ANET VMS</a>
                             <a href="../ANET/anetsimple.html" class="item">ANET Simple Checkout</a>
@@ -181,7 +191,7 @@
                     </div>
 
                     <div class="three wide column">
-                        <h4 class="ui inverted header">CYBS Tests</h4>
+                        <h4 class="ui teal inverted header">CYBS Tests</h4>
                         <div class="ui inverted link list">
                             <a href="../CYBS/anetcybsbridge.html" class="item">ANET Bridge to CYBS</a>
                             <a href="../CYBS/cybsflexmicro.html" class="item">CYBS Flex Micro Form</a>
@@ -189,7 +199,7 @@
                     </div>
 
                     <div class="three wide column">
-                        <h4 class="ui inverted header">CYBS API Doc Examples</h4>
+                        <h4 class="ui violet inverted header">CYBS API Doc Examples</h4>
                         <div class="ui inverted link list">
                             <a href="../CYBS/cybsapievolution.html" class="item">CYBS API Evolution</a>
                             <a href="../CYBS/cybsscmpg.html" class="item">CYBS SCMP</a>
@@ -199,11 +209,12 @@
                     </div>
 
                     <div class="three wide column">
-                        <h4 class="ui inverted header">Photo Galleries</h4>
+                        <h4 class="ui blue inverted header">Photo Galleries</h4>
                         <div class="ui inverted link list">
                             <a href="../Gallery/gallery1.html" class="item">Semantic 1</a>
                             <a href="../Gallery/gallery2.html" class="item">Semantic 2</a>
                             <a href="../Gallery/gallery3.html" class="item">Semantic 3</a>
+                            <a href="../Gallery/gallery4.html" class="item">Carousel</a>
                             <a href="https://www.flickr.com/photos/adam-p-thompson/albums" class="item" target="_blank">Flickr</a>
                             <a href="https://adthomps.myportfolio.com/projects" class="item" target="_blank">Adobe Portfolio</a>
                         </div>

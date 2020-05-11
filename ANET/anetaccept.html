@@ -16,17 +16,23 @@
     <title>APT Portfolio Semantic/Fomantic UI - Accept Suite</title>
 
     <!-- Resource Files - CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <!--<link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">-->
-    <link rel="stylesheet" type="text/css" href="../stylescripts/basic.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/semantic-ui@2/dist/semantic.min.css,npm/semantic-ui@2/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2/dist/semantic.min.css">
+
+    <link rel="stylesheet" href="../stylescripts/basic.css">
 
     <!-- Resource Files - JS -->
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-    <!--<script src="../semantic/dist/semantic.min.js"></script>-->
+    <script src='https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js'></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/combine/npm/semantic-ui@2/dist/semantic.min.js,npm/semantic-ui@2/dist/semantic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2/dist/semantic.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> -->
+
     <script src="../stylescripts/basic.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-            crossorigin="anonymous"></script>
 
 </head>
 
@@ -87,10 +93,10 @@
             <!-- End Header -->
 
             <div class="ui text container">
-                <h1 class="ui inverted header">
-                    APT API Examples
+                <h1 class="ui blue inverted header">
+                    API Examples
                 </h1>
-                <h2>Authorize.Net API Accept tests.</h2>
+                <!--<h2>Authorize.Net API Accept tests.</h2>-->
                 <!--<div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>-->
             </div>
 
@@ -101,11 +107,11 @@
 
                 <!-- Seperation -->
 
-                <h4 class="ui horizontal header divider">
+                <h4 class="ui blue horizontal header divider">
                     ANET Acceptjs Tests
                 </h4>
 
-                <h3 class="ui header">Acceptjs</h3>
+                <h3 class="ui blue header">Acceptjs</h3>
                 <p>This tests acceptjs displaying a form to collect the card information and create a payment nonce.</p>
                 <div class="ui large buttons">
                     <button class="ui button" onclick="window.location.href = 'Acceptjs/anetacceptjsp.html';">
@@ -121,11 +127,11 @@
 
                 <!-- Seperation -->
 
-                <h4 class="ui horizontal header divider">
+                <h4 class="ui blue horizontal header divider">
                     ANET Accept UI Tests
                 </h4>
 
-                <h3 class="ui header">Accept UI</h3>
+                <h3 class="ui blue header">Accept UI</h3>
                 <p>This tests displaying the ui for accept form to collect the card information and create a payment nonce.</p>
                 <div class="ui large buttons">
                     <button class="ui button" onclick="window.location.href = 'AcceptUI/anetacceptuip.html';">
@@ -141,11 +147,11 @@
 
                 <!-- Seperation -->
 
-                <h4 class="ui horizontal header divider">
+                <h4 class="ui blue horizontal header divider">
                     ANET Accept Hosted Tests
                 </h4>
 
-                <h3 class="ui header">Accept Hosted</h3>
+                <h3 class="ui blue header">Accept Hosted</h3>
                 <p>This tests displaying the ui for the new payment form utlizing Accept.</p>
                 <div class="ui large buttons">
                     <button class="ui button" onclick="window.location.href = 'AcceptHosted/anetaccepthostedp.html';">
@@ -161,11 +167,11 @@
 
                 <!-- Seperation -->
 
-                <h4 class="ui horizontal header divider">
+                <h4 class="ui blue horizontal header divider">
                     ANET Accept Tests
                 </h4>
 
-                <h3 class="ui header">Accept Customer</h3>
+                <h3 class="ui blue header">Accept Customer</h3>
                 <p>
                     This tests displaying the ui for Accept Customer that interacts with Customer Information Manager for CRUD
                     (Create, Edit, Delete).
@@ -232,6 +238,7 @@
                             <a href="../Gallery/gallery1.html" class="item">Semantic 1</a>
                             <a href="../Gallery/gallery2.html" class="item">Semantic 2</a>
                             <a href="../Gallery/gallery3.html" class="item">Semantic 3</a>
+                            <a href="../Gallery/gallery4.html" class="item">Carousel</a>
                             <a href="https://www.flickr.com/photos/adam-p-thompson/albums" class="item" target="_blank">Flickr</a>
                             <a href="https://adthomps.myportfolio.com/projects" class="item" target="_blank">Adobe Portfolio</a>
                         </div>
