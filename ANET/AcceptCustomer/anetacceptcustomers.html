@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -16,23 +16,17 @@
     <title>APT Portfolio Semantic/Fomantic UI - Accept Customer - CAS</title>
 
     <!-- Resource Files - CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/semantic-ui@2/dist/semantic.min.css,npm/semantic-ui@2/dist/semantic.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2/dist/semantic.min.css">
-
-    <link rel="stylesheet" href="../../stylescripts/basic.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <!--<link rel="stylesheet" type="text/css" href="../../semantic/dist/semantic.min.css">-->
+    <link rel="stylesheet" type="text/css" href="../../stylescripts/acceptcust.css">
 
     <!-- Resource Files - JS -->
-    <script src='https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js'></script>
-
-    <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-        crossorigin="anonymous"></script> -->
-
-    <script src="https://cdn.jsdelivr.net/combine/npm/semantic-ui@2/dist/semantic.min.js,npm/semantic-ui@2/dist/semantic.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2/dist/semantic.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> -->
-
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <!--<script src="../../semantic/dist/semantic.min.js"></script>-->
     <script src="../../stylescripts/basic.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
 
     <!-- JavaScript -->
     <script type="text/javascript">
@@ -410,7 +404,6 @@
         '&lt;isAliveRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"&gt;'  +'\n' +
         '\t' + '&lt;refId&gt;refid1&lt;/refId&gt;' + '\n' +
         '&lt;/isAliveRequest&gt;';
-
         var jsonRequestStr =
         '{' + '\n' +
         ' "isAliveRequest":' + '\n' +
@@ -435,28 +428,31 @@
 </head>
 
 <body>
-    <div class="ui inverted large top fixed hidden menu">
+    <div class="ui large top fixed hidden menu">
         <div class="ui container">
             <a href="../../index.html" class="item">Home</a>
-            <a href="../../anet.html" class="blue active item">ANET Examples</a>
+            <a href="../../anet.html" class="active item">ANET Examples</a>
             <a href="../../cybs.html" class="item">CYBS Examples</a>
             <a href="../../cybsdocs.html" class="item">CYBS API Docs</a>
             <a href="../../gallery.html" class="item">Photo Galleries</a>
-        <div class="right item">
-            <a href="https://developer.authorize.net" target="_blank" class="ui inverted blue button">ANET Dev Center</a>
-            <a href="https://developer.cybersource.com" target="_blank" class="ui inverted teal button">CYBS Dev Center</a>
+            <div class="right menu">
+                <div class="item">
+                    <a href="https://developer.authorize.net" target="_blank" class="ui button">ANET Dev Center</a>
+                </div>
+                <div class="item">
+                    <a href="https://developer.cybersource.com" target="_blank" class="ui button">CYBS Dev Center</a>
                 </div>
             </div>
         </div>
     </div>
     <div class="ui vertical inverted sidebar menu">
         <a href="../../index.html" class="item">Home</a>
-        <a href="../../anet.html" class="blue active item">ANET Examples</a>
+        <a href="../../anet.html" class="active item">ANET Examples</a>
         <a href="../../cybs.html" class="item">CYBS Examples</a>
         <a href="../../cybsdocs.html" class="item">CYBS API Docs</a>
         <a href="../../gallery.html" class="item">Photo Galleries</a>
-        <a href="https://developer.authorize.net" target="_blank" class="ui inverted blue button">ANET Dev Center</a>
-        <a href="https://developer.cybersource.com" target="_blank" class="ui inverted teal button">CYBS Dev Center</a>
+        <a href="https://developer.authorize.net" target="_blank" class="item">ANET Dev Center</a>
+        <a href="https://developer.cybersource.com" target="_blank" class="item">CYBS Dev Center</a>
     </div>
     <div class="pusher">
         <div class="ui inverted vertical masthead center aligned segment">
@@ -466,21 +462,21 @@
                         <i class="sidebar icon"></i>
                     </a>
                     <a href="../../index.html" class="item">Home</a>
-                    <a href="../../anet.html" class="blue active item">ANET Examples</a>
+                    <a href="../../anet.html" class="active item">ANET Examples</a>
                     <a href="../../cybs.html" class="item">CYBS Examples</a>
                     <a href="../../cybsdocs.html" class="item">CYBS API Docs</a>
                     <a href="../../gallery.html" class="item">Photo Galleries</a>
                     <div class="right item">
-                        <a href="https://developer.authorize.net" target="_blank" class="ui inverted blue button">ANET Dev Center</a>
-                        <a href="https://developer.cybersource.com" target="_blank" class="ui inverted teal button">CYBS Dev Center</a>
+                        <a href="https://developer.authorize.net" target="_blank" class="ui inverted button">ANET Dev Center</a>
+                        <a href="https://developer.cybersource.com" target="_blank" class="ui inverted button">CYBS Dev Center</a>
                     </div>
                 </div>
             </div>
             <div class="ui text container">
-                <h1 class="ui blue inverted header">
-                    API Examples
+                <h1 class="ui inverted header">
+                    APT API Examples
                 </h1>
-                <!--<h2>Authorize.Net API Accept tests.</h2>-->
+                <h2>Authorize.Net API Accept tests.</h2>
             </div>
         </div>
         
@@ -629,7 +625,7 @@
                 </div>
 
                 <div class="three wide column">
-                    <h4 class="ui blue inverted header">ANET Tests</h4>
+                    <h4 class="ui inverted header">ANET Tests</h4>
                     <div class="ui inverted link list">
                         <a href="../../ANET/anetvms.html" class="item">ANET VMS</a>
                         <a href="../../ANET/anetsimple.html" class="item">ANET Simple Checkout</a>
@@ -639,7 +635,7 @@
                 </div>
 
                 <div class="three wide column">
-                    <h4 class="ui teal inverted header">CYBS Tests</h4>
+                    <h4 class="ui inverted header">CYBS Tests</h4>
                     <div class="ui inverted link list">
                         <a href="../../CYBS/anetcybsbridge.html" class="item">ANET Bridge to CYBS</a>
                         <a href="../../CYBS/cybsflexmicro.html" class="item">CYBS Flex Micro Form</a>
@@ -647,7 +643,7 @@
                 </div>
 
                 <div class="three wide column">
-                    <h4 class="ui violet inverted header">CYBS API Doc Examples</h4>
+                    <h4 class="ui inverted header">CYBS API Doc Examples</h4>
                     <div class="ui inverted link list">
                         <a href="../../CYBS/cybsapievolution.html" class="item">CYBS API Evolution</a>
                         <a href="../../CYBS/cybsscmpg.html" class="item">CYBS SCMP</a>
@@ -657,12 +653,11 @@
                 </div>
 
                 <div class="three wide column">
-                    <h4 class="ui blue inverted header">Photo Galleries</h4>
+                    <h4 class="ui inverted header">Photo Galleries</h4>
                     <div class="ui inverted link list">
                         <a href="../../Gallery/gallery1.html" class="item">Semantic 1</a>
                         <a href="../../Gallery/gallery2.html" class="item">Semantic 2</a>
                         <a href="../../Gallery/gallery3.html" class="item">Semantic 3</a>
-                        <a href="../../Gallery/gallery4.html" class="item">Carousel</a>
                         <a href="https://www.flickr.com/photos/adam-p-thompson/albums" class="item" target="_blank">Flickr</a>
                         <a href="https://adthomps.myportfolio.com/projects" class="item" target="_blank">Adobe Portfolio</a>
                     </div>
