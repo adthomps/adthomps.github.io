@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en" dir="auto">
+
+<head>
+
+    <meta http-equiv="refresh" content="300" />
+
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <!--<link rel="shortcut icon" href="images/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/icons/favicon.ico" type="image/x-icon">-->
+
+    <link rel="shortcut icon" href="images/icons/profile.jpg" type="image/x-icon">
+    <link rel="icon" href="images/icons/profile.jpg" type="image/x-icon">
+
+    <!-- Site Properties -->
+    <title>APT Portfolio - Bootstrap</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!-- Resource Files - CSS - Local -->
+    <link rel="stylesheet" href="stylescripts/basic.css">
+    <link rel="stylesheet" href="stylescripts/bootstrap.min.css">
+
+    <!-- JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <script src="stylescripts/bootstrap.bundle.min.js.download"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="stylescripts/carousel.css" rel="stylesheet">
+    <link href="stylescripts/additionalcss.css" rel="stylesheet">
+
+    <!--Status Page Items-->
+
+    <style>
+        .page-statuses-container {
+            margin-top: 0rem
+        }
+
+        .page-statuses-container .products-services-divider {
+            margin-top: 2.5%;
+            margin-bottom: 7.5%;
+            background-color: #e0e0e0;
+            height: 1px
+        }
+
+        .page-statuses-container .page-status-container {
+            border-top: 8px solid #fff;
+            padding: 10% 15% 10%;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+            margin-bottom: 5%
+        }
+
+        @media screen and (max-width: 750px) {
+            .page-statuses-container .page-status-container {
+                width: 95.5% !important;
+                padding: 19px 25px 25px
+            }
+        }
+
+        .page-statuses-container .page-status-container.status-critical {
+            border-color: #ff5630
+        }
+
+        .page-statuses-container .page-status-container.status-critical .status-info .stub-for-status {
+            color: white;
+            background-color: #ff5630;
+            display: inline-block
+        }
+
+        .page-statuses-container .page-status-container.status-major {
+            border-color: #FF8B00
+        }
+
+        .page-statuses-container .page-status-container.status-major .status-info .stub-for-status {
+            color: #172B4D;
+            background-color: #FF8B00;
+            display: inline-block
+        }
+
+        .page-statuses-container .page-status-container.status-minor {
+            border-color: #FFC400
+        }
+
+        .page-statuses-container .page-status-container.status-minor .status-info .stub-for-status {
+            color: #172B4D;
+            background-color: #FFC400;
+            display: inline-block
+        }
+
+        .page-statuses-container .page-status-container.status-maintenance {
+            border-color: #0052CC
+        }
+
+        .page-statuses-container .page-status-container.status-maintenance .status-info .stub-for-status {
+            color: white;
+            background-color: #0052CC;
+            display: inline-block
+        }
+
+        .page-statuses-container .page-status-container.status-none-with-incident {
+            border-color: #333
+        }
+
+        .page-statuses-container .page-status-container.status-none-with-incident .status-info .stub-for-status {
+            color: white;
+            background-color: #333;
+            display: inline-block
+        }
+
+        .page-statuses-container .page-status-container.status-none {
+            border-color: white
+        }
+
+        .page-statuses-container .page-status-container.status-none .status-info .stub-for-status {
+            color: white;
+            background-color: #36B37E;
+            display: inline-block
+        }
+
+        .page-statuses-container .page-status-container .logo {
+            float: left
+        }
+
+        .page-statuses-container .page-status-container .logo img {
+            max-height: 50px
+        }
+
+        .page-statuses-container .page-status-container .status-info {
+            margin-left: 70px
+        }
+
+        .page-statuses-container .page-status-container .status-info .product-name {
+            color: #172B4D;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 34px;
+            margin-top: 8px;
+            margin-bottom: 14px;
+            word-wrap: normal
+        }
+
+        .page-statuses-container .page-status-container .status-info .stub-for-status {
+            display: none;
+            padding: 0px 6px;
+            text-transform: uppercase;
+            font-size: 11px;
+            border-radius: 3px;
+            font-weight: 500;
+            letter-spacing: .5px
+        }
+
+        .page-statuses-container .page-status-container .status-info .skeleton-status {
+            height: 28px;
+            width: 100px;
+            background-image: linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80%), linear-gradient(#ddd 16px, transparent 0);
+            background-size: 25%, 100%;
+            background-repeat: repeat-y;
+            animation: shine 1s infinite
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 150% 0
+            }
+        }
+
+        .page-statuses-container>.container>.row {
+            display: flex;
+            flex-wrap: wrap
+        }
+    </style>
+
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-bundle.js"></script>
+    <script src="https://unpkg.com/@statuspage/status-widget/dist/index.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+
+                <img src="images/icons/profile.jpg" width="32" height="32" class="rounded-circle" />
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="anet.html">ANET Examples</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cybs.html">CYBS Examples</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="statuspagetest.html">Status Page Examples</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Developer Documentation
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="https://developer.authorize.net/">Authorize.net</a>
+                                </li>
+                                <li><a class="dropdown-item" href="https://developer.cybersource.com/">Cybersource</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                            <!--<li class="nav-item">
+              <a class="nav-link disabled">Disabled Link</a>
+            </li>-->
+                    </ul>
+
+                    <!-- Profile-->
+                    <div class="dropdown text-end">
+                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="images/avatar/IMG_3686.jpg" alt="mdo" width="32" height="32"
+                                class="rounded-circle" />
+                        </a>
+                        <ul class="dropdown-menu text-small">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                    </div>
+
+                    <!--Search-->
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-info" type="submit">Search</button>
+                    </form>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="px-4 py-0 my-5 text-center">
+          <!--<img class="d-block mx-auto mb-4" src="images/icons/cybslogo.png" alt="" width="300" height="60">-->
+          <h1 class="display-8 fw-bold">Test Examples</h1>
+          <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">Various test for status page checks.</p>
+            <!--<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+              <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
+              <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+            </div>-->
+          </div>
+        </div>
+
+        <div class="b-example-divider"></div>
+
+        <div class="container px-4 py-5" id="featured-3">
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+                <div class="feature col">
+                    <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                        <img src="images/icons/anetlogo.png" width="300" height="69" />
+                    </div>
+                    <!--<h3 class="ui teal header">Authorize.net Status Page Test test</h3>-->
+                    <p>Test pulling Authorize.net status via API</p>
+                    <p>Wideget Status:<statuspage-widget src="https://status.authorize.net" target="_blank"></statuspage-widget></p>
+                    </a>
+                </div>
+                <div class="feature col">
+                    <div class="ui vertical stripe segment">
+                        <div class="ui text container">
+            
+                            <div class="ui middle aligned stackable grid container">
+                                <div class="row">
+                                    <div class="six wide right floated column">
+                                        <div class="page-statuses-container">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <!-- ANET -->
+                                                    <a href="https://status.authorize.net" target="_blank"
+                                                        class="page-status-container span10" id="page-06v575cbzlpr">
+                                                        <div class="logo">
+                                                            <img
+                                                                src="https://wac-cdn.atlassian.com/dam/jcr:a89c4cb0-5e3f-4b0c-90aa-8d4323c7be25/logos-jira software-icon-contained-gradient-blue-161x161@2x">
+                                                        </div>
+                                                        <div class="status-info">
+                                                            <div class="product-name">Authorize.net</div>
+                                                            <div class="skeleton-status"></div>
+                                                            <div class="stub-for-status"></div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            
+                        </div>
+                    </div>
+                </div>
+                <div class="feature col">
+                    <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                        <img src="images/icons/anetlogo.png" width="300" height="69" />
+                    </div>
+                    <!--<h3 class="ui teal header">Authorize.net Status Page Test test</h3>-->
+                    <p>Test pulling Authorize.net status via API</p>
+                    <p>Wideget Status:<statuspage-widget src="https://status.authorize.net" target="_blank"></statuspage-widget></p>
+                    </a>
+                </div>
+                <div class="feature col">
+                    <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                        <img src="images/icons/anetlogo.png" width="300" height="69" />
+                    </div>
+                    <!--<h3 class="ui teal header">Authorize.net Status Page Test test</h3>-->
+                    <p>Test pulling Authorize.net status via API</p>
+                    <p>Wideget Status:<statuspage-widget src="https://status.authorize.net" target="_blank"></statuspage-widget></p>
+                    </a>
+                </div>
+                <div class="feature col">
+                    <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                        <img src="images/icons/anetlogo.png" width="300" height="69" />
+                    </div>
+                    <!--<h3 class="ui teal header">Authorize.net Status Page Test test</h3>-->
+                    <p>Test pulling Authorize.net status via API</p>
+                    <p>Wideget Status:<statuspage-widget src="https://status.authorize.net" target="_blank"></statuspage-widget></p>
+                    </a>
+                </div>
+                <div class="feature col">
+                    <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                        <img src="images/icons/anetlogo.png" width="300" height="69" />
+                    </div>
+                    <!--<h3 class="ui teal header">Authorize.net Status Page Test test</h3>-->
+                    <p>Test pulling Authorize.net status via API</p>
+                    <p>Wideget Status:<statuspage-widget src="https://status.authorize.net" target="_blank"></statuspage-widget></p>
+                    </a>
+                </div>
+                <div class="feature col">
+                    <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                        <img src="images/icons/anetlogo.png" width="300" height="69" />
+                    </div>
+                    <!--<h3 class="ui teal header">Authorize.net Status Page Test test</h3>-->
+                    <p>Test pulling Authorize.net status via API</p>
+                    <p>Wideget Status:<statuspage-widget src="https://status.authorize.net" target="_blank"></statuspage-widget></p>
+                    </a>
+                </div>
+                <div class="feature col">
+                    <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                        <img src="images/icons/anetlogo.png" width="300" height="69" />
+                    </div>
+                    <!--<h3 class="ui teal header">Authorize.net Status Page Test test</h3>-->
+                    <p>Test pulling Authorize.net status via API</p>
+                    <p>Wideget Status:<statuspage-widget src="https://status.authorize.net" target="_blank"></statuspage-widget></p>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- FOOTER -->
+        <footer class="container">
+            <p>© 2023 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+        </footer>
+    </main>
+
+    <script src="https://cdn.statuspage.io/se-v2.js"></script>
+
+    <script>
+        $(function () {
+            // this function updates an product on the page to reflect what we get back when we pull its status
+            var updateElement = function (pageCode, message, indicator) {
+                // get the parent element for the product
+                var $elem = $('#page-' + pageCode);
+
+                // remove the skeleton bar
+                $elem.find('.skeleton-status').remove();
+
+                // add the text that's passed from the message
+                $elem.find('.stub-for-status').html(message);
+
+                // give it the class name that defines its styles (mostly just colors)
+                $elem.addClass('status-' + indicator);
+            }
+
+            // page codes array built for future tweakability
+            allPageCodes = [];
+            allPageCodes.push('06v575cbzlpr'); // ANET
+            allPageCodes.push('ttbtd8wrjg1b'); // CYBS
+            allPageCodes.push('1f3wy4kq816n'); // Payworks
+            allPageCodes.push('fbdy4fjp4p32'); // Cardinal
+
+            // this is a helper function to find the highest severity incident
+            var getWorstSeverity = function (incidents) {
+                var impacts = [];
+                for (i = 0; i < incidents.length; i++) {
+                    impacts.push(incidents[i].impact);
+                }
+                if (impacts.indexOf('critical') != -1) {
+                    return 'critical';
+                }
+                else if (impacts.indexOf('major') != -1) {
+                    return 'major';
+                }
+                else if (impacts.indexOf('minor') != -1) {
+                    return 'minor';
+                }
+                // in this case the status page has an open incident but either no affected components or all of the components are green which is wrong. returning critical here on purpose so that it's still clear there's an incident.
+                else if (impacts.indexOf('none') != -1) {
+                    return 'none-with-incident';
+                }
+            }
+
+            // looping through each product, let's hit the Status API to get their status
+            var i;
+            for (i = 0; i < allPageCodes.length; i++) {
+
+                // have to do this weird check bc Statuspage's status page lives on a different set of infra than the rest.
+                if (allPageCodes[i] == "y2j98763l56x") {
+                    var pageStatus = new StatusPage.page({ page: allPageCodes[i], host: 'metastatuspage.com', secure: true });
+                }
+                else {
+                    var pageStatus = new StatusPage.page({ page: allPageCodes[i], secure: true });
+                }
+
+                // this is the actual call that fetches the status
+                pageStatus.summary({
+                    success: function (data) {
+
+                        // define a helper method per iteration for updating the particular product
+                        var passMessage = function (message, indicator_override) {
+                            updateElement(data.page.id, message, (indicator_override || data.status.indicator));
+                        }
+
+                        // tease out which maintences are actually active
+                        var open_maintenances = [];
+                        $.each(data.scheduled_maintenances, function () {
+                            // if it's not in the scheduled state anymore
+                            if (this.status != 'scheduled') {
+                                open_maintenances.push(this);
+                            }
+                        });
+
+                        // as opposed to scheduled for the future
+                        var upcoming_maintenances = [];
+                        $.each(data.scheduled_maintenances, function () {
+                            // if it's scheduled time is less than an hour out
+                            if (((Date.parse(this.scheduled_for) / 1000) - (Date.now() / 1000)) < 3600) {
+                                upcoming_maintenances.push(this);
+                            }
+                        });
+
+                        if (!!data.incidents.length || !!open_maintenances.length || data.status.indicator != 'none' || !!upcoming_maintenances.length) {
+
+
+                            // if there's an open incident, display that
+                            if (!!data.incidents.length) {
+
+                                passMessage("Active Incident", getWorstSeverity(data.incidents));
+                            }
+                            // if there's an open scheduled maintenance, display that
+                            else if (!!open_maintenances.length) {
+                                passMessage("Active Maintenance", "maintenance");
+                            }
+                            // if there is a degraded component, display that
+                            else if (data.status.indicator != 'none') {
+                                passMessage("Degraded Infrastructure");
+                            }
+                            // else there's an upcoming scheduled maintenance
+                            else {
+                                passMessage("Upcoming Maintenance", "maintenance");
+                            }
+                        }
+                        else {
+                            passMessage("Operational", "none");
+                        }
+                    }
+                });
+            } // end for
+        });
+
+    </script>
+
+    <script>
+        var sp = new StatusPage.page({ page: 'ttbtd8wrjg1b' });
+        sp.summary({
+            success: function (data) {
+                console.log(data.components[0].status);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

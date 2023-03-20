@@ -9,8 +9,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="images/icons/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="images/icons/favicon.ico" type="image/x-icon">
+ <!--<link rel="shortcut icon" href="images/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/icons/favicon.ico" type="image/x-icon">-->
+
+  <link rel="shortcut icon" href="images/icons/profile.jpg" type="image/x-icon">
+  <link rel="icon" href="images/icons/profile.jpg" type="image/x-icon">
 
   <!-- Site Properties -->
   <title>APT Portfolio - Bootstrap</title>
@@ -31,152 +34,10 @@
 
   <script src="stylescripts/bootstrap.bundle.min.js.download"></script>
 
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-
-    .b-example-divider {
-      height: 3rem;
-      background-color: rgba(0, 0, 0, .1);
-      border: solid rgba(0, 0, 0, .15);
-      border-width: 1px 0;
-      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-    }
-
-    .b-example-vr {
-      flex-shrink: 0;
-      width: 1.5rem;
-      height: 100vh;
-    }
-
-    .bi {
-      vertical-align: -.125em;
-      fill: currentColor;
-    }
-
-    .nav-scroller {
-      position: relative;
-      z-index: 2;
-      height: 2.75rem;
-      overflow-y: hidden;
-    }
-
-    .nav-scroller .nav {
-      display: flex;
-      flex-wrap: nowrap;
-      padding-bottom: 1rem;
-      margin-top: -1px;
-      overflow-x: auto;
-      text-align: center;
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-    }
-  </style>
-
-
   <!-- Custom styles for this template -->
   <link href="stylescripts/carousel.css" rel="stylesheet">
-  <style type="text/css">
-    a#link-to-fond:hover {
-      background-color: #fff;
-      color: #4e80ff !important
-    }
+  <link href="stylescripts/additionalcss.css" rel="stylesheet">
 
-    a#link-to-fond:visited {
-      color: #fff
-    }
-
-    #close-fond-bar:hover {
-      cursor: pointer
-    }
-
-    #fond-bar {
-      display: block;
-      height: 50px;
-      max-height: 60px;
-      min-height: 10px;
-      background-color: #147bd1;
-      padding: 5px 5px 5px 10px;
-      position: fixed;
-      left: 0;
-      top: 42px;
-      margin-top: -60px;
-      width: 100%;
-      z-index: 999999;
-      text-align: center;
-      -webkit-box-sizing: initial;
-      box-sizing: initial
-    }
-
-    #fond-bar-container {
-      display: inline-block;
-      width: 98%;
-      margin: 0;
-      position: relative;
-      line-height: 32px;
-      max-height: 32px
-    }
-
-    #fond-text {
-      position: relative;
-      color: #fff !important;
-      font-size: 16px !important;
-      text-align: centecenter !important;
-      margin: 0 !important;
-      float: left !important;
-      text-shadow: none !important;
-      padding: 4px !important;
-      line-height: 60px;
-      vertical-align: middle;
-      width: 100%
-    }
-
-    #fond-text,
-    #link-to-fond {
-      font-family: walsheim, Arial !important
-    }
-
-    #link-to-fond {
-      color: #fff;
-      font-size: 14px !important;
-      font-weight: 400 !important;
-      border: 1px solid #fff;
-      padding: 6px 20px;
-      border-radius: 2px;
-      text-decoration: none !important;
-      margin-left: 12px
-    }
-
-    #fond-small {
-      width: 24px;
-      height: 24px;
-      margin-right: 8px;
-      margin-top: -2px;
-      vertical-align: middle;
-      display: inline !important
-    }
-
-    #close-fond-bar {
-      position: absolute;
-      top: 26px;
-      right: 5px;
-      width: 14px;
-      z-index: 999999;
-      font-family: Arial;
-      font-size: 12px
-    }
-  </style>
 </head>
 
 <body>
@@ -185,7 +46,7 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container-fluid">
 
-        <a class="navbar-brand" href="#">APT</a>
+        <img src="images/icons/profile.jpg" width="32" height="32" class="rounded-circle" />
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
           aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -206,6 +67,16 @@
             <li class="nav-item">
               <a class="nav-link" href="statuspagetest.html">Status Page Examples</a>
             </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Developer Documentation
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://developer.authorize.net/">Authorize.net</a></li>
+                <li><a class="dropdown-item" href="https://developer.cybersource.com/">Cybersource</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
             <!--<li class="nav-item">
               <a class="nav-link disabled">Disabled Link</a>
             </li>-->
@@ -215,7 +86,7 @@
           <div class="dropdown text-end">
             <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
               aria-expanded="false">
-              <img src="images/avatar/IMG_3686.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+              <img src="images/avatar/IMG_3686.jpg" alt="mdo" width="32" height="32" class="rounded-circle" />
             </a>
             <ul class="dropdown-menu text-small">
               <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -230,7 +101,7 @@
           <!--Search-->
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-info" type="submit">Search</button>
           </form>
 
         </div>
