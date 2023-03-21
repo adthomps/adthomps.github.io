@@ -1,10 +1,26 @@
-<html lang="en">
+﻿<!doctype html>
+<html lang="en" dir="auto">
 
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Accept UI Example</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <!--<link rel="shortcut icon" href="../images/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../images/icons/favicon.ico" type="image/x-icon">-->
+
+    <link rel="shortcut icon" href="../images/icons/profile.jpg" type="image/x-icon">
+    <link rel="icon" href="../images/icons/profile.jpg" type="image/x-icon">
+
+    <!-- Site Properties -->
+    <title>APT Portfolio - Bootstrap</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://jstest.authorize.net/v2/Accept.js" charset="utf-8"></script>
 </head>
 
@@ -17,7 +33,13 @@
             </div>
         </div>
     </div>
-    
+    <div class="container panel panel-default" style="margin-top:20px">
+        <div>
+            <h2 class="section-title text-dev-orange">
+                Using The Payment Nonce On Your Server
+                </h3>
+        </div>
+
     <script type="text/javascript">
         var blob = "";
         function getSecureData(button) {
@@ -31,6 +53,7 @@
             parameters.headerText = 'Payment Details';
 
             Accept.showForm(button, parameters, callbackFn);
+
         }
 
         function populateErrorMessage(response) {
@@ -55,8 +78,8 @@
             }
         }
 
+
     </script>
 </body>
-
 
 </html>
