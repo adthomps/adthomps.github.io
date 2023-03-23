@@ -43,7 +43,7 @@
             $("#btnOpenAuthorizeNetIFrame").click(function () {
                 $("#add_payment").show();
                 $("#embeddedToken").val($("#inputtoken").val());
-                $("#send_token").attr({ "action": "https://api.authorize.net/payment/Payment", "target": "add_payment" }).submit();
+                $("#send_token").attr({ "action": "https://accept.authorize.net/payment/Payment", "target": "add_payment" }).submit();
                 $(window).scrollTop($('#add_payment').offset().top - 50);
             });
 
@@ -60,7 +60,6 @@
         });
 
     </script>
-
     <script language="javascript" type="text/javascript">
         // <!CDATA[
         function XHConn() {
@@ -206,7 +205,7 @@
             <img class="d-block mx-auto mb-4" src="../../images/icons/accept.png" alt="" width="60" height="60">
             <h1 class="display-8 fw-bold">Accept Hosted Test</h1>
             <div class="col-lg-6 mx-auto">
-                <p class="lead mb-4">Production test.</p>
+                <p class="lead mb-4">Sandbox test.</p>
             </div>
         </div>
 
@@ -223,22 +222,22 @@
                                 <label>Code Url:</label>
                                 <select id="txtUrl">
                                     <option value="">-Select Url-</option>
-                                    <option value="https://api.authorize.net/xml/v1/request.api">Sandbox API
+                                    <option value="https://api.authorize.net/xml/v1/request.api">Production API
                                     </option>
                                 </select>
                                 <input class="btn btn-primary" type="button" id="btnSend" name="btnSend"
-                                    value="Generate Code" onclick="return btnSend_onclick()" />
-                            </div>
+                                value="Generate Code" onclick="return btnSend_onclick()" />
+                        </div>
 
                         </div>
                         <br />
                         <div class="fields">
                             <div class="field">
-                                <textarea class="d-none" id="txtReqXml" name="txtReqXml" cols="100" rows="5" placeholder="Code">
+                                    <textarea class="d-none" id="txtReqXml" name="txtReqXml" cols="100" rows="5" placeholder="Code">
                                     &#x3C;getHostedPaymentPageRequest xmlns=&#x22;AnetApi/xml/v1/schema/AnetApiSchema.xsd&#x22;&#x3E;
                                     &#x3C;merchantAuthentication&#x3E;
                                     &#x3C;name&#x3E;QOAA0OCC$aP94Nn8t528&#x3C;/name&#x3E;
-                                    &#x3C;transactionKey&#x3E;5SaT35b9D4h7kZP6&#x3C;/transactionKey&#x3E;
+                                    &#x3C;transactionKey&#x3E;5zdZ9X9sra6e2G29&#x3C;/transactionKey&#x3E;
                                     &#x3C;/merchantAuthentication&#x3E;
                                     &#x3C;transactionRequest&#x3E;
                                     &#x3C;transactionType&#x3E;authCaptureTransaction&#x3C;/transactionType&#x3E;
@@ -263,7 +262,7 @@
                                     &#x3C;hostedPaymentSettings&#x3E;
                                     &#x3C;setting&#x3E;
                                     &#x3C;settingName&#x3E;hostedPaymentReturnOptions&#x3C;/settingName&#x3E;
-                                    &#x3C;settingValue&#x3E;{&#x22;showReceipt&#x22;: true, &#x22;url&#x22;: &#x22;https://adthomps.github.io/anet/accept.html&#x22;, &#x22;urlText&#x22;: &#x22;Continue&#x22;, &#x22;cancelUrl&#x22;: &#x22;https://adthomps.github.io/anet/accepthosted/accepthosteds.html&#x22;, &#x22;cancelUrlText&#x22;: &#x22;Cancel&#x22;}&#x3C;/settingValue&#x3E;
+                                    &#x3C;settingValue&#x3E;{&#x22;showReceipt&#x22;: true, &#x22;url&#x22;: &#x22;https://adthomps.github.io/anet/accept.html&#x22;, &#x22;urlText&#x22;: &#x22;Continue&#x22;, &#x22;cancelUrl&#x22;: &#x22;https://adthomps.github.io/ANET/anetaccept.html&#x22;, &#x22;cancelUrlText&#x22;: &#x22;Cancel&#x22;}&#x3C;/settingValue&#x3E;
                                     &#x3C;/setting&#x3E;
                                     &#x3C;setting&#x3E;
                                     &#x3C;settingName&#x3E;hostedPaymentButtonOptions&#x3C;/settingName&#x3E;
@@ -319,7 +318,7 @@
                 </form>
 <br />
                 <h4 class="mb-3">Merchant Settings & Follow On Button</h4>
-                <form method="post" action="https://api.authorize.net/payment/Payment" id="formAuthorizeNetTestPage"
+                <form method="post" action="https://accept.authorize.net/payment/Payment" id="formAuthorizeNetTestPage"
                     name="formAuthorizeNetTestPage">
                     <button class="btn btn-primary" id="btnContinue" onclick="">Continue to next
                         page</button>
