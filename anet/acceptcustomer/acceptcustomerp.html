@@ -514,10 +514,6 @@
             <h1 class="display-8 fw-bold">Accept Customer Test</h1>
             <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4">Production test.</p>
-                <!--<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-              <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
-              <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
-            </div>-->
             </div>
         </div>
 
@@ -535,17 +531,13 @@
                                     <option value="">-Select Url-</option>
                                     <option value="https://api.authorize.net/xml/v1/request.api">Production API</option>
                                 </select>
-                            </div><br />
-                            <div class="field">
                                 <input class="btn btn-primary btn" type="button" id="btnSend" name="btnSend"
                                     value="Generate Code" onclick="return btnSend_onclick()" />
                             </div>
                         </div>
                         <br />
                         <div class="field">
-                            <label>Request:</label>
-                            <br />
-                            <textarea id="txtReqXml" name="txtReqXml" cols="100" rows="5" placeholder="Code">
+                            <textarea class="d-none" id="txtReqXml" name="txtReqXml" cols="100" rows="5" placeholder="Code">
                                 &lt;getHostedProfilePageRequest xmlns=&quot;AnetApi/xml/v1/schema/AnetApiSchema.xsd&quot;&gt;
                                 &lt;merchantAuthentication&gt;
                                 &lt;name&gt;QOAA0OCC$aP94Nn8t528&lt;/name&gt;

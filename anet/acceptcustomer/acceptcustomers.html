@@ -1,4 +1,4 @@
-﻿﻿<!doctype html>
+﻿<!doctype html>
 <html lang="en" dir="auto">
 
 <head>
@@ -307,6 +307,7 @@
             }
         }
     </script>
+
     <script language="javascript" type="text/javascript">
         // <!CDATA[
         function XHConn() {
@@ -325,13 +326,15 @@
                 }
             }
             if (!xmlhttp) return null;
+
             this.connect = function (sURL, sPostData, fnDone) {
                 if (!xmlhttp) return false;
                 bComplete = false;
+
                 try {
                     xmlhttp.open("POST", sURL, true);
                     xmlhttp.setRequestHeader("Method", "POST " + sURL + " HTTP/1.1");
-                    xmlhttp.setRequestHeader("Content-Type", "application/xml" .value);
+                    xmlhttp.setRequestHeader("Content-Type", "application/xml".value);
                     xmlhttp.onreadystatechange = function () {
                         if (xmlhttp.readyState == 4 && !bComplete) {
                             bComplete = true;
@@ -451,11 +454,7 @@
             <img class="d-block mx-auto mb-4" src="../../images/icons/accept.png" alt="" width="60" height="60">
             <h1 class="display-8 fw-bold">Accept Customer Test</h1>
             <div class="col-lg-6 mx-auto">
-                <p class="lead mb-4">Production test.</p>
-                <!--<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-              <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
-              <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
-            </div>-->
+                <p class="lead mb-4">Sandbox test.</p>
             </div>
         </div>
 
@@ -464,6 +463,7 @@
         <section>
             <div class="container px-4 py-5" id="featured-3">
                 <h4 class="mb-3">Code Settings</h4>
+
                 <form class="ui form" method="post" action="">
                     <div class="ui equal width form">
                         <div class="fields">
@@ -471,19 +471,17 @@
                                 <label>Code Url:</label>
                                 <select id="txtUrl">
                                     <option value="">-Select Url-</option>
-                                    <option value="https://apitest.authorize.net/xml/v1/request.api">Sandbox API</option>
+                                    <option value="https://apitest.authorize.net/xml/v1/request.api">Sandbox API
+                                    </option>
                                 </select>
-                            </div><br />
-                            <div class="field">
-                                <input class="btn btn-primary btn" type="button" id="btnSend" name="btnSend"
+                                <input class="btn btn-primary" type="button" id="btnSend" name="btnSend"
                                     value="Generate Code" onclick="return btnSend_onclick()" />
                             </div>
+
                         </div>
                         <br />
                         <div class="field">
-                            <label>Request:</label>
-                            <br />
-                            <textarea id="txtReqXml" name="txtReqXml" cols="100" rows="5" placeholder="Code">
+                            <textarea class="d-none" id="txtReqXml" name="txtReqXml" cols="100" rows="5" placeholder="Code">
                                 &lt;getHostedProfilePageRequest xmlns=&quot;AnetApi/xml/v1/schema/AnetApiSchema.xsd&quot;&gt;
                                 &lt;merchantAuthentication&gt;
                                 &lt;name&gt;QOAA0OCC$aP94Nn8t528&lt;/name&gt;
@@ -513,9 +511,9 @@
                             <div><textarea id="token" name="txtRespXml" cols="100" rows="5"></textarea></div>
                         </div>
                     </div>
-            </form>
-
-            <h4 class="mb-3">Merchant Settings & Follow On Button</h4>
+                </form>
+<br />
+                <h4 class="mb-3">Merchant Settings & Follow On Button</h4>
                 <div class="ui equal width form">
                     <div class="fields">
                         <div class="field">
@@ -540,7 +538,7 @@
                         <div class="field">
                             <label>Payment Profile ID:</label>
                             <input type="text" id="txtPaymentProfileID" value="">
-                            
+
                             <label>Shipping Profile ID:</label>
                             <input type="text" id="txtShippingAddressID" value="">
                         </div><br />
@@ -550,14 +548,14 @@
                         </div>
                     </div>
                     <form method="post" action="" id="formAuthorizeNetPage" name="formAuthorizeNetPage"
-                    style="display:none;">
-                    <input type="hidden" name="Token" value="">
-                    <input type="hidden" name="PaymentProfileId" value="">
-                    <input type="hidden" name="ShippingAddressId" value="">
-                    <input type="hidden" id="selectedPage" value="manage">
+                        style="display:none;">
+                        <input type="hidden" name="Token" value="">
+                        <input type="hidden" name="PaymentProfileId" value="">
+                        <input type="hidden" name="ShippingAddressId" value="">
+                        <input type="hidden" id="selectedPage" value="manage">
                     </form>
                 </div>
-        </div>
+            </div>
         </section>
 
         <hr class="featurette-divider">
