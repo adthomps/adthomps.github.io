@@ -202,6 +202,19 @@
 </footer>
 </main>
 
+<script>
+  // This function is called when the Turnstile script is loaded and ready to be used.
+  // The function name matches the "onload=..." parameter.
+  function _turnstileCb() {
+      console.debug('_turnstileCb called');
+  
+      turnstile.render('#myWidget', {
+        sitekey: '0x4AAAAAAADKANPmmb-AHW6n',
+        theme: 'dark',
+      });
+  }
+  </script>
+
 </body>
 
 </html>
