@@ -9,9 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Favicon -->
-    <!--<link rel="shortcut icon" href="../images/icons/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="../images/icons/favicon.ico" type="image/x-icon">-->
-
     <link rel="shortcut icon" href="../images/icons/profile.jpg" type="image/x-icon">
     <link rel="icon" href="../images/icons/profile.jpg" type="image/x-icon">
 
@@ -19,24 +16,17 @@
     <title>APT Portfolio - Bootstrap</title>
 
     <!-- CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 
-    <!-- Resource Files - CSS - Local -->
-    <link rel="stylesheet" href="../stylescripts/basic.css">
-    <link rel="stylesheet" href="../stylescripts/bootstrap.min.css">
-
-    <!-- JS -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
-
-    <script src="../stylescripts/bootstrap.bundle.min.js.download"></script>
-
-    <!-- Custom styles for this template -->
+    <link href="../stylescripts/basic.css" rel="stylesheet">
     <link href="../stylescripts/carousel.css" rel="stylesheet">
     <link href="../stylescripts/additionalcss.css" rel="stylesheet">
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
 
 </head>
 
@@ -69,18 +59,20 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                              aria-expanded="false">
-                              Developer Documentation
+                                aria-expanded="false">
+                                Developer Documentation
                             </a>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" target="_blank" href="https://developer.authorize.net/">Authorize.net</a>
-                              </li>
-                              <li><a class="dropdown-item" target="_blank" href="https://developer.cybersource.com/">Cybersource</a>
-                              </li>
-                              <li>
-                                <hr class="dropdown-divider">
-                              </li>
-                              <li>Something here</li>
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://developer.authorize.net/">Authorize.net</a>
+                                </li>
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://developer.cybersource.com/">Cybersource</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>Something here</li>
                             </ul>
                             <!--<li class="nav-item">
               <a class="nav-link disabled">Disabled Link</a>
@@ -117,15 +109,15 @@
 
     <main>
         <div class="px-4 py-0 my-5 text-center">
-          <img class="d-block mx-auto mb-4" src="../images/icons/anetlogo.png" alt="" width="300" height="60">
-          <h1 class="display-8 fw-bold">Simple Checkout Tests</h1>
-          <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">Test example Simple Checkout buttons.</p>
-            <!--<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <img class="d-block mx-auto mb-4" src="../images/icons/anetlogo.png" alt="" width="300" height="60">
+            <h1 class="display-8 fw-bold">Simple Checkout Tests</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">Test example Simple Checkout buttons.</p>
+                <!--<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
               <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
               <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
             </div>-->
-          </div>
+            </div>
         </div>
 
         <div class="b-example-divider"></div>
@@ -137,8 +129,10 @@
                         <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
                         </div>
                         <h3 class="fs-2">Simple Checkout - OCC</h3>
-                        <p>This tests displaying the Simple Checkout button and connection to hosted payment form with OCC affinity in Production.</p>
-                        <form name="PrePage" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx" target="_blank">
+                        <p>This tests displaying the Simple Checkout button and connection to hosted payment form with
+                            OCC affinity in Production.</p>
+                        <form name="PrePage" method="post"
+                            action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx" target="_blank">
                             <input type="hidden" name="LinkId" value="2d44f447-8ab0-4c7a-aef7-a138a6c0bf53" />
                             <button type="submit" class="btn btn-outline-primary btn-lg">Production - OCC - Buy</button>
                         </form>
@@ -147,8 +141,10 @@
                         <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
                         </div>
                         <h3 class="fs-2">Simple Checkout - OCE</h3>
-                        <p>This tests displaying the Simple Checkout button and connection to hosted payment form with OCE affinity in Production.</p>
-                        <form name="PrePage" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx" target="_blank">
+                        <p>This tests displaying the Simple Checkout button and connection to hosted payment form with
+                            OCE affinity in Production.</p>
+                        <form name="PrePage" method="post"
+                            action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx" target="_blank">
                             <input type="hidden" name="LinkId" value="c00e0880-2888-4f20-8753-b963f3645972" />
                             <button type="submit" class="btn btn-outline-primary btn-lg">Production - OCE - Buy</button>
                         </form>
@@ -159,8 +155,10 @@
                         <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
                         </div>
                         <h3 class="fs-2">Simple Checkout - OCC</h3>
-                        <p>This tests displaying the Simple Checkout button and connection to hosted payment form with OCC affinity in Sandbox.</p>
-                        <form name="PrePage" method="post" action="https://scotest.authorize.net/payment/CatalogPayment.aspx" target="_blank">
+                        <p>This tests displaying the Simple Checkout button and connection to hosted payment form with
+                            OCC affinity in Sandbox.</p>
+                        <form name="PrePage" method="post"
+                            action="https://scotest.authorize.net/payment/CatalogPayment.aspx" target="_blank">
                             <input type="hidden" name="LinkId" value="a6247877-00b6-4ea6-b5a6-028025000d15" />
                             <button type="submit" class="btn btn-outline-primary btn-lg">Sandbox - OCC - Buy</button>
                         </form>
@@ -169,8 +167,10 @@
                         <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
                         </div>
                         <h3 class="fs-2">Simple Checkout - OCE</h3>
-                        <p>This tests displaying the Simple Checkout button and connection to hosted payment form with OCE affinity in Sandbox.</p>
-                        <form name="PrePage" method="post" action="https://scotest.authorize.net/payment/CatalogPayment.aspx" target="_blank">
+                        <p>This tests displaying the Simple Checkout button and connection to hosted payment form with
+                            OCE affinity in Sandbox.</p>
+                        <form name="PrePage" method="post"
+                            action="https://scotest.authorize.net/payment/CatalogPayment.aspx" target="_blank">
                             <input type="hidden" name="LinkId" value="c0f4d56f-971d-4245-b659-5707758f389f" />
                             <button type="submit" class="btn btn-outline-primary btn-lg">Sandbox - OCE - Buy</button>
                         </form>
