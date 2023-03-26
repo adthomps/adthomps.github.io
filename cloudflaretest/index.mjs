@@ -1,5 +1,5 @@
-import explicitRenderHtml from './turnstile-explicit.html';
-import implicitRenderHtml from './turnstile-implicit.html';
+import explicitRenderHtml from '../cloudflaretest/turnstile-explicit.html';
+import implicitRenderHtml from '../cloudflaretest/turnstile-implicit.html';
 
 // This is the demo secret key. In prod, we recommend you store
 // your secret key(s) safely.
