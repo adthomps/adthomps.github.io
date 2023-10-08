@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="300">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/icons/profile.jpg" type="image/x-icon">
+    <link rel="icon" href="images/icons/profile.jpg" type="image/x-icon">
+
+    <!-- Title -->
+    <title>APT Portfolio - Bootstrap</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link href="stylescripts/basic.css" rel="stylesheet">
+    <link href="stylescripts/features.css" rel="stylesheet">
+    <link href="stylescripts/additionalcss.css" rel="stylesheet">
+    <link href="stylescripts/statuspage.css" rel="stylesheet">
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-bundle.js"></script>
+    <script src="https://unpkg.com/@statuspage/status-widget/dist/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <!-- Navbar Brand (Logo) -->
+                <a class="navbar-brand" href="#"><img src="images/icons/profile.jpg" width="32" height="32"
+                        class="rounded-circle" alt="Logo"></a>
+
+                <!-- Navbar Toggler Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar Links -->
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="anet.html">ANET Examples</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cybs.html">CYBS Examples</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="statuspage.html">Status Page Examples</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Developer Documentation
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://developer.authorize.net/">Authorize.net</a></li>
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://developer.cybersource.com/">Cybersource</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <!-- Profile Dropdown -->
+                    <div class="dropdown text-end">
+                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="images/avatar/IMG_3686.jpg" alt="Profile" width="32" height="32"
+                                class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Search Form -->
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-info" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="px-4 py-0 my-5 text-center">
+            <img class="d-block mx-auto mb-4" src="images/icons/heartbeat2.png" width="300" height="69" />
+            <h1 class="display-8 fw-bold">Status Page Hub</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">Various status page results.</p>
+            </div>
+        </div>
+
+        <div class="b-example-divider"></div>
+
+        <div class="container">
+            <h1 class="text-center">Website Status</h1>
+            <div class="row">
+
+                <!-- Widget - Authorize.net -->
+                <div class="col-md-4">
+                    <div class="page-statuses-container">
+                        <div class="container">
+                            <div class="row">
+                                <a href="https://status.authorize.net" target="_blank"
+                                    class="page-status-container span10" id="page-06v575cbzlpr">
+                                    <div class="logo">
+                                        <img src="images/icons/anetlogov2.png" width="60" height="60" />
+                                    </div>
+                                    <div class="status-info">
+                                        <div class="product-name">Authorize.net</div>
+                                        <div class="skeleton-status"></div>
+                                        <div class="stub-for-status"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Widget - Cybersource -->
+                <div class="col-md-4">
+                    <div class="page-statuses-container">
+                        <div class="container">
+                            <div class="row">
+                                <a href="https://status.cybersource.com" target="_blank"
+                                    class="page-status-container span10" id="page-ttbtd8wrjg1b">
+                                    <div class="logo">
+                                        <img src="images/icons/cybersource-logo-2.png" width="60" height="60" />
+                                    </div>
+                                    <div class="status-info">
+                                        <div class="product-name">Cybersource</div>
+                                        <div class="skeleton-status"></div>
+                                        <div class="stub-for-status"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Widget - Payworks -->
+                <div class="col-md-4">
+                    <div class="page-statuses-container">
+                        <div class="container">
+                            <div class="row">
+                                <!-- Payworks -->
+                                <a href="https://status.payworks.com/" target="_blank"
+                                    class="page-status-container span10" id="page-1f3wy4kq816n">
+                                    <div class="logo">
+                                        <img src="images/icons/cybersource-logo-2.png" width="60" height="60" />
+                                    </div>
+                                    <div class="status-info">
+                                        <div class="product-name">Payworks</div>
+                                        <div class="skeleton-status"></div>
+                                        <div class="stub-for-status"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Widget - Cardinal Commerce -->
+                <div class="col-md-4">
+                    <div class="page-statuses-container">
+                        <div class="container">
+                            <div class="row">
+                                <a href="https://cardinalcommercecorporation.statuspage.io/" target="_blank"
+                                    class="page-status-container span10" id="page-fbdy4fjp4p32">
+                                    <div class="logo">
+                                        <img src="images/icons/cardinal-logo.png" width="60" height="60" />
+                                    </div>
+                                    <div class="status-info">
+                                        <div class="product-name">Cardinal Commerce</div>
+                                        <div class="skeleton-status"></div>
+                                        <div class="stub-for-status"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- FOOTER -->
+        <footer class="container">
+            <p>Copyright © <script>document.write(new Date().getFullYear())</script> Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+        </footer>
+    </main>
+
+    <script src="https://cdn.statuspage.io/se-v2.js"></script>
+
+    <script>
+        $(function () {
+            // Function to update an element on the page to reflect its status
+            function updateElement(pageCode, message, indicator) {
+                const $elem = $(`#page-${pageCode}`);
+                $elem.find('.skeleton-status').remove();
+                $elem.find('.stub-for-status').html(message);
+                $elem.addClass('status-' + indicator);
+            }
+
+            // Array of page codes
+            const allPageCodes = ['06v575cbzlpr', 'ttbtd8wrjg1b', '1f3wy4kq816n', 'fbdy4fjp4p32'];
+
+            // Function to find the highest severity incident
+            function getWorstSeverity(incidents) {
+                const impacts = incidents.map(incident => incident.impact);
+                if (impacts.includes('critical')) {
+                    return 'critical';
+                } else if (impacts.includes('major')) {
+                    return 'major';
+                } else if (impacts.includes('minor')) {
+                    return 'minor';
+                } else if (impacts.includes('none')) {
+                    return 'none-with-incident';
+                }
+            }
+
+            // Loop through each product to fetch its status
+            for (let i = 0; i < allPageCodes.length; i++) {
+                const pageCode = allPageCodes[i];
+                const pageStatus = new StatusPage.page({
+                    page: pageCode,
+                    host: (pageCode === 'y2j98763l56x') ? 'metastatuspage.com' : undefined,
+                    secure: true
+                });
+
+                // Fetch the status
+                pageStatus.summary({
+                    success: function (data) {
+                        function passMessage(message, indicatorOverride) {
+                            updateElement(data.page.id, message, indicatorOverride || data.status.indicator);
+                        }
+
+                        const openMaintenances = data.scheduled_maintenances.filter(maintenance => maintenance.status !== 'scheduled');
+                        const upcomingMaintenances = data.scheduled_maintenances.filter(maintenance => ((Date.parse(maintenance.scheduled_for) / 1000) - (Date.now() / 1000)) < 3600);
+
+                        if (data.incidents.length || openMaintenances.length || data.status.indicator !== 'none' || upcomingMaintenances.length) {
+                            if (data.incidents.length) {
+                                passMessage("Active Incident", getWorstSeverity(data.incidents));
+                            } else if (openMaintenances.length) {
+                                passMessage("Active Maintenance", "maintenance");
+                            } else if (data.status.indicator !== 'none') {
+                                passMessage("Degraded Infrastructure");
+                            } else {
+                                passMessage("Upcoming Maintenance", "maintenance");
+                            }
+                        } else {
+                            passMessage("Operational", "none");
+                        }
+                    }
+                });
+            }
+        });
+
+        // Additional script
+        var sp = new StatusPage.page({ page: 'ttbtd8wrjg1b' });
+        sp.summary({
+            success: function (data) {
+                console.log(data.components[0].status);
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
