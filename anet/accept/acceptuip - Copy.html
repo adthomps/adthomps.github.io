@@ -56,24 +56,34 @@
         }
     
         function callbackMerchant(response) {
-            if (response.messages.resultCode === 'Error') {
-                populateErrorMessage(response);
-            } else {
-                var msg01 = '<b>PAYMENT NONCE (Data Value):</b> ' + response.opaqueData.dataValue;
-                var msg02 = '<b>TYPE (Data Descriptor):</b> ' + response.opaqueData.dataDescriptor;
-                var msg03 = '<b>CARD NUMBER:</b> ' + response.encryptedCardData.cardNumber + '<br/>' +
-                    '<b>EXPIRATION DATE:</b> ' + response.encryptedCardData.expDate + '<br/>' +
-                    '<b>BIN:</b> ' + response.encryptedCardData.bin;
-    
-                if ($('#paymentReceipt').length === 0) {
-                    $('body').append($('<br/><br/><div id="paymentReceipt" class="container" style="border: 1px solid #000; padding: 15px; width: 50%;"></div>'));
-                }
-    
-                $('#paymentReceipt').html(msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03);
-            }
+    if (response.messages.resultCode === 'Error') {
+        populateErrorMessage(response);
+    } else {
+        var paymentNonce = response.opaqueData.dataValue;
+        var dataDescriptor = response.opaqueData.dataDescriptor;
+        var cardNumber = response.encryptedCardData.cardNumber;
+        var expDate = response.encryptedCardData.expDate;
+        var bin = response.encryptedCardData.bin;
+
+        // Update the HTML elements with the parsed data
+        document.getElementById('paymentNonce').innerHTML = '<b>PAYMENT NONCE (Data Value):</b> ' + paymentNonce;
+        document.getElementById('dataDescriptor').innerHTML = '<b>TYPE (Data Descriptor):</b> ' + dataDescriptor;
+        document.getElementById('cardDetails').innerHTML = '<b>CARD NUMBER:</b> ' + cardNumber + '<br/>' +
+            '<b>EXPIRATION DATE:</b> ' + expDate + '<br/>' +
+            '<b>BIN:</b> ' + bin;
+
+        if ($('#paymentReceipt').length === 0) {
+            $('body').append($('<br/><br/><div id="paymentReceipt" class="container" style="border: 1px solid #000; padding: 15px; width: 50%;"></div>'));
         }
+    }
+}
     </script>
     
+    <div id="paymentReceipt" class="container" style="border: 1px solid #000; padding: 15px; width: 50%;"></div>
+    <div id="paymentNonce"></div>
+    <div id="dataDescriptor"></div>
+    <div id="cardDetails"></div>
+
 </body>
 
 </html>
