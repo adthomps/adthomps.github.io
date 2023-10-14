@@ -187,39 +187,51 @@
 
     <main>
         <div class="container">
+
             <header class="p-3 mb-3 border-bottom">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                    <a class="navbar-brand" href="sign-in.html"><img src="images/icons/profile.jpg" width="50"
-                            height="50" class="rounded-circle" alt="Logo"></a>
+                    <a class="navbar-brand" href="sign-in.html"><img src="images/icons/profile.jpg" width="50" height="50" class="rounded-circle" alt="Logo"></a>
 
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="index.html" class="nav-link px-2 link-secondary">Home</a></li>
-                        <li><a href="anet.html" class="nav-link px-2 link-body-emphasis"><i
-                                    class="bi bi-credit-card"></i> ANET
-                                Examples</a></li>
-                        <li><a href="cybs.html" class="nav-link px-2 link-body-emphasis"><i
-                                    class="bi bi-credit-card-fill"></i>
-                                CYBS Examples</a></li>
-
                         <li class="nav-item dropdown">
                             <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-activity"></i> Status
-                                Page Examples</a>
+                                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-house"></i> Home</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" target="_blank" href="statuspage1.html">Status Page
-                                        Examples
-                                        1</a>
+                                <li><a class="dropdown-item" href="gallery.html"><i class="bi bi-house"></i> Home Page</a>
                                 </li>
-                                <li><a class="dropdown-item" target="_blank" href="statuspage2.html">Status Page
-                                        Examples 2</a>
+                                <li><a class="link-body-emphasis dropdown-item" href="gallery.html"><i class="bi bi-images"></i> Gallery</a>
+                                </li>
+                                <li><a class="dropdown-item" href="dashboard.html"><i class="bi bi-graph-up"></i> Dashboard</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-2 link-secondary dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><i
+                                    class="bi bi-credit-card-2-front"></i> Platform Tests</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="link-secondary dropdown-item" href="anet.html"><i class="bi bi-credit-card"></i> Authorize.net</a>
+                                </li>
+                                <li><a class="dropdown-item" href="cybs.html"><i class="bi bi-credit-card-fill"></i> Cybersource</a>
                                 </li>
                             </ul>
                         </li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-file-earmark-code"></i>
-                                Developer Documentation</a>
+                                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-activity"></i> Status Page</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="statuspage1.html">Status Page Example 1</a>
+                                </li>
+                                <li><a class="dropdown-item" href="statuspage2.html">Status Page Example 2</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-code-square"></i> Dev Docs</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" target="_blank"
                                         href="https://developer.authorize.net/">Authorize.net</a>
@@ -230,8 +242,9 @@
                             </ul>
                         </li>
 
-                        <li><a href="drone.html" class="nav-link px-2 link-body-emphasis"><i class="bi bi-camera"></i>
-                                Drone Map</a></li>
+                        <li><a href="drone.html" class="nav-link px-2 link-body-emphasis"><i class="bi bi-pin-map"></i>
+                                Drone Map</a>
+                        </li>
 
                     </ul>
 
@@ -258,8 +271,9 @@
                         </ul>
                     </div>
                 </div>
+            </header>
 
-        </header>
+        </div>
 
         <div class="container">
 
@@ -279,8 +293,7 @@
                     </div>
                     <h3 class="fs-2">Accept Suite</h3>
                     <p>Test displaying and using the Authorize.net Accept Suite of services: Acceptjs, Accept UI, Accept
-                        Hosted,
-                        Accept Customer.</p>
+                        Hosted, Accept Customer.</p>
                     <p><a class="btn btn-outline-secondary" href="anet/accept.html">View Tests &raquo;</a></p>
                 </div>
 
@@ -302,8 +315,7 @@
                     </div>
                     <h3 class="fs-2">Simple Checkout/Pay By Link</h3>
                     <p>Tests displaying and using the Authorize.net Simple Checkout HTML button that links to the
-                        Authorize.Net
-                        Hosted Payment Form powered by Server Integration Method (SIM).</p>
+                        Authorize.net Hosted Payment Form powered by Server Integration Method (SIM).</p>
                     <p><a class="btn btn-outline-secondary" href="anet/simplecheckout.html">View Tests &raquo;</a></p>
                 </div>
 

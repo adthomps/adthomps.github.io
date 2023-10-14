@@ -187,37 +187,52 @@
 
   <main>
     <div class="container">
+
       <header class="p-3 mb-3 border-bottom">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <a class="navbar-brand" href="sign-in.html"><img src="images/icons/profile.jpg" width="50" height="50"
               class="rounded-circle" alt="Logo"></a>
 
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="index.html" class="nav-link px-2 link-secondary">Home</a></li>
-            <li><a href="anet.html" class="nav-link px-2 link-body-emphasis"><i class="bi bi-credit-card"></i> ANET
-                Examples</a></li>
-            <li><a href="cybs.html" class="nav-link px-2 link-body-emphasis"><i class="bi bi-credit-card-fill"></i>
-                CYBS Examples</a></li>
-
             <li class="nav-item dropdown">
-              <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-activity"></i> Status
-                Page Examples</a>
+              <a class="nav-link px-2 link-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false"><i class="bi bi-house"></i> Home</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" target="_blank" href="statuspage1.html">Status Page
-                    Examples
-                    1</a>
+                <li><a class="dropdown-item" href="gallery.html"><i class="bi bi-house"></i> Home Page</a>
                 </li>
-                <li><a class="dropdown-item" target="_blank" href="statuspage2.html">Status Page
-                    Examples 2</a>
+                <li><a class="link-secondary dropdown-item" href="gallery.html"><i class="bi bi-images"></i> Gallery</a>
+                </li>
+                <li><a class="dropdown-item" href="dashboard.html"><i class="bi bi-graph-up"></i> Dashboard</a>
                 </li>
               </ul>
             </li>
 
             <li class="nav-item dropdown">
               <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-file-earmark-code"></i>
-                Developer Documentation</a>
+                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-credit-card-2-front"></i> Platform
+                Tests</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="anet.html"><i class="bi bi-credit-card"></i> Authorize.net</a>
+                </li>
+                <li><a class="dropdown-item" href="cybs.html"><i class="bi bi-credit-card-fill"></i> Cybersource</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-activity"></i> Status Page</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="statuspage1.html">Status Page Example 1</a>
+                </li>
+                <li><a class="dropdown-item" href="statuspage2.html">Status Page Example 2</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-code-square"></i> Dev Docs</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" target="_blank" href="https://developer.authorize.net/">Authorize.net</a>
                 </li>
@@ -226,8 +241,8 @@
               </ul>
             </li>
 
-            <li><a href="drone.html" class="nav-link px-2 link-body-emphasis"><i class="bi bi-camera"></i>
-                Drone Map</a></li>
+            <li><a href="drone.html" class="nav-link px-2 link-body-emphasis"><i class="bi bi-pin-map"></i> Drone
+                Map</a></li>
 
           </ul>
 
@@ -253,7 +268,6 @@
             </ul>
           </div>
         </div>
-
       </header>
 
       <div class="container">
@@ -264,6 +278,7 @@
             <p class="lead mb-4">Something short and leading about the collection below—its contents, the creator,
               etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
           </div>
+          <img class="d-block mx-auto mb-4" src="images/gallery/galleryprofile2.png" width="368" height="300" />
         </div>
 
         <div class="album py-5 bg-body-tertiary">
@@ -273,13 +288,7 @@
 
               <div class="col">
                 <div class="card shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                      dy=".3em">Thumbnail</text>
-                  </svg>
+                  <img src="images/gallery/drop1.jpg" />
                   <div class="card-body">
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                       additional content. This content is a little bit longer.</p>
@@ -295,13 +304,7 @@
               </div>
               <div class="col">
                 <div class="card shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                      dy=".3em">Thumbnail</text>
-                  </svg>
+                  <img src="images/gallery/drop2.jpg" />
                   <div class="card-body">
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                       additional content. This content is a little bit longer.</p>
@@ -317,13 +320,7 @@
               </div>
               <div class="col">
                 <div class="card shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                      dy=".3em">Thumbnail</text>
-                  </svg>
+                  <img src="images/gallery/drop3.jpg" />
                   <div class="card-body">
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                       additional content. This content is a little bit longer.</p>
@@ -340,13 +337,7 @@
 
               <div class="col">
                 <div class="card shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                      dy=".3em">Thumbnail</text>
-                  </svg>
+                  <img src="images/gallery/drop4.jpg" />
                   <div class="card-body">
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                       additional content. This content is a little bit longer.</p>
@@ -362,13 +353,7 @@
               </div>
               <div class="col">
                 <div class="card shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                      dy=".3em">Thumbnail</text>
-                  </svg>
+                  <img src="images/gallery/drop5.jpg" />
                   <div class="card-body">
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                       additional content. This content is a little bit longer.</p>
@@ -384,13 +369,7 @@
               </div>
               <div class="col">
                 <div class="card shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                      dy=".3em">Thumbnail</text>
-                  </svg>
+                  <img src="images/gallery/drop6.jpg" />
                   <div class="card-body">
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                       additional content. This content is a little bit longer.</p>
@@ -407,13 +386,7 @@
 
               <div class="col">
                 <div class="card shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                      dy=".3em">Thumbnail</text>
-                  </svg>
+                  <img src="images/gallery/drop7.jpg" />
                   <div class="card-body">
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                       additional content. This content is a little bit longer.</p>
@@ -429,13 +402,7 @@
               </div>
               <div class="col">
                 <div class="card shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                      dy=".3em">Thumbnail</text>
-                  </svg>
+                  <img src="images/gallery/drop8.jpg" />
                   <div class="card-body">
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                       additional content. This content is a little bit longer.</p>
@@ -451,13 +418,7 @@
               </div>
               <div class="col">
                 <div class="card shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                      dy=".3em">Thumbnail</text>
-                  </svg>
+                  <img src="images/gallery/drop9.jpg" />
                   <div class="card-body">
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                       additional content. This content is a little bit longer.</p>
@@ -471,6 +432,105 @@
                   </div>
                 </div>
               </div>
+
+              <div class="col">
+                <div class="card shadow-sm">
+                  <img src="images/gallery/drop11.jpg" />
+                  <div class="card-body">
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                      additional content. This content is a little bit longer.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-body-secondary">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow-sm">
+                  <img src="images/gallery/drop12.jpg" />
+                  <div class="card-body">
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                      additional content. This content is a little bit longer.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-body-secondary">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow-sm">
+                  <img src="images/gallery/drop13.jpg" />
+                  <div class="card-body">
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                      additional content. This content is a little bit longer.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-body-secondary">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card shadow-sm">
+                  <img src="images/gallery/drop14.jpg" />
+                  <div class="card-body">
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                      additional content. This content is a little bit longer.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-body-secondary">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow-sm">
+                  <img src="images/gallery/drop15.jpg" />
+                  <div class="card-body">
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                      additional content. This content is a little bit longer.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-body-secondary">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow-sm">
+                  <img src="images/gallery/drop16.jpg" />
+                  <div class="card-body">
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                      additional content. This content is a little bit longer.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-body-secondary">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
