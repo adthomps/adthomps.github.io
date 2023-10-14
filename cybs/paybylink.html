@@ -187,24 +187,42 @@
 
     <main>
         <div class="container">
+
             <header class="p-3 mb-3 border-bottom">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <a class="navbar-brand" href="../sign-in.html"><img src="../images/icons/profile.jpg" width="50"
                             height="50" class="rounded-circle" alt="Logo"></a>
 
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="../index.html" class="nav-link px-2 link-secondary">Home</a></li>
-                        <li><a href="../anet.html" class="nav-link px-2 link-body-emphasis"><i class="bi bi-credit-card"></i> ANET Examples</a></li>
-                        <li><a href="../cybs.html" class="nav-link px-2 link-body-emphasis"><i class="bi bi-credit-card-fill"></i> CYBS Examples</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-2 link-secondary dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-house"></i> Home</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="link-secondary dropdown-item" target="_blank" href="../gallery.html"><i
+                                            class="bi bi-images"></i> Gallery</a>
+                                </li>
+                                <li><a class="dropdown-item" target="_blank" href="../dashboard.html"><i
+                                            class="bi bi-graph-up"></i>
+                                        Dashboard</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="../anet.html" class="nav-link px-2 link-body-emphasis"><i
+                                    class="bi bi-credit-card"></i> ANET
+                                Examples</a></li>
+                        <li><a href="../cybs.html" class="nav-link px-2 link-body-emphasis"><i
+                                    class="bi bi-credit-card-fill"></i> CYBS
+                                Examples</a></li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-activity"></i> Status Page Examples</a>
+                                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-activity"></i> Status
+                                Page Examples</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" target="_blank" href="../statuspage1.html">Status Page Examples
-                                        1</a>
+                                <li><a class="dropdown-item" target="_blank" href="../statuspage1.html">Status Page
+                                        Examples 1</a>
                                 </li>
-                                <li><a class="dropdown-item" target="_blank" href="statuspage2.html">Status Page
+                                <li><a class="dropdown-item" target="_blank" href="../statuspage2.html">Status Page
                                         Examples 2</a>
                                 </li>
                             </ul>
@@ -212,7 +230,8 @@
 
                         <li class="nav-item dropdown">
                             <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-file-earmark-code"></i> Developer Documentation</a>
+                                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-file-earmark-code"></i>
+                                Dev Docs</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" target="_blank"
                                         href="https://developer.authorize.net/">Authorize.net</a>
@@ -223,7 +242,9 @@
                             </ul>
                         </li>
 
-                        <li><a href="../drone.html" class="nav-link px-2 link-body-emphasis"><i class="bi bi-camera"></i> Drone Map</a></li>
+                        <li><a href="../drone.html" class="nav-link px-2 link-body-emphasis"><i
+                                    class="bi bi-pin-map"></i> Drone
+                                Map</a></li>
 
                     </ul>
 
@@ -250,125 +271,132 @@
                         </ul>
                     </div>
                 </div>
-        </div>
 
-        </header>
+            </header>
 
-        <div class="container">
+            <div class="container">
 
-            <div class="px-4 py-0 my-5 text-center">
-                <h1 class="display-8 fw-bold">Pay By Link Examples</h1>
-                <div class="d-flex justify-content-center">
-                    <p class="lead mb-4">Various test for Pay By Link product.</p>
+                <div class="px-4 py-0 my-5 text-center">
+                    <h1 class="display-8 fw-bold">Pay By Link Examples</h1>
+                    <div class="d-flex justify-content-center">
+                        <p class="lead mb-4">Various test for Pay By Link product.</p>
+                    </div>
+                    <img class="d-block mx-auto mb-4" src="../images/icons/cybs/cybersource-logo4.png" width="300"
+                        height="69" />
                 </div>
-                <img class="d-block mx-auto mb-4" src="../images/icons/cybs/cybersource-logo4.png" width="300" height="69" />
+
+                <div class="container px-4 py-5" id="featured-3">
+                    <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+                        <div class="feature col">
+                            <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                            </div>
+                            <h3 class="fs-2">Pay By Link - Production</h3>
+                            <p>This tests Acceptjs displaying a form to collect the card information and create a
+                                payment nonce.</p>
+                            <div class="container text-center">
+                                <div class="row">
+                                    <div class="col">
+                                        <a target="_blank"
+                                            href="https://paybylink.cybersource.com:443/ebc2/payByLink/pay/YScqtFwjAuZK5zlcbDvrDFri83XH35ztvvyeRQvrgw7trDxUyS5PXedyzqIH4Z4I">
+                                            <button class="btn btn-outline-primary btn-lg">
+                                                Fixed Price
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <img src="../cybs/paybylink_qr_fixed_prod.png" />
+                                    </div>
+                                    <div class="col">
+                                        <a target="_blank"
+                                            href="https://paybylink.cybersource.com:443/ebc2/payByLink/pay/PnODH76yq9bD91woVWEuiuhU9xBE5db2e8f7Bo1eodOP82DJtsOOTy57m6nMv092">
+                                            <button class="btn btn-outline-primary btn-lg">
+                                                Custom Price
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <img src="../cybs/paybylink_qr_custom_prod.png" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature col">
+                            <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                            </div>
+                            <h3 class="fs-2">Pay By Link - Sandbox</h3>
+                            <p>This tests Acceptjs displaying a form to collect the card information and create a
+                                payment nonce.</p>
+                            <div class="container text-center">
+                                <div class="row">
+                                    <div class="col">
+                                        <a target="_blank"
+                                            href="https://paybylinktest.cybersource.com:443/ebc2/payByLink/pay/ES5HJKrRJA1qDIevaUT7fTeWHIpKdnbcrUoGIsOZ5LHyWQn0botxJ9gXAZHcTunh">
+                                            <button class="btn btn-outline-primary btn-lg">
+                                                Fixed Price
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <img src="../cybs/paybylink_qr_custom_cas.png" />
+                                    </div>
+                                    <div class="col">
+                                        <a target="_blank"
+                                            href="https://paybylinktest.cybersource.com:443/ebc2/payByLink/pay/keAuuVC1tlVvTJlrAmOIMaueEMMuI43IDtJb40zA9tCK7oQ7E2ZyprzltvenkOWh">
+                                            <button class="btn btn-outline-primary btn-lg">
+                                                Custom Price
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <img src="../cybs/paybylink_qr_custom_cas.png" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
-    
-            <div class="container px-4 py-5" id="featured-3">
-              <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
-                <div class="feature col">
-                  <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-                  </div>
-                  <h3 class="fs-2">Pay By Link - Production</h3>
-                  <p>This tests Acceptjs displaying a form to collect the card information and create a payment nonce.</p>
-                  <div class="container text-center">
-                    <div class="row">
-                      <div class="col">
-                        <a  target="_blank" href="https://paybylink.cybersource.com:443/ebc2/payByLink/pay/YScqtFwjAuZK5zlcbDvrDFri83XH35ztvvyeRQvrgw7trDxUyS5PXedyzqIH4Z4I">
-                          <button class="btn btn-outline-primary btn-lg">
-                            Fixed Price
-                          </button>
-                          </a>
-                        </div>
-                        <div>
-                        <img src="../cybs/paybylink_qr_fixed_prod.png"/>
+
+            <div class="container">
+
+                <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                    <div class="col-md-4 d-flex align-items-center">
+                        <span class="mb-3 mb-md-0 text-body-secondary">&copy;
+                            <script>document.write(new Date().getFullYear())</script> Company, Inc | <a
+                                href="../privacy.html" target="_blank">Privacy</a> | <a href="../terms.html"
+                                target="_blank">Terms</a>
+                        </span>
                     </div>
-                      <div class="col">
-                        <a  target="_blank" href="https://paybylink.cybersource.com:443/ebc2/payByLink/pay/PnODH76yq9bD91woVWEuiuhU9xBE5db2e8f7Bo1eodOP82DJtsOOTy57m6nMv092">
-                          <button class="btn btn-outline-primary btn-lg">
-                            Custom Price
-                          </button>
-                          </a>
-                        </div>
-                        <div>
-                        <img src="../cybs/paybylink_qr_custom_prod.png"/>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="feature col">
-                  <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-                  </div>
-                  <h3 class="fs-2">Pay By Link - Sandbox</h3>
-                  <p>This tests Acceptjs displaying a form to collect the card information and create a payment nonce.</p>
-                  <div class="container text-center">
-                    <div class="row">
-                      <div class="col">
-                        <a  target="_blank" href="https://paybylinktest.cybersource.com:443/ebc2/payByLink/pay/ES5HJKrRJA1qDIevaUT7fTeWHIpKdnbcrUoGIsOZ5LHyWQn0botxJ9gXAZHcTunh">
-                          <button class="btn btn-outline-primary btn-lg">
-                            Fixed Price
-                          </button>
-                          </a>
-                          </div>
-                          <div>
-                          <img src="../cybs/paybylink_qr_custom_cas.png"/>
-                      </div>
-                      <div class="col">
-                        <a  target="_blank" href="https://paybylinktest.cybersource.com:443/ebc2/payByLink/pay/keAuuVC1tlVvTJlrAmOIMaueEMMuI43IDtJb40zA9tCK7oQ7E2ZyprzltvenkOWh">
-                        <button class="btn btn-outline-primary btn-lg">
-                          Custom Price
-                        </button>
-                        </a>
-                        </div>
-                        <div>
-                        <img src="../cybs/paybylink_qr_custom_cas.png"/>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                        <li class="ms-3">
+                            <a class="text-body-secondary" href="https://www.linkedin.com/in/adam-thompson-a547468/"
+                                target="_blank">
+                                <i class="bi bi-linkedin" style="font-size: 1.5rem; "></i>
+                            </a>
+                        </li>
+                        <li class="ms-3">
+                            <a class="text-body-secondary" href="https://www.flickr.com/photos/adam-p-thompson/albums"
+                                target="_blank">
+                                <i class="bi bi-camera2" style="font-size: 1.5rem; "></i>
+                            </a>
+                        </li>
+                        <li class="ms-3">
+                            <a class="text-body-secondary" href="https://www.behance.net/adthomps" target="_blank">
+                                <i class="bi bi-behance" style="font-size: 1.5rem; "></i>
+                            </a>
+                        </li>
+                        <li class="ms-3">
+                            <a class="text-body-secondary"
+                                href="https://www.youtube.com/channel/UChghyQZmnM2UYBYyJ2yhyVg" target="_blank">
+                                <i class="bi bi-youtube" style="font-size: 1.5rem; "></i>
+                            </a>
+                        </li>
+                    </ul>
+                </footer>
 
-            </div>            
-
-        </div>
-
-        <div class="container">
-
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                <div class="col-md-4 d-flex align-items-center">
-                    <span class="mb-3 mb-md-0 text-body-secondary">&copy;
-                        <script>document.write(new Date().getFullYear())</script> Company, Inc | <a href="../privacy.html"
-                            target="_blank">Privacy</a> | <a href="../terms.html" target="_blank">Terms</a>
-                    </span>
-                </div>
-                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                    <li class="ms-3">
-                        <a class="text-body-secondary" href="https://www.linkedin.com/in/adam-thompson-a547468/"
-                            target="_blank">
-                            <i class="bi bi-linkedin" style="font-size: 1.5rem; "></i>
-                        </a>
-                    </li>
-                    <li class="ms-3">
-                        <a class="text-body-secondary" href="https://www.flickr.com/photos/adam-p-thompson/albums"
-                            target="_blank">
-                            <i class="bi bi-camera2" style="font-size: 1.5rem; "></i>
-                        </a>
-                    </li>
-                    <li class="ms-3">
-                        <a class="text-body-secondary" href="https://www.behance.net/adthomps" target="_blank">
-                            <i class="bi bi-behance" style="font-size: 1.5rem; "></i>
-                        </a>
-                    </li>
-                    <li class="ms-3">
-                        <a class="text-body-secondary" href="ttps://www.youtube.com/channel/UChghyQZmnM2UYBYyJ2yhyVg"
-                            target="_blank">
-                            <i class="bi bi-youtube" style="font-size: 1.5rem; "></i>
-                        </a>
-                    </li>
-                </ul>
-            </footer>
-
-        </div>
+            </div>
 
     </main>
 
