@@ -13,10 +13,8 @@
     <!-- Title -->
     <title>APT Portfolio - Bootstrap</title>
 
-    <!-- JS -->
-    <script src="stylescripts2/JS/color-modes.js"></script>
-
     <!-- CSS - Universal -->
+    <link href="stylescripts2/CSS/common.css" rel="stylesheet">
     <link href="stylescripts2/CSS/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
@@ -29,88 +27,34 @@
     <script src='https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js'></script>
 
-    <!-- Custom styles for this template -->
-    <link href="stylescripts2/CSS/merged.css" rel="stylesheet">
+  <!-- CSS - Custom Color Selector -->
+  <style>
+    /*Theme Color Switcher*/
+    .btn-bd-primary {
+      --bd-violet-bg: #1739fc;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
 
-    <!-- CSS - Custom Color Selector -->
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #0923b6;
+      --bs-btn-hover-border-color: #1739fc;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #1739fc;
+      --bs-btn-active-border-color: #0923b6;
+    }
 
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
 
-        .b-example-divider {
-            width: 100%;
-            height: 3rem;
-            background-color: rgba(0, 0, 0, .1);
-            border: solid rgba(0, 0, 0, .15);
-            border-width: 1px 0;
-            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-        }
-
-        .b-example-vr {
-            flex-shrink: 0;
-            width: 1.5rem;
-            height: 100vh;
-        }
-
-        .bi {
-            vertical-align: -.125em;
-            fill: currentColor;
-        }
-
-        .nav-scroller {
-            position: relative;
-            z-index: 2;
-            height: 2.75rem;
-            overflow-y: hidden;
-        }
-
-        .nav-scroller .nav {
-            display: flex;
-            flex-wrap: nowrap;
-            padding-bottom: 1rem;
-            margin-top: -1px;
-            overflow-x: auto;
-            text-align: center;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .btn-bd-primary {
-            --bd-violet-bg: #1739fc;
-            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-            --bs-btn-font-weight: 600;
-            --bs-btn-color: var(--bs-white);
-            --bs-btn-bg: var(--bd-violet-bg);
-            --bs-btn-border-color: var(--bd-violet-bg);
-            --bs-btn-hover-color: var(--bs-white);
-            --bs-btn-hover-bg: #0923b6;
-            --bs-btn-hover-border-color: #1739fc;
-            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-            --bs-btn-active-color: var(--bs-btn-hover-color);
-            --bs-btn-active-bg: #1739fc;
-            --bs-btn-active-border-color: #0923b6;
-        }
-
-        .bd-mode-toggle {
-            z-index: 1500;
-        }
-
-        .bd-mode-toggle .dropdown-menu .active .bi {
-            display: block !important;
-        }
-    </style>
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
+  </style>
 
 </head>
 
@@ -197,7 +141,7 @@
                       <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false"><i class="bi bi-house"></i> Home</a>
                       <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="gallery.html"><i class="bi bi-house"></i> Home Page</a>
+                        <li><a class="dropdown-item" href="index.html"><i class="bi bi-house"></i> Home Page</a>
                         </li>
                         <li><a class="dropdown-item" href="gallery.html"><i
                               class="bi bi-images"></i> Gallery</a>
@@ -288,7 +232,7 @@
                 <header class="pb-3 mb-4 border-bottom">
                     <a href="https://status.authorize.net"
                         class="d-flex align-items-center text-dark text-decoration-none">
-                        <img src="images/icons/anet/anet-logo1.png" width="300" height="69" />
+                        <img src="images/icons/anet/anet-logo2.png" width="300" height="69" />
                     </a>
                 </header>
 
@@ -312,7 +256,7 @@
                                         <a href="https://status.authorize.net" target="_blank"
                                             class="page-status-container span10" id="page-06v575cbzlpr">
                                             <div class="logo">
-                                                <img src="images/icons/anet/anet-logo3.png" width="60" height="60" />
+                                                <img id="anetimage2" src="images/icons/anet/anet-logo4.png" width="60" height="60" />
                                             </div>
                                             <div class="status-info">
                                                 <div class="product-name">Authorize.net</div>
@@ -333,7 +277,7 @@
                 <header class="pb-3 mb-4 border-bottom">
                     <a href="https://getbootstrap.com/"
                         class="d-flex align-items-center text-dark text-decoration-none">
-                        <img src="images/icons/cybs/cybersource-logo4.png" width="300" height="69" />
+                        <img id="cybsimage" src="images/icons/cybs/cybersource-logo6.png" width="300" height="69" />
                     </a>
                 </header>
 
@@ -357,7 +301,7 @@
                                         <a href="https://status.cybersource.com" target="_blank"
                                             class="page-status-container span10" id="page-ttbtd8wrjg1b">
                                             <div class="logo">
-                                                <img src="images/icons/cybs/cybersource-logo2.png" width="60"
+                                                <img id="cybsimage2" src="images/icons/cybs/cybersource-logo1.png" width="60"
                                                     height="60" />
                                             </div>
                                             <div class="status-info">
@@ -380,7 +324,7 @@
                 <header class="pb-3 mb-4 border-bottom">
                     <a href="https://getbootstrap.com/"
                         class="d-flex align-items-center text-dark text-decoration-none">
-                        <img src="images/icons/cybs/cybersource-logo4.png" width="300" height="69" />
+                        <img id="cybsimage" src="images/icons/cybs/cybersource-logo6.png" width="300" height="69" />
                     </a>
                 </header>
 
@@ -405,7 +349,7 @@
                                         <a href="https://status.payworks.com/" target="_blank"
                                             class="page-status-container span10" id="page-1f3wy4kq816n">
                                             <div class="logo">
-                                                <img src="images/icons/cybs/cybersource-logo2.png" width="60"
+                                                <img id="cybsimage3" src="images/icons/cybs/cybersource-logo1.png" width="60"
                                                     height="60" />
                                             </div>
                                             <div class="status-info">
@@ -428,7 +372,7 @@
                 <header class="pb-3 mb-4 border-bottom">
                     <a href="https://cardinalcommercecorporation.statuspage.io"
                         class="d-flex align-items-center text-dark text-decoration-none">
-                        <img src="images/icons/cybs/cardinal-logo2.png" width="300" height="69" />
+                        <img id="cardimage" src="images/icons/cybs/cardinal-logo1.png" width="300" height="69" />
                     </a>
                 </header>
 
@@ -512,8 +456,6 @@
 
     </main>
 
-    <script src="stylescripts2/JS/bootstrap.bundle.min.js"></script>
-
     <script src="https://cdn.statuspage.io/se-v2.js"></script>
 
     <script>
@@ -535,10 +477,10 @@
 
             // page codes array built for future tweakability
             allPageCodes = [];
-            allPageCodes.push('06v575cbzlpr'); // ANET
-            allPageCodes.push('ttbtd8wrjg1b'); // CYBS
-            allPageCodes.push('1f3wy4kq816n'); // Payworks
-            allPageCodes.push('fbdy4fjp4p32'); // Cardinal
+            allPageCodes.push('06v575cbzlpr'); // Authorize.net
+            allPageCodes.push('ttbtd8wrjg1b'); // Cybersource
+            allPageCodes.push('1f3wy4kq816n'); // Cybersource Card Present (Payworks)
+            allPageCodes.push('fbdy4fjp4p32'); // Cardinal Commerce
 
             // this is a helper function to find the highest severity incident
             var getWorstSeverity = function (incidents) {
@@ -639,6 +581,10 @@
             }
         });
     </script>
+
+  <!-- JS -->
+  <script src="stylescripts2/JS/color-modes3.js"></script>
+  <script src="stylescripts2/JS/bootstrap.bundle.min.js"></script>
 
 </body>
 

@@ -8,84 +8,18 @@
 
     <!-- Favicon -->
     <link rel="icon" href="images/icons/profile.jpg" type="image/x-icon">
-    <link rel="shortcut icon" href="images/icons/profile.jpg" type="image/x-icon">
 
     <!-- Title -->
     <title>APT Portfolio - Bootstrap</title>
 
-    <!-- JS -->
-    <script src="stylescripts2/JS/color-modes.js"></script>
-
-    <!-- CSS - Universal -->
+    <!-- CSS -->
+    <link href="stylescripts2/CSS/common.css" rel="stylesheet">
     <link href="stylescripts2/CSS/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-    <!-- CSS, JS - For Status Page Widgets -->
-    <link href="stylescripts/statuspage.css" rel="stylesheet">
-
-    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-bundle.js"></script>
-    <script src="https://unpkg.com/@statuspage/status-widget/dist/index.js"></script>
-
-    <script src='https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js'></script>
-
-    <!-- Custom styles for this template -->
-    <link href="stylescripts2/CSS/merged.css" rel="stylesheet">
-
     <!-- CSS - Custom Color Selector -->
     <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-
-        .b-example-divider {
-            width: 100%;
-            height: 3rem;
-            background-color: rgba(0, 0, 0, .1);
-            border: solid rgba(0, 0, 0, .15);
-            border-width: 1px 0;
-            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-        }
-
-        .b-example-vr {
-            flex-shrink: 0;
-            width: 1.5rem;
-            height: 100vh;
-        }
-
-        .bi {
-            vertical-align: -.125em;
-            fill: currentColor;
-        }
-
-        .nav-scroller {
-            position: relative;
-            z-index: 2;
-            height: 2.75rem;
-            overflow-y: hidden;
-        }
-
-        .nav-scroller .nav {
-            display: flex;
-            flex-wrap: nowrap;
-            padding-bottom: 1rem;
-            margin-top: -1px;
-            overflow-x: auto;
-            text-align: center;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
-        }
-
+        /*Theme Color Switcher*/
         .btn-bd-primary {
             --bd-violet-bg: #1739fc;
             --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
@@ -115,7 +49,7 @@
 </head>
 
 <body>
-    <!--Theme Color Icons-->
+    <!--Theme Color Icons Start-->
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
         <symbol id="check2" viewBox="0 0 16 16">
             <path
@@ -135,11 +69,12 @@
                 d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
         </symbol>
     </svg>
+    <!--Theme Color Icons End-->
 
-    <!--Theme Code-->
+    <!--Theme Code Start-->
     <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
         <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
-            aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+            data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
             <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
                 <use href="#circle-half"></use>
             </svg>
@@ -184,108 +119,119 @@
             </li>
         </ul>
     </div>
+    <!--Theme Code End-->
 
     <main>
         <div class="container">
 
             <header class="p-3 mb-3 border-bottom">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                  <a class="navbar-brand" href="sign-in.html"><img src="images/icons/profile.jpg" width="50" height="50"
-                      class="rounded-circle" alt="Logo"></a>
-        
-                  <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li class="nav-item dropdown">
-                      <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false"><i class="bi bi-house"></i> Home</a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="gallery.html"><i class="bi bi-house"></i> Home Page</a>
+                    <a class="navbar-brand" href="sign-in.html"><img src="images/icons/profile.jpg" width="50"
+                            height="50" class="rounded-circle" alt="Logo"></a>
+
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-house"></i> Home</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="index.html"><i class="bi bi-house"></i> Home Page</a>
+                                </li>
+                                <li><a class="link-body-emphasis dropdown-item" href="gallery.html"><i
+                                            class="bi bi-images"></i> Gallery</a>
+                                </li>
+                                <li><a class="dropdown-item" href="dashboard.html"><i class="bi bi-graph-up"></i>
+                                        Dashboard</a>
+                                </li>
+                                <li><a class="dropdown-item" href="product.html"><i class="bi bi-archive"></i>
+                                        Product</a>
+                                </li>
+                            </ul>
                         </li>
-                        <li><a class="link-body-emphasis dropdown-item" href="gallery.html"><i
-                              class="bi bi-images"></i> Gallery</a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-2 link-secondary dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><i
+                                    class="bi bi-credit-card-2-front"></i> Platform Tests</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="anet.html"><i class="bi bi-credit-card"></i>
+                                        Authorize.net</a>
+                                </li>
+                                <li><a class="link-secondary dropdown-item" href="cybs.html"><i
+                                            class="bi bi-credit-card-fill"></i> Cybersource</a>
+                                </li>
+                            </ul>
                         </li>
-                        <li><a class="dropdown-item" href="dashboard.html"><i class="bi bi-graph-up"></i> Dashboard</a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-activity"></i> Status
+                                Page</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="statuspage1.html">Status Page Example 1</a>
+                                </li>
+                                <li><a class="dropdown-item" href="statuspage2.html">Status Page Example 2</a>
+                                </li>
+                            </ul>
                         </li>
-                        <li><a class="dropdown-item" href="product.html"><i class="bi bi-archive"></i>
-                            Product</a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-code-square"></i> Dev
+                                Docs</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://developer.authorize.net/">Authorize.net</a>
+                                </li>
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://developer.cybersource.com/">Cybersource</a>
+                                </li>
+                            </ul>
                         </li>
-                      </ul>
-                    </li>
-        
-                    <li class="nav-item dropdown">
-                      <a class="nav-link px-2 link-secondary dropdown-toggle" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-credit-card-2-front"></i> Platform Tests</a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="anet.html"><i class="bi bi-credit-card"></i> Authorize.net</a>
-                        </li>
-                        <li><a class="link-secondary dropdown-item" href="cybs.html"><i class="bi bi-credit-card-fill"></i> Cybersource</a>
-                        </li>
-                      </ul>
-                    </li>
-        
-                    <li class="nav-item dropdown">
-                      <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-activity"></i> Status Page</a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item"href="statuspage1.html">Status Page Example 1</a>
-                        </li>
-                        <li><a class="dropdown-item" href="statuspage2.html">Status Page Example 2</a>
-                        </li>
-                      </ul>
-                    </li>
-        
-                    <li class="nav-item dropdown">
-                      <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-code-square"></i> Dev Docs</a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" target="_blank" href="https://developer.authorize.net/">Authorize.net</a>
-                        </li>
-                        <li><a class="dropdown-item" target="_blank" href="https://developer.cybersource.com/">Cybersource</a>
-                        </li>
-                      </ul>
-                    </li>
-        
-                    <li><a href="drone.html" class="nav-link px-2 link-body-emphasis"><i class="bi bi-pin-map"></i> Drone Map</a></li>
-        
-                  </ul>
-        
-                  <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                    <div class="form-floating">
-                      <input type="search" class="form-control" placeholder="Search...">
-                      <label for="floatingInput">Search...</label>
-                    </div>
-                  </form>
-        
-                  <div class="dropdown text-end">
-                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
-                      data-bs-toggle="dropdown" aria-expanded="false">
-                      <img src="images/avatar/IMG_3686.jpg" alt="mdo" width="40" height="50" class="rounded-circle">
-                    </a>
-                    <ul class="dropdown-menu text-small">
-                      <li><a class="dropdown-item" href="#">Profile</a></li>
-                      <li><a class="dropdown-item" href="#">Settings</a></li>
-                      <li>
-                        <hr class="dropdown-divider">
-                      </li>
-                      <li><a class="dropdown-item" href="sign-in.html">Sign out</a></li>
+
+                        <li><a href="drone.html" class="nav-link px-2 link-body-emphasis"><i class="bi bi-pin-map"></i>
+                                Drone Map</a></li>
+
                     </ul>
-                  </div>
+
+                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                        <div class="form-floating">
+                            <input type="search" class="form-control" placeholder="Search...">
+                            <label for="floatingInput">Search...</label>
+                        </div>
+                    </form>
+
+                    <div class="dropdown text-end">
+                        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="images/avatar/IMG_3686.jpg" alt="mdo" width="40" height="50"
+                                class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="sign-in.html">Sign out</a></li>
+                        </ul>
+                    </div>
                 </div>
-              </header>
+            </header>
 
 
-        <div class="container">
+            <div class="container">
 
-            <div class="px-4 py-0 my-5 text-center">
-                <h1 class="display-8 fw-bold">Cybersource Test Examples</h1>
-                <div class="d-flex justify-content-center">
-                    <p class="lead mb-4">Various test for the Cybersource platform.</p>
+                <div class="px-4 py-0 my-5 text-center">
+                    <img id="cybsimage" class="d-block mx-auto mb-4" src="images/icons/cybs/cybersource-logo6.png" width="300"
+                        height="69" />
+                    <h1 class="display-8 fw-bold">Cybersource Test Examples</h1>
+                    <div class="d-flex justify-content-center">
+                        <p class="lead mb-4">Various test for the Cybersource platform.</p>
+                    </div>
                 </div>
-                <img class="d-block mx-auto mb-4" src="images/icons/cybs/cybersource-logo4.png" width="300"
-                    height="69" />
-            </div>
 
-            <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
-                <!--<div class="feature col">
+                <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+                    <!--<div class="feature col">
                     <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
                         <img src="images/icons/bridge.png" width="80" height="80">
                         <i class="bi bi-code-slash" width="80" height="80"></i>
@@ -296,28 +242,28 @@
                     <p><a class="btn btn-outline-secondary" href="./anet/bridge.html">View Tests &raquo;</a></p>
                 </div>-->
 
-                <div class="feature col">
-                    <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-                        <!--<img src="images/icons/accept.png" width="80" height="80">-->
-                        <i class="bi bi-cart-check" width="80" height="80"></i>
+                    <div class="feature col">
+                        <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                            <!--<img src="images/icons/accept.png" width="80" height="80">-->
+                            <i class="bi bi-cart-check" width="80" height="80"></i>
+                        </div>
+                        <h3 class="fs-2">Pay By Link</h3>
+                        <p>Tests displaying and using Pay By Link.</p>
+                        <p><a class="btn btn-outline-secondary" href="cybs/paybylink.html">View Tests &raquo;</a></p>
                     </div>
-                    <h3 class="fs-2">Pay By Link</h3>
-                    <p>Tests displaying and using Pay By Link.</p>
-                    <p><a class="btn btn-outline-secondary" href="cybs/paybylink.html">View Tests &raquo;</a></p>
-                </div>
 
-                <div class="feature col">
-                    <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-                        <!--<img src="images/icons/checkout.png" width="80" height="80">-->
-                        <i class="bi bi-wallet2" width="80" height="80"></i>
+                    <div class="feature col">
+                        <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                            <!--<img src="images/icons/checkout.png" width="80" height="80">-->
+                            <i class="bi bi-wallet2" width="80" height="80"></i>
+                        </div>
+                        <h3 class="fs-2">Unified Checkout</h3>
+                        <p>Tests displaying and using Unfieid Checkout.</p>
+                        <p><a class="btn btn-outline-secondary" href="cybs/unifiedcheckoutaccept.html">View Tests
+                                &raquo;</a></p>
                     </div>
-                    <h3 class="fs-2">Unified Checkout</h3>
-                    <p>Tests displaying and using Unfieid Checkout.</p>
-                    <p><a class="btn btn-outline-secondary" href="cybs/unifiedcheckoutaccept.html">View Tests
-                            &raquo;</a></p>
-                </div>
 
-                <!--<div class="feature col">
+                    <!--<div class="feature col">
                     <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
                         <img src="images/icons/anet/vms1.png" width="80" height="80">
                         <i class="bi bi-patch-check" width="80" height="80"></i>
@@ -327,50 +273,53 @@
                     <p><a class="btn btn-outline-secondary" href="anet/vms.html">View Tests &raquo;</a></p>
                 </div>-->
 
+                </div>
+
             </div>
 
-        </div>
+            <div class="container">
 
-        <div class="container">
+                <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                    <div class="col-md-4 d-flex align-items-center">
+                        <span class="mb-3 mb-md-0 text-body-secondary">&copy;
+                            <script>document.write(new Date().getFullYear())</script> Company, Inc | <a
+                                href="privacy.html" target="_blank">Privacy</a> | <a href="terms.html"
+                                target="_blank">Terms</a>
+                        </span>
+                    </div>
+                    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                        <li class="ms-3">
+                            <a class="text-body-secondary" href="https://www.linkedin.com/in/adam-thompson-a547468/"
+                                target="_blank">
+                                <i class="bi bi-linkedin" style="font-size: 1.5rem; "></i>
+                            </a>
+                        </li>
+                        <li class="ms-3">
+                            <a class="text-body-secondary" href="https://www.flickr.com/photos/adam-p-thompson/albums"
+                                target="_blank">
+                                <i class="bi bi-camera2" style="font-size: 1.5rem; "></i>
+                            </a>
+                        </li>
+                        <li class="ms-3">
+                            <a class="text-body-secondary" href="https://www.behance.net/adthomps" target="_blank">
+                                <i class="bi bi-behance" style="font-size: 1.5rem; "></i>
+                            </a>
+                        </li>
+                        <li class="ms-3">
+                            <a class="text-body-secondary"
+                                href="https://www.youtube.com/channel/UChghyQZmnM2UYBYyJ2yhyVg" target="_blank">
+                                <i class="bi bi-youtube" style="font-size: 1.5rem; "></i>
+                            </a>
+                        </li>
+                    </ul>
+                </footer>
 
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                <div class="col-md-4 d-flex align-items-center">
-                    <span class="mb-3 mb-md-0 text-body-secondary">&copy;
-                        <script>document.write(new Date().getFullYear())</script> Company, Inc | <a href="privacy.html"
-                            target="_blank">Privacy</a> | <a href="terms.html" target="_blank">Terms</a>
-                    </span>
-                </div>
-                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                    <li class="ms-3">
-                        <a class="text-body-secondary" href="https://www.linkedin.com/in/adam-thompson-a547468/"
-                            target="_blank">
-                            <i class="bi bi-linkedin" style="font-size: 1.5rem; "></i>
-                        </a>
-                    </li>
-                    <li class="ms-3">
-                        <a class="text-body-secondary" href="https://www.flickr.com/photos/adam-p-thompson/albums"
-                            target="_blank">
-                            <i class="bi bi-camera2" style="font-size: 1.5rem; "></i>
-                        </a>
-                    </li>
-                    <li class="ms-3">
-                        <a class="text-body-secondary" href="https://www.behance.net/adthomps" target="_blank">
-                            <i class="bi bi-behance" style="font-size: 1.5rem; "></i>
-                        </a>
-                    </li>
-                    <li class="ms-3">
-                        <a class="text-body-secondary" href="https://www.youtube.com/channel/UChghyQZmnM2UYBYyJ2yhyVg"
-                            target="_blank">
-                            <i class="bi bi-youtube" style="font-size: 1.5rem; "></i>
-                        </a>
-                    </li>
-                </ul>
-            </footer>
-
-        </div>
+            </div>
 
     </main>
 
+    <!-- JS -->
+    <script src="stylescripts2/JS/color-modes3.js"></script>
     <script src="stylescripts2/JS/bootstrap.bundle.min.js"></script>
 
 </body>

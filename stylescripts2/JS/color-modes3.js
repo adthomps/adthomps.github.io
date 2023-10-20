@@ -1,9 +1,3 @@
-/*!
- * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
- * Copyright 2011-2023 The Bootstrap Authors
- * Licensed under the Creative Commons Attribution 3.0 Unported License.
- */
-
 (() => {
   'use strict'
 
@@ -57,29 +51,61 @@
     }
   }
 
-  // Add a function to switch images based on the theme - Drone Image
+  // Add a function to switch images based on the theme
   const switchImageBasedOnTheme = theme => {
     const imageContainer = document.querySelector('#imageContainer');
-    const image = document.querySelector('#image');
-    let imagePath;
 
-    switch (theme) {
-      case 'light':
-        imagePath = 'images/icons/drone-logo3.png';
-        break;
-      case 'dark':
-        imagePath = 'images/icons/drone-logo1.png';
-        break;
-      case 'auto':
-        imagePath = 'images/icons/drone-logo2.png';
-        break;
-      default:
-        imagePath = 'images/icons/drone-logo2.png';
-        break;
+    // Define an object to map image IDs to their respective paths for different themes
+    const imagePaths = {
+      'droneimage': {
+        light: 'images/icons/drone-logo3.png',
+        dark: 'images/icons/drone-logo1.png',
+        auto: 'images/icons/drone-logo2.png',
+        // Add more themes and image paths as needed
+      },
+      'anetimage': {
+        light: 'images/icons/anet/anet-logo1.png',
+        dark: 'images/icons/anet/anet-logo2.png',
+        auto: 'images/icons/anet/anet-logo2.png',
+      },
+      'anetimage2': {
+        light: 'images/icons/anet/anet-logo5.png',
+        dark: 'images/icons/anet/anet-logo4.png',
+        auto: 'images/icons/anet/anet-logo4.png',
+      },
+      'cybsimage': {
+        light: 'images/icons/cybs/cybersource-logo4.png',
+        dark: 'images/icons/cybs/cybersource-logo6.png',
+        auto: 'images/icons/cybs/cybersource-logo6.png',
+      },
+      'cybsimage2': {
+        light: 'images/icons/cybs/cybersource-logo2.png',
+        dark: 'images/icons/cybs/cybersource-logo1.png',
+        auto: 'images/icons/cybs/cybersource-logo1.png',
+      },
+      'cybsimage3': {
+        light: 'images/icons/cybs/cybersource-logo2.png',
+        dark: 'images/icons/cybs/cybersource-logo1.png',
+        auto: 'images/icons/cybs/cybersource-logo1.png',
+      },
+      'cardimage': {
+        light: 'images/icons/cybs/cardinal-logo2.png',
+        dark: 'images/icons/cybs/cardinal-logo1.png',
+        auto: 'images/icons/cybs/cardinal-logo1.png',
+      }
+      // Add more image IDs and their associated themes and image paths
+    };
+
+    // Get the image elements by their IDs
+    for (const imageId in imagePaths) {
+      if (imagePaths.hasOwnProperty(imageId)) {
+        const image = document.querySelector(`#${imageId}`);
+        if (image) {
+          const imagePath = imagePaths[imageId][theme] || imagePaths[imageId]['auto'];
+          image.src = imagePath;
+        }
+      }
     }
-
-      // Update the image source
-      image.src = imagePath;
   };
 
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
@@ -99,26 +125,9 @@
           setStoredTheme(theme)
           setTheme(theme)
           showActiveTheme(theme, true)
-        })
-      })
-  })
-
-    // Add an event listener for theme changes to switch images
-    window.addEventListener('DOMContentLoaded', () => {
-      showActiveTheme(getPreferredTheme());
-  
-      document.querySelectorAll('[data-bs-theme-value]')
-        .forEach(toggle => {
-          toggle.addEventListener('click', () => {
-            const theme = toggle.getAttribute('data-bs-theme-value');
-            setStoredTheme(theme);
-            setTheme(theme);
-            showActiveTheme(theme, true);
-  
-            // Call the function to switch images
-            switchImageBasedOnTheme(theme);
-          });
+          // Call the function to switch images
+          switchImageBasedOnTheme(theme);
         });
-    });
-
-})()
+      });
+  });
+})();
