@@ -12,10 +12,14 @@
   <!-- Title -->
   <title>APT Portfolio - Bootstrap</title>
 
-    <!-- CSS - Universal -->
-    <link href="../stylescripts2/CSS/common.css" rel="stylesheet">
-    <link href="../stylescripts2/CSS/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- CSS - Universal -->
+  <link href="../stylescripts2/CSS/common.css" rel="stylesheet">
+  <link href="../stylescripts2/CSS/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- Custom styles for this template -->
+  <link href="../stylescripts2/CSS/product.css" rel="stylesheet">
 
   <!-- CSS - Custom Color Selector -->
   <style>
@@ -45,6 +49,7 @@
       display: block !important;
     }
   </style>
+
 
 </head>
 
@@ -131,8 +136,8 @@
 
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li class="nav-item dropdown">
-              <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false"><i class="bi bi-house"></i> Home</a>
+              <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-house"></i> Home</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="../index.html"><i class="bi bi-house"></i> Home
                     Page</a>
@@ -142,26 +147,28 @@
                 <li><a class="dropdown-item" href="../dashboard.html"><i class="bi bi-graph-up"></i> Dashboard</a>
                 </li>
                 <li><a class="dropdown-item" href="../product.html"><i class="bi bi-archive"></i>
-                  Product</a>
-              </li>
+                    Product</a>
+                </li>
               </ul>
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link px-2 link-secondary dropdown-toggle" href="#" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-credit-card-2-front"></i> Platform
-                Tests</a>
+              <a class="nav-link px-2 link-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false"><i class="bi bi-credit-card-2-front"></i> Platform Tests</a>
               <ul class="dropdown-menu">
-                <li><a class="link-secondary dropdown-item" href="../anet.html"><i class="bi bi-credit-card"></i> Authorize.net</a>
+                <li><a class="link-secondary dropdown-item" href="../anet.html"><i class="bi bi-credit-card"></i>
+                    Authorize.net</a>
                 </li>
-                <li><a class="dropdown-item" href="../cybs.html"><i class="bi bi-credit-card-fill"></i> Cybersource</a>
+                <li><a class="dropdown-item" href="../cybs.html"><i class="bi bi-credit-card-fill"></i>
+                    Cybersource</a>
                 </li>
               </ul>
             </li>
 
             <li class="nav-item dropdown">
               <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-activity"></i> Status Page</a>
+                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-activity"></i> Status
+                Page</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="../statuspage1.html">Status Page Example 1</a>
                 </li>
@@ -212,172 +219,170 @@
 
       </header>
 
-      <div class="container">
+    </div>
 
-        <div class="px-4 py-0 my-5 text-center">
-          <img id="anetimage" class="d-block mx-auto mb-4" src="../images/icons/anet/anet-logo2.png" width="300" height="60" />
-          <h1 class="display-8 fw-bold">API Bridge Examples</h1>
-          <div class="d-flex justify-content-center">
-            <p class="lead mb-4">Test example API Bridge of legacy Authorize.net to new Authorize.net platform.</p>
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
+      <div class="col-md-6 p-lg-5 mx-auto my-5">
+        <img id="anetimage" class="d-block mx-auto mb-4" src="../images/icons/anet/anet-logo2.png" width="300"
+          height="60" />
+        <br />
+        <h1 class="display-3 fw-bold">API Bridge Examples</h1>
+        <h3 class="fw-normal text-muted mb-3">Test example API Bridge of legacy Authorize.net to new Authorize.net platform.</h3>
+        <div class="d-flex gap-3 justify-content-center lead fw-normal">
+          <a class="icon-link" href="#">
+            Learn more
+            <svg class="bi">
+              <use xlink:href="#chevron-right" />
+            </svg>
+          </a>
+          <a class="icon-link" href="#">
+            Buy
+            <svg class="bi">
+              <use xlink:href="#chevron-right" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+      <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5">API - Acceptjs</h2>
+          <p class="lead">Acceptjs displaying payment form to collet card information and create a payment nonce.</p>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-outline-primary btn-lg"
+              onclick="window.location.href = '../anet/accept/acceptjsp-cybs.html';">
+              Production - Acceptjs
+            </button>
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-primary btn-lg"
+              onclick="window.location.href = '../anet/accept/acceptjss-cybs.html';">
+              Sandbox - Acceptjs
+            </button>
           </div>
         </div>
-
-        <div class="container px-4 py-5" id="featured-3">
-          <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
-            <div class="feature col">
-              <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-              </div>
-              <h3 class="fs-2">API Bridge - AIM/Foxy.io - Sandbox/CAS</h3>
-              <p>This tests displaying a form to collect the card information and process payment using AIM/Foxy Cart
-                (foxy.io).</p>
-              <div class="container text-center">
-                <div class="row">
-                  <div class="col">
-                    <form action="https://aptaccept.foxycart.com/cart" method="post">
-                      <input type="hidden" name="name" value="Simple Smartphone" />
-                      <input type="hidden" name="price" value="99.99" />
-                      <input type="hidden" name="2:name" value="Leather Case for Smartphone" />
-                      <input type="hidden" name="2:price" value="9.99" />
-                      <input class="btn btn-outline-primary btn-lg" type="submit" value="CAS - Simple Smartphone" />
-                    </form>
-                  </div>
-                  <!--<div class="col">
-                  <form action="https://aptaccept.foxycart.com/cart" method="post">
-                    <input type="hidden" name="name" value="Simple Smartphone" />
-                    <input type="hidden" name="price" value="99.99" />
-                    <input type="hidden" name="2:name" value="Leather Case for Smartphone" />
-                    <input type="hidden" name="2:price" value="9.99" />
-                    <input class="btn btn-outline-primary btn-lg" type="submit" value="CAS - Simple Smartphone" />
-                  </form>
-                </div>-->
-                </div>
-              </div>
-            </div>
-
-            <div class="feature col">
-              <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-              </div>
-              <!--<h3 class="fs-2">API Bridge - AIM/Foxy.io - Production</h3>
-            <p>This tests displaying a form to collect the card information and process payment using AIM/Foxy Cart
-              (foxy.io).</p>
-            <div class="container text-center">
-              <div class="row">
-                <div class="col">
-                  <form action="https://aptaccept.foxycart.com/cart" method="post">
-                    <input type="hidden" name="name" value="Simple Smartphone" />
-                    <input type="hidden" name="price" value="99.99" />
-                    <input type="hidden" name="2:name" value="Leather Case for Smartphone" />
-                    <input type="hidden" name="2:price" value="9.99" />
-                    <input class="btn btn-outline-primary btn-lg" type="submit" value="Production - Simple Smartphone" />
-                  </form>
-                </div>
-                <div class="col">
-                  <form action="https://aptaccept.foxycart.com/cart" method="post">
-                    <input type="hidden" name="name" value="Simple Smartphone" />
-                    <input type="hidden" name="price" value="99.99" />
-                    <input type="hidden" name="2:name" value="Leather Case for Smartphone" />
-                    <input type="hidden" name="2:price" value="9.99" />
-                    <input class="btn btn-outline-primary btn-lg" type="submit" value="Production - Simple Smartphone" />
-                  </form>
-                </div>
-              </div>
-            </div>-->
-            </div>
-
-            <div class="feature col">
-              <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-              </div>
-              <h3 class="fs-2">API Bridge - Acceptjs</h3>
-              <p>This tests Acceptjs displaying a form to collect the card information and create a payment nonce.</p>
-              <div class="container text-center">
-                <div class="row">
-                  <div class="col">
-                    <button class="btn btn-outline-primary btn-lg"
-                      onclick="window.location.href = '../anet/accept/acceptjsp-cybs.html';">
-                      Production - Acceptjs
-                    </button>
-                  </div>
-                  <div class="col">
-                    <button class="btn btn-outline-primary btn-lg"
-                      onclick="window.location.href = '../anet/accept/acceptjss-cybs.html';">
-                      CAS - Acceptjs
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="feature col">
-              <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-              </div>
-              <h3 class="fs-2">API Bridge - Accept UI</h3>
-              <p>This tests Accept UI displaying a form to collect the card information and create a payment nonce.</p>
-              <div class="container text-center">
-                <div class="row">
-                  <div class="col">
-                    <button class="btn btn-outline-primary btn-lg"
-                      onclick="window.location.href = '../anet/accept/acceptuip-cybs.html';">
-                      Production - Accept UI
-                    </button>
-                  </div>
-                  <div class="col">
-                    <button class="btn btn-outline-primary btn-lg"
-                      onclick="window.location.href = '../anet/accept/acceptuis-cybs.html';">
-                      CAS - Accept UI
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
+        <br /><br />
+      </div>
+      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+          <h2 class="display-5">API - Accept UI</h2>
+          <p class="lead">Accept UI displaying payment form to collect card information and create a payment nonce.</p>
         </div>
-
-      </div>
-
-      <div class="container">
-
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-          <div class="col-md-4 d-flex align-items-center">
-            <span class="mb-3 mb-md-0 text-body-secondary">&copy;
-              <script>document.write(new Date().getFullYear())</script> Company, Inc | <a href="../privacy.html"
-                target="_blank">Privacy</a> | <a href="../terms.html" target="_blank">Terms</a>
-            </span>
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-outline-primary btn-lg"
+              onclick="window.location.href = '../anet/accept/acceptuip-cybs.html';">
+              Production - Accept UI
+            </button>
           </div>
-          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3">
-              <a class="text-body-secondary" href="https://www.linkedin.com/in/adam-thompson-a547468/" target="_blank">
-                <i class="bi bi-linkedin" style="font-size: 1.5rem; "></i>
-              </a>
-            </li>
-            <li class="ms-3">
-              <a class="text-body-secondary" href="https://www.flickr.com/photos/adam-p-thompson/albums"
-                target="_blank">
-                <i class="bi bi-camera2" style="font-size: 1.5rem; "></i>
-              </a>
-            </li>
-            <li class="ms-3">
-              <a class="text-body-secondary" href="https://www.behance.net/adthomps" target="_blank">
-                <i class="bi bi-behance" style="font-size: 1.5rem; "></i>
-              </a>
-            </li>
-            <li class="ms-3">
-              <a class="text-body-secondary" href="https://www.youtube.com/channel/UChghyQZmnM2UYBYyJ2yhyVg"
-                target="_blank">
-                <i class="bi bi-youtube" style="font-size: 1.5rem; "></i>
-              </a>
-            </li>
-          </ul>
-        </footer>
-
+          <div class="col">
+            <button class="btn btn-outline-primary btn-lg"
+              onclick="window.location.href = '../anet/accept/acceptuis-cybs.html';">
+              Sandbox - Accept UI
+            </button>
+          </div>
+        </div>
+        <br /><br />
       </div>
+    </div>
+    </div>
 
-    </main>
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5">API Bridge - AIM/Foxy.io</h2>
+          <p class="lead">This tests displaying a form to collect the card information and process payment using AIM/Foxy Cart
+            (foxy.io).</p>
+        </div>
+        <div class="row">
+          <div class="col">
+            <form action="https://aptaccept.foxycart.com/cart" method="post">
+              <input type="hidden" name="name" value="Simple Smartphone" />
+              <input type="hidden" name="price" value="99.99" />
+              <input type="hidden" name="2:name" value="Leather Case for Smartphone" />
+              <input type="hidden" name="2:price" value="9.99" />
+              <input class="btn btn-outline-primary btn-lg" type="submit" value="CAS - Simple Smartphone" />
+            </form>
+          </div>
+          <div class="col">
+            <!--<button class="btn btn-outline-primary btn-lg"
+              onclick="window.location.href = '../anet/acceptcustomer/acceptcustomers.html';">
+              Sandbox - Accept Customer
+            </button>-->
+          </div>
+        </div>
+        <br /><br />
+      </div>
+      <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <!--<div class="my-3 p-3">
+          <h2 class="display-5">API - Accept Hosted</h2>
+          <p class="lead">Accpet Hosted display hoest payment form for accepting customer payments.</p>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-outline-primary btn-lg"
+              onclick="window.location.href = '../anet/accepthosted/accepthostedp.html';">
+              Production - Accept Hosted
+            </button>
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-primary btn-lg"
+              onclick="window.location.href = '../anet/accepthosted/accepthosteds.html';">
+              Sandbox - Accept Hosted
+            </button>
+          </div>
+        </div>
+        <br /><br />-->
+      </div>
+    </div>
 
-    <!-- JS -->
-    <script src="../stylescripts2/JS/color-modes4.js"></script>
-<script src="../stylescripts2/JS/bootstrap.bundle.min.js"></script>
+  </main>
+
+  <div class="container">
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <span class="mb-3 mb-md-0 text-body-secondary">&copy;
+          <script>document.write(new Date().getFullYear())</script> Company, Inc | <a href="privacy.html"
+            target="_blank">Privacy</a> | <a href="terms.html" target="_blank">Terms</a>
+        </span>
+      </div>
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3">
+          <a class="text-body-secondary" href="https://www.linkedin.com/in/adam-thompson-a547468/" target="_blank">
+            <i class="bi bi-linkedin" style="font-size: 1.5rem; "></i>
+          </a>
+        </li>
+        <li class="ms-3">
+          <a class="text-body-secondary" href="https://www.flickr.com/photos/adam-p-thompson/albums" target="_blank">
+            <i class="bi bi-camera2" style="font-size: 1.5rem; "></i>
+          </a>
+        </li>
+        <li class="ms-3">
+          <a class="text-body-secondary" href="https://www.behance.net/adthomps" target="_blank">
+            <i class="bi bi-behance" style="font-size: 1.5rem; "></i>
+          </a>
+        </li>
+        <li class="ms-3">
+          <a class="text-body-secondary" href="https://www.youtube.com/channel/UChghyQZmnM2UYBYyJ2yhyVg"
+            target="_blank">
+            <i class="bi bi-youtube" style="font-size: 1.5rem; "></i>
+          </a>
+        </li>
+      </ul>
+    </footer>
+
+  </div>
+
+  </main>
+
+  <!-- JS -->
+  <script src="../stylescripts2/JS/color-modes4.js"></script>
+  <script src="../stylescripts2/JS/bootstrap.bundle.min.js"></script>
 
 </body>
 
