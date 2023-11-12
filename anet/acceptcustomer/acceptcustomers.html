@@ -55,12 +55,20 @@
     <script type="text/javascript">
         //<![CDATA[
         function hostedProfilePageBorderVisible_onchange() {
+            //var y = document.getElementById("hostedProfileIFrameCommunicatorUrl");
+            //var url = window.location.href.substring(0,window.location.href.lastIndexOf("/"))+"/TestPageIframeCommunicator.html";
+            //y.value = isPageBorderVisible() ? "" : url;
         }
 
         function isPageBorderVisible() {
             var sel = document.getElementById("selIntegrationPage");
             var selVal = (sel.selectedIndex >= 0) ? sel.options[sel.selectedIndex].text : "manage";
             var txtPBV = document.getElementById("hostedProfilePageBorderVisible");
+            // if ("manage" == selVal) {
+            //return "false" != txtPBV.value;
+            //} else {
+            //        return "true" == txtPBV.value;
+            //    }
         }
 
         function selIntegrationPage_onchange(elem) {
@@ -72,6 +80,14 @@
                 var txtAddressRequired = document.getElementById("hostedProfileBillingAddressRequired");
                 var selectedPage = document.getElementById("selectedPage");
                 selectedPage.value = val;
+                //  txtPPID.readOnly = (val != "editPayment");
+                //  txtSAID.readOnly = (val != "editShipping");
+                //  txtCCRequired.readOnly = (val == "addShipping" || val == "editShipping");
+                //  txtAddressRequired.readOnly = txtCCRequired.readOnly;
+                //  txtPPID.style.backgroundColor = (val != "editPayment") ? "#dddddd" : "";
+                //  txtSAID.style.backgroundColor = (val != "editShipping") ? "#dddddd" : "";
+                //  txtCCRequired.style.backgroundColor = (val == "addShipping" || val == "editShipping") ? "#dddddd" : "";
+                //  txtAddressRequired.style.backgroundColor = txtCCRequired.style.backgroundColor;
                 if (val == "addPayment") {
                     txtPPID.value = "new";
                 } else if (val != "editPayment" || (val == "editPayment" && txtPPID.value == "new")) {
@@ -87,7 +103,6 @@
         }
         //]]>
     </script>
-
     <script type="text/javascript">
         //<![CDATA[
         (function () {
@@ -104,6 +119,21 @@
                 document.getElementById("iframeAuthorizeNet").src = "empty.html";
                 if (AuthorizeNetPopup.options.onPopupClosed) AuthorizeNetPopup.options.onPopupClosed();
             };
+            /*   AuthorizeNetPopup.openManagePopup = function () {
+            openSpecificPopup({ action: "manage" });
+            };
+            AuthorizeNetPopup.openAddPaymentPopup = function () {
+            openSpecificPopup({ action: "addPayment", paymentProfileId: "new" });
+            };
+            AuthorizeNetPopup.openEditPaymentPopup = function (paymentProfileId) {
+            openSpecificPopup({ action: "editPayment", paymentProfileId: paymentProfileId });
+            };
+            AuthorizeNetPopup.openAddShippingPopup = function () {
+            openSpecificPopup({ action: "addShipping", shippingAddressId: "new" });
+            };
+            AuthorizeNetPopup.openEditShippingPopup = function (shippingAddressId) {
+            openSpecificPopup({ action: "editShipping", shippingAddressId: shippingAddressId });
+            };*/
             AuthorizeNetPopup.onReceiveCommunication = function (querystr) {
                 var params = parseQueryString(querystr);
                 switch (params["action"]) {
@@ -324,7 +354,7 @@
             }
         }
     </script>
-
+    
     <script language="javascript" type="text/javascript">
         // <!CDATA[
         function XHConn() {
@@ -343,11 +373,9 @@
                 }
             }
             if (!xmlhttp) return null;
-
             this.connect = function (sURL, sPostData, fnDone) {
                 if (!xmlhttp) return false;
                 bComplete = false;
-
                 try {
                     xmlhttp.open("POST", sURL, true);
                     xmlhttp.setRequestHeader("Method", "POST " + sURL + " HTTP/1.1");
@@ -390,80 +418,81 @@
         }
 
     </script>
+
 </head>
 
 <body>
-  <!--Theme Color Icons Start-->
-  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-    <symbol id="check2" viewBox="0 0 16 16">
-      <path
-        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-    </symbol>
-    <symbol id="circle-half" viewBox="0 0 16 16">
-      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
-    </symbol>
-    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-      <path
-        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
-      <path
-        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
-    </symbol>
-    <symbol id="sun-fill" viewBox="0 0 16 16">
-      <path
-        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
-    </symbol>
-  </svg>
-  <!--Theme Color Icons End-->
-
-  <!--Theme Code Start-->
-  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
-      data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
-      <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
-        <use href="#circle-half"></use>
-      </svg>
-      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-    </button>
-    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-      <li>
-        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
-          aria-pressed="false">
-          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-            <use href="#sun-fill"></use>
-          </svg>
-          Light
-          <svg class="bi ms-auto d-none" width="1em" height="1em">
-            <use href="#check2"></use>
-          </svg>
-        </button>
-      </li>
-      <li>
-        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
-          aria-pressed="false">
-          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-            <use href="#moon-stars-fill"></use>
-          </svg>
-          Dark
-          <svg class="bi ms-auto d-none" width="1em" height="1em">
-            <use href="#check2"></use>
-          </svg>
-        </button>
-      </li>
-      <li>
-        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
-          aria-pressed="true">
-          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-            <use href="#circle-half"></use>
-          </svg>
-          Auto
-          <svg class="bi ms-auto d-none" width="1em" height="1em">
-            <use href="#check2"></use>
-          </svg>
-        </button>
-      </li>
-    </ul>
-  </div>
-  <!--Theme Code End-->
+    <!--Theme Color Icons Start-->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path
+          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+        <path
+          d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path
+          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+      </symbol>
+    </svg>
+    <!--Theme Color Icons End-->
+  
+    <!--Theme Code Start-->
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+        data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+          <use href="#circle-half"></use>
+        </svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+            aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+              <use href="#sun-fill"></use>
+            </svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+            aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+              <use href="#moon-stars-fill"></use>
+            </svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+            aria-pressed="true">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+              <use href="#circle-half"></use>
+            </svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <!--Theme Code End-->
 
     <main>
         <div class="container">
@@ -587,45 +616,47 @@
                                     <label>Code Url:</label>
                                     <select id="txtUrl">
                                         <option value="">-Select Url-</option>
-                                        <option value="test.authorize.net">Sandbox API
-                                        </option>
+                                        <option value="https://apitest.authorize.net/xml/v1/request.api">Production API</option>
                                     </select>
-                                    <input class="btn btn-primary" type="button" id="btnSend" name="btnSend"
+                                    <input class="btn btn-primary btn" type="button" id="btnSend" name="btnSend"
                                         value="Generate Code" onclick="return btnSend_onclick()" />
                                 </div>
-    
                             </div>
                             <br />
                             <div class="field">
                                 <textarea class="d-none" id="txtReqXml" name="txtReqXml" cols="100" rows="5"
-                                    placeholder="Code">
-                                    &lt;getHostedProfilePageRequest xmlns=&quot;AnetApi/xml/v1/schema/AnetApiSchema.xsd&quot;&gt;
-                                    &lt;merchantAuthentication&gt;
-                                    &lt;name&gt;QOAA0OCC$aP94Nn8t528&lt;/name&gt;
-                                    &lt;transactionKey&gt;5SaT35b9D4h7kZP6&lt;/transactionKey&gt;
-                                    &lt;/merchantAuthentication&gt;
-                                    &lt;customerProfileId&gt;515360845&lt;/customerProfileId&gt;
-                                    &lt;hostedProfileSettings&gt;
-                                    &lt;setting&gt;
-                                    &lt;settingName&gt;hostedProfileReturnUrl&lt;/settingName&gt;
-                                    &lt;settingValue&gt;https://adthomps.github.io/anet/accept.html&lt;/settingValue&gt;
-                                    &lt;/setting&gt;
-                                    &lt;setting&gt;
-                                    &lt;settingName&gt;hostedProfileReturnUrlText&lt;/settingName&gt;
-                                    &lt;settingValue&gt;Return to test page.&lt;/settingValue&gt;
-                                    &lt;/setting&gt;
-                                    &lt;setting&gt;
-                                    &lt;settingName&gt;hostedProfilePageBorderVisible&lt;/settingName&gt;
-                                    &lt;settingValue&gt;true&lt;/settingValue&gt;
-                                    &lt;/setting&gt;
-                                    &lt;/hostedProfileSettings&gt;
-                                    &lt;/getHostedProfilePageRequest&gt;
-                                </textarea>
+                                placeholder="Code">
+                                &lt;getHostedProfilePageRequest xmlns=&quot;AnetApi/xml/v1/schema/AnetApiSchema.xsd&quot;&gt;
+                                &lt;merchantAuthentication&gt;
+                                &lt;name&gt;QOAA0OCC$aP94Nn8t528&lt;/name&gt;
+                                &lt;transactionKey&gt;5SaT35b9D4h7kZP6&lt;/transactionKey&gt;
+                                &lt;/merchantAuthentication&gt;
+                                &lt;customerProfileId&gt;1200000005&lt;/customerProfileId&gt;
+                                &lt;hostedProfileSettings&gt;
+                                &lt;setting&gt;
+                                &lt;settingName&gt;hostedProfileReturnUrl&lt;/settingName&gt;
+                                &lt;settingValue&gt;https://returnurl.com/return/&lt;/settingValue&gt;
+                                &lt;/setting&gt;
+                                &lt;setting&gt;
+                                &lt;settingName&gt;hostedProfileReturnUrlText&lt;/settingName&gt;
+                                &lt;settingValue&gt;Continue to confirmation page.&lt;/settingValue&gt;
+                                &lt;/setting&gt;
+                                &lt;setting&gt;
+                                &lt;settingName&gt;hostedProfilePageBorderVisible&lt;/settingName&gt;
+                                &lt;settingValue&gt;true&lt;/settingValue&gt;
+                                &lt;/setting&gt;
+                                &lt;/hostedProfileSettings&gt;
+                                &lt;/getHostedProfilePageRequest&gt;
+                            </textarea>
                             </div>
                             <div class="field">
                                 <label>Response:</label>
-                                <div><span id="spnStatusCode" class="error"></span></div>
-                                <div><textarea id="token" name="txtRespXml" cols="100" rows="5"></textarea></div>
+                                <div>
+                                    <span id="spnStatusCode" class="error"></span>
+                                </div>
+                                <div>
+                                    <textarea id="token" name="txtRespXml" cols="100" rows="8"></textarea>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -637,7 +668,7 @@
                                 <label>Set Form Url:</label>
                                 <select id="txtDomain">
                                     <option value="">-Select Url-</option>
-                                    <option value="accept.authorize.net">Sandbox API</option>
+                                    <option value="test.authorize.net">Production API</option>
                                 </select>
                                     <br /><br />
                                 <label>Page:</label>
@@ -721,7 +752,7 @@
     <script src="../../stylescripts2/JS/color-modes3.js"></script>
     <script src="../../stylescripts2/JS/bootstrap.bundle.min.js"></script>
     <script src="../../stylescripts2/JS/checkout.js"></script>
-    
+
 </body>
 
 </body>
