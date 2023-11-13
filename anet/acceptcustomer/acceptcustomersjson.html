@@ -1,4 +1,4 @@
-﻿﻿<!doctype html>
+﻿<!doctype html>
 <html lang="en" data-bs-theme="auto">
 
 <head>
@@ -55,20 +55,27 @@
     <script type="text/javascript">
         //<![CDATA[
         function hostedProfilePageBorderVisible_onchange() {
-            //var y = document.getElementById("hostedProfileIFrameCommunicatorUrl");
-            //var url = window.location.href.substring(0,window.location.href.lastIndexOf("/"))+"/TestPageIframeCommunicator.html";
-            //y.value = isPageBorderVisible() ? "" : url;
         }
 
         function isPageBorderVisible() {
             var sel = document.getElementById("selIntegrationPage");
             var selVal = (sel.selectedIndex >= 0) ? sel.options[sel.selectedIndex].text : "manage";
             var txtPBV = document.getElementById("hostedProfilePageBorderVisible");
-            // if ("manage" == selVal) {
-            //return "false" != txtPBV.value;
-            //} else {
-            //        return "true" == txtPBV.value;
-            //    }
+            var txtPPID = document.getElementById("txtPaymentProfileID");
+            var txtSAID = document.getElementById("txtShippingAddressID");
+            var txtCCRequired = document.getElementById("hostedProfileCardCodeRequired");
+            var txtAddressRequired = document.getElementById("hostedProfileBillingAddressRequired");
+            var selectedPage = document.getElementById("selectedPage");
+            var isPageBorderVisible = true;
+            if (selVal == "addPayment" || selVal == "editPayment") {
+                isPageBorderVisible = false;
+            } else if (selVal == "addShipping" || selVal == "editShipping") {
+                isPageBorderVisible = false;
+            } else if (selVal == "manage") {
+                isPageBorderVisible = true;
+            }
+            txtPBV.value = isPageBorderVisible ? "true" : "false";
+            return isPageBorderVisible;
         }
 
         function selIntegrationPage_onchange(elem) {
@@ -80,14 +87,6 @@
                 var txtAddressRequired = document.getElementById("hostedProfileBillingAddressRequired");
                 var selectedPage = document.getElementById("selectedPage");
                 selectedPage.value = val;
-                //  txtPPID.readOnly = (val != "editPayment");
-                //  txtSAID.readOnly = (val != "editShipping");
-                //  txtCCRequired.readOnly = (val == "addShipping" || val == "editShipping");
-                //  txtAddressRequired.readOnly = txtCCRequired.readOnly;
-                //  txtPPID.style.backgroundColor = (val != "editPayment") ? "#dddddd" : "";
-                //  txtSAID.style.backgroundColor = (val != "editShipping") ? "#dddddd" : "";
-                //  txtCCRequired.style.backgroundColor = (val == "addShipping" || val == "editShipping") ? "#dddddd" : "";
-                //  txtAddressRequired.style.backgroundColor = txtCCRequired.style.backgroundColor;
                 if (val == "addPayment") {
                     txtPPID.value = "new";
                 } else if (val != "editPayment" || (val == "editPayment" && txtPPID.value == "new")) {
@@ -119,21 +118,21 @@
                 document.getElementById("iframeAuthorizeNet").src = "empty.html";
                 if (AuthorizeNetPopup.options.onPopupClosed) AuthorizeNetPopup.options.onPopupClosed();
             };
-            /*   AuthorizeNetPopup.openManagePopup = function () {
-            openSpecificPopup({ action: "manage" });
+            AuthorizeNetPopup.openManagePopup = function () {
+                openSpecificPopup({ action: "manage" });
             };
             AuthorizeNetPopup.openAddPaymentPopup = function () {
-            openSpecificPopup({ action: "addPayment", paymentProfileId: "new" });
+                openSpecificPopup({ action: "addPayment", paymentProfileId: "new" });
             };
             AuthorizeNetPopup.openEditPaymentPopup = function (paymentProfileId) {
-            openSpecificPopup({ action: "editPayment", paymentProfileId: paymentProfileId });
+                openSpecificPopup({ action: "editPayment", paymentProfileId: paymentProfileId });
             };
             AuthorizeNetPopup.openAddShippingPopup = function () {
-            openSpecificPopup({ action: "addShipping", shippingAddressId: "new" });
+                openSpecificPopup({ action: "addShipping", shippingAddressId: "new" });
             };
             AuthorizeNetPopup.openEditShippingPopup = function (shippingAddressId) {
-            openSpecificPopup({ action: "editShipping", shippingAddressId: shippingAddressId });
-            };*/
+                openSpecificPopup({ action: "editShipping", shippingAddressId: shippingAddressId });
+            };
             AuthorizeNetPopup.onReceiveCommunication = function (querystr) {
                 var params = parseQueryString(querystr);
                 switch (params["action"]) {
@@ -354,70 +353,72 @@
             }
         }
     </script>
-    
-    <script language="javascript" type="text/javascript">
-        // <!CDATA[
-        function XHConn() {
-            var xmlhttp, bComplete = false;
+
+<script language="javascript" type="text/javascript">
+    function XHConn() {
+        var xmlhttp, bComplete = false;
+        try {
+            xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
             try {
-                xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
             } catch (e) {
                 try {
-                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    xmlhttp = new XMLHttpRequest();
                 } catch (e) {
-                    try {
-                        xmlhttp = new XMLHttpRequest();
-                    } catch (e) {
-                        xmlhttp = false;
-                    }
+                    xmlhttp = false;
                 }
             }
-            if (!xmlhttp) return null;
-            this.connect = function (sURL, sPostData, fnDone) {
-                if (!xmlhttp) return false;
-                bComplete = false;
-                try {
-                    xmlhttp.open("POST", sURL, true);
-                    xmlhttp.setRequestHeader("Method", "POST " + sURL + " HTTP/1.1");
-                    xmlhttp.setRequestHeader("Content-Type", "application/xml".value);
-                    xmlhttp.onreadystatechange = function () {
-                        if (xmlhttp.readyState == 4 && !bComplete) {
-                            bComplete = true;
-                            fnDone(xmlhttp);
-                        }
-                    };
-                    xmlhttp.send(sPostData);
-                } catch (z) {
-                    alert(z);
-                    return false;
-                }
-                return true;
-            };
-            return this;
         }
-        var g_xc = new XHConn();
+        if (!xmlhttp) return null;
+        this.connect = function (sURL, sPostData, fnDone) {
+            if (!xmlhttp) return false;
+            bComplete = false;
+            try {
+                xmlhttp.open("POST", sURL, true);
+                xmlhttp.setRequestHeader("Method", "POST " + sURL + " HTTP/1.1");
+                xmlhttp.setRequestHeader("Content-Type", "application/json");
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState == 4 && !bComplete) {
+                        bComplete = true;
+                        fnDone(xmlhttp);
+                    }
+                };
+                xmlhttp.send(JSON.stringify(sPostData));
+            } catch (z) {
+                alert(z);
+                return false;
+            }
+            return true;
+        };
+        return this;
+    }
+    var g_xc = new XHConn();
 
-        function btnSend_onclick() {
-            document.getElementById("btnSend").disabled = true;
-            document.getElementById("token").innerHTML = "";
-            document.getElementById("spnStatusCode").innerHTML = "";
-            var fnWhenDone = function (oXML) {
-                if (oXML.status && oXML.status != "200") {
-                    document.getElementById("spnStatusCode").innerHTML = "HTTP status code: " + oXML.status.toString().replace(/</g, "&lt;");
-                }
-                var txt = oXML.responseText;
-                var result = $(txt).find("token").text();
-                alert(result);
-                txt = txt.replace(/></g, "><");
-                txt = txt.replace(/</g, "&lt;");
-                txt = txt.replace(/>/g, "&gt;");
-                document.getElementById("token").innerHTML = result;
-                document.getElementById("btnSend").disabled = false;
-            };
-            g_xc.connect(document.getElementById("txtUrl").value, document.getElementById("txtReqXml").value, fnWhenDone);
-        }
-
-    </script>
+    function btnSend_onclick() {
+        document.getElementById("btnSend").disabled = true;
+        document.getElementById("token").innerHTML = "";
+        document.getElementById("spnStatusCode").innerHTML = "";
+        var fnWhenDone = function (oXML) {
+            if (oXML.status && oXML.status != "200") {
+                document.getElementById("spnStatusCode").innerHTML = "HTTP status code: " + oXML.status.toString().replace(/</g, "&lt;");
+            }
+            var txt = oXML.responseText;
+            var result;
+            try {
+                var json = JSON.parse(txt);
+                result = json.token; // Assuming 'token' is the desired field from JSON
+            } catch (e) {
+                alert("Error parsing JSON: " + e);
+                result = "Error";
+            }
+            alert(result);
+            document.getElementById("token").innerHTML = result;
+            document.getElementById("btnSend").disabled = false;
+        };
+        g_xc.connect(document.getElementById("txtUrl").value, JSON.parse(document.getElementById("txtReqJson").value), fnWhenDone);
+    }
+</script>
 
 </head>
 
@@ -616,7 +617,7 @@
                                     <label>Code Url:</label>
                                     <select id="txtUrl">
                                         <option value="">-Select Url-</option>
-                                        <option value="https://api.authorize.net/xml/v1/request.api">Production API</option>
+                                        <option value="https://apitest.authorize.net/xml/v1/request.api">Sandbox API</option>
                                     </select>
                                     <input class="btn btn-primary btn" type="button" id="btnSend" name="btnSend"
                                         value="Generate Code" onclick="return btnSend_onclick()" />
@@ -624,29 +625,10 @@
                             </div>
                             <br />
                             <div class="field">
-                                <textarea class="d-none" id="txtReqXml" name="txtReqXml" cols="100" rows="5" placeholder="Code">
-                                    &lt;getHostedProfilePageRequest xmlns=&quot;AnetApi/xml/v1/schema/AnetApiSchema.xsd&quot;&gt;
-                                    &lt;merchantAuthentication&gt;
-                                    &lt;name&gt;QOAA0OCC$aP94Nn8t528&lt;/name&gt;
-                                    &lt;transactionKey&gt;5zdZ9X9sra6e2G29&lt;/transactionKey&gt;
-                                    &lt;/merchantAuthentication&gt;
-                                    &lt;customerProfileId&gt;302106418&lt;/customerProfileId&gt;
-                                    &lt;hostedProfileSettings&gt;
-                                    &lt;setting&gt;
-                                    &lt;settingName&gt;hostedProfileReturnUrl&lt;/settingName&gt;
-                                    &lt;settingValue&gt;https://adthomps.github.io/anet/accept.html&lt;/settingValue&gt;
-                                    &lt;/setting&gt;
-                                    &lt;setting&gt;
-                                    &lt;settingName&gt;hostedProfileReturnUrlText&lt;/settingName&gt;
-                                    &lt;settingValue&gt;Return to test page.&lt;/settingValue&gt;
-                                    &lt;/setting&gt;
-                                    &lt;setting&gt;
-                                    &lt;settingName&gt;hostedProfilePageBorderVisible&lt;/settingName&gt;
-                                    &lt;settingValue&gt;true&lt;/settingValue&gt;
-                                    &lt;/setting&gt;
-                                    &lt;/hostedProfileSettings&gt;
-                                    &lt;/getHostedProfilePageRequest&gt;
-                                </textarea>
+                                <textarea class="d-none" id="txtReqJson" name="txtReqJson" cols="100" rows="5"
+                                    placeholder="Code">
+                                { &quot;getHostedProfilePageRequest&quot;: { &quot;merchantAuthentication&quot;: { &quot;name&quot;: &quot;QOAA0OCC$aP94Nn8t528&quot;, &quot;transactionKey&quot;: &quot;5SaT35b9D4h7kZP6&quot; }, &quot;customerProfileId&quot;: &quot;1200000005&quot;, &quot;hostedProfileSettings&quot;: { &quot;setting&quot;: [ { &quot;settingName&quot;: &quot;hostedProfileReturnUrl&quot;, &quot;settingValue&quot;: &quot;https://adthomps.github.io/anet/accept.html&quot; }, { &quot;settingName&quot;: &quot;hostedProfileReturnUrlText&quot;, &quot;settingValue&quot;: &quot;Return to test page.&quot; }, { &quot;settingName&quot;: &quot;hostedProfilePageBorderVisible&quot;, &quot;settingValue&quot;: &quot;true&quot; } ] } } }
+                            </textarea>
                             </div>
                             <div class="field">
                                 <label>Response:</label>
@@ -654,7 +636,7 @@
                                     <span id="spnStatusCode" class="error"></span>
                                 </div>
                                 <div>
-                                    <textarea id="token" name="txtRespXml" cols="100" rows="8"></textarea>
+                                    <textarea id="token" name="txtRespJson" cols="100" rows="8"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -667,7 +649,7 @@
                                 <label>Set Form Url:</label>
                                 <select id="txtDomain">
                                     <option value="">-Select Url-</option>
-                                    <option value="accept.authorize.net">Production API</option>
+                                    <option value="test.authorize.net">Sandbox API</option>
                                 </select>
                                     <br /><br />
                                 <label>Page:</label>
@@ -751,6 +733,8 @@
     <script src="../../stylescripts2/JS/color-modes3.js"></script>
     <script src="../../stylescripts2/JS/bootstrap.bundle.min.js"></script>
     <script src="../../stylescripts2/JS/checkout.js"></script>
+
+</body>
 
 </body>
 
