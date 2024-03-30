@@ -8,6 +8,7 @@ async function handleRequest(request) {
     const formData = await request.formData();
     const transactionId = formData.get('x_trans_id');
     const responseCode = formData.get('x_response_code');
+    const reasonText = formData.get('x_response_reason_text');
     const description = formData.get('x_description');
 
     // Generate a response based on the transaction result
