@@ -32,7 +32,8 @@ const populateFormFieldsArray = () => {
         { type: "input", id: "x_receipt_link_method", value: "link", sendit: "1" },
         { type: "input", id: "x_receipt_link_text", value: "Receipt Link", sendit: "1" },
         { type: "input", id: "x_receipt_link_url", value: "https://adthomps.github.io/product.html", sendit: "1" },
-        { type: "input", id: "x_relay_response", value: "false", sendit: "1" }
+        { type: "input", id: "x_relay_response", value: "false", sendit: "1" },
+        { type: "input", id: "x_test_mode", value: "true", sendit: "1" }
     ];
 
     return formFields;

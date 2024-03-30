@@ -30,7 +30,8 @@ const populateFormFieldsArray = () => {
         { type: "input", id: "x_cancel_url_text", value: "Cancel Order", sendit: "1" },
         { type: "input", id: "x_cancel_url", value: "https://www.authorize.net", sendit: "1" },
         { type: "input", id: "x_relay_response", value: "true", sendit: "1" },
-        { type: "input", id: "x_relay_url", value: "https://anetreplayresponse.apt-account.workers.dev/", sendit: "1" }
+        { type: "input", id: "x_relay_url", value: "https://anetreplayresponse.apt-account.workers.dev/", sendit: "1" },
+        { type: "input", id: "x_test_mode", value: "true", sendit: "1" }
     ];
 
     return formFields;
