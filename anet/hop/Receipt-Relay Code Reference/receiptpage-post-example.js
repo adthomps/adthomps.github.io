@@ -8,10 +8,7 @@ async function handleRequest(request) {
     const formData = await request.formData();
     const transactionId = formData.get('x_trans_id');
     const responseCode = formData.get('x_response_code');
-    const amount = formData.get('x_amount');
-    const authCode = formData.get('x_auth_code');
-    const firstName = formData.get('x_first_name');
-    const lastName = formData.get('x_last_name');
+    const description = formData.get('x_description');
 
     // Generate HTML content with transaction data
     const htmlContent = `
@@ -24,12 +21,9 @@ async function handleRequest(request) {
       <body>
           <h1>Transaction Receipt</h1>
           <div id="receipt">
-              <p>Transaction ID: ${transactionId}</p>
-              <p>Response Code: ${responseCode}</p>
-              <p>Amount: ${amount}</p>
-              <p>Authorization Code: ${authCode}</p>
-              <p>First Name: ${firstName}</p>
-              <p>Last Name: ${lastName}</p>
+          <p>Transaction ID: ${transactionId}</p>
+          <p>Response Code: ${responseCode}</p>
+          <p>Description: ${description}</p>
               <br />
               <p><a href='https://adthomps.github.io/anet.html'>Back to test site.</a></p>
           </div>
