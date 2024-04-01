@@ -1,83 +1,58 @@
-﻿<!doctype html>
-<html lang="en" dir="auto">
-
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-
-    <!-- Standard Meta -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Favicon -->
-    <!--<link rel="shortcut icon" href="../images/icons/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="../images/icons/favicon.ico" type="image/x-icon">-->
-
-    <link rel="shortcut icon" href="../images/icons/profile.jpg" type="image/x-icon">
-    <link rel="icon" href="../images/icons/profile.jpg" type="image/x-icon">
-
-    <!-- Site Properties -->
-    <title>APT Portfolio - Bootstrap</title>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    
-    <script src="https://jstest.authorize.net/v2/Accept.js" charset="utf-8"></script>
-
+    <meta charset="UTF-8">
+    <title>Authorize.net Accept UI Demo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </head>
-
 <body>
-    <div>
-        <p><a href="../accept.html">Back to testing site.</a></p>
-    </div>
-    <div class="container panel panel-default" style="margin-top:20px">
-        <div class="form-group" style="margin-left: 0px; margin-right: 0px;">
-            <div class="col-md-offset-3 col-sm-offset-3 col-lg-offset-3 col-md-8 col-lg-8 col-sm-8">
-                <button type="submit" id="pay" class="btn btn-primary btn-lg btn-block"
-                    onclick="getSecureData(this)">Get Payment Nonce (with UI)</button>
-            </div>
+    <div class="container mt-5">
+        <h2>Payment Form</h2>
+        <div id="paymentForm">
+            <button class="btn btn-primary" onclick="sendPaymentDataToAnet()">Pay with Card</button>
         </div>
+        <div id="paymentResponse"></div>
     </div>
 
+    <script type="text/javascript" src="https://jstest.authorize.net/v1/Accept.js" charset="utf-8"></script>
     <script type="text/javascript">
-        var blob = "";
-        function getSecureData(button) {
-            var parameters = {};
-            parameters.showBilling = true;
-            parameters.apiLoginID = '5841489448760177102910';
-            parameters.clientKey = '8BWYEa3BGW8YWo1CqCrTLMACPvy8WcrnriWsiYXM5q+tQn5vCUtFLGLpga8+uqV=';
-            callbackFn = 'callbackMerchant';
+        function sendPaymentDataToAnet() {
+            var authData = {
+                clientKey: "5FcB6WrfHGS76gHW3v7btBCE3HuuBuke9Pj96Ztfn5R32G5ep42vne7MCWZtAucY",
+                apiLoginID: "5KP3u95bQpv"
+            };
 
-            parameters.buttonText = 'Pay';
-            parameters.headerText = 'Payment Details';
+            var paymentData = {
+                cardNumber: "4111111111111111", // Dummy card number - use a test card number
+                month: "12",
+                year: "2030",
+                cardCode: "123",
+                zip: "12345",
+                fullName: "Test User"
+            };
 
-            Accept.showForm(button, parameters, callbackFn);
+            var secureData = {
+                authData: authData,
+                cardData: paymentData
+            };
 
+            Accept.dispatchData(secureData, responseHandler);
         }
 
-        function populateErrorMessage(response) {
-            var text = '';
-            for (var i = 0; i < response.messages.message.length; i++) {
-                text = text + response.messages.message[i].code + ':' + response.messages.message[i].text + '\n';
-            }
-            console.log(text);
-        };
-
-        function callbackMerchant(response) {
-            if (response.messages.resultCode === 'Error') {
-                populateErrorMessage(response);
-            } else {
-                var msg01 = '<b> PAYMENT NONCE (Data Value) : </b> ' + response.opaqueData.dataValue;
-                var msg02 = '<b> TYPE (Data Descriptor) : </b> ' + response.opaqueData.dataDescriptor;
-                var msg03 = '<b>CARD NUMBER</b> : ' + response.encryptedCardData.cardNumber + '<br/>' + '<b>EXPIRATION DATE</b> : ' + response.encryptedCardData.expDate + '<br/>' + '<b>BIN</b> : ' + response.encryptedCardData.bin;
-                if ($('#paymentReceipt').length == 0) {
-                    $('body').append($('<br/><br/><div id = "paymentReceipt" style="margin: auto;border: 1px solid black;padding: 15px;width: 50%;"></div>'));
+        function responseHandler(response) {
+            if (response.messages.resultCode === "Error") {
+                var i = 0;
+                while (i < response.messages.message.length) {
+                    console.log(response.messages.message[i].code + ": " + response.messages.message[i].text);
+                    i = i + 1;
                 }
-                $('#paymentReceipt').html(msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03);
+            } else {
+                paymentToken = response.opaqueData.dataDescriptor + " " + response.opaqueData.dataValue;
+                document.getElementById("paymentResponse").innerHTML = "Payment token: " + paymentToken;
             }
         }
     </script>
-    
 </body>
-
 </html>
