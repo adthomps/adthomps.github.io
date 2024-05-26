@@ -13,6 +13,17 @@
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
   }
 
+  
+  const setTheme = theme => {
+    if (theme === 'auto') {
+      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+  
+
+  /*
   const setTheme = theme => {
     if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       document.documentElement.setAttribute('data-bs-theme', 'dark')
@@ -20,6 +31,7 @@
       document.documentElement.setAttribute('data-bs-theme', theme)
     }
   }
+  */
 
   setTheme(getPreferredTheme())
 
@@ -92,6 +104,11 @@
         light: 'images/icons/cybs/cardinal-logo2.png',
         dark: 'images/icons/cybs/cardinal-logo1.png',
         auto: 'images/icons/cybs/cardinal-logo1.png',
+      },
+      'mapimage': {
+        light: 'images/icons/hiking-logo-light.png',
+        dark: 'images/icons/hiking-logo-dark.png',
+        auto: 'images/icons/hiking-logo-dark.png',
       }
       // Add more image IDs and their associated themes and image paths
     };
