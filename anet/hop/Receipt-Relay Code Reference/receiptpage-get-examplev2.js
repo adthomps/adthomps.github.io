@@ -32,8 +32,8 @@ async function handleRequest(request) {
         <title>APT Portfolio - Bootstrap</title>
     
         <!-- CSS - Universal -->
-        <link href=".https://adthomps.github.io/stylescripts2/CSS/common.css" rel="stylesheet">
-        <link href="https://adthomps.github.io/stylescripts2/CSS/bootstrap.min.css" rel="stylesheet">
+        <link href=".https://adthomps.github.io/scripts/CSS/common.css" rel="stylesheet">
+        <link href="https://adthomps.github.io/scripts/CSS/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
       <!-- CSS - Custom Color Selector -->
@@ -394,9 +394,9 @@ async function handleRequest(request) {
         </main>
     
         <!-- JS -->
-        <script src="https://adthomps.github.io/stylescripts2/JS/color-modes3.js"></script>
-        <script src="https://adthomps.github.io/stylescripts2/JS/checkout.js"></script>
-        <script src="https://adthomps.github.io/stylescripts2/JS/bootstrap.bundle.min.js"></script>
+        <script src="https://adthomps.github.io/scripts/JS/color-modes3.js"></script>
+        <script src="https://adthomps.github.io/scripts/JS/checkout.js"></script>
+        <script src="https://adthomps.github.io/scripts/JS/bootstrap.bundle.min.js"></script>
     
     </body>
     
