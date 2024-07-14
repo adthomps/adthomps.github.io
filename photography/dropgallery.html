@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Favicon -->
-  <link rel="icon" href="images/icons/profile.jpg" type="image/x-icon">
+  <link rel="icon" href="../images/icons/profile.jpg" type="image/x-icon">
 
   <!-- Title -->
   <title>APT Portfolio - Bootstrap</title>
 
   <!-- CSS -->
-  <link href="scripts/CSS/common.css" rel="stylesheet">
-  <link href="scripts/CSS/bootstrap.min.css" rel="stylesheet">
+  <link href="../scripts/CSS/common.css" rel="stylesheet">
+  <link href="../scripts/CSS/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
   <!-- CSS - Custom Color Selector -->
@@ -122,86 +122,11 @@
   <!--Theme Code End-->
 
   <main>
-    <div class="container">
 
-      <header class="p-3 mb-3 border-bottom">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <a class="navbar-brand" href="sign-in.html"><img src="images/icons/profile.jpg" width="50" height="50"
-              class="rounded-circle" alt="Logo"></a>
-
-          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li class="nav-item dropdown">
-              <a class="nav-link px-2 link-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false"><i class="bi bi-house"></i> Home</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="index.html"><i class="bi bi-house"></i> Home Page</a>
-                </li>
-                <li><a class="link-secondary dropdown-item" href="gallery.html"><i class="bi bi-images"></i> Gallery</a>
-                </li>
-                <li><a class="dropdown-item" href="dashboard.html"><i class="bi bi-graph-up"></i> Dashboard</a>
-                </li>
-                <li><a class="dropdown-item" href="product.html"><i class="bi bi-archive"></i>
-                    Product</a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-credit-card-2-front"></i> Platform
-                Tests</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="anet.html"><i class="bi bi-credit-card"></i> Authorize.net</a>
-                </li>
-                <li><a class="dropdown-item" href="cybs.html"><i class="bi bi-credit-card-fill"></i> Cybersource</a>
-                </li>
-              </ul>
-            </li>
-
-            <li><a href="statuspage.html" class="nav-link px-2 link-body-emphasis"><i class="bi bi-activity"></i> Status
-                Page</a>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-code-square"></i> Dev Docs</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" target="_blank" href="https://developer.authorize.net/">Authorize.net</a>
-                </li>
-                <li><a class="dropdown-item" target="_blank" href="https://developer.cybersource.com/">Cybersource</a>
-                </li>
-              </ul>
-            </li>
-
-            <li><a href="maps.html" class="nav-link px-2 link-body-emphasis"><i class="bi bi-pin-map"></i> Drone &
-                Hiking Maps</a>
-            </li>
-
-          </ul>
-
-          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-            <div class="form-floating">
-              <input type="search" class="form-control" placeholder="Search...">
-              <label for="floatingInput">Search...</label>
-            </div>
-          </form>
-
-          <div class="dropdown text-end">
-            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="images/avatar/IMG_3686.jpg" alt="mdo" width="40" height="50" class="rounded-circle">
-            </a>
-            <ul class="dropdown-menu text-small">
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="sign-in.html">Sign out</a></li>
-            </ul>
-          </div>
-        </div>
-      </header>
+        <!-- Header File Load-->
+        <div class="container">
+          <div id="header"></div>
+      </div>
 
       <div class="container">
 
@@ -211,7 +136,7 @@
             <p class="lead mb-4">Something short and leading about the collection below—its contents, the creator,
               etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
           </div>
-          <img class="d-block mx-auto mb-4" src="images/gallery/galleryprofile2.png" width="368" height="300" />
+          <img class="d-block mx-auto mb-4" src="../images/gallery/galleryprofile2.png" width="368" height="300" />
         </div>
 
         <div class="album py-5 bg-body-tertiary">
@@ -222,7 +147,7 @@
               <!-- Card 1 -->
               <div class="col">
                 <div class="card shadow-sm">
-                  <img src="images/gallery/drop1.jpg" />
+                  <img src="../images/gallery/drop1.jpg" />
                   <div class="card-body">
                     <p class="card-text">
                       This is a wider card with supporting text below as a natural lead-in to additional content. This
@@ -242,7 +167,7 @@
               <!-- Card 2 -->
               <div class="col">
                 <div class="card shadow-sm">
-                  <img src="images/gallery/drop2.jpg" />
+                  <img src="../images/gallery/drop2.jpg" />
                   <div class="card-body">
                     <p class="card-text">
                       This is a wider card with supporting text below as a natural lead-in to additional content. This
@@ -262,7 +187,7 @@
               <!-- Card 3 -->
               <div class="col">
                 <div class="card shadow-sm">
-                  <img src="images/gallery/drop3.jpg" />
+                  <img src="../images/gallery/drop3.jpg" />
                   <div class="card-body">
                     <p class="card-text">
                       This is a wider card with supporting text below as a natural lead-in to additional content. This
@@ -282,7 +207,7 @@
               <!-- Card 4 -->
               <div class="col">
                 <div class="card shadow-sm">
-                  <img src="images/gallery/drop4.jpg" />
+                  <img src="../images/gallery/drop4.jpg" />
                   <div class="card-body">
                     <p class="card-text">
                       This is a wider card with supporting text below as a natural lead-in to additional content. This
@@ -302,7 +227,7 @@
               <!-- Card 5 -->
               <div class="col">
                 <div class="card shadow-sm">
-                  <img src="images/gallery/drop5.jpg" />
+                  <img src="../images/gallery/drop5.jpg" />
                   <div class="card-body">
                     <p class="card-text">
                       This is a wider card with supporting text below as a natural lead-in to additional content. This
@@ -322,7 +247,7 @@
               <!-- Card 6 -->
               <div class="col">
                 <div class="card shadow-sm">
-                  <img src="images/gallery/drop6.jpg" />
+                  <img src="../images/gallery/drop6.jpg" />
                   <div class="card-body">
                     <p class="card-text">
                       This is a wider card with supporting text below as a natural lead-in to additional content. This
@@ -342,7 +267,7 @@
               <!-- Card 7 -->
               <div class="col">
                 <div class="card shadow-sm">
-                  <img src="images/gallery/drop7.jpg" />
+                  <img src="../images/gallery/drop7.jpg" />
                   <div class="card-body">
                     <p class="card-text">
                       This is a wider card with supporting text below as a natural lead-in to additional content. This
@@ -362,7 +287,7 @@
               <!-- Card 8 -->
               <div class="col">
                 <div class="card shadow-sm">
-                  <img src="images/gallery/drop8.jpg" />
+                  <img src="../images/gallery/drop8.jpg" />
                   <div class="card-body">
                     <p class="card-text">
                       This is a wider card with supporting text below as a natural lead-in to additional content. This
@@ -382,7 +307,7 @@
               <!-- Card 9 -->
               <div class="col">
                 <div class="card shadow-sm">
-                  <img src="images/gallery/drop9.jpg" />
+                  <img src="../images/gallery/drop9.jpg" />
                   <div class="card-body">
                     <p class="card-text">
                       This is a wider card with supporting text below as a natural lead-in to additional content. This
@@ -402,7 +327,7 @@
               <!-- Card 10 -->
               <!--<div class="col">
                 <div class="card shadow-sm">
-                  <img src="images/gallery/drop10.jpg" />
+                  <img src="../images/gallery/drop10.jpg" />
                   <div class="card-body">
                     <p class="card-text">
                       This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
@@ -421,7 +346,7 @@
               <!-- Card 11 -->
               <div class="col">
                 <div class="card shadow-sm">
-                  <img src="images/gallery/drop11.jpg" />
+                  <img src="../images/gallery/drop11.jpg" />
                   <div class="card-body">
                     <p class="card-text">
                       This is a wider card with supporting text below as a natural lead-in to additional content. This
@@ -441,7 +366,7 @@
               <!-- Card 12 -->
               <div class="col">
                 <div class="card shadow-sm">
-                  <img src="images/gallery/drop12.jpg" />
+                  <img src="../images/gallery/drop12.jpg" />
                   <div class="card-body">
                     <p class="card-text">
                       This is a wider card with supporting text below as a natural lead-in to additional content. This
@@ -461,7 +386,7 @@
               <!-- Card 13 -->
               <div class="col">
                 <div class="card shadow-sm">
-                  <img src="images/gallery/drop13.jpg" />
+                  <img src="../images/gallery/drop13.jpg" />
                   <div class="card-body">
                     <p class="card-text">
                       This is a wider card with supporting text below as a natural lead-in to additional content. This
@@ -481,7 +406,7 @@
               <!-- Card 14 -->
               <div class="col">
                 <div class="card shadow-sm">
-                  <img src="images/gallery/drop14.jpg" />
+                  <img src="../images/gallery/drop14.jpg" />
                   <div class="card-body">
                     <p class="card-text">
                       This is a wider card with supporting text below as a natural lead-in to additional content. This
@@ -501,7 +426,7 @@
               <!-- Card 15 -->
               <div class="col">
                 <div class="card shadow-sm">
-                  <img src="images/gallery/drop15.jpg" />
+                  <img src="../images/gallery/drop15.jpg" />
                   <div class="card-body">
                     <p class="card-text">
                       This is a wider card with supporting text below as a natural lead-in to additional content. This
@@ -521,7 +446,7 @@
               <!-- Card 16 -->
               <div class="col">
                 <div class="card shadow-sm">
-                  <img src="images/gallery/drop16.jpg" />
+                  <img src="../images/gallery/drop16.jpg" />
                   <div class="card-body">
                     <p class="card-text">
                       This is a wider card with supporting text below as a natural lead-in to additional content. This
