@@ -5,12 +5,14 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="images/icons/profile.jpg" type="image/x-icon">
+  <link rel="icon" href="../images/icons/profile.jpg" type="image/x-icon">
   <title>APT Portfolio - Bootstrap</title>
-  <link href="scripts/CSS/common.css" rel="stylesheet">
-  <link href="scripts/CSS/bootstrap.min.css" rel="stylesheet">
+  <link href="../scripts/CSS/common.css" rel="stylesheet">
+  <link href="../scripts/CSS/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link href="scripts/CSS/merged.css" rel="stylesheet">
+  <link href="../scripts/CSS/merged.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="../scripts/CSS/product.css" rel="stylesheet">
   <style>
     .btn-bd-primary {
       --bd-violet-bg: #1739fc;
@@ -120,16 +122,96 @@
       <div id="header"></div>
     </div>
 
-      <div class="px-4 py-0 my-5 text-center">
-        <h1 class="display-8 fw-bold">Example Title Page Widget Examples</h1>
-        <div class="d-flex justify-content-center">
-          <p class="lead mb-4">Example Subtitle or Lead.</p>
-        </div>
-        <img class="d-block mx-auto mb-4" src="images/icons/heartbeat3.png" width="300" height="69"
-          alt="Heartbeat Icon" />Example Image
-      </div>
       <div class="container">
-        Example Body Content
+
+        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
+          <div class="col-md-6 p-lg-5 mx-auto my-5">
+              <h1 class="display-3 fw-bold">Payments designed by engineers</h1>
+              <h3 class="fw-normal text-muted mb-3">Build anything you want with APT</h3>
+              <i class="bi bi-coin" style="font-size: 10rem; width: 25%; height: 300px; border-radius: 21px 21px 0 0;"></i>
+              <div class="d-flex gap-3 justify-content-center lead fw-normal">
+                  <a class="icon-link" href="#">
+                      Learn more
+                      <svg class="bi">
+                          <use xlink:href="#chevron-right" />
+                      </svg>
+                  </a>
+                  <a class="icon-link" href="#">
+                      Buy
+                      <svg class="bi">
+                          <use xlink:href="#chevron-right" />
+                      </svg>
+                  </a>
+              </div>
+          </div>
+
+      </div>
+
+      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+          <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+              <div class="my-3 py-3">
+                  <h2 class="display-5">Global Payment Acceptance</h2>
+                  <p class="lead">Accept payments anywhere you are.</p>
+              </div>
+              <!--<img src="images/icons/Product/acceptance.jpg"
+                  style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;" />-->
+              <i class="bi bi-globe-americas" style="font-size: 10rem; width: 25%; height: 300px; border-radius: 21px 21px 0 0;"></i>
+              <br /><br />
+          </div>
+          <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+              <div class="my-3 p-3">
+                  <h2 class="display-5">Fraud Preventer</h2>
+                  <p class="lead">Fight Card Testers</p>
+              </div>
+              <!--<img src="images/icons/Product/FraudPrevent.jpg"
+                  style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;" />-->
+              <i class="bi bi-shield-check" style="font-size: 10rem; width: 25%; height: 300px; border-radius: 21px 21px 0 0;"></i>
+              <br /><br />
+          </div>
+      </div>
+
+      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+          <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+              <div class="my-3 p-3">
+                  <h2 class="display-5">Quick and Simple Acceptance</h2>
+                  <p class="lead">And an even wittier subheading.</p>
+              </div>
+              <!--<img src="images/icons/Product/invoice3.png"
+                  style="width: 25%; height: 300px; border-radius: 21px 21px 0 0;" />-->
+              <i class="bi bi-currency-exchange" style="font-size: 10rem; width: 25%; height: 300px; border-radius: 21px 21px 0 0;"></i>
+          </div>
+          <div class="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+              <div class="my-3 py-3">
+                  <h2 class="display-5">Global API Acceptance</h2>
+                  <p class="lead">Intergrated payments.</p>
+              </div>
+              <i class="bi bi-file-earmark-code" style="font-size: 10rem; width: 25%; height: 300px; border-radius: 21px 21px 0 0;"></i>
+              <br /><br />
+          </div>
+      </div>
+
+      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+          <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+              <div class="my-3 py-3">
+                  <h2 class="display-5">Recurring Payments</h2>
+                  <p class="lead">And an even wittier subheading.</p>
+              </div>
+              <!--<img src="images/icons/Product/Recurring2.png"
+                  style="width: 50%; height: 300px; border-radius: 21px 21px 0 0;" />-->
+                  <i class="bi bi-arrow-repeat" style="font-size: 10rem; width: 25%; height: 300px; border-radius: 21px 21px 0 0;"></i>
+              <br /><br />
+          </div>
+          <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+              <div class="my-3 p-3">
+                  <h2 class="display-5">Manage Customers</h2>
+                  <p class="lead">And an even wittier subheading.</p>
+              </div>
+              <!--<div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">-->
+                  <i class="bi bi-file-earmark-person" style="font-size: 10rem; width: 25%; height: 300px; border-radius: 21px 21px 0 0;"></i>
+              <br /><br />
+          </div>
+      </div>
+        
       </div>
     </div>
 
@@ -140,9 +222,9 @@
 
   </main>
 
-  <script src="scripts/JS/color-modes3.js" defer></script>
-  <script src="scripts/JS/bootstrap.bundle.min.js" defer></script>
-  <script src="scripts/JS/loadHeaderFooter_v3.js" defer></script>
+  <script src="../scripts/JS/color-modes3.js" defer></script>
+  <script src="../scripts/JS/bootstrap.bundle.min.js" defer></script>
+  <script src="../scripts/JS/loadHeaderFooter.js" defer></script>
 
 </body>
 
