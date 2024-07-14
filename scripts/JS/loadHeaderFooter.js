@@ -9,23 +9,27 @@ function loadHeaderFooter() {
   fetch(`${basePath}/templates/header.html`)
     .then(response => response.text())
     .then(data => {
-      document.querySelector('header').innerHTML = data;
-      adjustPaths('header', basePath);
+      const headerElement = document.querySelector('header');
+      if (headerElement) {
+        headerElement.innerHTML = data;
+        adjustPaths(headerElement, basePath);
+      }
     })
     .catch(error => console.error('Error loading header:', error));
 
   fetch(`${basePath}/templates/footer.html`)
     .then(response => response.text())
     .then(data => {
-      document.querySelector('footer').innerHTML = data;
-      adjustPaths('footer', basePath);
+      const footerElement = document.querySelector('footer');
+      if (footerElement) {
+        footerElement.innerHTML = data;
+        adjustPaths(footerElement, basePath);
+      }
     })
     .catch(error => console.error('Error loading footer:', error));
 }
 
-function adjustPaths(elementId, basePath) {
-  const element = document.getElementById(elementId);
-
+function adjustPaths(element, basePath) {
   if (element) {
     // Adjust the paths for links
     const links = element.querySelectorAll('a');
