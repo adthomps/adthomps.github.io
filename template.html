@@ -131,39 +131,39 @@
   <main>
 
     <!-- Placeholder for Header -->
+    <div id="header"></div>
+
     <div class="container">
-      <header></header>
+
+      <div class="px-4 py-0 my-5 text-center">
+        <h1 class="display-8 fw-bold">Example Title Page Widget Examples</h1>
+        <div class="d-flex justify-content-center">
+          <p class="lead mb-4">Example Subtitle or Lead.</p>
+        </div>
+        <img class="d-block mx-auto mb-4" src="images/icons/heartbeat3.png" width="300" height="69" />Example Image
+      </div>
+
+      <div class="container">
+
+        Example Body Content
+
+      </div>
+
     </div>
 
-      <div class="container">
-
-        <div class="px-4 py-0 my-5 text-center">
-          <h1 class="display-8 fw-bold">Example Title Page Widget Examples</h1>
-          <div class="d-flex justify-content-center">
-            <p class="lead mb-4">Example Subtitle or Lead.</p>
-          </div>
-          <img class="d-block mx-auto mb-4" src="images/icons/heartbeat3.png" width="300" height="69" />Example Image
-        </div>
-
-        <div class="container">
-
-          Example Body Content
-
-        </div>
-
-      </div>
-
-      <!-- Placeholder for Footer -->
-      <div class="container">
-        <footer></footer>
-      </div>
+    <!-- Placeholder for Footer -->
+    <div id="footer"></div>
 
   </main>
 
   <!-- JS -->
   <script src="scripts/JS/color-modes3.js"></script>
   <script src="scripts/JS/bootstrap.bundle.min.js"></script>
-  <script src="scripts/JS/loadHeaderFooter.js"></script>
+  <!--<script src="../scripts/JS/loadHeaderFooter.js"></script>-->
+  <script>
+    document.getElementById("header").innerHTML = '<object type="text/html" data="header.html"></object>';
+    document.getElementById("footer").innerHTML = '<object type="text/html" data="footer.html"></object>';
+  </script>
 
 </body>
 

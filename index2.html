@@ -131,9 +131,7 @@
     <main>
 
         <!-- Placeholder for Header -->
-        <div class="container">
-            <header></header>
-        </div>
+        <div id="header"></div>
 
         <div class="container">
 
@@ -318,16 +316,18 @@
         </div>
 
         <!-- Placeholder for Footer -->
-        <div class="container">
-            <footer></footer>
-        </div>
+        <div id="footer"></div>
 
     </main>
 
     <!-- JS -->
     <script src="scripts/JS/color-modes3.js"></script>
     <script src="scripts/JS/bootstrap.bundle.min.js"></script>
-    <script src="scripts/JS/loadHeaderFooter.js"></script>
+    <!--<script src="../scripts/JS/loadHeaderFooter.js"></script>-->
+    <script>
+        document.getElementById("header").innerHTML = '<object type="text/html" data="header.html"></object>';
+        document.getElementById("footer").innerHTML = '<object type="text/html" data="footer.html"></object>';
+    </script>
 
 </body>
 
