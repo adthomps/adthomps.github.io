@@ -1,8 +1,8 @@
 /* GLOBAL STYLES -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 body {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   color: rgb(var(--bs-tertiary-color-rgb));
 }
 
