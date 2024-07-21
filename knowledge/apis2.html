@@ -51,6 +51,8 @@
             --bs-tooltip-bg: var(--bd-violet-bg);
             --bs-tooltip-color: var(--bs-white);
         }
+
+
     </style>
 </head>
 
@@ -154,102 +156,188 @@
                         data-bs-toggle="tooltip"
                         data-bs-title="The API is now obsolete and actively being phased out and disabled.">Sunset</span>
                     <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill"
-                        data-bs-toggle="tooltip" 
-                        data-bs-title="The API is now obsolete and no longer functional.">End
+                        data-bs-toggle="tooltip" data-bs-title="The API is now obsolete and no longer functional.">End
                         of life</span>
                 </div>
 
             </div>
-
+            <br />
             <div class="container">
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">API Name</th>
-                    <th scope="col">API Type</th>
-                    <th scope="col">API Status</th>
-                    <th scope="col">API Documnetation</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Authorize.net API</td>
-                    <td>XML, JSON</td>
-                    <td>
-                        <span
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">API Name</th>
+                            <th scope="col">API Type</th>
+                            <th scope="col">API Status</th>
+                            <th scope="col">API Documnetation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Authorize.net API</td>
+                            <td>XML, JSON</td>
+                            <td>
+                                <span
+                                    class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-title="The API is fully supported and actively updated.">Supported</span>
+                            </td>
+                            <td>
+                                <a href="https://developer.authorize.net/api.html" target="_blank">Documnetation</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Authorize.net API</td>
+                            <td>SOAP</td>
+                            <td>
+                                <span
+                                    class="badge bg-warning-subtle border border-warning-subtle text-warning-emphasis rounded-pill"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-title="The API is now obsolete and in the process of being phased out.">Deprecated</span>
+                            </td>
+                            <td>
+                                <a href="https://developer.authorize.net/api.html" target="_blank">Documnetation</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Accept Suite</td>
+                            <td>Hosted Form/Solution</td>
+                            <td>
+                                <span
+                                    class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-title="The API is fully supported and actively updated.">Supported</span>
+                            </td>
+                            <td>
+                                <a href="https://developer.authorize.net/api/reference/features/accept.html"
+                                    target="_blank">Documnetation</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Advanced Integration Method (AIM)</td>
+                            <td>Name Value Pair (NVP)</td>
+                            <td>
+                                <span
+                                    class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-title="The API is now obsolete and actively being phased out and disabled.">Sunset</span>
+                            </td>
+                            <td>
+                                <a href="https://www.authorize.net/content/dam/anet-redesign/documents/AIM_guide.pdf"
+                                    target="_blank">Documnetation</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Server Integration Method (SIM)</td>
+                            <td>Name Value Pair (NVP) - Hosted Form/Solution</td>
+                            <td>
+                                <span
+                                    class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-title="The API is now obsolete and actively being phased out and disabled.">Sunset</span>
+                            </td>
+                            <td>
+                                <a href="https://www.authorize.net/content/dam/anet-redesign/documents/SIM_guide.pdf"
+                                    target="_blank">Documnetation</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Direct Post Method (DPM)</td>
+                            <td>Name Value Pair (NVP) - Hosted Form/Solution</td>
+                            <td>
+                                <span
+                                    class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-title="The API is now obsolete and actively being phased out and disabled.">Sunset</span>
+                            </td>
+                            <td>
+                                <a href="https://www.authorize.net/content/dam/anet-redesign/documents/SIM_guide.pdf"
+                                    target="_blank">Documnetation</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                <div class="col d-flex align-items-start">
+                    <span
                         class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill"
                         data-bs-toggle="tooltip"
                         data-bs-title="The API is fully supported and actively updated.">Supported</span>
-                    </td>                    
-                    <td>
-                        <a href="https://developer.authorize.net/api.html" target="_blank">Documnetation</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Authorize.net API</td>
-                    <td>SOAP</td>
-                    <td>
-                        <span
+                    <div>
+                        <h3 class="fs-2 text-body-emphasis">Authorize.net API</h3>
+                        <p>API Type: XML, JSON</p>
+                        <a class="btn btn-primary" href="https://developer.authorize.net/api.html"
+                            target="_blank">Documnetation</a>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <span
                         class="badge bg-warning-subtle border border-warning-subtle text-warning-emphasis rounded-pill"
                         data-bs-toggle="tooltip"
                         data-bs-title="The API is now obsolete and in the process of being phased out.">Deprecated</span>
-                    </td>                   
-                    <td>
-                        <a href="https://developer.authorize.net/api.html" target="_blank">Documnetation</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Accept Suite</td>
-                    <td>Hosted Form/Solution</td>
-                    <td>
-                        <span
+                    <div>
+                        <h3 class="fs-2 text-body-emphasis">Authorize.net API</h3>
+                        <p>API Type: SOAP</p>
+                        <a class="btn btn-primary" href="https://developer.authorize.net/api.html"
+                            target="_blank">Documnetation</a>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <span
                         class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill"
                         data-bs-toggle="tooltip"
                         data-bs-title="The API is fully supported and actively updated.">Supported</span>
-                    </td>                     
-                    <td>
-                        <a href="https://developer.authorize.net/api/reference/features/accept.html" target="_blank">Documnetation</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Advanced Integration Method (AIM)</td>
-                    <td>Name Value Pair (NVP)</td>
-                    <td>
-                        <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill"
+                    <div>
+                        <h3 class="fs-2 text-body-emphasis">Accept Suite</h3>
+                        <p>API Type: Hosted Form/Solution</p>
+                        <a class="btn btn-primary"
+                            href="https://developer.authorize.net/api/reference/features/accept.html"
+                            target="_blank">Documnetation</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                <div class="col d-flex align-items-start">
+                    <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill"
                         data-bs-toggle="tooltip"
                         data-bs-title="The API is now obsolete and actively being phased out and disabled.">Sunset</span>
-                    </td>                       
-                    <td>
-                        <a href="https://www.authorize.net/content/dam/anet-redesign/documents/AIM_guide.pdf" target="_blank">Documnetation</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Server Integration Method (SIM)</td>
-                    <td>Name Value Pair (NVP) - Hosted Form/Solution</td>
-                    <td>
-                        <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill"
+                    <div>
+                        <h3 class="fs-2 text-body-emphasis">Advanced Integration Method (AIM)</h3>
+                        <p>API Type: Name Value Pair (NVP)</p>
+                        <a class="btn btn-primary"
+                            href="https://www.authorize.net/content/dam/anet-redesign/documents/AIM_guide.pdf"
+                            target="_blank">Documnetation</a>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill"
                         data-bs-toggle="tooltip"
                         data-bs-title="The API is now obsolete and actively being phased out and disabled.">Sunset</span>
-                    </td>                       
-                    <td>
-                        <a href="https://www.authorize.net/content/dam/anet-redesign/documents/SIM_guide.pdf" target="_blank">Documnetation</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Direct Post Method (DPM)</td>
-                    <td>Name Value Pair (NVP) - Hosted Form/Solution</td>
-                    <td>
-                        <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill"
+                    <div>
+                        <h3 class="fs-2 text-body-emphasis">Server Integration Method (SIM)</h3>
+                        <p>API Type: Name Value Pair (NVP) - Hosted Form/Solution</p>
+                        <a class="btn btn-primary"
+                            href="https://www.authorize.net/content/dam/anet-redesign/documents/SIM_guide.pdf"
+                            target="_blank">Documnetation</a>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill"
                         data-bs-toggle="tooltip"
                         data-bs-title="The API is now obsolete and actively being phased out and disabled.">Sunset</span>
-                    </td>                        
-                    <td>
-                        <a href="https://www.authorize.net/content/dam/anet-redesign/documents/SIM_guide.pdf" target="_blank">Documnetation</a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              </div>
+                    <div>
+                        <h3 class="fs-2 text-body-emphasis">Direct Post Method (DPM)</h3>
+                        <p>API Type: Name Value Pair (NVP) - Hosted Form/Solution</p>
+                        <a class="btn btn-primary"
+                            href="https://www.authorize.net/content/dam/anet-redesign/documents/SIM_guide.pdf"
+                            target="_blank">Documnetation</a>
+                    </div>
+                </div>
+            </div>
+
 
             <!-- Footer File Load-->
             <footer>
