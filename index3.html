@@ -19,8 +19,6 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-  <!-- CSS - Template Specific -->
-
   <!-- CSS - Custom Color Selector -->
   <style>
     .btn-bd-primary {
@@ -50,7 +48,6 @@
 </head>
 
 <body>
-
   <!--Theme Color Icons Start-->
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
     <symbol id="check2" viewBox="0 0 16 16">
@@ -123,108 +120,35 @@
   </div>
   <!--Theme Code End-->
 
-  <!-- Sidebar -->
   <div class="d-flex">
-    <nav id="sidebar" class="flex-shrink-0 p-3 bg-light" style="width: 250px;">
-      <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-        <span class="fs-5 fw-semibold">Navigation</span>
-      </a>
-      <ul class="list-unstyled ps-0">
-        <li class="mb-1">
-          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-            data-bs-target="#home-collapse" aria-expanded="false">
-            <i class="bi bi-house"></i> Home
-          </button>
-          <div class="collapse" id="home-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="index.html" class="link-dark rounded">Home Page</a></li>
-              <li><a href="about.html" class="link-dark rounded">About</a></li>
-              <li><a href="blog.html" class="link-dark rounded">Blog</a></li>
-              <li><a href="product/dashboard.html" class="link-dark rounded">Dashboard</a></li>
-              <li><a href="product/products.html" class="link-dark rounded">Product</a></li>
-              <li><a href="product/pricing.html" class="link-dark rounded">Pricing</a></li>
-              <li><a href="product/checkout-free.html" class="link-dark rounded">Checkout</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="mb-1">
-          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-            data-bs-target="#platform-collapse" aria-expanded="false">
-            <i class="bi bi-credit-card-2-front"></i> Platform Tests
-          </button>
-          <div class="collapse" id="platform-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="anet.html" class="link-dark rounded">Authorize.net</a></li>
-              <li><a href="cybs.html" class="link-dark rounded">Cybersource</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="mb-1">
-          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-            data-bs-target="#status-collapse" aria-expanded="false">
-            <i class="bi bi-activity"></i> Status Page
-          </button>
-          <div class="collapse" id="status-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="statuspage/statuspage1.html" class="link-dark rounded">Status Page Ex1</a></li>
-              <li><a href="statuspage/statuspage2.html" class="link-dark rounded">Status Page Ex2</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="mb-1">
-          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-            data-bs-target="#dev-collapse" aria-expanded="false">
-            <i class="bi bi-file-code"></i> Dev Docs
-          </button>
-          <div class="collapse" id="dev-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="https://developer.authorize.net/" target="_blank" class="link-dark rounded">Authorize.net</a></li>
-              <li><a href="https://developer.cybersource.com/" target="_blank" class="link-dark rounded">Cybersource</a></li>
-              <li><a href="https://developer.visaacceptance.com/" target="_blank" class="link-dark rounded">Visa Acceptance</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="mb-1">
-          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-            data-bs-target="#knowledge-collapse" aria-expanded="false">
-            <i class="bi bi-file-code"></i> Knowledge/Support
-          </button>
-          <div class="collapse" id="knowledge-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="knowledge/apis.html" class="link-dark rounded">API Guide</a></li>
-              <li><a href="knowledge/knowledge.html" class="link-dark rounded">Knowledge</a></li>
-              <li><a href="knowledge/support.html" class="link-dark rounded">Support</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="mb-1">
-          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-            data-bs-target="#photo-collapse" aria-expanded="false">
-            <i class="bi bi-camera2"></i> Photography
-          </button>
-          <div class="collapse" id="photo-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="photography/dronemap.html" class="link-dark rounded">Drone Map</a></li>
-              <li><a href="photography/hikingmap.html" class="link-dark rounded">Hiking Map</a></li>
-              <li><a href="photography/dropgallery.html" class="link-dark rounded">Water Drop Photography</a></li>
-              <li><a href="https://www.skypixel.com/users/sanchito84" class="link-dark rounded" target="_blank">Drone Photography</a></li>
-            </ul>
-          </div>
-        </li>
-      </ul>
+    <!-- Sidebar -->
+    <nav id="sidebar" class="collapse collapse-horizontal show bg-light border-end">
+      <div class="list-group list-group-flush mx-3 mt-4">
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple" aria-current="true"><i
+            class="bi bi-house me-3"></i><span>Home</span></a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+            class="bi bi-credit-card-2-front me-3"></i><span>Platform Tests</span></a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+            class="bi bi-activity me-3"></i><span>Status Page</span></a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+            class="bi bi-file-code me-3"></i><span>Dev Docs</span></a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+            class="bi bi-file-code me-3"></i><span>Knowledge/Support</span></a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+            class="bi bi-camera2 me-3"></i><span>Photography</span></a>
+      </div>
     </nav>
 
     <!-- Main content -->
-    <div class="flex-grow-1 p-3">
-
-      <!-- Top Nav -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+    <div class="flex-grow-1">
+      <!-- Top Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar"
+            aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+          <a class="navbar-brand" href="#">Navbar</a>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
@@ -425,6 +349,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+
+  <!-- JS - Template Specific -->
   <script src="scripts/JS/loadHeaderFooter_v3.js" defer></script>
 
 </body>
