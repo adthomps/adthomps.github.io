@@ -1,3 +1,4 @@
+/*Theme Color Switcher*/
 .btn-bd-primary {
     --bd-violet-bg: #1739fc;
     --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
@@ -12,12 +13,12 @@
     --bs-btn-active-color: var(--bs-btn-hover-color);
     --bs-btn-active-bg: #1739fc;
     --bs-btn-active-border-color: #0923b6;
-}
-
-.bd-mode-toggle {
+  }
+  
+  .bd-mode-toggle {
     z-index: 1500;
-}
-
-.bd-mode-toggle .dropdown-menu .active .bi {
+  }
+  
+  .bd-mode-toggle .dropdown-menu .active .fa-check {
     display: block !important;
-}
+  }
