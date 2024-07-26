@@ -129,19 +129,6 @@
                                     class="bi bi-airplane"></i> Drone Photography</a></li>
                     </ul>
                 </li>
-
-                <!-- Alert Test -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link px-2 link-body-emphasis dropdown-toggle" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-camera2"></i> Alert Test
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
-                        </li>
-                    </ul>
-                </li>
-
             </ul>
 
             <!-- User Profile Dropdown -->
@@ -193,27 +180,6 @@
     <!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 
-    <script>
-        const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-        const appendAlert = (message, type) => {
-            const wrapper = document.createElement('div')
-            wrapper.innerHTML = [
-                `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-                `   <div>${message}</div>`,
-                '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-                '</div>'
-            ].join('')
-
-            alertPlaceholder.append(wrapper)
-        }
-
-        const alertTrigger = document.getElementById('liveAlertBtn')
-        if (alertTrigger) {
-            alertTrigger.addEventListener('click', () => {
-                appendAlert('Nice, you triggered this alert message!', 'success')
-            })
-        }
-    </script>
 
 </body>
 
