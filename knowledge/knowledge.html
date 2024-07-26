@@ -142,6 +142,8 @@
                                     class="form-control me-sm-2 mb-2 mb-sm-0"
                                     placeholder="Type your question or issue here..."> <button
                                     class="btn btn-primary flex-shrink-0" type="submit">Get Started</button></form>
+                                    <br />
+                                    <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
                         </div>
                     </div>
                 </div>
@@ -316,7 +318,27 @@
     <script src="../scripts/JS/loadHeaderFooter_v2.js" defer></script>
 
     <!-- JS - Tempalte Specific -->
+    <script>
+        const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+        const appendAlert = (message, type) => {
+            const wrapper = document.createElement('div')
+            wrapper.innerHTML = [
+                `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+                `   <div>${message}</div>`,
+                '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                '</div>'
+            ].join('')
 
+            alertPlaceholder.append(wrapper)
+        }
+
+        const alertTrigger = document.getElementById('liveAlertBtn')
+        if (alertTrigger) {
+            alertTrigger.addEventListener('click', () => {
+                appendAlert('Nice, you triggered this alert message!', 'success')
+            })
+        }
+    </script>
 
 
 </body>
