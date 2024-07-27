@@ -247,11 +247,10 @@ body {
 }
 
 /* Bootstrap Primary Button */
-/* Custom styling for primary button */
+/* Custom styling for primary button 
 .btn-bd-primary {
   --bd-violet-bg: #1739fc;
   --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
   --bs-btn-font-weight: 600;
   --bs-btn-color: var(--bs-white);
   --bs-btn-bg: var(--bd-violet-bg);
@@ -263,7 +262,7 @@ body {
   --bs-btn-active-color: var(--bs-btn-hover-color);
   --bs-btn-active-bg: #1739fc;
   --bs-btn-active-border-color: #0923b6;
-}
+}*/
 
 /* Mode Toggle Dropdown */
 /* Styling for mode toggle dropdown */
