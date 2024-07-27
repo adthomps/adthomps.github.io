@@ -61,7 +61,11 @@
         light: '../images/icons/drone-logo3.png',
         dark: '../images/icons/drone-logo1.png',
         auto: '../images/icons/drone-logo2.png',
-        // Add more themes and image paths as needed
+      },
+      'mapimage': {
+        light: '../images/icons/hiking-logo-light.png',
+        dark: '../images/icons/hiking-logo-dark.png',
+        auto: '../images/icons/hiking-logo-auto.png',
       },
       'anetimage': {
         light: '../images/icons/anet/anet-logo1.png',
@@ -72,11 +76,6 @@
         light: '../images/icons/cybs/cybersource-logo4.png',
         dark: '../images/icons/cybs/cybersource-logo6.png',
         auto: '../images/icons/cybs/cybersource-logo6.png',
-      },
-      'cardimage': {
-        light: '../images/icons/cybs/cardinal-logo2.png',
-        dark: '../images/icons/cybs/cardinal-logo1.png',
-        auto: '../images/icons/cybs/cardinal-logo1.png',
       }
       // Add more image IDs and their associated themes and image paths
     };
