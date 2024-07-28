@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon -->
+    <link rel="shortcut icon" href="../images/icons/profile.jpg" type="image/x-icon">
     <link rel="icon" href="../images/icons/profile.jpg" type="image/x-icon">
 
     <!-- Title -->
@@ -18,16 +19,14 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-    <!-- CSS - For Status Page Widgets -->
-    <link href="../scripts/CSS/statuspage.css" rel="stylesheet">
+    <!-- CSS - Tempalte Specific -->
+
 
     <!-- CSS - Custom Color Selector -->
     <style>
-        /*Theme Color Switcher*/
         .btn-bd-primary {
             --bd-violet-bg: #1739fc;
             --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
             --bs-btn-font-weight: 600;
             --bs-btn-color: var(--bs-white);
             --bs-btn-bg: var(--bd-violet-bg);
@@ -49,10 +48,10 @@
             display: block !important;
         }
     </style>
-
 </head>
 
 <body>
+
     <!--Theme Color Icons Start-->
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
         <symbol id="check2" viewBox="0 0 16 16">
@@ -71,7 +70,7 @@
         <symbol id="sun-fill" viewBox="0 0 16 16">
             <path
                 d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
-    </symbol>
+        </symbol>
     </svg>
     <!--Theme Color Icons End-->
 
@@ -135,99 +134,159 @@
             </header>
 
             <div class="px-4 py-0 my-5 text-center">
-                <h1 class="display-8 fw-bold">Status Page Widget Examples</h1>
+                <h1 class="display-8 fw-bold">Custom Status Page Example</h1>
                 <div class="d-flex justify-content-center">
-                    <p class="lead mb-4">Various test for pull Status Page results.</p>
+                    <p class="lead mb-4">Example Status Page.</p>
                 </div>
-                <img class="d-block mx-auto mb-4" src="../images/icons/heartbeat3.png" width="300" height="69" />
+            </div>
+            <div class="p-5 bg-body-tertiary rounded-3">
+                <div class="alert alert-warning" role="alert">
+                    Some Systems Experiencing Issues
+                </div>
+                <h2 class="display-8 fw-bold">Welcome to the APT status page.</h2>
+                <p>We use this page to communicate service availability and status. Subscribe to get real-time updates
+                    via Email, SMS.</p>
+                <p>For more information on our status page and how to use it, read our support article here.</p>
             </div>
 
-            <div class="container py-4">
-                <header class="pb-3 mb-4 border-bottom">
-                    <a href="https://status.authorize.net"
-                        class="d-flex align-items-center text-dark text-decoration-none">
-                        <img src="../images/icons/anet/anet-logo2.png" width="300" height="69" />
-                    </a>
-                </header>
+            <div class="b-example-divider"></div>
 
-                <div class="row align-items-md-stretch">
-                    <div class="col-md-6">
-                        <div class="h-100 p-5 text-bg-dark rounded-3">
-                            <h2>Widget Example 1</h2>
-                            <p>Test pulling Authorize.net components status via API.</p>
-                            <statuspage-widget src="https://status.authorize.net" target="_blank"></statuspage-widget>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-                            <h2>Widget Example 2</h2>
-                            <p>Test pulling Authorize.net incdient and components status via API.</p>
-                            <div class="page-statuses-container">
-                                <div class="container">
-
-                                    <div class="row">
-                                        <!-- ANET -->
-                                        <a href="https://status.authorize.net" target="_blank"
-                                            class="page-status-container span10" id="page-06v575cbzlpr">
-                                            <div class="logo">
-                                                <img id="anetimage2" src="../images/icons/anet/anet-logo4.png"
-                                                    width="60" height="60" />
-                                            </div>
-                                            <div class="status-info">
-                                                <div class="product-name">Authorize.net</div>
-                                                <div class="skeleton-status"></div>
-                                                <div class="stub-for-status"></div>
-                                            </div>
-                                        </a>
-                                    </div>
-
-                                </div>
+            <div class="p-5 bg-body-tertiary rounded-3">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <div class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <p>
+                                    <span>API Integration/Endpoints</span>
+                                    <span
+                                        class="badge bg-success-subtle border border-warning-subtle text-warning-emphasis rounded-pill">Warning</span>
+                                </p>
+                            </div>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Sub Component Name</th>
+                                            <th scope="col"></th>
+                                            <th scope="col">Sub Component Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>API Integration #1</td>
+                                            <td></td>
+                                            <td><span
+                                                    class="badge bg-success-subtle border border-warning-subtle text-warning-emphasis rounded-pill">Warning</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>API Integration #2</td>
+                                            <td></td>
+                                            <td><span
+                                                    class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">Operational</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>API Integration #3</td>
+                                            <td></td>
+                                            <td><span
+                                                    class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">Operational</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="container py-4">
-                <header class="pb-3 mb-4 border-bottom">
-                    <a href="https://getbootstrap.com/"
-                        class="d-flex align-items-center text-dark text-decoration-none">
-                        <img id="cybsimage" src="../images/icons/cybs/cybersource-logo6.png" width="300" height="69" />
-                    </a>
-                </header>
-
-                <div class="row align-items-md-stretch">
-                    <div class="col-md-6">
-                        <div class="h-100 p-5 text-bg-dark rounded-3">
-                            <h2>Widget Example 1</h2>
-                            <p>Test pulling Cybersource components status via API.</p>
-                            <statuspage-widget src="https://status.cybersource.com" target="_blank"></statuspage-widget>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Corporate and Support Web Sites
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Sub Component Name</th>
+                                            <th scope="col"></th>
+                                            <th scope="col">Sub Component Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>API Integration #1</td>
+                                            <td></td>
+                                            <td><span
+                                                    class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">Operational</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>API Integration #2</td>
+                                            <td></td>
+                                            <td><span
+                                                    class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">Operational</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>API Integration #3</td>
+                                            <td></td>
+                                            <td><span
+                                                    class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">Operational</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-                            <h2>Widget Example 2</h2>
-                            <p>Test pulling Cybersource incident and components status via API.</p>
-                            <div class="page-statuses-container">
-                                <div class="container">
-
-                                    <div class="row">
-                                        <!-- CYBS -->
-                                        <a href="https://status.cybersource.com" target="_blank"
-                                            class="page-status-container span10" id="page-ttbtd8wrjg1b">
-                                            <div class="logo">
-                                                <img id="cybsimage2" src="../images/icons/cybs/cybersource-logo1.png"
-                                                    width="60" height="60" />
-                                            </div>
-                                            <div class="status-info">
-                                                <div class="product-name">Cybersource</div>
-                                                <div class="skeleton-status"></div>
-                                                <div class="stub-for-status"></div>
-                                            </div>
-                                        </a>
-                                    </div>
-
-                                </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Sandbox/Test Environment
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Sub Component Name</th>
+                                            <th scope="col"></th>
+                                            <th scope="col">Sub Component Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>API Integration #1</td>
+                                            <td></td>
+                                            <td><span
+                                                    class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">Operational</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>API Integration #2</td>
+                                            <td></td>
+                                            <td><span
+                                                    class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">Operational</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>API Integration #3</td>
+                                            <td></td>
+                                            <td><span
+                                                    class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">Operational</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -244,139 +303,15 @@
     </main>
 
     <!-- JS - Universal -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-bundle.js"></script>
-    <script src="https://unpkg.com/@statuspage/status-widget/dist/index.js"></script>
+    <script src="../scripts/JS/color-modes.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="../scripts/JS/loadHeaderFooter_v2.js" defer></script>
 
-    <!-- JS - Template Specific -->
-    <script src="https://cdn.statuspage.io/se-v2.js"></script>
-
-    <script>
-        $(function () {
-            // this function updates an product on the page to reflect what we get back when we pull its status
-            var updateElement = function (pageCode, message, indicator) {
-                // get the parent element for the product
-                var $elem = $('#page-' + pageCode);
-
-                // remove the skeleton bar
-                $elem.find('.skeleton-status').remove();
-
-                // add the text that's passed from the message
-                $elem.find('.stub-for-status').html(message);
-
-                // give it the class name that defines its styles (mostly just colors)
-                $elem.addClass('status-' + indicator);
-            }
-
-            // page codes array built for future tweakability
-            allPageCodes = [];
-            allPageCodes.push('06v575cbzlpr'); // Authorize.net
-            allPageCodes.push('ttbtd8wrjg1b'); // Cybersource
+    <!-- JS - Tempalte Specific -->
 
 
-            // this is a helper function to find the highest severity incident
-            var getWorstSeverity = function (incidents) {
-                var impacts = [];
-                for (i = 0; i < incidents.length; i++) {
-                    impacts.push(incidents[i].impact);
-                }
-                if (impacts.indexOf('critical') != -1) {
-                    return 'critical';
-                }
-                else if (impacts.indexOf('major') != -1) {
-                    return 'major';
-                }
-                else if (impacts.indexOf('minor') != -1) {
-                    return 'minor';
-                }
-                // in this case the status page has an open incident but either no affected components or all of the components are green which is wrong. returning critical here on purpose so that it's still clear there's an incident.
-                else if (impacts.indexOf('none') != -1) {
-                    return 'none-with-incident';
-                }
-            }
-
-            // looping through each product, let's hit the Status API to get their status
-            var i;
-            for (i = 0; i < allPageCodes.length; i++) {
-
-                // have to do this weird check bc Statuspage's status page lives on a different set of infra than the rest.
-                if (allPageCodes[i] == "y2j98763l56x") {
-                    var pageStatus = new StatusPage.page({ page: allPageCodes[i], host: 'metastatuspage.com', secure: true });
-                }
-                else {
-                    var pageStatus = new StatusPage.page({ page: allPageCodes[i], secure: true });
-                }
-
-                // this is the actual call that fetches the status
-                pageStatus.summary({
-                    success: function (data) {
-
-                        // define a helper method per iteration for updating the particular product
-                        var passMessage = function (message, indicator_override) {
-                            updateElement(data.page.id, message, (indicator_override || data.status.indicator));
-                        }
-
-                        // tease out which maintences are actually active
-                        var open_maintenances = [];
-                        $.each(data.scheduled_maintenances, function () {
-                            // if it's not in the scheduled state anymore
-                            if (this.status != 'scheduled') {
-                                open_maintenances.push(this);
-                            }
-                        });
-
-                        // as opposed to scheduled for the future
-                        var upcoming_maintenances = [];
-                        $.each(data.scheduled_maintenances, function () {
-                            // if it's scheduled time is less than an hour out
-                            if (((Date.parse(this.scheduled_for) / 1000) - (Date.now() / 1000)) < 3600) {
-                                upcoming_maintenances.push(this);
-                            }
-                        });
-
-                        if (!!data.incidents.length || !!open_maintenances.length || data.status.indicator != 'none' || !!upcoming_maintenances.length) {
-
-
-                            // if there's an open incident, display that
-                            if (!!data.incidents.length) {
-
-                                passMessage("Active Incident", getWorstSeverity(data.incidents));
-                            }
-                            // if there's an open scheduled maintenance, display that
-                            else if (!!open_maintenances.length) {
-                                passMessage("Active Maintenance", "maintenance");
-                            }
-                            // if there is a degraded component, display that
-                            else if (data.status.indicator != 'none') {
-                                passMessage("Degraded Infrastructure");
-                            }
-                            // else there's an upcoming scheduled maintenance
-                            else {
-                                passMessage("Upcoming Maintenance", "maintenance");
-                            }
-                        }
-                        else {
-                            passMessage("Operational", "none");
-                        }
-                    }
-                });
-            } // end for
-        });
-
-    </script>
-
-    <script>
-        var sp = new StatusPage.page({ page: 'ttbtd8wrjg1b' });
-        sp.summary({
-            success: function (data) {
-                console.log(data.components[0].status);
-            }
-        });
-    </script>
 
 </body>
 
