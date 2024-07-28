@@ -72,6 +72,11 @@
         dark: '../images/icons/anet/anet-logo2.png',
         auto: '../images/icons/anet/anet-logo2.png',
       },
+      'anetimage2': {
+        light: '../images/icons/anet/anet-logo5.png',
+        dark: '../images/icons/anet/anet-logo4.png',
+        auto: '../images/icons/anet/anet-logo4.png',
+      },
       'cybsimage': {
         light: '../images/icons/cybs/cybersource-logo4.png',
         dark: '../images/icons/cybs/cybersource-logo6.png',
