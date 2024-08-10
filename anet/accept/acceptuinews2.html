@@ -15,7 +15,7 @@
     <!-- Site Properties -->
     <title>APT Portfolio - Bootstrap</title>
 
-    <script src="https://jstest.authorize.net/v3/AcceptUI.js" charset="utf-8"></script>
+    <script src="https://jstest.authorize.net/v2/Accept.js" charset="utf-8"></script>
 
 </head>
 
@@ -41,6 +41,11 @@
             parameters.clientKey = '5FcB6WrfHGS76gHW3v7btBCE3HuuBuke9Pj96Ztfn5R32G5ep42vne7MCWZtAucY';
             callbackFn = 'callbackMerchant';
 
+            parameters.paymentOptions = {
+                showCreditCard: true,
+                showBankAccount: true
+            };
+
             parameters.buttonText = 'Pay';
             parameters.headerText = 'Payment Details';
 
@@ -62,11 +67,11 @@
             } else {
                 var msg01 = '<b> PAYMENT NONCE (Data Value) : </b> ' + response.opaqueData.dataValue;
                 var msg02 = '<b> TYPE (Data Descriptor) : </b> ' + response.opaqueData.dataDescriptor;
-                var msg03 = '<b>CARD NUMBER</b> : ' + response.encryptedCardData.cardNumber + '<br/>' + '<b>EXPIRATION DATE</b> : ' + response.encryptedCardData.expDate + '<br/>' + '<b>BIN</b> : ' + response.encryptedCardData.bin;
+                //var msg03 = '<b>CARD NUMBER</b> : ' + response.encryptedCardData.cardNumber + '<br/>' + '<b>EXPIRATION DATE</b> : ' + response.encryptedCardData.expDate + '<br/>' + '<b>BIN</b> : ' + response.encryptedCardData.bin;
                 if ($('#paymentReceipt').length == 0) {
                     $('body').append($('<br/><br/><div id = "paymentReceipt" style="margin: auto;border: 1px solid black;padding: 15px;width: 50%;"></div>'));
                 }
-                $('#paymentReceipt').html(msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03);
+                $('#paymentReceipt').html(msg01 + '<br/><hr>' + msg02 + '<br/><hr>');
             }
         }
     </script>
