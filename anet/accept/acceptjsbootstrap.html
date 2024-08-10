@@ -76,14 +76,14 @@
         function responseHandler(response) {
             // Start by parsing the resultCode
             var resultCode = response.messages.resultCode;
-            var paymentResponse = "<strong>Result Code:</strong> " + resultCode + "<br>";
+            var paymentResponse = "<strong>Result Code:</strong> " + resultCode + "<br><br>";
 
             if (resultCode === "Error") {
                 // Handle error response
                 var i = 0;
                 var errorResponse = "";
                 while (i < response.messages.message.length) {
-                    errorResponse += response.messages.message[i].text + "<br>";
+                    errorResponse += response.messages.message[i].text + "<br><br>";
                     i++;
                 }
                 paymentResponse += errorResponse;
@@ -93,12 +93,11 @@
                 var messages = response.messages;
 
                 // Build the response message
-                paymentResponse += "<strong>Transaction Successful!</strong><br>";
-                paymentResponse += "Data Descriptor: " + opaqueData.dataDescriptor + "<br>";
-                paymentResponse += "Data Value: " + opaqueData.dataValue + "<br><br>";
+                paymentResponse += "<strong>Message Code:</strong> " + messages.message[0].code + "<br>";
+                paymentResponse += "<strong>Message:</strong> " + messages.message[0].text + "<br><br>";
 
-                paymentResponse += "Message Code: " + messages.message[0].code + "<br>";
-                paymentResponse += "Message: " + messages.message[0].text + "<br>";
+                paymentResponse += "<strong>Data Descriptor:</strong> " + opaqueData.dataDescriptor + "<br>";
+                paymentResponse += "<strong>Data Value:</strong> " + opaqueData.dataValue + "<br><br>";
             }
 
             // Display the response in the paymentResponse element
