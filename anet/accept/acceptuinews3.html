@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Payment Integration</title>
+    <script src="https://jstest.authorize.net/v3/AcceptUI.js" charset="utf-8"></script>
+</head>
+
+<body>
+
+    <button type="button"
+        id="acceptUiButton"
+        class="AcceptUI"
+        data-billingAddressOptions='{"show":true, "required":false}' 
+        data-apiLoginID="62W3Efur" 
+        data-clientKey="4abK6fG25BtW9QF3LZUN84FsmvQh47bpdm8FJ2yA28r9p5WPB34H8N6n7whjUsBu"
+        data-acceptUIFormBtnTxt="Submit" 
+        data-acceptUIFormHeaderTxt="Card Information" 
+        data-paymentOptions='{"showCreditCard": true, "showBankAccount": true}' 
+        data-responseHandler="responseHandler">Pay
+    </button>
+
+    <div id="paymentReceipt" style="margin: auto; border: 1px solid black; padding: 15px; width: 50%; display: none;"></div>
+
+    <script type="text/javascript">
+        const apiLoginID = '62W3Efur';
+        const clientKey = '4abK6fG25BtW9QF3LZUN84FsmvQh47bpdm8FJ2yA28r9p5WPB34H8N6n7whjUsBu';
+
+        function getSecureData(button) {
+            const parameters = {
+                showBilling: true,
+                apiLoginID: apiLoginID,
+                clientKey: clientKey,
+                buttonText: 'Pay',
+                headerText: 'Payment Details'
+            };
+
+            Accept.showForm(button, parameters, callbackMerchant);
+        }
+
+        function populateErrorMessage(response) {
+            let text = '';
+            for (let i = 0; i < response.messages.message.length; i++) {
+                text += response.messages.message[i].code + ': ' + response.messages.message[i].text + '\n';
+            }
+            console.error(text);
+        }
+
+        function callbackMerchant(response) {
+            if (response.messages.resultCode === 'Error') {
+                populateErrorMessage(response);
+            } else {
+                displayPaymentReceipt(response.opaqueData);
+            }
+        }
+
+        function displayPaymentReceipt(opaqueData) {
+            const paymentReceipt = document.getElementById('paymentReceipt');
+            const msg01 = `<b> PAYMENT NONCE (Data Value) : </b> ${opaqueData.dataValue}`;
+            const msg02 = `<b> TYPE (Data Descriptor) : </b> ${opaqueData.dataDescriptor}`;
+            
+            paymentReceipt.innerHTML = `${msg01}<br/><hr>${msg02}`;
+            paymentReceipt.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
