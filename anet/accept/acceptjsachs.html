@@ -61,22 +61,9 @@
                 authData = {},
                 bankData = {};
                 
-                var accountNumber = document.getElementById('bankAccountNumber').value;
-            var routingNumber = document.getElementById('bankRoutingNumber').value;
-
-            // Basic validation checks
-            if (accountNumber.length < 10) {
-                alert('Bank account number must be at least 10 digits.');
-                return false;
-            }
-            if (routingNumber.length < 9) {
-                alert('Routing number must be exactly 9 digits.');
-                return false;
-            }
-
             bankData.nameOnAccount = document.getElementById('bankAccountName').value;
-            bankData.accountNumber = accountNumber;
-            bankData.routingNumber = routingNumber;
+            bankData.accountNumber = document.getElementById('bankAccountNumber').value;
+            bankData.routingNumber = document.getElementById('bankRoutingNumber').value;
             bankData.accountType = document.getElementById('bankAccountType').value;
 
             secureData.bankData = bankData;
@@ -216,7 +203,7 @@
                                     <label for="bankAccountNumber" class="form-label">Bank Account Number</label>
                                     <input type="text" class="form-control" maxlength="17" id="bankAccountNumber" required>
                                     <div class="invalid-feedback">
-                                        Bank account number must be at least 10 digits.
+                                        Bank account number is required
                                     </div>
                                 </div>
 
@@ -224,7 +211,7 @@
                                     <label for="bankRoutingNumber" class="form-label">Routing Number</label>
                                     <input type="text" class="form-control" maxlength="9" id="bankRoutingNumber" required>
                                     <div class="invalid-feedback">
-                                        Routing number must be exactly 9 digits.
+                                        Routing number is required
                                     </div>
                                 </div>
 
@@ -278,26 +265,6 @@
     <!-- JS - Tempalte Specific -->
     <script src="../../scripts/JS/checkout.js"></script>
 
-
-    <script>
-        // Bootstrap validation
-        (function () {
-            'use strict'
-            var forms = document.querySelectorAll('.needs-validation')
-
-            Array.prototype.slice.call(forms)
-                .forEach(function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (!form.checkValidity()) {
-                            event.preventDefault()
-                            event.stopPropagation()
-                        }
-
-                        form.classList.add('was-validated')
-                    }, false)
-                })
-        })();
-    </script>
 
 </body>
 
