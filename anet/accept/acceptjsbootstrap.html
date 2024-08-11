@@ -21,111 +21,100 @@
 
 <body>
 
-    <div class="container">
-        <div class="form-container">
-            <h2 class="text-center mb-4">Payment Form</h2>
-            <form id="paymentForm">
-                <div class="mb-3">
-                    <label for="cardNumber" class="form-label">Card Number</label>
-                    <input type="text" class="form-control" id="cardNumber" data-acceptjs="data"
-                        placeholder="1234 5678 9012 3456">
+<div class="container">
+    <div class="form-container">
+        <h2 class="text-center mb-4">Payment Form</h2>
+        <form id="paymentForm">
+            <div class="mb-3">
+                <label for="cardNumber" class="form-label">Card Number</label>
+                <input type="text" class="form-control" id="cardNumber" data-acceptjs="data"
+                       placeholder="1234 5678 9012 3456">
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="expiryDate" class="form-label">Expiration Date</label>
+                    <input type="text" class="form-control" id="expiryDate" data-acceptjs="data"
+                           placeholder="MM/YY">
                 </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="expiryDate" class="form-label">Expiration Date</label>
-                        <input type="text" class="form-control" id="expiryDate" data-acceptjs="data"
-                            placeholder="MM/YY">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="cvv" class="form-label">CVV</label>
-                        <input type="text" class="form-control" id="cvv" data-acceptjs="data" placeholder="123">
-                    </div>
+                <div class="col-md-6 mb-3">
+                    <label for="cvv" class="form-label">CVV</label>
+                    <input type="text" class="form-control" id="cvv" data-acceptjs="data" placeholder="123">
                 </div>
-                <div class="mb-3">
-                    <label for="zip" class="form-label">ZIP Code</label>
-                    <input type="text" class="form-control" id="zip" data-acceptjs="data" placeholder="12345">
-                </div>
-                <div class="d-grid">
-                    <button type="button" class="btn btn-primary" onclick="sendPaymentDataToAnet()">Submit
-                        Payment</button>
-                </div>
-                <div id="paymentResponse" class="mt-3"></div>
-            </form>
-        </div>
+            </div>
+            <div class="mb-3">
+                <label for="zip" class="form-label">ZIP Code</label>
+                <input type="text" class="form-control" id="zip" data-acceptjs="data" placeholder="12345">
+            </div>
+            <div class="d-grid">
+                <button type="button" class="btn btn-primary" onclick="sendPaymentDataToAnet()">Submit Payment</button>
+            </div>
+        </form>
+        <div id="paymentResponse" class="mt-3"></div>
     </div>
+</div>
 
-    <script type="text/javascript">
-        function sendPaymentDataToAnet() {
-            var authData = {};
-            var cardData = {};
-            var secureData = {};
-
-            authData.clientKey = "5FcB6WrfHGS76gHW3v7btBCE3HuuBuke9Pj96Ztfn5R32G5ep42vne7MCWZtAucY";
-            authData.apiLoginID = "5KP3u95bQpv";
-
-            cardData.cardNumber = document.getElementById("cardNumber").value;
-            cardData.month = document.getElementById("expiryDate").value.split("/")[0];
-            cardData.year = document.getElementById("expiryDate").value.split("/")[1];
-            cardData.cardCode = document.getElementById("cvv").value;
-
-            secureData.authData = authData;
-            secureData.cardData = cardData;
-
-            Accept.dispatchData(secureData, responseHandler);
+<script type="text/javascript">
+    function populateErrorMessage(response) {
+        let errorMsg = '<strong>Error:</strong><br>';
+        for (let i = 0; i < response.messages.message.length; i++) {
+            errorMsg += `${response.messages.message[i].code}: ${response.messages.message[i].text}<br>`;
         }
-        function callbackMerchant(response) {
-            // Start with result code, message code, and message
-            var resultCode = response.messages.resultCode;
-            var messageCode = response.messages.message[0].code;
-            var messageText = response.messages.message[0].text;
+        document.getElementById("paymentResponse").innerHTML = errorMsg;
+    }
 
-            // Initialize the base message with result code, message code, and message text
-            var baseMsg = `<strong>Result Code:</strong> ${resultCode}<br/>` +
-                `<strong>Message Code:</strong> ${messageCode}<br/>` +
-                `<strong>Message:</strong> ${messageText}<br/><br/>`;
+    function sendPaymentDataToAnet() {
+        var authData = {
+            clientKey: "5FcB6WrfHGS76gHW3v7btBCE3HuuBuke9Pj96Ztfn5R32G5ep42vne7MCWZtAucY",
+            apiLoginID: "5KP3u95bQpv"
+        };
+        var cardData = {
+            cardNumber: document.getElementById("cardNumber").value,
+            month: document.getElementById("expiryDate").value.split("/")[0],
+            year: document.getElementById("expiryDate").value.split("/")[1],
+            cardCode: document.getElementById("cvv").value
+        };
+        var secureData = {authData: authData, cardData: cardData};
 
-            if (resultCode === 'Error') {
-                populateErrorMessage(response);
-            } else {
-                var msg01 = '<b>Date Type (Data Descriptor):</b> ' + response.opaqueData.dataDescriptor;
-                var msg02 = '<b>Payment Nonce (Data Value):</b> ' +
-                    '<span style="word-wrap: break-word; display: block; overflow-wrap: break-word;">' +
-                    response.opaqueData.dataValue + '</span>';
-                var msg03 = '';
+        Accept.dispatchData(secureData, callbackMerchant);
+    }
 
-                // Check if the response contains encrypted card data
-                if (response.encryptedCardData) {
-                    msg03 =
-                        '<b>BIN</b> : ' + response.encryptedCardData.bin + '<br/>' +
-                        '<b>CARD NUMBER</b> : ' + response.encryptedCardData.cardNumber + '<br/>' +
-                        '<b>EXPIRATION DATE</b> : ' + response.encryptedCardData.expDate;
-                }
-                // Check if the response contains encrypted bank data
-                else if (response.encryptedBankData) {
-                    msg03 =
-                        '<b>Account Type</b> : ' + response.encryptedBankData.accountType + '<br/>' +
-                        '<b>Name on Account</b> : ' + response.encryptedBankData.nameOnAccount + '<br/>' +
-                        '<b>Account Number</b> : ' + response.encryptedBankData.accountNumber + '<br/>' +
-                        '<b>Routing Number</b> : ' + response.encryptedBankData.routingNumber;
-                }
+    function callbackMerchant(response) {
+        var resultCode = response.messages.resultCode;
+        var messageCode = response.messages.message[0].code;
+        var messageText = response.messages.message[0].text;
 
-                // Check if paymentReceipt exists and update or create it
-                var paymentReceipt = document.getElementById("paymentReceipt");
-                if (!paymentReceipt) {
-                    paymentReceipt = document.createElement("div");
-                    paymentReceipt.id = "paymentReceipt";
-                    paymentReceipt.style.margin = "auto";
-                    paymentReceipt.style.border = "1px solid black";
-                    paymentReceipt.style.padding = "15px";
-                    paymentReceipt.style.width = "50%";
-                    paymentReceipt.style.wordWrap = "break-word"; // Ensures long text wraps
-                    paymentReceipt.style.overflowWrap = "break-word"; // Ensures long text wraps
-                    document.body.appendChild(paymentReceipt);
-                }
-                paymentReceipt.innerHTML = baseMsg + '<br/><hr>' + msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03;
-            }
+        var baseMsg = `<strong>Result Code:</strong> ${resultCode}<br/>` +
+            `<strong>Message Code:</strong> ${messageCode}<br/>` +
+            `<strong>Message:</strong> ${messageText}<br/><br/>`;
+
+        if (resultCode === 'Error') {
+            populateErrorMessage(response);
+            return; // Stop further execution if there is an error
         }
-    </script>
+
+        var msg01 = '<b>Date Type (Data Descriptor):</b> ' + response.opaqueData.dataDescriptor;
+        var msg02 = '<b>Payment Nonce (Data Value):</b> ' +
+            '<span style="word-wrap: break-word; display: block; overflow-wrap: break-word;">' +
+            response.opaqueData.dataValue + '</span>';
+        var msg03 = '';
+
+        if (response.encryptedCardData) {
+            msg03 =
+                '<b>BIN:</b> ' + response.encryptedCardData.bin + '<br/>' +
+                '<b>Card Number:</b> ' + response.encryptedCardData.cardNumber + '<br/>' +
+                '<b>Expiration Date:</b> ' + response.encryptedCardData.expDate;
+        } else if (response.encryptedBankData) {
+            msg03 =
+                '<b>Account Type:</b> ' + response.encryptedBankData.accountType + '<br/>' +
+                '<b>Name on Account:</b> ' + response.encryptedBankData.nameOnAccount + '<br/>' +
+                '<b>Account Number:</b> ' + response.encryptedBankData.accountNumber + '<br/>' +
+                '<b>Routing Number:</b> ' + response.encryptedBankData.routingNumber;
+        }
+
+        document.getElementById("paymentResponse").innerHTML = baseMsg + '<br/><hr>' + msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03;
+    }
+
+</script>
 
 </body>
 
