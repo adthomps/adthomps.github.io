@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Payment Form</title>
+    <title>Acceptui Sample Payment Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" src="https://jstest.authorize.net/v3/AcceptUI.js" charset="utf-8"></script>
     <style>
@@ -66,44 +66,45 @@
 
             if (resultCode === 'Error') {
                 populateErrorMessage(response);
-            } else {
-                var msg01 = '<b>Date Type (Data Descriptor):</b> ' + response.opaqueData.dataDescriptor;
-                var msg02 = '<b>Payment Nonce (Data Value):</b> ' +
-                    '<span style="word-wrap: break-word; display: block; overflow-wrap: break-word;">' +
-                    response.opaqueData.dataValue + '</span>';
-                var msg03 = '';
-
-                // Check if the response contains encrypted card data
-                if (response.encryptedCardData) {
-                    msg03 =
-                        '<b>BIN</b> : ' + response.encryptedCardData.bin + '<br/>' +
-                        '<b>CARD NUMBER</b> : ' + response.encryptedCardData.cardNumber + '<br/>' +
-                        '<b>EXPIRATION DATE</b> : ' + response.encryptedCardData.expDate;
-                }
-                // Check if the response contains encrypted bank data
-                else if (response.encryptedBankData) {
-                    msg03 =
-                        '<b>Account Type</b> : ' + response.encryptedBankData.accountType + '<br/>' +
-                        '<b>Name on Account</b> : ' + response.encryptedBankData.nameOnAccount + '<br/>' +
-                        '<b>Account Number</b> : ' + response.encryptedBankData.accountNumber + '<br/>' +
-                        '<b>Routing Number</b> : ' + response.encryptedBankData.routingNumber;
-                }
-
-                // Check if paymentReceipt exists and update or create it
-                var paymentReceipt = document.getElementById("paymentReceipt");
-                if (!paymentReceipt) {
-                    paymentReceipt = document.createElement("div");
-                    paymentReceipt.id = "paymentReceipt";
-                    paymentReceipt.style.margin = "auto";
-                    paymentReceipt.style.border = "1px solid black";
-                    paymentReceipt.style.padding = "15px";
-                    paymentReceipt.style.width = "50%";
-                    paymentReceipt.style.wordWrap = "break-word"; // Ensures long text wraps
-                    paymentReceipt.style.overflowWrap = "break-word"; // Ensures long text wraps
-                    document.body.appendChild(paymentReceipt);
-                }
-                paymentReceipt.innerHTML = baseMsg + '<br/><hr>' + msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03;
+                return; // Stop further execution if there is an error
             }
+
+            var msg01 = '<b>Date Type (Data Descriptor):</b> ' + response.opaqueData.dataDescriptor;
+            var msg02 = '<b>Payment Nonce (Data Value):</b> ' +
+                '<span style="word-wrap: break-word; display: block; overflow-wrap: break-word;">' +
+                response.opaqueData.dataValue + '</span>';
+            var msg03 = '';
+
+            // Check if the response contains encrypted card data
+            if (response.encryptedCardData) {
+                msg03 =
+                    '<b>BIN:</b> ' + response.encryptedCardData.bin + '<br/>' +
+                    '<b>Card Number:</b> ' + response.encryptedCardData.cardNumber + '<br/>' +
+                    '<b>Expiration Date:</b> ' + response.encryptedCardData.expDate;
+            }
+            // Check if the response contains encrypted bank data
+            else if (response.encryptedBankData) {
+                msg03 =
+                    '<b>Account Type:</b> ' + response.encryptedBankData.accountType + '<br/>' +
+                    '<b>Name on Account:</b> ' + response.encryptedBankData.nameOnAccount + '<br/>' +
+                    '<b>Account Number:</b> ' + response.encryptedBankData.accountNumber + '<br/>' +
+                    '<b>Routing Number:</b> ' + response.encryptedBankData.routingNumber;
+            }
+
+            // Check if paymentReceipt exists and update or create it
+            var paymentReceipt = document.getElementById("paymentReceipt");
+            if (!paymentReceipt) {
+                paymentReceipt = document.createElement("div");
+                paymentReceipt.id = "paymentReceipt";
+                paymentReceipt.style.margin = "auto";
+                paymentReceipt.style.border = "1px solid black";
+                paymentReceipt.style.padding = "15px";
+                paymentReceipt.style.width = "50%";
+                paymentReceipt.style.wordWrap = "break-word"; // Ensures long text wraps
+                paymentReceipt.style.overflowWrap = "break-word"; // Ensures long text wraps
+                document.body.appendChild(paymentReceipt);
+            }
+            paymentReceipt.innerHTML = baseMsg + '<br/><hr>' + msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03;
         }
 
     </script>
