@@ -54,7 +54,9 @@
             if (response.messages.resultCode === 'Error') {
                 populateErrorMessage(response);
             } else {
-                var msg01 = '<b> PAYMENT NONCE (Data Value) : </b> ' + response.opaqueData.dataValue;
+                var msg01 = '<b> PAYMENT NONCE (Data Value) : </b> ' +
+                    '<span style="word-wrap: break-word; display: block; overflow-wrap: break-word;">' +
+                    response.opaqueData.dataValue + '</span>';
                 var msg02 = '<b> TYPE (Data Descriptor) : </b> ' + response.opaqueData.dataDescriptor;
                 var msg03 = '';
 
@@ -81,6 +83,8 @@
                     paymentReceipt.style.border = "1px solid black";
                     paymentReceipt.style.padding = "15px";
                     paymentReceipt.style.width = "50%";
+                    paymentReceipt.style.wordWrap = "break-word"; // Ensures long text wraps
+                    paymentReceipt.style.overflowWrap = "break-word"; // Ensures long text wraps
                     document.body.appendChild(paymentReceipt);
                 }
                 paymentReceipt.innerHTML = msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03;
