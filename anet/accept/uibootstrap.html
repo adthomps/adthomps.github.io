@@ -57,24 +57,26 @@
             if (response.messages.resultCode === 'Error') {
                 populateErrorMessage(response);
             } else {
-                var msg01 = '<b> PAYMENT NONCE (Data Value) : </b> ' +
+                var msg01 = '<b> Date Type (Data Descriptor): </b> ' + response.opaqueData.dataDescriptor;
+                var msg02 = '<b> Payment Nonce (Data Value): </b> ' +
                     '<span style="word-wrap: break-word; display: block; overflow-wrap: break-word;">' +
                     response.opaqueData.dataValue + '</span>';
-                var msg02 = '<b> TYPE (Data Descriptor) : </b> ' + response.opaqueData.dataDescriptor;
                 var msg03 = '';
 
                 // Check if the response contains encrypted card data
                 if (response.encryptedCardData) {
-                    msg03 = '<b>CARD NUMBER</b> : ' + response.encryptedCardData.cardNumber + '<br/>' +
-                        '<b>EXPIRATION DATE</b> : ' + response.encryptedCardData.expDate + '<br/>' +
-                        '<b>BIN</b> : ' + response.encryptedCardData.bin;
+                    msg03 = 
+                        '<b>BIN</b> : ' + response.encryptedCardData.bin + '<br/>' +
+                        '<b>CARD NUMBER</b> : ' + response.encryptedCardData.cardNumber + '<br/>' +
+                        '<b>EXPIRATION DATE</b> : ' + response.encryptedCardData.expDate;
                 }
                 // Check if the response contains encrypted bank data
                 else if (response.encryptedBankData) {
-                    msg03 = '<b>ACCOUNT NUMBER</b> : ' + response.encryptedBankData.accountNumber + '<br/>' +
-                        '<b>ROUTING NUMBER</b> : ' + response.encryptedBankData.routingNumber + '<br/>' +
-                        '<b>NAME ON ACCOUNT</b> : ' + response.encryptedBankData.nameOnAccount + '<br/>' +
-                        '<b>ACCOUNT TYPE</b> : ' + response.encryptedBankData.accountType;
+                    msg03 = 
+                        '<b>Account Type</b> : ' + response.encryptedBankData.accountType + '<br/>' + 
+                        '<b>Name on Account</b> : ' + response.encryptedBankData.nameOnAccount + '<br/>' + 
+                        '<b>Account Number</b> : ' + response.encryptedBankData.accountNumber + '<br/>' +
+                        '<b>Rounting Number</b> : ' + response.encryptedBankData.routingNumber;
                 }
 
                 // Check if paymentReceipt exists and update or create it
