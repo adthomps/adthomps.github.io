@@ -71,10 +71,11 @@
                 secureData.cardData = cardData;
             } else if (document.getElementById('bank').checked) {
                 var bankData = {};
+                bankData.accountType = document.getElementById('bankAccountType').value;
                 bankData.nameOnAccount = document.getElementById('bankAccountName').value;
                 bankData.accountNumber = document.getElementById('bankAccountNumber').value;
                 bankData.routingNumber = document.getElementById('bankRoutingNumber').value;
-                bankData.accountType = document.getElementById('bankAccountType').value;
+
                 secureData.bankData = bankData;
             }
 
@@ -341,6 +342,8 @@
                             <div class="w-35 btn btn-primary btn-lg" tabindex="0" type="submit" id="pay"
                                 onclick="getSecureData()">Get Payment Nonce</div>
                         </form>
+                        <br />
+
                         <div class="form-horizontal formDiv1" role="form">
                             <div class="form-group">
                                 <label class="control-label col-sm-3" for="blob">Payment Nonce:</label>
