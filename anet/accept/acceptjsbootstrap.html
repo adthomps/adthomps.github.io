@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Form</title>
+    <title>Acceptjs Payment Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" src="https://jstest.authorize.net/v1/Accept.js"></script>
     <style>
@@ -79,10 +79,12 @@
     }
 
     function callbackMerchant(response) {
+            // Start with result code, message code, and message
         var resultCode = response.messages.resultCode;
         var messageCode = response.messages.message[0].code;
         var messageText = response.messages.message[0].text;
 
+            // Initialize the base message with result code, message code, and message text        
         var baseMsg = `<strong>Result Code:</strong> ${resultCode}<br/>` +
             `<strong>Message Code:</strong> ${messageCode}<br/>` +
             `<strong>Message:</strong> ${messageText}<br/><br/>`;
@@ -98,12 +100,15 @@
             response.opaqueData.dataValue + '</span>';
         var msg03 = '';
 
+                // Check if the response contains encrypted card data
         if (response.encryptedCardData) {
             msg03 =
                 '<b>BIN:</b> ' + response.encryptedCardData.bin + '<br/>' +
                 '<b>Card Number:</b> ' + response.encryptedCardData.cardNumber + '<br/>' +
                 '<b>Expiration Date:</b> ' + response.encryptedCardData.expDate;
-        } else if (response.encryptedBankData) {
+            }
+            // Check if the response contains encrypted bank data
+            else if (response.encryptedBankData) {
             msg03 =
                 '<b>Account Type:</b> ' + response.encryptedBankData.accountType + '<br/>' +
                 '<b>Name on Account:</b> ' + response.encryptedBankData.nameOnAccount + '<br/>' +
@@ -111,8 +116,21 @@
                 '<b>Routing Number:</b> ' + response.encryptedBankData.routingNumber;
         }
 
-        document.getElementById("paymentResponse").innerHTML = baseMsg + '<br/><hr>' + msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03;
-    }
+            // Check if paymentReceipt exists and update or create it
+            var paymentReceipt = document.getElementById("paymentReceipt");
+            if (!paymentReceipt) {
+                paymentReceipt = document.createElement("div");
+                paymentReceipt.id = "paymentReceipt";
+                paymentReceipt.style.margin = "auto";
+                paymentReceipt.style.border = "1px solid black";
+                paymentReceipt.style.padding = "15px";
+                paymentReceipt.style.width = "50%";
+                paymentReceipt.style.wordWrap = "break-word"; // Ensures long text wraps
+                paymentReceipt.style.overflowWrap = "break-word"; // Ensures long text wraps
+                document.body.appendChild(paymentReceipt);
+            }
+            paymentReceipt.innerHTML = baseMsg + '<br/><hr>' + msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03;
+        }
 
 </script>
 
