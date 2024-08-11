@@ -87,7 +87,7 @@
             // Initialize the base message with result code, message code, and message text        
         var baseMsg = `<strong>Result Code:</strong> ${resultCode}<br/>` +
             `<strong>Message Code:</strong> ${messageCode}<br/>` +
-            `<strong>Message:</strong> ${messageText}<br/>`;
+            `<strong>Message:</strong> ${messageText}`;
 
         if (resultCode === 'Error') {
             populateErrorMessage(response);
@@ -131,7 +131,6 @@
             }
             paymentResponse.innerHTML = baseMsg + '<br/><hr>' + msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03;
         }
-
 
 </script>
 
