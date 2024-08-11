@@ -21,53 +21,61 @@
 
 <body>
 
-<div class="container">
-    <div class="form-container">
-        <h2 class="text-center mb-4">Sample Payment Form</h2>
-        <form id="paymentForm">
-            <input type="hidden" name="dataValue" id="dataValue" />
-            <input type="hidden" name="dataDescriptor" id="dataDescriptor" />
-            <div class="d-grid">
-                <button type="button"
-                        class="btn btn-primary AcceptUI"
+    <div class="container">
+        <div class="form-container">
+            <h2 class="text-center mb-4">Sample Payment Form</h2>
+            <form id="paymentForm">
+                <input type="hidden" name="dataValue" id="dataValue" />
+                <input type="hidden" name="dataDescriptor" id="dataDescriptor" />
+                <div class="d-grid">
+                    <button type="button" class="btn btn-primary AcceptUI"
                         data-billingAddressOptions='{"show":true, "required":false}'
-                        data-paymentOptions='{"showCreditCard":true, "showBankAccount":true}' 
-                        data-apiLoginID="62W3Efur" 
+                        data-paymentOptions='{"showCreditCard":true, "showBankAccount":true}' data-apiLoginID="62W3Efur"
                         data-clientKey="4abK6fG25BtW9QF3LZUN84FsmvQh47bpdm8FJ2yA28r9p5WPB34H8N6n7whjUsBu"
-                        data-acceptUIFormBtnTxt="Submit" 
-                        data-acceptUIFormHeaderTxt="Payment Information" 
+                        data-acceptUIFormBtnTxt="Submit" data-acceptUIFormHeaderTxt="Payment Information"
                         data-responseHandler="callbackMerchant">Pay
-                </button>
-            </div>
-        </form>
-        <div id="paymentReceipt"></div>
+                    </button>
+                </div>
+            </form>
+            <div id="paymentReceipt"></div>
+        </div>
     </div>
-</div>
 
-<script type="text/javascript">
-    function populateErrorMessage(response) {
-        var text = '';
-        for (var i = 0; i < response.messages.message.length; i++) {
-            text = text + response.messages.message[i].code + ': ' + response.messages.message[i].text + '\n';
-        }
-        console.log(text);
-    }
-
-    function callbackMerchant(response) {
-        if (response.messages.resultCode === 'Error') {
-            populateErrorMessage(response);
-        } else {
-            var msg01 = '<b> PAYMENT NONCE (Data Value) : </b> ' + response.opaqueData.dataValue;
-            var msg02 = '<b> TYPE (Data Descriptor) : </b> ' + response.opaqueData.dataDescriptor;
-            var msg03 = '<b>CARD NUMBER</b> : ' + response.encryptedCardData.cardNumber + '<br/>' + '<b>EXPIRATION DATE</b> : ' + response.encryptedCardData.expDate + '<br/>' + '<b>BIN</b> : ' + response.encryptedCardData.bin;
-
-            if ($('#paymentReceipt').length == 0) {
-                $('body').append($('<br/><br/><div id = "paymentReceipt" style="margin: auto;border: 1px solid black;padding: 15px;width: 50%;"></div>'));
+    <script type="text/javascript">
+        function populateErrorMessage(response) {
+            var text = '';
+            for (var i = 0; i < response.messages.message.length; i++) {
+                text = text + response.messages.message[i].code + ': ' + response.messages.message[i].text + '\n';
             }
-            $('#paymentReceipt').html(msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03);
+            console.log(text);
         }
-    }
-</script>
+
+        function callbackMerchant(response) {
+            if (response.messages.resultCode === 'Error') {
+                populateErrorMessage(response);
+            } else {
+                var msg01 = '<b> PAYMENT NONCE (Data Value) : </b> ' + response.opaqueData.dataValue;
+                var msg02 = '<b> TYPE (Data Descriptor) : </b> ' + response.opaqueData.dataDescriptor;
+                var msg03 = '<b>CARD NUMBER</b> : ' + response.encryptedCardData.cardNumber + '<br/>' +
+                    '<b>EXPIRATION DATE</b> : ' + response.encryptedCardData.expDate + '<br/>' +
+                    '<b>BIN</b> : ' + response.encryptedCardData.bin;
+
+                // Check if paymentReceipt exists and update or create it
+                var paymentReceipt = document.getElementById("paymentReceipt");
+                if (!paymentReceipt) {
+                    paymentReceipt = document.createElement("div");
+                    paymentReceipt.id = "paymentReceipt";
+                    paymentReceipt.style.margin = "auto";
+                    paymentReceipt.style.border = "1px solid black";
+                    paymentReceipt.style.padding = "15px";
+                    paymentReceipt.style.width = "50%";
+                    document.body.appendChild(paymentReceipt);
+                }
+                paymentReceipt.innerHTML = msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03;
+            }
+        }
+    </script>
 
 </body>
+
 </html>
