@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon -->
+    <link rel="shortcut icon" href="../../images/icons/profile.jpg" type="image/x-icon">
     <link rel="icon" href="../../images/icons/profile.jpg" type="image/x-icon">
 
     <!-- Title -->
@@ -18,7 +19,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-    <!-- CSS - Template Specific -->
+    <!-- CSS - Tempalte Specific -->
     <link href="../../scripts/CSS/checkout.css" rel="stylesheet">
 
     <!-- CSS - Custom Color Selector -->
@@ -49,14 +50,13 @@
     </style>
 
     <!-- JS References for Accept Form -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://jstest.authorize.net/v1/Accept.js"></script>
 
-    <script src="https://jstest.authorize.net/v1/Accept.js" charset="utf-8"></script>
 
 </head>
 
 <body>
+
     <!--Theme Color Icons Start-->
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
         <symbol id="check2" viewBox="0 0 16 16">
@@ -143,6 +143,7 @@
                 <div class="d-flex justify-content-center">
                     <p class="lead mb-4">Test example API Accept Suite products.</p>
                 </div>
+                <!--<img class="d-block mx-auto mb-4" src="../../images/icons/anet/accept.png" width="300" height="69" />-->
                 <i class="bi bi-wallet2" style="font-size: 5rem; "></i>
             </div>
 
@@ -151,14 +152,14 @@
                 <div class="row g-5">
                     <div class="col-md-7 col-lg-8">
                         <h4 class="mb-3">Payment</h4>
-                        <form class="needs-validation" novalidate onsubmit="event.preventDefault(); sendPaymentDataToAnet();">
+                        <form class="needs-validation" novalidate>
 
                             <!-- Payment Method Selection -->
                             <div class="my-3">
                                 <div class="form-check">
                                     <input id="credit" name="paymentMethod" type="radio" class="form-check-input"
                                         checked onclick="togglePaymentMethod()" required>
-                                    <label class="form-check-label" for="credit">Credit/Debit card</label>
+                                    <label class="form-check-label" for="credit">Credit/Debit Card</label>
                                 </div>
                                 <div class="form-check">
                                     <input id="bank" name="paymentMethod" type="radio" class="form-check-input"
@@ -171,48 +172,49 @@
                             <div id="creditCardFields">
                                 <div class="row gy-3">
                                     <div class="col-md-6">
-                                        <label for="cc-number" class="form-label">Credit card number</label>
+                                        <label for="cc-name" class="form-label">Name on card</label>
+                                        <input type="text" class="form-control" id="cc-name" placeholder="John Doe"
+                                            required>
+                                        <small class="text-body-secondary">Full name as displayed on card</small>
+                                        <div class="invalid-feedback">
+                                            Name on card is required
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="cardNumber" class="form-label">Credit card number</label>
                                         <input type="text" class="form-control" name="card[number]" maxlength="20"
-                                            id="cardNumber" placeholder="Card #" required>
+                                            id="cardNumber" data-acceptjs="data" placeholder="1234 5678 9012 3456"
+                                            required>
                                         <div class="invalid-feedback">
                                             Credit card number is required
                                         </div>
                                     </div>
 
                                     <div class="col-md-3">
-                                        <label for="cc-cvv" class="form-label">CVV</label>
-                                        <input type="text" class="form-control" name="card[cvc]" maxlength="3" id="cvv"
-                                            placeholder="CVV" required>
+                                        <label for="cvv" class="form-label">CVV</label>
+                                        <input type="text" class="form-control" id="cvv" data-acceptjs="data"
+                                            maxlength="4" placeholder="123" required>
                                         <small class="text-body-secondary">3-4 Digit number on back of card</small>
                                         <div class="invalid-feedback">
-                                            Card code (CVV) required
+                                            Card code required
                                         </div>
                                     </div>
 
                                     <div class="col-md-3">
-                                        <label for="cc-expiration" class="form-label">Month</label>
-                                        <input type="text" class="form-control" name="card[expire-month]" maxlength="2"
-                                            id="expiryDate_Month" placeholder="Month" required>
-                                        <small class="text-body-secondary">Expiration Month (MM)</small>
+                                        <label for="expiryDate" class="form-label">Expiration Date</label>
+                                        <input type="text" class="form-control" id="expiryDate" data-acceptjs="data"
+                                            placeholder="MM/YY">
+                                        <small class="text-body-secondary">Expiration Date MM/YY or MM/YYYY</small>
                                         <div class="invalid-feedback">
-                                            Expiration month required
+                                            Expiration date required
                                         </div>
                                     </div>
 
                                     <div class="col-md-3">
-                                        <label for="cc-expiration" class="form-label">Year</label>
-                                        <input type="text" class="form-control" name="card[expire-year]" maxlength="4"
-                                            id="expiryDate_Year" placeholder="Year" required>
-                                        <small class="text-body-secondary">Expiration Year (YY OR YYYY)</small>
-                                        <div class="invalid-feedback">
-                                            Expiration year required
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <label for="zip" class="form-label">Zip Code</label>
-                                        <input type="text" class="form-control" name="card[zip]" maxlength="5" id="Zip"
-                                            placeholder="ZIP" required>
+                                        <label for="zip" class="form-label">ZIP Code</label>
+                                        <input type="text" class="form-control" id="zip" data-acceptjs="data"
+                                            placeholder="12345">
                                         <small class="text-body-secondary">Billing Zip Code</small>
                                         <div class="invalid-feedback">
                                             Zip code required.
@@ -225,34 +227,7 @@
                             <div id="bankAccountFields" style="display: none;">
                                 <div class="row gy-3">
                                     <div class="col-md-6">
-                                        <label for="bankAccountName" class="form-label">Account Holder Name</label>
-                                        <input type="text" class="form-control" maxlength="22" id="nameOnAccount"
-                                            placeholder="John Doe" required>
-                                        <div class="invalid-feedback">
-                                            Account holder name is required
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label for="bankAccountNumber" class="form-label">Bank Account Number</label>
-                                        <input type="text" class="form-control" maxlength="17" id="accountNumber"
-                                            required>
-                                        <div class="invalid-feedback">
-                                            Bank account number is required
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label for="bankRoutingNumber" class="form-label">Routing Number</label>
-                                        <input type="text" class="form-control" maxlength="9" id="routingNumber"
-                                            required>
-                                        <div class="invalid-feedback">
-                                            Routing number is required
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label for="bankAccountType" class="form-label">Account Type</label>
+                                        <label for="accountType" class="form-label">Account Type</label>
                                         <select class="form-select" id="accountType" required>
                                             <option value="checking">Checking</option>
                                             <option value="businessChecking">Business Checking</option>
@@ -262,33 +237,54 @@
                                             Account type is required
                                         </div>
                                     </div>
+                                    <div class="col-md-6">
+                                        <label for="nameOnAccount" class="form-label">Name on Account</label>
+                                        <input type="text" class="form-control" id="nameOnAccount"
+                                            placeholder="John Doe" required>
+                                        <div class="invalid-feedback">
+                                            Account holder name is required
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="accountNumber" class="form-label">Account Number</label>
+                                        <input type="text" class="form-control" id="accountNumber"
+                                            placeholder="123456789" required>
+                                        <div class="invalid-feedback">
+                                            Bank account number is required
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="routingNumber" class="form-label">Routing Number</label>
+                                        <input type="text" class="form-control" id="routingNumber"
+                                            placeholder="987654321" required>
+                                        <div class="invalid-feedback">
+                                            Routing number is required
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
                             <hr class="my-4">
 
-                            <div class="w-35 btn btn-primary btn-lg" tabindex="0" type="submit" id="pay">Submit Payment</div>
-                        </form>
 
-                        <br />
 
-                        <div class="form-horizontal formDiv1" role="form">
-                            <div class="form-group">
-                                <label class="control-label col-sm-3" for="blob">Payment Nonce:</label>
-                                <div id="paymentResponse" class="mt-3"></div>
+                            <div class="w-35">
+                                <button type="button" class="w-35 btn btn-primary btn-lg" onclick="sendPaymentDataToAnet()">Generate
+                                    Payment Nonce</button>
                             </div>
-                        </div>
+                        </form>
+                        
+                        <hr class="my-4">
+
+                        <div id="paymentResponse" class="mt-3"></div>
                     </div>
 
+                    <!-- Footer File Load-->
+                    <footer>
+                        <div id="footer"></div>
+                    </footer>
+
                 </div>
-            </div>
-
-            <!-- Footer File Load-->
-            <footer>
-                <div id="footer"></div>
-            </footer>
-
-        </div>
 
     </main>
 
@@ -299,8 +295,18 @@
         crossorigin="anonymous"></script>
     <script src="../../scripts/JS/loadHeaderFooter_v2.js" defer></script>
 
-    <!-- JS for Accept Form -->
+    <!-- JS - Tempalte Specific -->
     <script type="text/javascript">
+        function togglePaymentMethod() {
+            if (document.getElementById('credit').checked) {
+                document.getElementById('creditCardFields').style.display = 'block';
+                document.getElementById('bankAccountFields').style.display = 'none';
+            } else if (document.getElementById('bank').checked) {
+                document.getElementById('creditCardFields').style.display = 'none';
+                document.getElementById('bankAccountFields').style.display = 'block';
+            }
+        }
+
         function populateErrorMessage(response) {
             let errorMsg = '<strong>Error:</strong><br>';
             for (let i = 0; i < response.messages.message.length; i++) {
@@ -314,24 +320,23 @@
                 clientKey: "5FcB6WrfHGS76gHW3v7btBCE3HuuBuke9Pj96Ztfn5R32G5ep42vne7MCWZtAucY",
                 apiLoginID: "5KP3u95bQpv"
             };
-
             var secureData = { authData: authData };
 
-            // Check which payment method is selected
             if (document.getElementById('credit').checked) {
-                var cardData = {};
-                cardData.cardNumber = document.getElementById('cardNumber').value;
-                cardData.month = document.getElementById('expiryDate_Month').value;
-                cardData.year = document.getElementById('expiryDate_Year').value;
-                cardData.zip = document.getElementById('Zip').value;
-                cardData.cardCode = document.getElementById('cvv').value;
+                var cardData = {
+                    cardNumber: document.getElementById("cardNumber").value,
+                    month: document.getElementById("expiryDate").value.split("/")[0],
+                    year: document.getElementById("expiryDate").value.split("/")[1],
+                    cardCode: document.getElementById("cvv").value
+                };
                 secureData.cardData = cardData;
             } else if (document.getElementById('bank').checked) {
-                var bankData = {};
-                bankData.accountType = document.getElementById('accountType').value;
-                bankData.nameOnAccount = document.getElementById('nameOnAccount').value;
-                bankData.accountNumber = document.getElementById('accountNumber').value;
-                bankData.routingNumber = document.getElementById('routingNumber').value;
+                var bankData = {
+                    accountType: document.getElementById("accountType").value,
+                    nameOnAccount: document.getElementById("nameOnAccount").value,
+                    accountNumber: document.getElementById("accountNumber").value,
+                    routingNumber: document.getElementById("routingNumber").value
+                };
                 secureData.bankData = bankData;
             }
 
@@ -339,19 +344,17 @@
         }
 
         function callbackMerchant(response) {
-            // Start with result code, message code, and message
             var resultCode = response.messages.resultCode;
             var messageCode = response.messages.message[0].code;
             var messageText = response.messages.message[0].text;
 
-            // Initialize the base message with result code, message code, and message text        
             var baseMsg = `<strong>Result Code:</strong> ${resultCode}<br/>` +
                 `<strong>Message Code:</strong> ${messageCode}<br/>` +
                 `<strong>Message:</strong> ${messageText}`;
 
             if (resultCode === 'Error') {
                 populateErrorMessage(response);
-                return; // Stop further execution if there is an error
+                return;
             }
 
             var msg01 = '<b>Date Type (Data Descriptor):</b> ' + response.opaqueData.dataDescriptor;
@@ -360,15 +363,12 @@
                 response.opaqueData.dataValue + '</span>';
             var msg03 = '';
 
-            // Check if the response contains encrypted card data
             if (response.encryptedCardData) {
                 msg03 =
                     '<b>BIN:</b> ' + response.encryptedCardData.bin + '<br/>' +
                     '<b>Card Number:</b> ' + response.encryptedCardData.cardNumber + '<br/>' +
                     '<b>Expiration Date:</b> ' + response.encryptedCardData.expDate;
-            }
-            // Check if the response contains encrypted bank data
-            else if (response.encryptedBankData) {
+            } else if (response.encryptedBankData) {
                 msg03 =
                     '<b>Account Type:</b> ' + response.encryptedBankData.accountType + '<br/>' +
                     '<b>Name on Account:</b> ' + response.encryptedBankData.nameOnAccount + '<br/>' +
@@ -379,18 +379,8 @@
             var paymentResponse = document.getElementById("paymentResponse");
             paymentResponse.innerHTML = baseMsg + '<br/><hr>' + msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03;
         }
-
-        // Toggle visibility of payment method fields
-        function togglePaymentMethod() {
-            if (document.getElementById('credit').checked) {
-                document.getElementById('creditCardFields').style.display = 'block';
-                document.getElementById('bankAccountFields').style.display = 'none';
-            } else if (document.getElementById('bank').checked) {
-                document.getElementById('creditCardFields').style.display = 'none';
-                document.getElementById('bankAccountFields').style.display = 'block';
-            }
-        }
     </script>
+
 
 </body>
 
