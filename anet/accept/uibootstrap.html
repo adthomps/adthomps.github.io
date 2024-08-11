@@ -41,6 +41,7 @@
             <br />
 
             <div id="paymentResponse"></div>
+
         </div>
     </div>
 
@@ -62,7 +63,7 @@
             // Initialize the base message with result code, message code, and message text
             var baseMsg = `<strong>Result Code:</strong> ${resultCode}<br/>` +
                 `<strong>Message Code:</strong> ${messageCode}<br/>` +
-                `<strong>Message:</strong> ${messageText}<br/><br/>`;
+                `<strong>Message:</strong> ${messageText}<br/>`;
 
             if (resultCode === 'Error') {
                 populateErrorMessage(response);
