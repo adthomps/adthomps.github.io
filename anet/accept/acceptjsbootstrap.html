@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceptjs Payment Form</title>
+    <title>Payment Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" src="https://jstest.authorize.net/v1/Accept.js"></script>
     <style>
@@ -87,7 +87,7 @@
             // Initialize the base message with result code, message code, and message text        
         var baseMsg = `<strong>Result Code:</strong> ${resultCode}<br/>` +
             `<strong>Message Code:</strong> ${messageCode}<br/>` +
-            `<strong>Message:</strong> ${messageText}<br/><br/>`;
+            `<strong>Message:</strong> ${messageText}<br/>`;
 
         if (resultCode === 'Error') {
             populateErrorMessage(response);
@@ -116,21 +116,22 @@
                 '<b>Routing Number:</b> ' + response.encryptedBankData.routingNumber;
         }
 
-            // Check if paymentReceipt exists and update or create it
-            var paymentReceipt = document.getElementById("paymentReceipt");
-            if (!paymentReceipt) {
-                paymentReceipt = document.createElement("div");
-                paymentReceipt.id = "paymentReceipt";
-                paymentReceipt.style.margin = "auto";
-                paymentReceipt.style.border = "1px solid black";
-                paymentReceipt.style.padding = "15px";
-                paymentReceipt.style.width = "50%";
-                paymentReceipt.style.wordWrap = "break-word"; // Ensures long text wraps
-                paymentReceipt.style.overflowWrap = "break-word"; // Ensures long text wraps
-                document.body.appendChild(paymentReceipt);
+            // Check if paymentResponse exists and update or create it
+            var paymentResponse = document.getElementById("paymentResponse");
+            if (!paymentResponse) {
+                paymentResponse = document.createElement("div");
+                paymentResponse.id = "paymentResponse";
+                paymentResponse.style.margin = "auto";
+                paymentResponse.style.border = "1px solid black";
+                paymentResponse.style.padding = "15px";
+                paymentResponse.style.width = "50%";
+                paymentResponse.style.wordWrap = "break-word"; // Ensures long text wraps
+                paymentResponse.style.overflowWrap = "break-word"; // Ensures long text wraps
+                document.body.appendChild(paymentResponse);
             }
-            paymentReceipt.innerHTML = baseMsg + '<br/><hr>' + msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03;
+            paymentResponse.innerHTML = baseMsg + '<br/><hr>' + msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03;
         }
+
 
 </script>
 
