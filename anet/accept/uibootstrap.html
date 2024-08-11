@@ -56,9 +56,21 @@
             } else {
                 var msg01 = '<b> PAYMENT NONCE (Data Value) : </b> ' + response.opaqueData.dataValue;
                 var msg02 = '<b> TYPE (Data Descriptor) : </b> ' + response.opaqueData.dataDescriptor;
-                var msg03 = '<b>CARD NUMBER</b> : ' + response.encryptedCardData.cardNumber + '<br/>' +
-                    '<b>EXPIRATION DATE</b> : ' + response.encryptedCardData.expDate + '<br/>' +
-                    '<b>BIN</b> : ' + response.encryptedCardData.bin;
+                var msg03 = '';
+
+                // Check if the response contains encrypted card data
+                if (response.encryptedCardData) {
+                    msg03 = '<b>CARD NUMBER</b> : ' + response.encryptedCardData.cardNumber + '<br/>' +
+                        '<b>EXPIRATION DATE</b> : ' + response.encryptedCardData.expDate + '<br/>' +
+                        '<b>BIN</b> : ' + response.encryptedCardData.bin;
+                }
+                // Check if the response contains encrypted bank data
+                else if (response.encryptedBankData) {
+                    msg03 = '<b>ACCOUNT NUMBER</b> : ' + response.encryptedBankData.accountNumber + '<br/>' +
+                        '<b>ROUTING NUMBER</b> : ' + response.encryptedBankData.routingNumber + '<br/>' +
+                        '<b>NAME ON ACCOUNT</b> : ' + response.encryptedBankData.nameOnAccount + '<br/>' +
+                        '<b>ACCOUNT TYPE</b> : ' + response.encryptedBankData.accountType;
+                }
 
                 // Check if paymentReceipt exists and update or create it
                 var paymentReceipt = document.getElementById("paymentReceipt");
@@ -74,6 +86,7 @@
                 paymentReceipt.innerHTML = msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03;
             }
         }
+
     </script>
 
 </body>
