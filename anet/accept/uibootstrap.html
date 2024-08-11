@@ -24,7 +24,7 @@
 <div class="container">
     <div class="form-container">
         <h2 class="text-center mb-4">Sample Payment Form</h2>
-        <form id="paymentForm" method="POST" action="https://YourServer/PathToExistingPaymentProcessingScript">
+        <form id="paymentForm">
             <input type="hidden" name="dataValue" id="dataValue" />
             <input type="hidden" name="dataDescriptor" id="dataDescriptor" />
             <div class="d-grid">
@@ -35,35 +35,37 @@
                         data-apiLoginID="62W3Efur" 
                         data-clientKey="4abK6fG25BtW9QF3LZUN84FsmvQh47bpdm8FJ2yA28r9p5WPB34H8N6n7whjUsBu"
                         data-acceptUIFormBtnTxt="Submit" 
-                        data-acceptUIFormHeaderTxt="Card Information" 
-                        data-responseHandler="responseHandler">Pay
+                        data-acceptUIFormHeaderTxt="Payment Information" 
+                        data-responseHandler="callbackMerchant">Pay
                 </button>
             </div>
         </form>
+        <div id="paymentReceipt"></div>
     </div>
 </div>
 
 <script type="text/javascript">
-    function responseHandler(response) {
-        if (response.messages.resultCode === "Error") {
-            var i = 0;
-            while (i < response.messages.message.length) {
-                console.log(
-                    response.messages.message[i].code + ": " +
-                    response.messages.message[i].text
-                );
-                i = i + 1;
-            }
-        } else {
-            paymentFormUpdate(response.opaqueData);
+    function populateErrorMessage(response) {
+        var text = '';
+        for (var i = 0; i < response.messages.message.length; i++) {
+            text = text + response.messages.message[i].code + ': ' + response.messages.message[i].text + '\n';
         }
+        console.log(text);
     }
 
-    function paymentFormUpdate(opaqueData) {
-        document.getElementById("dataDescriptor").value = opaqueData.dataDescriptor;
-        document.getElementById("dataValue").value = opaqueData.dataValue;
+    function callbackMerchant(response) {
+        if (response.messages.resultCode === 'Error') {
+            populateErrorMessage(response);
+        } else {
+            var msg01 = '<b> PAYMENT NONCE (Data Value) : </b> ' + response.opaqueData.dataValue;
+            var msg02 = '<b> TYPE (Data Descriptor) : </b> ' + response.opaqueData.dataDescriptor;
+            var msg03 = '<b>CARD NUMBER</b> : ' + response.encryptedCardData.cardNumber + '<br/>' + '<b>EXPIRATION DATE</b> : ' + response.encryptedCardData.expDate + '<br/>' + '<b>BIN</b> : ' + response.encryptedCardData.bin;
 
-        document.getElementById("paymentForm").submit();
+            if ($('#paymentReceipt').length == 0) {
+                $('body').append($('<br/><br/><div id = "paymentReceipt" style="margin: auto;border: 1px solid black;padding: 15px;width: 50%;"></div>'));
+            }
+            $('#paymentReceipt').html(msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03);
+        }
     }
 </script>
 
