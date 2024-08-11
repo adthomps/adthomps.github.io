@@ -57,8 +57,8 @@
             if (response.messages.resultCode === 'Error') {
                 populateErrorMessage(response);
             } else {
-                var msg01 = '<b> Date Type (Data Descriptor): </b> ' + response.opaqueData.dataDescriptor;
-                var msg02 = '<b> Payment Nonce (Data Value): </b> ' +
+                var msg01 = '<b>Date Type (Data Descriptor):</b> ' + response.opaqueData.dataDescriptor;
+                var msg02 = '<b>Payment Nonce (Data Value):</b> ' +
                     '<span style="word-wrap: break-word; display: block; overflow-wrap: break-word;">' +
                     response.opaqueData.dataValue + '</span>';
                 var msg03 = '';
