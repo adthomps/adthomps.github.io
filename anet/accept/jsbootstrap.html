@@ -75,7 +75,7 @@
                         <input type="text" class="form-control" id="cvv" data-acceptjs="data" placeholder="123">
                     </div>
                 </div>
-                <div class="mb-3">
+                <div class="col-md-6 mb-3">
                     <label for="zip" class="form-label">ZIP Code</label>
                     <input type="text" class="form-control" id="zip" data-acceptjs="data" placeholder="12345">
                 </div>
@@ -146,7 +146,7 @@
                 year: document.getElementById("expiryDate").value.split("/")[1],
                 cardCode: document.getElementById("cvv").value,
                 zip: document.getElementById("zip").value,
-                fullName: document.getElementById("firstName" + "lastName").value
+                fullName: document.getElementById("firstName").value + " " + document.getElementById("lastName").value
             };
             secureData.cardData = cardData;
         } else if (document.getElementById('bank').checked) {
