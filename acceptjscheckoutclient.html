@@ -1,185 +1,317 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="images/icons/profile.jpg" type="image/x-icon">
-  <link rel="icon" href="images/icons/profile.jpg" type="image/x-icon">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../images/icons/profile.jpg" type="image/x-icon">
+    <link rel="icon" href="../../images/icons/profile.jpg" type="image/x-icon">
 
-  <!-- Title -->
-  <title>APT Portfolio - Bootstrap</title>
+    <!-- Title -->
+    <title>APT Portfolio - Bootstrap</title>
 
-  <!-- CSS - Universal -->
-  <link href="scripts/CSS/general.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- CSS - Universal -->
+    <link href="../../scripts/CSS/general.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-  <!-- CSS - Custom Color Selector -->
-  <style>
-    .btn-bd-primary {
-      --bd-violet-bg: #1739fc;
-      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-      --bs-btn-font-weight: 600;
-      --bs-btn-color: var(--bs-white);
-      --bs-btn-bg: var(--bd-violet-bg);
-      --bs-btn-border-color: var(--bd-violet-bg);
-      --bs-btn-hover-color: var(--bs-white);
-      --bs-btn-hover-bg: #0923b6;
-      --bs-btn-hover-border-color: #1739fc;
-      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-      --bs-btn-active-color: var(--bs-btn-hover-color);
-      --bs-btn-active-bg: #1739fc;
-      --bs-btn-active-border-color: #0923b6;
-    }
-    .bd-mode-toggle {
-      z-index: 1500;
-    }
-    .bd-mode-toggle .dropdown-menu .active .bi {
-      display: block !important;
-    }
-  </style>
+    <!-- CSS - Template Specific -->
+    <link href="../../scripts/CSS/checkout.css" rel="stylesheet">
 
-  <!-- Include Accept.js -->
-  <script type="text/javascript" src="https://jstest.authorize.net/v1/Accept.js"></script>
+    <!-- CSS - Custom Color Selector -->
+    <style>
+        .btn-bd-primary {
+            --bd-violet-bg: #1739fc;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #0923b6;
+            --bs-btn-hover-border-color: #1739fc;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #1739fc;
+            --bs-btn-active-border-color: #0923b6;
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+        }
+    </style>
+
+    <!-- JS References for Accept.js -->
+    <script type="text/javascript" src="https://jstest.authorize.net/v1/Accept.js" charset="utf-8"></script>
+
 </head>
 
-<body class="bg-body-tertiary">
-<div class="container">
-  <main>
-    <div class="py-5 text-center">
-      <h2>Checkout form</h2>
-      <p class="lead">Complete your purchase by providing your payment details below.</p>
-    </div>
+<body>
 
-    <div class="row g-5">
-      <div class="col-md-5 col-lg-4 order-md-last">
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-primary">Your cart</span>
-          <span class="badge bg-primary rounded-pill">3</span>
-        </h4>
-        <!-- Cart details... -->
-      </div>
+    <main>
+        <div class="container">
 
-      <div class="col-md-7 col-lg-8">
-        <h4 class="mb-3">Billing address</h4>
-        <!-- Form action points to the full URL of process_payment.php -->
-        <form class="needs-validation" id="paymentForm" novalidate onsubmit="event.preventDefault(); sendPaymentDataToAnet();" action="https://acceptjscheckoutserver.apt-account.workers.dev"; method="POST">
-          <div class="row g-3">
-            <!-- Other form fields... -->
-          </div>
+            <!-- Header -->
+            <header>
+                <div id="header"></div>
+            </header>
 
-          <hr class="my-4">
-
-          <h4 class="mb-3">Payment</h4>
-
-          <div class="my-3">
-            <div class="form-check">
-              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
-              <label class="form-check-label" for="credit">Credit card</label>
-            </div>
-          </div>
-
-          <div class="row gy-3">
-            <div class="col-md-6">
-              <label for="cc-name" class="form-label">Name on card</label>
-              <input type="text" class="form-control" id="cc-name" placeholder="" required>
-              <small class="text-body-secondary">Full name as displayed on card</small>
-              <div class="invalid-feedback">
-                Name on card is required
-              </div>
+            <div class="px-4 py-0 my-5 text-center">
+                <h1 class="display-8 fw-bold">Accept.js Sandbox Tests</h1>
+                <div class="d-flex justify-content-center">
+                    <p class="lead mb-4">Test example API Accept Suite products.</p>
+                </div>
+                <i class="bi bi-wallet2" style="font-size: 5rem; "></i>
             </div>
 
-            <div class="col-md-6">
-              <label for="cc-number" class="form-label">Credit card number</label>
-              <input type="text" class="form-control" id="cc-number" placeholder="" required>
-              <div class="invalid-feedback">
-                Credit card number is required
-              </div>
-            </div>
+            <div class="container">
+                <hr class="my-4">
+                <div class="row g-5">
+                    <div class="col-md-7 col-lg-8">
+                        <h4 class="mb-3">Payment</h4>
+                        <form class="needs-validation" id="paymentForm" novalidate>
 
-            <div class="col-md-3">
-              <label for="cc-expiration" class="form-label">Expiration</label>
-              <input type="text" class="form-control" id="cc-expiration" placeholder="MM/YY" required>
-              <div class="invalid-feedback">
-                Expiration date required
-              </div>
-            </div>
+                            <!-- Payment Method Selection -->
+                            <div class="my-3">
+                                <div class="form-check">
+                                    <input id="credit" name="paymentMethod" type="radio" class="form-check-input"
+                                        checked onclick="togglePaymentMethod()" required>
+                                    <label class="form-check-label" for="credit">Credit/Debit Card</label>
+                                </div>
+                                <div class="form-check">
+                                    <input id="bank" name="paymentMethod" type="radio" class="form-check-input"
+                                        onclick="togglePaymentMethod()" required>
+                                    <label class="form-check-label" for="bank">Bank Account (ACH)</label>
+                                </div>
+                            </div>
 
-            <div class="col-md-3">
-              <label for="cc-cvv" class="form-label">CVV</label>
-              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-              <div class="invalid-feedback">
-                Security code required
-              </div>
-            </div>
-          </div>
+                            <!-- Credit Card Fields -->
+                            <div id="creditCardFields">
+                                <div class="row gy-3">
+                                    <div class="col-md-6">
+                                        <label for="cc-name" class="form-label">Name on card</label>
+                                        <input type="text" class="form-control" id="cc-name" placeholder="John Doe"
+                                            required>
+                                        <small class="text-body-secondary">Full name as displayed on card</small>
+                                        <div class="invalid-feedback">
+                                            Name on card is required
+                                        </div>
+                                    </div>
 
-          <!-- Hidden fields for tokenized data and supplemental information -->
-          <input type="hidden" id="dataDescriptor" name="dataDescriptor">
-          <input type="hidden" id="dataValue" name="dataValue">
-          <input type="hidden" id="amount" name="amount" value="20.00"> <!-- Example amount -->
-          <input type="hidden" id="description" name="description" value="Purchase of products">
-          
-          <hr class="my-4">
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
-        </form>
+                                    <div class="col-md-6">
+                                        <label for="cardNumber" class="form-label">Credit card number</label>
+                                        <input type="text" class="form-control" name="card[number]" maxlength="20"
+                                            id="cardNumber" data-acceptjs="data" placeholder="1234 5678 9012 3456"
+                                            required>
+                                        <div class="invalid-feedback">
+                                            Credit card number is required
+                                        </div>
+                                    </div>
 
-        <div id="paymentResponse" class="mt-3"></div>
-      </div>
-    </div>
-  </main>
-</div>
+                                    <div class="col-md-3">
+                                        <label for="cvv" class="form-label">CVV</label>
+                                        <input type="text" class="form-control" id="cvv" data-acceptjs="data"
+                                            maxlength="4" placeholder="123" required>
+                                        <small class="text-body-secondary">3-4 Digit number on back of card</small>
+                                        <div class="invalid-feedback">
+                                            Card code required
+                                        </div>
+                                    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-  crossorigin="anonymous"></script>
+                                    <div class="col-md-3">
+                                        <label for="expiryDate" class="form-label">Expiration Date</label>
+                                        <input type="text" class="form-control" id="expiryDate" data-acceptjs="data"
+                                            placeholder="MM/YY">
+                                        <small class="text-body-secondary">Expiration Date MM/YY or MM/YYYY</small>
+                                        <div class="invalid-feedback">
+                                            Expiration date required
+                                        </div>
+                                    </div>
 
-<!-- Accept.js and custom JS -->
-<script type="text/javascript">
-  function sendPaymentDataToAnet() {
-    var authData = {
-      clientKey: "5FcB6WrfHGS76gHW3v7btBCE3HuuBuke9Pj96Ztfn5R32G5ep42vne7MCWZtAucY",
-      apiLoginID: "5KP3u95bQpv"
-    };
+                                    <div class="col-md-3">
+                                        <label for="zip" class="form-label">ZIP Code</label>
+                                        <input type="text" class="form-control" id="zip" data-acceptjs="data"
+                                            placeholder="12345">
+                                        <small class="text-body-secondary">Billing Zip Code</small>
+                                        <div class="invalid-feedback">
+                                            Zip code required.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-    var cardData = {
-      cardNumber: document.getElementById("cc-number").value,
-      month: document.getElementById("cc-expiration").value.split("/")[0],
-      year: document.getElementById("cc-expiration").value.split("/")[1],
-      cardCode: document.getElementById("cc-cvv").value,
-      fullName: document.getElementById("cc-name").value
-    };
+                            <!-- Bank Account Fields -->
+                            <div id="bankAccountFields" style="display: none;">
+                                <div class="row gy-3">
+                                    <div class="col-md-6">
+                                        <label for="accountType" class="form-label">Account Type</label>
+                                        <select class="form-select" id="accountType" required>
+                                            <option value="checking">Checking</option>
+                                            <option value="businessChecking">Business Checking</option>
+                                            <option value="savings">Savings</option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Account type is required
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="nameOnAccount" class="form-label">Name on Account</label>
+                                        <input type="text" class="form-control" id="nameOnAccount"
+                                            placeholder="John Doe" required>
+                                        <div class="invalid-feedback">
+                                            Account holder name is required
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="accountNumber" class="form-label">Account Number</label>
+                                        <input type="text" class="form-control" id="accountNumber"
+                                            placeholder="123456789" required>
+                                        <small class="text-body-secondary">Update to 17 digits</small>
+                                        <div class="invalid-feedback">
+                                            Bank account number is required
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="routingNumber" class="form-label">Routing Number</label>
+                                        <input type="text" class="form-control" id="routingNumber"
+                                            placeholder="987654321" required>
+                                        <small class="text-body-secondary">Update to 9 digits</small>
+                                        <div class="invalid-feedback">
+                                            Routing number is required
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-    var secureData = {
-      authData: authData,
-      cardData: cardData
-    };
+                            <hr class="my-4">
 
-    Accept.dispatchData(secureData, responseHandler);
-  }
+                            <div class="w-35">
+                                <button type="button" class="w-35 btn btn-primary btn-lg"
+                                    onclick="sendPaymentDataToAnet()">Generate
+                                    Payment Nonce</button>
+                            </div>
+                        </form>
 
-  function responseHandler(response) {
-    if (response.messages.resultCode === "Error") {
-      var errorMessage = "";
-      for (var i = 0; i < response.messages.message.length; i++) {
-        errorMessage += response.messages.message[i].text + "<br/>";
-      }
-      document.getElementById("paymentResponse").innerHTML = errorMessage;
-    } else {
-      var dataDescriptor = response.opaqueData.dataDescriptor;
-      var dataValue = response.opaqueData.dataValue;
+                        <hr class="my-4">
 
-      document.getElementById("dataDescriptor").value = dataDescriptor;
-      document.getElementById("dataValue").value = dataValue;
+                        <div id="paymentResponse" class="mt-3"></div>
+                    </div>
 
-      document.getElementById("paymentForm").submit();
-    }
-  }
-</script>
+                    <!-- Footer File Load-->
+                    <footer>
+                        <div id="footer"></div>
+                    </footer>
+
+                </div>
+
+    </main>
+
+    <!-- JS - Universal -->
+    <script src="../../scripts/JS/color-modes.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="../../scripts/JS/loadHeaderFooter_v2.js" defer></script>
+
+    <!-- JS - Template Specific -->
+    <script type="text/javascript">
+        function togglePaymentMethod() {
+            if (document.getElementById('credit').checked) {
+                document.getElementById('creditCardFields').style.display = 'block';
+                document.getElementById('bankAccountFields').style.display = 'none';
+            } else if (document.getElementById('bank').checked) {
+                document.getElementById('creditCardFields').style.display = 'none';
+                document.getElementById('bankAccountFields').style.display = 'block';
+            }
+        }
+
+        function populateErrorMessage(response) {
+            let errorMsg = '<strong>Error:</strong><br>';
+            for (let i = 0; i < response.messages.message.length; i++) {
+                errorMsg += `${response.messages.message[i].code}: ${response.messages.message[i].text}<br>`;
+            }
+            document.getElementById("paymentResponse").innerHTML = errorMsg;
+        }
+
+        function sendPaymentDataToAnet() {
+            var authData = {
+                clientKey: "5FcB6WrfHGS76gHW3v7btBCE3HuuBuke9Pj96Ztfn5R32G5ep42vne7MCWZtAucY",
+                apiLoginID: "5KP3u95bQpv"
+            };
+            var secureData = { authData: authData };
+
+            if (document.getElementById('credit').checked) {
+                var cardData = {
+                    cardNumber: document.getElementById("cardNumber").value,
+                    month: document.getElementById("expiryDate").value.split("/")[0],
+                    year: document.getElementById("expiryDate").value.split("/")[1],
+                    cardCode: document.getElementById("cvv").value
+                };
+                secureData.cardData = cardData;
+            } else if (document.getElementById('bank').checked) {
+                var bankData = {
+                    accountType: document.getElementById("accountType").value,
+                    nameOnAccount: document.getElementById("nameOnAccount").value,
+                    accountNumber: document.getElementById("accountNumber").value,
+                    routingNumber: document.getElementById("routingNumber").value
+                };
+                secureData.bankData = bankData;
+            }
+
+            Accept.dispatchData(secureData, callbackMerchant);
+        }
+
+        function callbackMerchant(response) {
+            var resultCode = response.messages.resultCode;
+            var messageCode = response.messages.message[0].code;
+            var messageText = response.messages.message[0].text;
+
+            var baseMsg = `<strong>Result Code:</strong> ${resultCode}<br/>` +
+                `<strong>Message Code:</strong> ${messageCode}<br/>` +
+                `<strong>Message:</strong> ${messageText}`;
+
+            if (resultCode === 'Error') {
+                populateErrorMessage(response);
+                return;
+            }
+
+            var msg01 = '<b>Date Type (Data Descriptor):</b> ' + response.opaqueData.dataDescriptor;
+            var msg02 = '<b>Payment Nonce (Data Value):</b> ' +
+                '<span style="word-wrap: break-word; display: block; overflow-wrap: break-word;">' +
+                response.opaqueData.dataValue + '</span>';
+
+            // Create form and submit to the Cloudflare Worker
+            var form = document.createElement("form");
+            form.method = "POST";
+            form.action = "https://acceptjscheckoutserver.apt-account.workers.dev";
+
+            form.appendChild(createHiddenField("dataDescriptor", response.opaqueData.dataDescriptor));
+            form.appendChild(createHiddenField("dataValue", response.opaqueData.dataValue));
+            form.appendChild(createHiddenField("amount", document.getElementById("amount").value || "20.00")); // Example amount
+            form.appendChild(createHiddenField("description", document.getElementById("description").value || "Purchase of products"));
+            // Add any other fields you need to send to the worker
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+        function createHiddenField(name, value) {
+            var input = document.createElement("input");
+            input.type = "hidden";
+            input.name = name;
+            input.value = value;
+            return input;
+        }
+    </script>
 
 </body>
+
 </html>
