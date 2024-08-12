@@ -194,32 +194,6 @@
     description: description
 }));
 
-fetch("https://acceptjscheckoutserver.apt-account.workers.dev", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-        dataDescriptor: dataDescriptor,
-        dataValue: dataValue,
-        amount: amount,
-        description: description
-    })
-})
-.then(response => response.json())
-.then(data => {
-    console.log('Response from Cloudflare Worker:', data);
-    if (data.success) {
-        document.getElementById("paymentResponse").innerHTML = "Payment processed successfully!";
-    } else {
-        document.getElementById("paymentResponse").innerHTML = "Payment failed: " + data.message;
-    }
-})
-.catch(error => {
-    console.error("Error:", error);
-    document.getElementById("paymentResponse").innerHTML = "An error occurred during payment processing.";
-});
-
     </script>
 </body>
 
