@@ -22,8 +22,6 @@ async function handleRequest(request) {
       const apiLoginID = "QOAA0OCC$aP94Nn8t528";
       const transactionKey = "5SaT35b9D4h7kZP6";
 
-      const postUrl = "https://apitest.authorize.net/xml/v1/request.api";
-
       const transactionRequest = {
         createTransactionRequest: {
           merchantAuthentication: {
@@ -58,7 +56,7 @@ async function handleRequest(request) {
         },
       };
 
-      const apiResponse = await fetch(postUrl, {
+      const apiResponse = await fetch('https://apitest.authorize.net/xml/v1/request.api', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -90,7 +88,7 @@ async function handleRequest(request) {
         <h1>Thank You!</h1>
         <p>Transaction ID: ${transaction_id}</p>
         <p>Amount Charged: $${amount}</p>
-        <a href="/">Continue to homepage</a>
+        <a href="https://adthomps.github.io/anet/accept.html">Continue to homepage</a>
       </body>
       </html>
     `, { headers: { 'Content-Type': 'text/html' } });
@@ -104,7 +102,7 @@ async function handleRequest(request) {
       <body>
         <h1>Oops!</h1>
         <p>Error: ${error_message}</p>
-        <a href="/">Return to homepage</a>
+        <a href="https://adthomps.github.io/anet/accept.html">Return to homepage</a>
       </body>
       </html>
     `, { headers: { 'Content-Type': 'text/html' } });

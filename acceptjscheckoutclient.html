@@ -141,45 +141,65 @@
 
 <!-- Accept.js and custom JS -->
 <script type="text/javascript">
-  function sendPaymentDataToAnet() {
+function sendPaymentDataToAnet() {
     var authData = {
-      clientKey: "5FcB6WrfHGS76gHW3v7btBCE3HuuBuke9Pj96Ztfn5R32G5ep42vne7MCWZtAucY",  // Replace with your actual client key
-      apiLoginID: "5KP3u95bQpv"  // Replace with your actual API login ID
+        clientKey: "5FcB6WrfHGS76gHW3v7btBCE3HuuBuke9Pj96Ztfn5R32G5ep42vne7MCWZtAucY",
+        apiLoginID: "5KP3u95bQpv"
     };
-
     var cardData = {
-      cardNumber: document.getElementById("cc-number").value,
-      month: document.getElementById("cc-expiration").value.split("/")[0],
-      year: document.getElementById("cc-expiration").value.split("/")[1],
-      cardCode: document.getElementById("cc-cvv").value,
-      fullName: document.getElementById("cc-name").value
+        cardNumber: document.getElementById("cardNumber").value,
+        month: document.getElementById("expiryDate").value.split("/")[0],
+        year: document.getElementById("expiryDate").value.split("/")[1],
+        cardCode: document.getElementById("cvv").value
     };
+    var secureData = { authData: authData, cardData: cardData };
 
-    var secureData = {
-      authData: authData,
-      cardData: cardData
-    };
+    Accept.dispatchData(secureData, callbackMerchant);
+}
 
-    Accept.dispatchData(secureData, responseHandler);
-  }
-
-  function responseHandler(response) {
-    if (response.messages.resultCode === "Error") {
-      var errorMessage = "";
-      for (var i = 0; i < response.messages.message.length; i++) {
-        errorMessage += response.messages.message[i].text + "<br/>";
-      }
-      document.getElementById("paymentResponse").innerHTML = errorMessage;
-    } else {
-      var dataDescriptor = response.opaqueData.dataDescriptor;
-      var dataValue = response.opaqueData.dataValue;
-
-      document.getElementById("dataDescriptor").value = dataDescriptor;
-      document.getElementById("dataValue").value = dataValue;
-
-      document.getElementById("paymentForm").submit();
+function callbackMerchant(response) {
+    if (response.messages.resultCode === 'Error') {
+        populateErrorMessage(response);
+        return; // Stop further execution if there is an error
     }
-  }
+
+    var dataDescriptor = response.opaqueData.dataDescriptor;
+    var dataValue = response.opaqueData.dataValue;
+    var amount = document.getElementById("amount").value; // Example: Fetching amount from the form
+    var description = document.getElementById("description").value; // Example: Fetching description from the form
+    var firstName = document.getElementById("firstName").value; // Example: Fetching first name from the form
+    var lastName = document.getElementById("lastName").value; // Example: Fetching last name from the form
+    var address = document.getElementById("address").value; // Example: Fetching address from the form
+    var zip = document.getElementById("zip").value; // Example: Fetching zip from the form
+    var email = document.getElementById("email").value; // Example: Fetching email from the form
+
+    // Create a form to submit to the worker endpoint
+    var form = document.createElement("form");
+    form.method = "POST";
+    form.action = "https://acceptjscheckoutserver.apt-account.workers.dev/process_payment";
+
+    // Append hidden fields to the form
+    form.appendChild(createHiddenField("dataDescriptor", dataDescriptor));
+    form.appendChild(createHiddenField("dataValue", dataValue));
+    form.appendChild(createHiddenField("amount", amount));
+    form.appendChild(createHiddenField("description", description));
+    form.appendChild(createHiddenField("firstName", firstName));
+    form.appendChild(createHiddenField("lastName", lastName));
+    form.appendChild(createHiddenField("address", address));
+    form.appendChild(createHiddenField("zip", zip));
+    form.appendChild(createHiddenField("email", email));
+
+    document.body.appendChild(form);
+    form.submit();
+}
+
+function createHiddenField(name, value) {
+    var input = document.createElement("input");
+    input.type = "hidden";
+    input.name = name;
+    input.value = value;
+    return input;
+}
 </script>
 
 </body>
