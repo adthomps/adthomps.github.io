@@ -1,3 +1,13 @@
+/**
+ * Welcome to Cloudflare Workers! This is your first worker.
+ *
+ * - Run "npm run dev" in your terminal to start a development server
+ * - Open a browser tab at http://localhost:8787/ to see your worker in action
+ * - Run "npm run deploy" to publish your worker
+ *
+ * Learn more at https://developers.cloudflare.com/workers/
+ */
+
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request));
 })
@@ -5,7 +15,8 @@ addEventListener('fetch', event => {
 async function handleRequest(request) {
   const { pathname } = new URL(request.url);
 
-  if (pathname === '/process_payment' && request.method === 'POST') {
+  // Root path (/) now handles payment processing
+  if (pathname === '/' && request.method === 'POST') {
     try {
       const formData = await request.formData();
 
@@ -78,6 +89,7 @@ async function handleRequest(request) {
     }
   }
 
+  // Handle receipt page
   if (pathname === '/receipt') {
     const urlParams = new URL(request.url).searchParams;
     const transaction_id = urlParams.get('transaction_id');
@@ -94,6 +106,7 @@ async function handleRequest(request) {
     `, { headers: { 'Content-Type': 'text/html' } });
   }
 
+  // Handle error page
   if (pathname === '/error') {
     const urlParams = new URL(request.url).searchParams;
     const error_message = urlParams.get('error_message');
