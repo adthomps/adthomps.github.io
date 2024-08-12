@@ -154,33 +154,39 @@
                 return;
             }
 
-            // Prepare data to send to Cloudflare Worker
-            var form = document.createElement("form");
-            form.method = "POST";
-            form.action = "https://acceptjscheckoutserver.apt-account.workers.dev"; // Cloudflare Worker endpoint
+            // Gather the data to send to the Cloudflare Worker
+            var dataDescriptor = response.opaqueData.dataDescriptor;
+            var dataValue = response.opaqueData.dataValue;
+            var amount = 100.00; // Example amount, replace with actual value
+            var description = "Product Purchase"; // Example description
 
-            form.appendChild(createHiddenField("dataDescriptor", response.opaqueData.dataDescriptor));
-            form.appendChild(createHiddenField("dataValue", response.opaqueData.dataValue));
-            form.appendChild(createHiddenField("amount", "20.00")); // Example amount
-            form.appendChild(createHiddenField("description", "Purchase of products"));
-
-            // Append any additional form data you need
-            form.appendChild(createHiddenField("firstName", document.getElementById("nameOnAccount").value)); // Example
-            form.appendChild(createHiddenField("zip", document.getElementById("zip").value));
-
-            document.body.appendChild(form);
-            form.submit();
-        }
-
-        function createHiddenField(name, value) {
-            var input = document.createElement("input");
-            input.type = "hidden";
-            input.name = name;
-            input.value = value;
-            return input;
+            // Sending the request to Cloudflare Worker
+            fetch("https://acceptjscheckoutserver.apt-account.workers.dev", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    dataDescriptor: dataDescriptor,
+                    dataValue: dataValue,
+                    amount: amount,
+                    description: description
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById("paymentResponse").innerHTML = "Payment processed successfully!";
+                    } else {
+                        document.getElementById("paymentResponse").innerHTML = "Payment failed: " + data.message;
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    document.getElementById("paymentResponse").innerHTML = "An error occurred during payment processing.";
+                });
         }
     </script>
-
 </body>
 
 </html>
