@@ -44,55 +44,256 @@
     .bd-mode-toggle .dropdown-menu .active .bi {
       display: block !important;
     }
+
+    /* Top Navbar styles */
+    .top-navbar {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1050; /* Higher z-index to ensure it stays on top */
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #dee2e6;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add shadow for depth */
+    }
+
+    .top-navbar .navbar-brand img {
+      max-height: 40px;
+    }
+
+    /* Sidebar styles */
+    .sidebar {
+      height: calc(100vh - 56px); /* Subtract the height of the top navbar */
+      position: fixed;
+      top: 56px; /* Push it down to start below the top navbar */
+      left: 0;
+      z-index: 1000;
+      width: 250px;
+      background-color: #f8f9fa;
+      border-right: 1px solid #dee2e6;
+      padding-top: 20px; /* Padding for inside the sidebar */
+    }
+
+    .sidebar .nav-link {
+      padding: 10px 15px;
+    }
+
+    .content {
+      margin-left: 250px; /* Width of the sidebar */
+      padding: 20px;
+      margin-top: 56px; /* Height of the top navbar */
+    }
+
+    /* Media query for smaller screens */
+    @media (max-width: 767.98px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid #dee2e6;
+      }
+
+      .content {
+        margin-left: 0;
+        margin-top: 56px; /* Keep margin for the top navbar */
+      }
+    }
+
+    /* Ensure dropdown is visible */
+    .dropdown-menu {
+      right: 0;
+      left: auto;
+    }
+
+    .dropdown-toggle::after {
+      display: none; /* Remove the default arrow for better alignment */
+    }
+
+    /* Optional: Responsive tweaks */
+    @media (max-width: 576px) {
+      .top-navbar .navbar-brand img,
+      .top-navbar .dropdown img {
+        max-height: 35px;
+      }
+
+      .top-navbar {
+        padding: 0.5rem 0.75rem;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!--Theme Color Icons Start-->
-  <!-- (Your existing SVG icons for theme toggle) -->
-  <!--Theme Color Icons End-->
-
-  <!-- Offcanvas Toggle Button -->
-  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-    aria-controls="offcanvasExample">
-    <i class="bi bi-list"></i> Menu
-  </button>
-
-  <!-- Offcanvas Sidebar -->
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Navigation</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <nav class="nav flex-column">
-        <a class="nav-link active" href="#">Home</a>
-        <a class="nav-link" href="#">About</a>
-        <a class="nav-link" href="#">Services</a>
-        <a class="nav-link" href="#">Contact</a>
-      </nav>
-    </div>
-  </div>
-
-  <main class="container">
-    <div class="px-4 py-0 my-5 text-center">
-      <h1 class="display-8 fw-bold">Example Title Page Widget Examples</h1>
-      <div class="d-flex justify-content-center">
-        <p class="lead mb-4">Example Subtitle or Lead.</p>
+  <!-- Top Navbar -->
+  <nav class="navbar top-navbar">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <a class="navbar-brand" href="sign-in.html">
+        <img src="images/icons/profile.jpg" width="50" height="50" class="rounded-circle" alt="Logo">
+      </a>
+      <div class="dropdown text-end">
+        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            6+
+            <span class="visually-hidden">unread messages</span>
+          </span>
+          <img src="images/avatar/IMG-Profile.jpg" alt="Profile" width="50" height="50" class="rounded">
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end text-small">
+          <li><a class="dropdown-item" href="profile.html"><i class="bi bi-person-bounding-box"></i> Profile</a></li>
+          <li><a class="dropdown-item" href="settings.html"><i class="bi bi-sliders"></i> Settings</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#signOutModal"><i class="bi bi-box-arrow-left"></i> Sign out</a></li>
+        </ul>
       </div>
-      <img class="d-block mx-auto mb-4" src="images/icons/heartbeat3.png" width="300" height="69" alt="Heartbeat Icon" />
-      Example Image
+    </div>
+  </nav>
+
+    <!-- Sign Out Modal -->
+    <div class="modal fade" id="signOutModal" tabindex="-1" aria-labelledby="signOutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="signOutModalLabel">Sign Out</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Do you really want to sign out?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a type="button" class="btn btn-primary" href="sign-in.html">Sign Out</a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="container">
-      Example Body Content
-    </div>
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-3 col-lg-2 sidebar">
+          <ul class="nav flex-column">
+            <!-- Home Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-house"></i> Home
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html"><i class="bi bi-house"></i> Home Page</a></li>
+                <li><a class="dropdown-item" href="about.html"><i class="bi bi-file-earmark-person-fill"></i> About</a></li>
+                <li><a class="dropdown-item" href="blog.html"><i class="bi bi-pen"></i> Blog</a></li>
+                <li><a class="dropdown-item" href="product/dashboard.html"><i class="bi bi-graph-up"></i> Dashboard</a></li>
+                <li><a class="dropdown-item" href="product/products.html"><i class="bi bi-card-checklist"></i> Product</a></li>
+                <li><a class="dropdown-item" href="product/pricing.html"><i class="bi bi-cash-coin"></i> Pricing</a></li>
+                <li><a class="dropdown-item" href="product/checkout-free.html"><i class="bi bi-cart3"></i> Checkout</a></li>
+              </ul>
+            </li>
 
-    <!-- Footer File Load-->
-    <footer>
-      <div id="footer"></div>
-    </footer>
+            <!-- Platform Tests Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-credit-card-2-front"></i> Platform Tests
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="anet.html"><i class="bi bi-credit-card"></i> Authorize.net</a></li>
+                <li><a class="dropdown-item" href="cybs.html"><i class="bi bi-credit-card-fill"></i> Cybersource</a></li>
+              </ul>
+            </li>
+
+            <!-- Status Page Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-activity"></i> Status Page
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="statuspage/statuspage1.html"><i class="bi bi-arrow-up-right-square"></i>
+                    Status Page Ex1</a></li>
+                <li><a class="dropdown-item" href="statuspage/statuspage2.html"><i class="bi bi-arrow-up-right-circle"></i>
+                    Status Page Ex2</a></li>
+              </ul>
+            </li>
+
+            <!-- Dev Docs Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-puzzle"></i> Dev Docs
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" target="_blank" href="https://developer.authorize.net/"><i class="bi bi-journal-code"></i>
+                    Authorize.net</a></li>
+                <li><a class="dropdown-item" target="_blank" href="https://developer.cybersource.com/"><i class="bi bi-journal-text"></i>
+                    Cybersource</a></li>
+                <li><a class="dropdown-item" target="_blank" href="https://developer.visaacceptance.com/"><i class="bi bi-journal-richtext"></i>
+                    Visa Acceptance</a></li>
+                <li><a class="dropdown-item" href="knowledge/apidocs.html"><i class="bi bi-journal-richtext"></i> APT Docs</a></li>
+              </ul>
+            </li>
+
+            <!-- Knowledge/Support Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-file-code"></i> Knowledge/Support
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="knowledge/apis.html"><i class="bi bi-journal-code"></i> API Guide v1</a></li>
+                <li><a class="dropdown-item" href="knowledge/apis2.html"><i class="bi bi-journal-code"></i> API Guide v2</a></li>
+                <li><a class="dropdown-item" href="knowledge/knowledge.html"><i class="bi bi-journal-text"></i> Knowledge</a></li>
+                <li><a class="dropdown-item" href="knowledge/support.html"><i class="bi bi-telephone-inbound"></i> Support</a></li>
+              </ul>
+            </li>
+
+            <!-- Photography Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-camera2"></i> Photography
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="photography/dronemap.html"><i class="bi bi-geo-alt-fill"></i> Drone Map</a></li>
+                <li><a class="dropdown-item" href="photography/hikingmap.html"><i class="bi bi-geo-alt"></i> Hiking Map</a></li>
+                <li><a class="dropdown-item" href="photography/dropgallery.html"><i class="bi bi-droplet-half"></i> Water Drop Photography</a></li>
+                <li><a class="dropdown-item" href="https://www.skypixel.com/users/sanchito84"><i class="bi bi-airplane"></i> Drone Photography</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="content col-md-9 col-lg-10 ms-sm-auto">
+          <div class="px-4 py-0 my-5 text-center">
+            <h1 class="display-8 fw-bold">Example Title Page Widget Examples</h1>
+            <div class="d-flex justify-content-center">
+              <p class="lead mb-4">Example Subtitle or Lead.</p>
+            </div>
+            <img class="d-block mx-auto mb-4" src="images/icons/heartbeat3.png" width="300" height="69" alt="Heartbeat Icon" />
+            Example Image
+          </div>
+
+          <div class="container">
+            Example Body Content
+          </div>
+
+      <!-- Footer File Load-->
+      <footer>
+        <div id="footer"></div>
+      </footer>
+          
+        </div>
+      </div>
+    </div>
 
   </main>
 
@@ -102,6 +303,8 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="scripts/JS/loadHeaderFooter_v3.js" defer></script>
+
+  <!-- JS - Tempalte Specific -->
 </body>
 
 </html>
