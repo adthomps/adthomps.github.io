@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const sidebarPath = getRelativePath("templates/sidebar.html");
   const footerPath = getRelativePath("templates/footer.html");
 
-  loadHTML(headerPath, "header");
+  loadHTML(headerPath, "header2");
   loadHTML(sidebarPath, "sidebar");
   loadHTML(footerPath, "footer");
 });
