@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>APT Portfolio - Bootstrap</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/icons/profile.jpg" type="image/x-icon">
+
+    <!-- Universal CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        .top-navbar,
+        .sidebar {
+            background-color: var(--bs-body-bg);
+            color: var(--bs-body-color);
+            border-color: var(--bs-border-color-translucent);
+            padding: 0.5rem 1rem;
+        }
+
+        .sidebar {
+            height: 100vh;
+            position: fixed;
+            top: 56px;
+            left: 0;
+            z-index: 1000;
+            padding-top: 2rem;
+            overflow-y: auto;
+        }
+
+        .sidebar a {
+            color: var(--bs-body-color);
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 1rem;
+        }
+
+        @media (max-width: 991.98px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                top: 0;
+                border-right: none;
+                border-bottom: 1px solid var(--bs-border-color-translucent);
+            }
+
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+
+<style>
+    body {
+        padding-top: 50px;
+    }
+
+    .container {
+        margin-top: 20px;
+    }
+
+    .search-section {
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid var(--bs-border-color-translucent);
+        border-radius: 10px;
+        background-color: var(--bs-body-bg);
+    }
+
+    .search-section h5 {
+        margin-bottom: 15px;
+    }
+</style>
+</head>
+
+<body>
+
+    <!-- Theme Toggle Button -->
+    <div class="position-fixed bottom-0 end-0 m-3">
+        <button class="btn btn-primary d-flex align-items-center" id="theme-toggle" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="bi bi-circle-half"></i>
+            <span class="ms-2">Theme</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+            <li><button class="dropdown-item" data-bs-theme-value="light"><i class="bi bi-sun"></i> Light</button></li>
+            <li><button class="dropdown-item" data-bs-theme-value="dark"><i class="bi bi-moon-stars"></i> Dark</button></li>
+            <li><button class="dropdown-item active" data-bs-theme-value="auto"><i class="bi bi-circle-half"></i> Auto</button></li>
+        </ul>
+    </div>
+
+    <!-- Top Navbar -->
+    <nav class="navbar fixed-top shadow-sm top-navbar">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="navbar-brand" href="sign-in.html">
+                <img src="images/icons/profile.jpg" width="50" height="50" class="rounded-circle" alt="Logo">
+            </a>
+            <div class="dropdown text-end">
+                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        6+
+                        <span class="visually-hidden">unread messages</span>
+                    </span>
+                    <img src="images/avatar/IMG-Profile.jpg" alt="Profile" width="40" height="40"
+                        class="rounded">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end text-small" aria-labelledby="dropdownUser1">
+                    <li><a class="dropdown-item" href="profile.html"><i class="bi bi-person-bounding-box me-2"></i>
+                            Profile</a></li>
+                    <li><a class="dropdown-item" href="settings.html"><i class="bi bi-sliders me-2"></i> Settings</a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#signOutModal"><i
+                                class="bi bi-box-arrow-left me-2"></i> Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sign Out Modal -->
+    <div class="modal fade" id="signOutModal" tabindex="-1" aria-labelledby="signOutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signOutModalLabel">Sign Out</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to sign out?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a class="btn btn-primary" href="sign-in.html">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <nav class="col-md-3 col-lg-2 sidebar">
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="#" class="nav-link active" aria-current="page" data-bs-toggle="collapse" data-bs-target="#systemsearchSubmenu"
+                aria-expanded="false" aria-controls="systemsearchSubmenu">
+                    <i class="bi bi-search"></i> System Search
+                </a>
+                <ul class="collapse ms-4" id="systemsearchSubmenu">
+                    <li><a href="#" class="nav-link">Merchant Search</a></li>
+                    <li><a href="#" class="nav-link">Partner Search</a></li>
+                    <li><a href="#" class="nav-link">Transaction Search</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#bulkNotificationSubmenu"
+                    aria-expanded="false" aria-controls="bulkNotificationSubmenu">
+                    <i class="bi bi-bell"></i> Bulk Notification
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#businessOpsSubmenu"
+                    aria-expanded="false" aria-controls="businessOpsSubmenu">
+                    <i class="bi bi-asterisk"></i> Business Operations
+                </a>
+                <ul class="collapse ms-4" id="businessOpsSubmenu">
+                    <li><a href="#" class="nav-link">Bulk Updates</a></li>
+                    <li><a href="#" class="nav-link">Billing Operations</a></li>
+                    <li><a href="#" class="nav-link">Risk Operations</a></li>
+                    <li><a href="#" class="nav-link">Add Reseller</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-activity"></i> Processor Health
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#adminSettingsSubmenu"
+                    aria-expanded="false" aria-controls="adminSettingsSubmenu">
+                    <i class="bi bi-people"></i> Admin Settings
+                </a>
+                <ul class="collapse ms-4" id="adminSettingsSubmenu">
+                    <li><a href="#" class="nav-link">Manage Roles</a></li>
+                    <li><a href="#" class="nav-link">Manage Users</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content col-md-9 col-lg-10 ms-sm-auto">
+        <!-- Filters Section -->
+        <div class="filters-section">
+            <h5>Active Filters:</h5>
+            <div id="activeFilters" class="mb-3">
+                <!-- Filter Pills will be appended here -->
+            </div>
+        </div>
+
+        <!-- Account Search Section -->
+        <div class="search-section">
+            <h5>Search Accounts</h5>
+            <form id="accountSearchForm">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="accountType" class="form-label">Account Type</label>
+                        <select class="form-select" id="accountType">
+                            <option selected>Choose...</option>
+                            <option value="Merchant">Merchant</option>
+                            <option value="Partner">Partner</option>
+                            <option value="Affiliate">Affiliate</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="accountStatus" class="form-label">Account Status</label>
+                        <select class="form-select" id="accountStatus">
+                            <option selected>Choose...</option>
+                            <option value="Active">Active</option>
+                            <option value="Closed">Closed</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="gatewayID" class="form-label">Gateway ID</label>
+                        <input type="text" class="form-control" id="gatewayID" placeholder="Enter Gateway ID">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="businessName" class="form-label">Business Name</label>
+                        <input type="text" class="form-control" id="businessName" placeholder="Enter Business Name">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="accountNumber" class="form-label">Account Number</label>
+                        <input type="text" class="form-control" id="accountNumber" placeholder="Enter Account Number">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <button type="button" class="btn btn-primary" onclick="addAccountFilters()">Add Filters</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Transaction Search Section -->
+        <div class="search-section">
+            <h5>Search Transactions</h5>
+            <form id="transactionSearchForm">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="transactionID" class="form-label">Transaction ID</label>
+                        <input type="text" class="form-control" id="transactionID" placeholder="Enter Transaction ID">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="amount" class="form-label">Amount</label>
+                        <input type="number" class="form-control" id="amount" placeholder="Enter Amount">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="dateRange" class="form-label">Date Range</label>
+                        <input type="text" class="form-control" id="dateRange" placeholder="Enter Date Range">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="lastFourCC" class="form-label">Last 4 of Credit Card</label>
+                        <input type="text" class="form-control" id="lastFourCC" placeholder="Enter Last 4 Digits">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="lastFourBank" class="form-label">Last 4 of Bank Account</label>
+                        <input type="text" class="form-control" id="lastFourBank" placeholder="Enter Last 4 Digits">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="routingNumber" class="form-label">Routing Number</label>
+                        <input type="text" class="form-control" id="routingNumber" placeholder="Enter Routing Number">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <button type="button" class="btn btn-primary" onclick="addTransactionFilters()">Add Filters</button>
+                </div>
+            </form>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 mt-5 border-top">
+        <div class="container">
+            <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> APT, Inc. All rights reserved.
+            </p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="privacy.html">Privacy</a></li>
+                <li class="list-inline-item"><a href="terms.html">Terms</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- JS - Universal -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', function () {
+                document.documentElement.setAttribute('data-bs-theme', this.getAttribute('data-bs-theme-value'));
+                document.querySelectorAll('.dropdown-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+
+    <!-- Custom JS for managing filters -->
+    <script>
+        function addAccountFilters() {
+            const accountType = document.getElementById('accountType').value;
+            const accountStatus = document.getElementById('accountStatus').value;
+            const gatewayID = document.getElementById('gatewayID').value;
+            const businessName = document.getElementById('businessName').value;
+            const accountNumber = document.getElementById('accountNumber').value;
+
+            if (accountType !== 'Choose...') addFilterPill('Account Type', accountType);
+            if (accountStatus !== 'Choose...') addFilterPill('Account Status', accountStatus);
+            if (gatewayID) addFilterPill('Gateway ID', gatewayID);
+            if (businessName) addFilterPill('Business Name', businessName);
+            if (accountNumber) addFilterPill('Account Number', accountNumber);
+        }
+
+        function addTransactionFilters() {
+            const transactionID = document.getElementById('transactionID').value;
+            const amount = document.getElementById('amount').value;
+            const dateRange = document.getElementById('dateRange').value;
+            const lastFourCC = document.getElementById('lastFourCC').value;
+            const lastFourBank = document.getElementById('lastFourBank').value;
+            const routingNumber = document.getElementById('routingNumber').value;
+
+            if (transactionID) addFilterPill('Transaction ID', transactionID);
+            if (amount) addFilterPill('Amount', amount);
+            if (dateRange) addFilterPill('Date Range', dateRange);
+            if (lastFourCC) addFilterPill('Last 4 CC', lastFourCC);
+            if (lastFourBank) addFilterPill('Last 4 Bank', lastFourBank);
+            if (routingNumber) addFilterPill('Routing Number', routingNumber);
+        }
+
+        function addFilterPill(label, value) {
+            const pill = document.createElement('span');
+            pill.className = 'badge bg-primary filter-pill';
+            pill.innerHTML = `${label}: ${value} <i class="bi bi-x-circle ms-2" onclick="removeFilterPill(this)"></i>`;
+            document.getElementById('activeFilters').appendChild(pill);
+        }
+
+        function removeFilterPill(element) {
+            element.parentElement.remove();
+        }
+    </script>
+
+</body>
+
+</html>
