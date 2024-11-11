@@ -60,7 +60,7 @@
             $("#btnOpenAuthorizeNetIFrame").click(function () {
                 $("#add_payment").show();
                 $("#embeddedToken").val($("#inputtoken").val());
-                $("#send_token").attr({ "action": "https://test.authorize.net/payment/Payment", "target": "add_payment" }).submit();
+                $("#send_token").attr({ "action": "https://accept.authorize.net/payment/Payment", "target": "add_payment" }).submit();
                 $(window).scrollTop($('#add_payment').offset().top - 50);
             });
 
@@ -246,7 +246,7 @@
                                     <label>Code Url:</label>
                                     <select id="txtUrl">
                                         <option value="">-Select Url-</option>
-                                        <option value="https://apitest.authorize.net/xml/v1/request.api">Sandbox API
+                                        <option value="https://api.authorize.net/xml/v1/request.api">Production API
                                         </option>
                                     </select>
                                     <input class="btn btn-primary" type="button" id="btnSend" name="btnSend"
@@ -262,13 +262,13 @@
                                                     &#x3C;getHostedPaymentPageRequest xmlns=&#x22;AnetApi/xml/v1/schema/AnetApiSchema.xsd&#x22;&#x3E;
                                                     &#x3C;merchantAuthentication&#x3E;
                                                     &#x3C;name&#x3E;QOAA0OCC$aP94Nn8t528&#x3C;/name&#x3E;
-                                                    &#x3C;transactionKey&#x3E;5SaT35b9D4h7kZP6&#x3C;/transactionKey&#x3E;
+                                                    &#x3C;transactionKey&#x3E;5zdZ9X9sra6e2G29&#x3C;/transactionKey&#x3E;
                                                     &#x3C;/merchantAuthentication&#x3E;
                                                     &#x3C;transactionRequest&#x3E;
                                                     &#x3C;transactionType&#x3E;authCaptureTransaction&#x3C;/transactionType&#x3E;
                                                     &#x3C;amount&#x3E;20.00&#x3C;/amount&#x3E;
                                                     &#x3C;profile&#x3E;
-                                                    &#x3C;customerProfileId&#x3E;1200000005&#x3C;/customerProfileId&#x3E;
+                                                    &#x3C;customerProfileId&#x3E;1520408756&#x3C;/customerProfileId&#x3E;
                                                     &#x3C;/profile&#x3E;
                                                     &#x3C;customer&#x3E;
                                                     &#x3C;email&#x3E;ellen@mail.com&#x3C;/email&#x3E;
@@ -343,7 +343,7 @@
                     </form>
                     <br />
                     <h4 class="mb-3">Merchant Settings & Follow On Button</h4>
-                    <form method="post" action="https://test.authorize.net/payment/Payment"
+                    <form method="post" action="https://accept.authorize.net/payment/Payment"
                         id="formAuthorizeNetTestPage" name="formAuthorizeNetTestPage">
                         <button class="btn btn-primary" id="btnContinue" onclick="">Continue to next
                             page</button>
