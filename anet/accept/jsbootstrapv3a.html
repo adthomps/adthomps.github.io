@@ -382,14 +382,14 @@
                         </lineItems>
                         <poNumber>456654</poNumber>
                         <billTo>
-                            <firstName>Ellen</firstName>
-                            <lastName>Johnson</lastName>
+                            <firstName>${document.getElementById("firstName").value}</firstName>
+                            <lastName>${document.getElementById("lastName").value}</lastName>
                             <company>Souveniropolis</company>
-                            <address>14 Main Street</address>
-                            <city>Pecan Springs</city>
-                            <state>TX</state>
-                            <zip>44628</zip>
-                            <country>US</country>
+                            <address>${document.getElementById("Address").value}</address>
+                            <city>${document.getElementById("City").value}</city>
+                            <state>${document.getElementById("State").value}</state>
+                            <zip>${document.getElementById("Zip").value}</zip>
+                            <country>${document.getElementById("Country").value}</country>
                         </billTo>
                         <shipTo>
                             <firstName>China</firstName>
