@@ -81,15 +81,20 @@
 
         // Handle the response from Accept.js
         function responseHandler(response) {
+            var resultMessageElement = document.getElementById("resultMessage");
             if (response.messages.resultCode === "Error") {
                 console.log("Error: " + response.messages.message[0].text);
-                document.getElementById("resultMessage").innerText = "Error: " + response.messages.message[0].text;
+                if (resultMessageElement) {
+                    resultMessageElement.innerText = "Error: " + response.messages.message[0].text;
+                }
             } else {
                 var opaqueData = response.opaqueData;
                 console.log("Received opaqueData: ", opaqueData);
                 // Set the opaque data value into the hidden field for submission
                 document.getElementById("redirectToken").value = opaqueData.dataValue;
-                document.getElementById("resultMessage").innerText = "Payment nonce generated successfully.";
+                if (resultMessageElement) {
+                    resultMessageElement.innerText = "Payment nonce generated successfully.";
+                }
             }
         }
     </script>
@@ -326,10 +331,10 @@
                     </form>
                 </div>
             </div>
-            <!-- Footer File Load-->
-            <footer>
-                <div id="footer"></div>
-            </footer>
+                    <!-- Footer File Load-->
+        <footer>
+            <div id="footer"></div>
+        </footer>
         </div>
 
     </main>
