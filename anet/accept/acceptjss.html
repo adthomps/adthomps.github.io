@@ -346,16 +346,36 @@
         }
 
         function callbackMerchant(response) {
-            if (response.messages.resultCode === 'Error') {
+            var resultCode = response.messages.resultCode;
+            var messageCode = response.messages.message[0].code;
+            var messageText = response.messages.message[0].text;
+
+            var baseMsg = `<strong>Result Code:</strong> ${resultCode}<br/>` +
+                `<strong>Message Code:</strong> ${messageCode}<br/>` +
+                `<strong>Message:</strong> ${messageText}`;
+
+            if (resultCode === 'Error') {
                 populateErrorMessage(response);
-            } else {
-                var msg01 = '<b> PAYMENT NONCE (Data Value) : </b> ' + response.opaqueData.dataValue;
-                var msg02 = '<b> TYPE (Data Descriptor) : </b> ' + response.opaqueData.dataDescriptor;
-                var msg03 = '<b>CARD NUMBER</b> : ' + response.encryptedCardData.cardNumber + '<br/>' + '<b>EXPIRATION DATE</b> : ' + response.encryptedCardData.expDate + '<br/>' + '<b>BIN</b> : ' + response.encryptedCardData.bin;
-                if ($('#paymentReceipt').length == 0) {
-                    $('body').append($('<br/><br/><div id = "paymentReceipt" style="margin: auto;border: 1px solid black;padding: 15px;width: 50%;"></div>'));
-                }
-                $('#paymentReceipt').html(msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03);
+                return;
+            }
+
+            var msg01 = '<b>Date Type (Data Descriptor):</b> ' + response.opaqueData.dataDescriptor;
+            var msg02 = '<b>Payment Nonce (Data Value):</b> ' +
+                '<span style="word-wrap: break-word; display: block; overflow-wrap: break-word;">' +
+                response.opaqueData.dataValue + '</span>';
+            var msg03 = '';
+
+            if (response.encryptedCardData) {
+                msg03 =
+                    '<b>BIN:</b> ' + response.encryptedCardData.bin + '<br/>' +
+                    '<b>Card Number:</b> ' + response.encryptedCardData.cardNumber + '<br/>' +
+                    '<b>Expiration Date:</b> ' + response.encryptedCardData.expDate;
+            } else if (response.encryptedBankData) {
+                msg03 =
+                    '<b>Account Type:</b> ' + response.encryptedBankData.accountType + '<br/>' +
+                    '<b>Name on Account:</b> ' + response.encryptedBankData.nameOnAccount + '<br/>' +
+                    '<b>Account Number:</b> ' + response.encryptedBankData.accountNumber + '<br/>' +
+                    '<b>Routing Number:</b> ' + response.encryptedBankData.routingNumber;
             }
 
             var paymentResponse = document.getElementById("paymentResponse");
