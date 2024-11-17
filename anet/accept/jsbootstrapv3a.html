@@ -376,22 +376,28 @@
                 },
                 body: xmlPayload,
             })
-                .then(response => response.text())
+            .then(response => response.text())
                 .then(data => {
                     // Parse response and display key parts
                     const parser = new DOMParser();
                     const xmlDoc = parser.parseFromString(data, "application/xml");
-
+                    
                     const resultCode = xmlDoc.getElementsByTagName("resultCode")[0]?.textContent;
-                    const messageText = xmlDoc.getElementsByTagName("description")[0]?.textContent;
-                    const errorCode = xmlDoc.getElementsByTagName("responseCode")[0]?.textContent;
+                    const responseCode = xmlDoc.getElementsByTagName("responseCode")[0]?.textContent;
+                    const description = xmlDoc.getElementsByTagName("description")[0]?.textContent;
+                    const transactionId = xmlDoc.getElementsByTagName("transId")[0]?.textContent;
+                    const errorCode = xmlDoc.getElementsByTagName("errorCode")[0]?.textContent;
+                    const errorText = xmlDoc.getElementsByTagName("errorText")[0]?.textContent;
 
                     let responseMessage = '<strong>Payment Response:</strong><br>';
 
                     if (resultCode === 'Ok') {
-                        responseMessage += 'Transaction Successful: ' + messageText;
+                        responseMessage += `<p>Transaction Successful!</p>`;
+                        responseMessage += `<p><strong>Transaction ID:</strong> ${transactionId}</p>`;
+                        responseMessage += `<p><strong>Description:</strong> ${description}</p>`;
                     } else {
-                        responseMessage += `Error Code: ${errorCode} <br> Message: ${messageText}`;
+                        responseMessage += `<p><strong>Error Code:</strong> ${errorCode || responseCode}</p>`;
+                        responseMessage += `<p><strong>Message:</strong> ${description || errorText}</p>`;
                     }
 
                     document.getElementById("paymentResponse").innerHTML = responseMessage;
@@ -400,6 +406,7 @@
                     console.error('Error:', error);
                     document.getElementById("paymentResponse").innerHTML = '<strong>Payment Error:</strong> An error occurred while making the payment. Please check your network and try again.';
                 });
+
         }
 
         function togglePaymentMethod() {
