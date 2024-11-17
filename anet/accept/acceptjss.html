@@ -363,7 +363,9 @@
             var msg02 = '<b>Payment Nonce (Data Value):</b> ' +
                 '<span style="word-wrap: break-word; display: block; overflow-wrap: break-word;">' +
                 response.opaqueData.dataValue + '</span>';
-            var msg03 = '';
+            var msg03 = '<b>CARD NUMBER</b> : ' + response.encryptedCardData.cardNumber + '<br/>' + 
+                '<b>EXPIRATION DATE</b> : ' + response.encryptedCardData.expDate + '<br/>' + 
+                '<b>BIN</b> : ' + response.encryptedCardData.bin;
 
             if (response.encryptedCardData) {
                 msg03 =
