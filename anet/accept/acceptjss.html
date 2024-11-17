@@ -363,12 +363,7 @@
             var msg02 = '<b>Payment Nonce (Data Value):</b> ' +
                 '<span style="word-wrap: break-word; display: block; overflow-wrap: break-word;">' +
                 response.opaqueData.dataValue + '</span>';
-                var msg03 = '<b>CARD NUMBER</b> : ' + response.encryptedCardData.cardNumber + '<br/>' + '<b>EXPIRATION DATE</b> : ' + response.encryptedCardData.expDate + '<br/>' + '<b>BIN</b> : ' + response.encryptedCardData.bin;
-                if ($('#paymentReceipt').length == 0) {
-                    $('body').append($('<br/><br/><div id = "paymentReceipt" style="margin: auto;border: 1px solid black;padding: 15px;width: 50%;"></div>'));
-                }
-                $('#paymentReceipt').html(msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03);
-            var msg04 = '';
+            var msg03 = '';
 
             if (response.encryptedCardData) {
                 msg03 =
