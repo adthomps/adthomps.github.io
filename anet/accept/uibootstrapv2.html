@@ -59,9 +59,13 @@
                 </div>
 
                 <!-- Accept UI Integration -->
-                <div id="acceptUIContainer">
-                    <button class="btn btn-primary" type="button" id="acceptUIBtn">
-                        Enter Payment Details
+                <div class="d-grid">
+                    <button type="button" class="btn btn-primary AcceptUI"
+                        data-billingAddressOptions='{"show":true, "required":false}'
+                        data-paymentOptions='{"showCreditCard":true, "showBankAccount":true}' data-apiLoginID="62W3Efur"
+                        data-clientKey="4abK6fG25BtW9QF3LZUN84FsmvQh47bpdm8FJ2yA28r9p5WPB34H8N6n7whjUsBu"
+                        data-acceptUIFormBtnTxt="Submit" data-acceptUIFormHeaderTxt="Payment Information"
+                        data-responseHandler="callbackMerchant">Generate Payment Nonce
                     </button>
                 </div>
 
@@ -69,7 +73,7 @@
                 <input type="hidden" id="dataValue" name="dataValue">
 
                 <div class="d-grid mt-3">
-                    <button type="submit" class="btn btn-success" id="makePaymentButton">Make Payment</button>
+                    <button type="submit" class="btn btn-success" id="makePaymentButton">Make Payment with Nonce</button>
                 </div>
             </form>
             <div id="paymentResponse" class="mt-3"></div>
