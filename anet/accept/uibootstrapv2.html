@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcceptUI Sample Payment Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://jstest.authorize.net/v3/AcceptUI.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../accept/config.js"></script> <!-- Include configuration file -->
+    <style>
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2 class="text-center mb-4">Sample Payment Form</h2>
+            <form id="paymentForm">
+                <input type="hidden" name="dataValue" id="dataValue" />
+                <input type="hidden" name="dataDescriptor" id="dataDescriptor" />
+                <div class="d-grid">
+                    <button type="button" class="btn btn-primary AcceptUI"
+                        data-billingAddressOptions='{"show":true, "required":false}'
+                        data-paymentOptions='{"showCreditCard":true, "showBankAccount":true}'
+                        data-acceptUIFormBtnTxt="Submit" data-acceptUIFormHeaderTxt="Payment Information"
+                        data-responseHandler="callbackMerchant" id="acceptUIButton">Pay
+                    </button>
+                </div>
+            </form>
+            <br />
+            <div id="paymentResponse"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        // Inject apiLoginID and clientKey dynamically from the config file
+        document.addEventListener('DOMContentLoaded', function () {
+            const acceptUIButton = document.getElementById("acceptUIButton");
+            if (acceptUIButton) {
+                acceptUIButton.setAttribute("data-apiLoginID", ENV_CONFIG.apiLoginID);
+                acceptUIButton.setAttribute("data-clientKey", ENV_CONFIG.clientKey);
+            }
+        });
+
+        function populateErrorMessage(response) {
+            var text = '';
+            for (var i = 0; i < response.messages.message.length; i++) {
+                text = text + response.messages.message[i].code + ': ' + response.messages.message[i].text + '\n';
+            }
+            console.log(text);
+        }
+
+        function callbackMerchant(response) {
+            // Start with result code, message code, and message
+            var resultCode = response.messages.resultCode;
+            var messageCode = response.messages.message[0].code;
+            var messageText = response.messages.message[0].text;
+
+            // Initialize the base message with result code, message code, and message text
+            var baseMsg = `<strong>Result Code:</strong> ${resultCode}<br/>` +
+                `<strong>Message Code:</strong> ${messageCode}<br/>` +
+                `<strong>Message:</strong> ${messageText}<br/>`;
+
+            if (resultCode === 'Error') {
+                populateErrorMessage(response);
+                return; // Stop further execution if there is an error
+            }
+
+            var msg01 = '<b>Date Type (Data Descriptor):</b> ' + response.opaqueData.dataDescriptor;
+            var msg02 = '<b>Payment Nonce (Data Value):</b> ' +
+                '<span style="word-wrap: break-word; display: block; overflow-wrap: break-word;">' +
+                response.opaqueData.dataValue + '</span>';
+            var msg03 = '';
+
+            // Check if the response contains encrypted card data
+            if (response.encryptedCardData) {
+                msg03 =
+                    '<b>BIN:</b> ' + response.encryptedCardData.bin + '<br/>' +
+                    '<b>Card Number:</b> ' + response.encryptedCardData.cardNumber + '<br/>' +
+                    '<b>Expiration Date:</b> ' + response.encryptedCardData.expDate;
+            }
+            // Check if the response contains encrypted bank data
+            else if (response.encryptedBankData) {
+                msg03 =
+                    '<b>Account Type:</b> ' + response.encryptedBankData.accountType + '<br/>' +
+                    '<b>Name on Account:</b> ' + response.encryptedBankData.nameOnAccount + '<br/>' +
+                    '<b>Account Number:</b> ' + response.encryptedBankData.accountNumber + '<br/>' +
+                    '<b>Routing Number:</b> ' + response.encryptedBankData.routingNumber;
+            }
+
+            // Check if paymentResponse exists and update or create it
+            var paymentResponse = document.getElementById("paymentResponse");
+            if (!paymentResponse) {
+                paymentResponse = document.createElement("div");
+                paymentResponse.id = "paymentResponse";
+                paymentResponse.style.margin = "auto";
+                paymentResponse.style.border = "1px solid black";
+                paymentResponse.style.padding = "15px";
+                paymentResponse.style.width = "50%";
+                paymentResponse.style.wordWrap = "break-word"; // Ensures long text wraps
+                paymentResponse.style.overflowWrap = "break-word"; // Ensures long text wraps
+                document.body.appendChild(paymentResponse);
+            }
+            paymentResponse.innerHTML = baseMsg + '<br/><hr>' + msg01 + '<br/><hr>' + msg02 + '<br/><hr>' + msg03;
+        }
+    </script>
+
+</body>
+
+</html>
