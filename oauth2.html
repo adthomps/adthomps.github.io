@@ -6,11 +6,11 @@
     <h1>Welcome to OAuth Integration Test</h1>
     <button id="startOAuth">Connect Your Account</button>
     <script>
-      const clientId = 'YOUR_CLIENT_ID';
+      const clientId = 'MMnhUVZXRh';
       const redirectUri = 'https://adthomps.github.io/oauth2callback';
       const scope = 'read_write';
       const state = 'csrf_protection_token';
-      const authUrl = `https://sandbox.sandbox.authorize.net/oauth/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&state=${state}`;
+      const authUrl = `https://sandbox.authorize.net/oauth/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&state=${state}`;
       
       document.getElementById('startOAuth').addEventListener('click', () => {
         window.location.href = authUrl;
