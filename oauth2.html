@@ -8,9 +8,9 @@
     <script>
       const clientId = 'MMnhUVZXRh';
       const redirectUri = 'https://adthomps.github.io/oauth2callback';
-      const scope = 'read_write';
+      const scope = 'read,write';
       const state = 'csrf_protection_token';
-      const authUrl = `https://sandbox.authorize.net/oauth/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&state=${state}`;
+      const authUrl = `https://sandbox.authorize.net/oauth/authorize?sub=oauth&client_id=${clientId}&state=${state}&scope=${scope}&redirect_uri=${redirectUri}`;
       
       document.getElementById('startOAuth').addEventListener('click', () => {
         window.location.href = authUrl;
