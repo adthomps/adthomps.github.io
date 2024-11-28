@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>OAuth Callback</title>
+  </head>
+  <body>
+    <h1>Authorization Successful</h1>
+    <p>Processing your request...</p>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const code = urlParams.get('code');
+      const state = urlParams.get('state');
+
+      if (code) {
+        fetch('https://oauth2exchange.apt-account.workers.dev/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ code }),
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Access Token:', data.accessToken);
+            alert('Authorization complete. Check the console for token details.');
+          })
+          .catch(err => console.error('Error:', err));
+      } else {
+        console.error('No authorization code found in URL.');
+      }
+    </script>
+  </body>
+</html>
