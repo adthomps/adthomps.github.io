@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authenticating API Requests With OAuth 2.0</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../scripts/CSS/oauthcss.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Authenticating API Requests With OAuth 2.0</h2>
+        <h3>Use the tabs below to complete the authentication demo</h3>
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#step1" data-toggle="tab">Register</a></li>
+            <li><a href="#step2" data-toggle="tab">Connect</a></li>
+            <li><a href="#step3" data-toggle="tab">Retrieve</a></li>
+            <li><a href="#step4" data-toggle="tab">Use</a></li>
+            <li><a href="#step5" data-toggle="tab">Refresh</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <!-- Step 1: Register -->
+            <div id="step1" class="tab-pane fade in active">
+                <h4>Step 1. Registering Your Application</h4>
+                <h5>Before configuring your application, contact the Authorize.Net support team at affiliate@authorize.net. You will provide a redirect URL and obtain a client ID and client secret.
+                    <br/>
+                    These values are used in the next step. An application has already been registered for this demo.</h5>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="clientId">Client ID</label>
+                        <input type="text" id="clientId" class="form-control" placeholder="Enter Client ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="clientSecret">Client Secret</label>
+                        <input type="text" id="clientSecret" class="form-control" placeholder="Enter Client Secret">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="saveRegistration()">Save</button>
+                </form>
+            </div>
+
+            <!-- Step 2: Redirect -->
+            <div id="step2" class="tab-pane fade">
+                <h4>Step 2. Redirecting the Merchant</h4>
+                <h5>
+                    When the merchant arrives at the third-party site, the merchant must redirect them to Authorize.Net so that they can log in
+                    with their credentials and authorize the application to perform certain actions on their behalf. Use the fields below to create a link that will
+                    redirect the merchant with the appropriate parameters.
+                    <br />
+                    After the merchant has signed in and allowed the application access, the authorization code from the URI in the new tab must be copied into the next step.
+                </h5>
+            
+                <form id="redirectForm" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="clientId" class="col-md-2 control-label">Client ID</label>
+                        <div class="col-md-10">
+                            <input type="text" id="clientId" class="form-control" placeholder="Enter Client ID">
+                        </div>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="redirectUri" class="col-md-2 control-label">Redirect URI</label>
+                        <div class="col-md-10">
+                            <input type="text" id="redirectUri" class="form-control" placeholder="Enter Redirect URI">
+                        </div>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="scope" class="col-md-2 control-label">Scope</label>
+                        <div class="col-md-10">
+                            <label><input type="checkbox" id="scopeRead" value="read"> Read</label>
+                            <br />
+                            <label><input type="checkbox" id="scopeWrite" value="write"> Write</label>
+                        </div>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="state" class="col-md-2 control-label">State</label>
+                        <div class="col-md-10">
+                            <input type="text" id="state" class="form-control" placeholder="Enter State">
+                        </div>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="sub" class="col-md-2 control-label">Sub</label>
+                        <div class="col-md-10">
+                            <input type="text" id="sub" class="form-control" placeholder="Enter Sub (optional)">
+                        </div>
+                    </div>
+            
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <button type="button" class="btn btn-primary" onclick="redirectToAuthorize()">Redirect to Authorize.Net</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Step 3: Retrieve -->
+            <div id="step3" class="tab-pane fade">
+                <h4>Step 3. Retrieving the Access Token</h4>
+                <p>Provide the authorization code obtained from the redirect:</p>
+                <form id="retrieveForm">
+                    <div class="form-group">
+                        <label for="authCode">Authorization Code</label>
+                        <input type="text" id="authCode" class="form-control" placeholder="Enter Authorization Code">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="retrieveAccessToken()">Retrieve Token</button>
+                </form>
+                <textarea id="retrieveResponse" readonly></textarea>
+            </div>
+
+            <!-- Step 4: Use -->
+            <div id="step4" class="tab-pane fade">
+                <h4>Step 4. Submitting API Requests</h4>
+                <p>Provide the access token to make a test API request:</p>
+                <form id="useForm">
+                    <div class="form-group">
+                        <label for="accessToken">Access Token</label>
+                        <input type="text" id="accessToken" class="form-control" placeholder="Enter Access Token">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="useApi()">Submit API Request</button>
+                </form>
+                <textarea id="apiResponse" readonly></textarea>
+            </div>
+
+            <!-- Step 5: Refresh -->
+            <div id="step5" class="tab-pane fade">
+                <h4>Step 5. Refreshing the Access Token</h4>
+                <p>Provide the refresh token to obtain a new access token:</p>
+                <form id="refreshForm">
+                    <div class="form-group">
+                        <label for="refreshToken">Refresh Token</label>
+                        <input type="text" id="refreshToken" class="form-control" placeholder="Enter Refresh Token">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="refreshAccessToken()">Refresh Token</button>
+                </form>
+                <textarea id="refreshResponse" readonly></textarea>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../scripts/JS/oauth.js"></script>
+</body>
+</html>
