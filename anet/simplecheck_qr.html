@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code for Payment Form</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    #qrcode {
+      margin: 20px auto;
+      text-align: center;
+    }
+    h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h2>Scan to Make a Payment</h2>
+  <div id="qrcode"></div>
+
+  <script>
+    // URL from the form, converted to query parameters
+    const paymentUrl = "https://scotest.authorize.net/payment/CatalogPayment.aspx?LinkId=b158b188-9316-4979-bffa-b394a1405b08";
+
+    // Generate the QR code
+    const qrCodeContainer = document.getElementById('qrcode');
+    new QRCode(qrCodeContainer, {
+      text: paymentUrl, // URL as QR code content
+      width: 200, // QR code width
+      height: 200, // QR code height
+      colorDark: "#000000", // QR code dark color
+      colorLight: "#ffffff", // QR code light color
+      correctLevel: QRCode.CorrectLevel.H, // High error correction
+    });
+  </script>
+</body>
+</html>
