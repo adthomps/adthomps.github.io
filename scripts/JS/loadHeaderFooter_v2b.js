@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Adjust paths for header and footer
-  const headerPath = getRelativePath("templates/header2.html");
+  const headerPath = getRelativePath("templates/header.html");
   const sidebarPath = getRelativePath("templates/sidebar.html");
   const footerPath = getRelativePath("templates/footer.html");
 
