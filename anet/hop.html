@@ -371,6 +371,23 @@
             </div>
           </div>
           <br /><br />
+          <div class="row">
+            <div class="col">
+              <form name="PrePage" method="post"
+                action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx" target="_blank">
+                <input type="hidden" name="LinkId" value="c00e0880-2888-4f20-8753-b963f3645972" />
+                <input type="submit" value="Buy Now!" />
+              </form>
+            </div>
+            <div class="col">
+              <form name="PrePage" method="post" action="https://scotest.authorize.net/payment/CatalogPayment.aspx"
+                target="_blank">
+                <input type="hidden" name="LinkId" value="c0f4d56f-971d-4245-b659-5707758f389f" />
+                <input type="image" src="https://testcontent.authorize.net/images/new-buy-now-blue.gif" />
+              </form>
+            </div>
+          </div>
+          <br /><br />
         </div>
 
         <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
@@ -379,8 +396,10 @@
             <p class="lead">Simple Checkout QR Code Test using the hosted payment form.</p>
           </div>
           <div class="row">
-  <!-- QR code canvas container -->
-  <canvas id="qrcode" style="border: 1px solid #ddd;"></canvas>
+            <!-- QR code -->
+            <img src="../anet/qrcode.png" alt="QR Code"
+              class="d-block mx-auto"
+              style="border: 1px solid #ddd; width: 200px; height: 200px;" />
 
           </div>
           <br /><br />
@@ -406,7 +425,8 @@
 
   <!-- JS - Tempalte Specific -->
 
-<!-- Import the qrcode library -->
+  <!-- Import the qrcode library -->
+  <!--
 <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
 <script>
   // URL to be encoded in the QR code
@@ -428,7 +448,7 @@
       console.log("QR Code generated successfully!");
     }
   });
-</script>
+</script>-->
 
 
 </body>
