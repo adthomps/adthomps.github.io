@@ -11,18 +11,18 @@ let fieldSetOpen = false;
 const populateFormFieldsArray = () => {
     const formFields = [
         { type: "panel", label: "Data", id: "pnlAuthentication" },
-        { type: "input", id: "x_login", value: "QOAA1OCE-79g61W58I6s", locked: true },
-        { type: "input", id: "x_tran_key", value: "55tLJu2tU694Z2hz", sendit: "0", locked: true },
+        { type: "input", id: "x_login", value: "QOAA0OCC$aP94Nn8t528", locked: true },
+        { type: "input", id: "x_tran_key", value: "5SaT35b9D4h7kZP6", sendit: "0", locked: true },
         { type: "input", id: "x_fp_sequence", value: "1", sendit: "1", locked: true },
         { type: "input", id: "x_fp_timestamp", value: "", sendit: "1", locked: true },
         { type: "input", id: "x_fp_hash", value: "", sendit: "1", locked: true },
         { type: "input", id: "x_type", value: "auth_capture", sendit: "1" },
-        { type: "input", id: "x_currency_code", value: "USD", sendit: "0", locked: true },
-        { type: "input", id: "x_amount", value: "5.00", sendit: "1", locked: true },
-        { type: "input", id: "x_invoice_num", value: "INV-1001", sendit: "1" },
+        { type: "input", id: "x_currency_code", value: "", sendit: "0", locked: true },
+        { type: "input", id: "x_amount", value: "5", sendit: "1", locked: true },
+        { type: "input", id: "x_invoice_num", value: "", sendit: "1" },
         { type: "input", id: "x_cust_id", value: "A123", sendit: "1" },
         { type: "input", id: "x_description", value: "SIM Test Sandbox - OCC", sendit: "1", locked: true },
-        { type: "input", id: "x_line_item", value: "item1<|>Golf Balls<|><|>2<|>18.95<|>Y", sendit: "1" },
+        { type: "input", id: "x_line_item", value: "item1<|>golf balls<|><|>2<|>18.95<|>Y", sendit: "1" },
         { type: "input", id: "x_show_form", value: "payment_form", sendit: "1", locked: true },
         { type: "input", id: "x_response_format", value: "0", sendit: "1" },
         { type: "input", id: "x_duplicate_window", value: "0", sendit: "1" },
@@ -32,7 +32,7 @@ const populateFormFieldsArray = () => {
         { type: "input", id: "x_receipt_link_method", value: "link", sendit: "1" },
         { type: "input", id: "x_receipt_link_text", value: "Receipt Link", sendit: "1" },
         { type: "input", id: "x_receipt_link_url", value: "https://adthomps.github.io/product.html", sendit: "1" },
-        { type: "input", id: "x_relay_response", value: "false", sendit: "1" },
+        { type: "input", id: "x_relay_response", value: "false", sendit: "1" }
     ];
 
     // Add rename examples - these are optional and can be extended dynamically
@@ -44,12 +44,52 @@ const populateFormFieldsArray = () => {
 
     // Merchant-defined custom fields (extra metadata)
     const merchantDefinedFields = [
-        { type: "input", id: "order_source", value: "Web Portal", sendit: "1" },
-        { type: "input", id: "shipping_instructions", value: "Leave at side door", sendit: "1" },
+        { type: "input", id: "order_source", value: "Web Portal", sendit: "1", label: "Order Source" },
+        { type: "input", id: "shipping_instructions", value: "Leave at side door", sendit: "1", label: "Shipping Instructions" },
     ];
 
-    return formFields.concat(renameFields, merchantDefinedFields);
-};
+    // Append merchant defined fields to the form fields
+    for (var m = 0; m < merchantDefinedFields.length; m++) {
+        formFields.push(merchantDefinedFields[m]);
+    }
+
+    // Apply renames to the formFields array
+    applyRenames(formFields, renameFields);
+
+    return formFields;
+}
+
+// ------------------------------------------------------------------------------------
+// Apply rename definitions to the form fields array.
+// renameDefs: array of objects where value is a CSV 'fieldId,New Label[,New Description]'
+// This will find matching fields by id and set their label (and optionally description).
+// ------------------------------------------------------------------------------------
+function applyRenames(formFields, renameDefs) {
+    if (!Array.isArray(renameDefs) || renameDefs.length === 0) return;
+
+    for (var r = 0; r < renameDefs.length; r++) {
+        var def = renameDefs[r];
+        if (!def || typeof def.value !== 'string') continue;
+
+        // split into parts: fieldId, label, [description]
+        var parts = def.value.split(',');
+        if (parts.length < 2) continue; // need at least id and label
+        var targetId = parts[0].trim();
+        var newLabel = parts[1].trim();
+        var newDesc = parts.length > 2 ? parts.slice(2).join(',').trim() : undefined;
+
+        // find target(s) in the formFields array
+        for (var f = 0; f < formFields.length; f++) {
+            var fld = formFields[f];
+            // check id or name match
+            if (fld.id === targetId || fld.name === targetId) {
+                // set label so it will be rendered
+                fld.label = newLabel;
+                if (newDesc !== undefined) fld.description = newDesc;
+            }
+        }
+    }
+}
 
 // Assigning the populated form fields array to arFormFields
 arFormFields = populateFormFieldsArray();
@@ -291,6 +331,9 @@ function writeDatalist(obj) {
     return datalistId;
 }
 
+    // write the label cell for the input. If a label wasn't provided, use the id as a fallback
+    if (obj.label === undefined || obj.label === null) obj.label = obj.id;
+    writeLabel(obj);
 // ------------------------------------------------------------------------------------
 // Submit the form after processing the fields.
 // ------------------------------------------------------------------------------------
