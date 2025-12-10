@@ -11,8 +11,8 @@ let fieldSetOpen = false;
 const populateFormFieldsArray = () => {
     const formFields = [
         { type: "panel", label: "Data", id: "pnlAuthentication" },
-        { type: "input", id: "x_login", value: "8Y3q4YkmD2Fg", locked: true },
-        { type: "input", id: "x_tran_key", value: "4Hc23G843d7tbqS9", sendit: "0", locked: true },
+        { type: "input", id: "x_login", value: "8q57jTU8u", locked: true },
+        { type: "input", id: "x_tran_key", value: "246N2eh26UrE95cp", sendit: "0", locked: true },
         { type: "input", id: "x_fp_sequence", value: "1", sendit: "1", locked: true },
         { type: "input", id: "x_fp_timestamp", value: "", sendit: "1", locked: true },
         { type: "input", id: "x_fp_hash", value: "", sendit: "1", locked: true },
