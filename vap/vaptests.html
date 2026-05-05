@@ -17,6 +17,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
   <!-- CSS - Tempalte Specific -->
   <link href="../scripts/CSS/product.css" rel="stylesheet">
@@ -45,6 +46,15 @@
 
     .bd-mode-toggle .dropdown-menu .active .bi {
       display: block !important;
+    }
+
+    #qrcode {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto;
+      width: 200px;
+      height: 200px;
     }
   </style>
 </head>
@@ -136,21 +146,21 @@
           <img id="anetimage" class="d-block mx-auto mb-4" src="../images/icons/anet/anet-logo2.png" width="300"
             height="60" />
           <br />
-          <h1 class="display-3 fw-bold">Application & OAuth Examples</h1>
-          <h3 class="fw-normal text-muted mb-3">Test example Application & OAuth Registration</h3>
+          <h1 class="display-3 fw-bold">VAP Tests for Hosted Payment Form</h1>
+          <h3 class="fw-normal text-muted mb-3">SIM, DPM and Simple Checkout Hosted and Accept Suite Tests</h3>
           <div class="d-flex gap-3 justify-content-center lead fw-normal">
-            <a class="icon-link" target="_blank" href="https://developer.authorize.net/api/reference/features/oauth.html">
+            <a class="icon-link" href="#">
               Learn more
               <svg class="bi">
                 <use xlink:href="#chevron-right" />
               </svg>
             </a>
-            <!--<a class="icon-link" href="#">
+            <a class="icon-link" href="#">
               Buy
               <svg class="bi">
                 <use xlink:href="#chevron-right" />
               </svg>
-            </a>-->
+            </a>
           </div>
         </div>
       </div>
@@ -158,48 +168,140 @@
       <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
         <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
           <div class="my-3 py-3">
-            <h2 class="display-5">Account Creation via Application</h2>
-            <p class="lead">Example account creation via online application</p>
+            <h2 class="display-5">Server Integration Method (SIM)</h2>
+            <p class="lead">Server Integration Method using the hosted payment form.</p>
           </div>
           <div class="row">
-            <!--<div class="col">
-              <a target="_blank" class="btn btn-outline-primary btn-lg"
-                href="https://sandbox.authorize.net/signUpNow?resellerID=14584"
-                role="button">New Account Creation Sandbox - Tech Partner - All Plans</a>
-            </div>-->
             <div class="col">
-              <a target="_blank" class="btn btn-outline-primary btn-lg"
-                href="https://sandbox.authorize.net/signUpNow?resellerID=14584&profileTypeID=2"
-                role="button">New Account Creation Sandbox - Tech Partner - All-in-one</a>
+              <button class="btn btn-outline-primary btn-lg"
+                onclick="window.location.href = '../vap/hopvap/sim-sandbox1-link.html';">
+                Sandbox - OCC - Receipt Link
+              </button>
             </div>
+          </div>
+          <br /><br />
+          <div class="row">
             <div class="col">
-              <a target="_blank" class="btn btn-outline-primary btn-lg"
-                href="https://sandbox.authorize.net/signUpNow?resellerID=14584&profileTypeID=1"
-                role="button">New Account Creation Sandbox - Tech Partner - Gatway Only</a>
+              <button class="btn btn-outline-primary btn-lg"
+                onclick="window.location.href = '../vap/hopvap/sim-sandbox1-post.html';">
+                Sandbox - OCC - Receipt Post
+              </button>
+            </div>
+          </div>
+          <br /><br />
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-outline-primary btn-lg"
+                onclick="window.location.href = '../vap/hopvap/sim-sandbox3-post.html';">
+                Sandbox - OCE - Receipt Post with Rename & Defined
+              </button>
+            </div>
+          </div>
+          <br /><br />
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-outline-primary btn-lg"
+                onclick="window.location.href = '../vap/hopvap/sim-sandbox1-get.html';">
+                Sandbox - OCC - Receipt Get
+              </button>
+            </div>
+          </div>
+          <br /><br />
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-outline-primary btn-lg"
+                onclick="window.location.href = '../vap/hopvap/sim-sandbox1-relay.html';">
+                Sandbox - OCC - Relay
+              </button>
+            </div>
+          </div>
+          <br /><br />
+        </div>
+      </div>
+
+      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+        <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+          <div class="my-3 p-3">
+            <h2 class="display-5">Direct Post Method (DPM)</h2>
+            <p class="lead">Direct Post Method using the hosted payment form.</p>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-outline-primary btn-lg"
+                onclick="window.location.href = '../vap/hopvap/dpm-sandbox1.html';">
+                Sandbox - OCC
+              </button>
+            </div>
+          </div>
+          <br /><br />
+        </div>
+
+        <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+          <div class="my-3 py-3">
+            <h2 class="display-5">Simple Checkout</h2>
+            <p class="lead">Simple Checkout using the hosted payment form.</p>
+          </div>
+          <div class="row">
+            <div class="col">
+              <form name="PrePage" method="post" action="https://scotest.authorize.net/payment/CatalogPayment.aspx"
+                target="_blank">
+                <input type="hidden" name="LinkId" value="575b9479-2ed3-4535-befc-022dc1fc48b8" />
+                <button type="submit" class="btn btn-outline-primary btn-lg">Sandbox - OCC - Buy</button>
+              </form>
+            </div>
+          </div>
+          <br /><br />
+        </div>
+
+        
+      </div>
+
+      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+        <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+          <div class="my-3 py-3">
+            <h2 class="display-5">API - Acceptjs</h2>
+            <p class="lead">Acceptjs displaying payment form to collet card information and create a payment nonce.</p>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-outline-primary btn-lg"
+                onclick="window.location.href = '../vap/acceptvap/acceptjss.html';">
+                Sandbox - Acceptjs -v1
+              </button>
+            </div>
+          </div>
+          <br /><br />
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-outline-primary btn-lg"
+                onclick="window.location.href = '../vap/acceptvap/acceptjssv2.html';">
+                Sandbox - Acceptjs - v2
+              </button>
             </div>
           </div>
           <br /><br />
         </div>
         <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
           <div class="my-3 p-3">
-            <h2 class="display-5">Account Creation + OAuth Registration</h2>
-            <p class="lead">Example account creation + OAuth access grant</p>
+            <h2 class="display-5">API - Accept UI</h2>
+            <p class="lead">Accept UI displaying payment form to collect card information and create a payment nonce.
+            </p>
           </div>
           <div class="row">
-            <!--<div class="col">
-              <a target="_blank" class="btn btn-outline-primary btn-lg"
-                href="https://sandbox.authorize.net/signUpNow?resellerID=14584&sub=oauth&client_id=GHB4Lv0W4T&state=someValue&scope=read,write&redirect_uri=https://anetoauth.apt-account.workers.dev/"
-                role="button">New Account Creation + OAuth Grant Sandbox - Tech Partner - All Plans</a>
-            </div>-->
             <div class="col">
-              <a target="_blank" class="btn btn-outline-primary btn-lg"
-                href="https://sandbox.authorize.net/signUpNow?resellerID=14584&profileTypeID=2&sub=oauth&client_id=GHB4Lv0W4T&state=someValue&scope=read,write&redirect_uri=https://anetoauth.apt-account.workers.dev/"
-                role="button">New Account Creation + OAuth Grant Sandbox - Tech Partner - All-in-one</a>
+              <button class="btn btn-outline-primary btn-lg"
+                onclick="window.location.href = '../vap/acceptvap/acceptuisv1.html';">
+                Sandbox - Accept UI - v1
+              </button>
             </div>
+          </div>
+          <br /><br />
+          <div class="row">
             <div class="col">
-              <a target="_blank" class="btn btn-outline-primary btn-lg"
-                href="https://sandbox.authorize.net/signUpNow?resellerID=14584&profileTypeID=1&sub=oauth&client_id=GHB4Lv0W4T&state=someValue&scope=read,write&redirect_uri=https://anetoauth.apt-account.workers.dev/"
-                role="button">New Account Creation + OAuth Grant Sandbox - Tech Partner - Gatway Only</a>
+              <button class="btn btn-outline-primary btn-lg"
+                onclick="window.location.href = '../vap/acceptvap/acceptuisv2.html';">
+                Sandbox - Accept UI - v2
+              </button>
             </div>
           </div>
           <br /><br />
@@ -209,44 +311,46 @@
       <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
         <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
           <div class="my-3 py-3">
-            <h2 class="display-5">API - OAuth Registration</h2>
-            <p class="lead">Example New Account Creation + OAuth Registration</p>
+            <h2 class="display-5">API - Accept Customer</h2>
+            <p class="lead">Accept Customer displaying hosted form for using stored customer information for payments.
+            </p>
           </div>
           <div class="row">
-            <!--<div class="col">
-              <a class="btn btn-outline-primary btn-lg"
-                href="https://account.authorize.net/oauth/authorize?sub=oauth&client_id=-DFnckuNsv&state=someValue&scope=read,write&redirect_uri=https://anetoauth.apt-account.workers.dev/"
-                role="button">Connect to Authorize.net Production - Partner</a>
-            </div>-->
             <div class="col">
-              <a class="btn btn-outline-primary btn-lg"
-                href="https://account.authorize.net/oauth/authorize?sub=oauth&client_id=-DFnckuNsv&state=someValue&scope=read,write&redirect_uri=https://anetoauth.apt-account.workers.dev/"
-                role="button">New Account + Connect to Authorize.net Production - ISV</a>
+              <button class="btn btn-outline-primary btn-lg"
+                onclick="window.location.href = '../vap/acceptcustomervap/acceptcustomersjson.html';">
+                Sandbox - Accept Customer (JSON)
+              </button>
             </div>
           </div>
           <br /><br />
         </div>
         <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
           <div class="my-3 p-3">
-            <h2 class="display-5">OAuth Registration</h2>
-            <p class="lead">Example existing OAuth registration</p>
+            <h2 class="display-5">API - Accept Hosted</h2>
+            <p class="lead">Accpet Hosted display hoest payment form for accepting customer payments.</p>
           </div>
           <div class="row">
-            <!--<div class="col">
-              <a target="_blank" class="btn btn-outline-primary btn-lg"
-                href="https://sandbox.authorize.net/oauth/authorize?sub=oauth&client_id=NvcpSjdMax&state=someValue&scope=read,write&redirect_uri=https://anetoauth.apt-account.workers.dev/"
-                role="button">Connect to Authorize.net Sandbox - Partner</a>
-            </div>-->
             <div class="col">
-              <a target="_blank" class="btn btn-outline-primary btn-lg"
-                href="https://sandbox.authorize.net/oauth/authorize?sub=oauth&client_id=GHB4Lv0W4T&state=someValue&scope=read,write&redirect_uri=https://anetoauth.apt-account.workers.dev/"
-                role="button">Connect to Account OAuth Grant Sandbox - Tech Partner</a>
+              <button class="btn btn-outline-primary btn-lg"
+                onclick="window.location.href = '../vap/accepthostedvap/accepthosteds.html';">
+                Sandbox - Accept Hosted - v1
+              </button>
+            </div>
+          </div>
+          <br /><br />
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-outline-primary btn-lg"
+                onclick="window.location.href = '../vap/accepthostedvap/accepthostedsv2.html';">
+                Sandbox - Accept Hosted - v2
+              </button>
             </div>
           </div>
           <br /><br />
         </div>
       </div>
-
+      
       <!-- Footer File Load-->
       <footer>
         <div id="footer"></div>
@@ -264,7 +368,6 @@
   <script src="../scripts/JS/loadHeaderFooter_v2.js" defer></script>
 
   <!-- JS - Tempalte Specific -->
-
 
 
 </body>

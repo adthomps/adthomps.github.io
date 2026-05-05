@@ -247,7 +247,7 @@ body {
 }
 
 /* Bootstrap Primary Button */
-/* Custom styling for primary button 
+/* Custom styling for theme selector button */
 .btn-bd-primary {
   --bd-violet-bg: #1739fc;
   --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
@@ -262,7 +262,52 @@ body {
   --bs-btn-active-color: var(--bs-btn-hover-color);
   --bs-btn-active-bg: #1739fc;
   --bs-btn-active-border-color: #0923b6;
-}*/
+}
+
+/* Homepage helpers */
+.hero-slide {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: brightness(.7);
+}
+
+.carousel-caption h1 {
+  font-weight: 600;
+}
+
+.carousel-caption p {
+  max-width: 40rem;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: .75rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--bs-secondary-color);
+}
+
+.quick-link-card {
+  border: 1px solid var(--bs-border-color);
+  border-radius: .75rem;
+  padding: 1.25rem;
+  height: 100%;
+  background-color: var(--bs-body-bg);
+}
+
+.apt-footer {
+  border-top: 1px solid var(--bs-border-color);
+}
+
+.apt-footer-links a {
+  text-decoration: none;
+}
+
+.apt-footer-links a:hover,
+.apt-footer-links a:focus {
+  text-decoration: underline;
+}
 
 /* Mode Toggle Dropdown */
 /* Styling for mode toggle dropdown */

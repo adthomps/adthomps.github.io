@@ -1,0 +1,9 @@
+{
+  // Recommended extensions for static web development and markdown editing
+  "recommendations": [
+    "yzhang.markdown-all-in-one",
+    "davidanson.vscode-markdownlint",
+    "esbenp.prettier-vscode",
+    "ritwickdey.LiveServer"
+  ]
+}
