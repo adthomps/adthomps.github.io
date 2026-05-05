@@ -32,10 +32,7 @@ const populateFormFieldsArray = () => {
         { type: "input", id: "x_receipt_link_method", value: "post", sendit: "1" },
         { type: "input", id: "x_receipt_link_text", value: "Receipt Link", sendit: "1" },
         { type: "input", id: "x_receipt_link_url", value: "https://anetreceiptpagepost2.apt-account.workers.dev/", sendit: "1" },
-        { type: "input", id: "x_relay_response", value: "false", sendit: "1" },
-        { type: "input", id: "x_rename", value: "x_description,Order Summary", sendit: "1" },
-        { type: "input", id: "x_rename", value: "x_invoice_num,Order ID", sendit: "1" },
-        { type: "input", id: "x_rename", value: "x_cust_id,Customer Reference", sendit: "1" }
+        { type: "input", id: "x_relay_response", value: "false", sendit: "1" }
     ];
 
     // Add rename examples - these are optional and can be extended dynamically
