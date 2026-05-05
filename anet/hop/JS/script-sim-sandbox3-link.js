@@ -177,9 +177,7 @@ function writeInputControl(obj) {
     var datalistId = "";
 
     document.write("<tr id=\"tr_" + obj.id + "\">");
-    // write the label cell for the input. If a label wasn't provided, use the id as a fallback
-    if (obj.label === undefined || obj.label === null) obj.label = obj.id;
-    writeLabel(obj);
+    /**writeLabel(obj);**/
     writeSendit(obj);
 
     /**if (obj.suggestions != undefined) datalistId = writeDatalist(obj);**/
@@ -332,6 +330,10 @@ function writeDatalist(obj) {
     dataLists += "</datalist>\r\n";
     return datalistId;
 }
+
+    // write the label cell for the input. If a label wasn't provided, use the id as a fallback
+    if (obj.label === undefined || obj.label === null) obj.label = obj.id;
+    writeLabel(obj);
 // ------------------------------------------------------------------------------------
 // Submit the form after processing the fields.
 // ------------------------------------------------------------------------------------
@@ -372,30 +374,6 @@ function prepareFormForSubmission(form) {
             else if (fields["i_signature_key"] != undefined
                 && form.i_signature_key.value != "") {
                 generateFingerprintSHA512(form);
-            }
-        }
-    }
-    else {
-        // No explicit checkbox to request fingerprint generation; auto-generate
-        // if x_fp_hash exists but is empty and we have the transaction/signature key.
-        if (fields["x_fp_hash"] != undefined && (form.x_fp_hash.value == undefined || form.x_fp_hash.value === "")) {
-            if (fields["x_tran_key"] != undefined && form.x_tran_key.value != "") {
-                // Generate fingerprint (this function sets x_fp_timestamp) then log the exact
-                // string that was hashed using the timestamp placed into the form by the function.
-                generateFingerprintHMAC(form);
-                try {
-                    var debugStr = form.x_login.value + "^" + form.x_fp_sequence.value + "^" + form.x_fp_timestamp.value + "^" + form.x_amount.value + "^" + form.x_currency_code.value;
-                    console.debug("Generating x_fp_hash (HMAC-MD5) using str=", debugStr);
-                } catch (e) { /* ignore debug failures */ }
-                console.debug("Generated x_fp_hash=", form.x_fp_hash.value);
-            }
-            else if (fields["i_signature_key"] != undefined && form.i_signature_key.value != "") {
-                generateFingerprintSHA512(form);
-                try {
-                    var debugStr = form.x_login.value + "^" + form.x_fp_sequence.value + "^" + form.x_fp_timestamp.value + "^" + form.x_amount.value + "^" + form.x_currency_code.value;
-                    console.debug("Generating x_fp_hash (SHA512 HMAC) using str=", debugStr);
-                } catch (e) { /* ignore debug failures */ }
-                console.debug("Generated x_fp_hash=", form.x_fp_hash.value);
             }
         }
     }
