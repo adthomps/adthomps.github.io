@@ -1,0 +1,12 @@
+{
+  // Basic VS Code settings for static web projects
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.wordWrap": "on",
+  "markdownlint.config": {
+    "default": true,
+    "MD013": false // Disable line length rule
+  }
+}

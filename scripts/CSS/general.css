@@ -90,18 +90,29 @@ body {
 /* rtl:end:remove */
 
 /* RESPONSIVE STYLES -------------------------------------------------- */
+/* Media query for minimum width of 36em (576px) */
+@media (min-width: 36em) {
+  .quick-link-card {
+    padding: 1.75rem;
+  }
+}
+
 /* Media query for minimum width of 40em (640px) */
 @media (min-width: 40em) {
   /* Bump up size of carousel content */
   .carousel-caption p {
     margin-bottom: 1.25rem;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     line-height: 1.4;
+  }
+
+  .carousel-caption h2 {
+    font-size: 2rem;
   }
 
   /* Increase font size for featurette heading */
   .featurette-heading {
-    font-size: 50px;
+    font-size: 2rem;
   }
 }
 
@@ -109,7 +120,11 @@ body {
 @media (min-width: 62em) {
   /* Top margin for featurette heading */
   .featurette-heading {
-    margin-top: 7rem;
+    margin-top: 2rem;
+  }
+
+  .launch-hero {
+    margin-bottom: 3rem;
   }
 }
 
@@ -247,7 +262,7 @@ body {
 }
 
 /* Bootstrap Primary Button */
-/* Custom styling for primary button 
+/* Custom styling for theme selector button */
 .btn-bd-primary {
   --bd-violet-bg: #1739fc;
   --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
@@ -262,15 +277,138 @@ body {
   --bs-btn-active-color: var(--bs-btn-hover-color);
   --bs-btn-active-bg: #1739fc;
   --bs-btn-active-border-color: #0923b6;
-}*/
-
-/* Mode Toggle Dropdown */
-/* Styling for mode toggle dropdown */
-.bd-mode-toggle {
-  z-index: 1500;
 }
 
-/* Display active icon in mode toggle dropdown */
-.bd-mode-toggle .dropdown-menu .active .bi {
-  display: block !important;
+/* Homepage helpers */
+.hero-slide {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: brightness(.7);
+}
+
+.carousel-caption h1 {
+  font-weight: 600;
+}
+
+.carousel-caption p {
+  max-width: 40rem;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: .7rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--bs-secondary);
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+.quick-link-card {
+  border: 1px solid var(--bs-border-color);
+  border-radius: .75rem;
+  padding: 1.5rem 1.25rem;
+  height: 100%;
+  background-color: var(--bs-secondary-bg);
+  transition: border-color .15s ease-in-out, background-color .15s ease-in-out;
+}
+
+.quick-link-card:hover {
+  border-color: var(--bs-primary);
+  background-color: var(--bs-tertiary-bg);
+}
+
+.launch-hero {
+  border-bottom: 1px solid var(--bs-border-color);
+  margin-bottom: 2rem;
+}
+
+.launch-summary {
+  min-height: 100%;
+}
+
+.launch-section {
+  margin-bottom: 1rem;
+}
+
+.launch-card {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+
+.launch-card-compact {
+  min-height: 100%;
+}
+
+.launch-card-external {
+  position: relative;
+}
+
+.launch-card-external::after {
+  content: "External";
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: .7rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--bs-secondary-color);
+}
+
+.launch-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  background-color: rgba(13, 110, 253, .12);
+  color: var(--bs-primary);
+  font-size: 1.15rem;
+  margin-bottom: .75rem;
+}
+
+.apt-footer {
+  border-top: 1px solid var(--bs-border-color);
+}
+
+.apt-footer-links a {
+  text-decoration: none;
+}
+
+.apt-footer-links a:hover,
+.apt-footer-links a:focus {
+  text-decoration: underline;
+}
+
+/* Dark mode is forced, hide theme toggle */
+.bd-mode-toggle {
+  display: none;
+}
+
+/* APT dark palette optimizations */
+:root[data-bs-theme="dark"] {
+  --bs-body-bg: #0f0f0f;
+  --bs-body-color: #e0e0e0;
+  --bs-secondary-bg: #1a1a1a;
+  --bs-tertiary-bg: #2d2d2d;
+}
+
+/* Button improvements for dark mode */
+.btn-primary {
+  --bs-btn-hover-bg: #0d66cc;
+  --bs-btn-active-bg: #0d66cc;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #1f7bff;
+  --bs-btn-border-color: #1f7bff;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  --bs-btn-bg: #1f7bff;
+  --bs-btn-color: #0f0f0f;
 }
