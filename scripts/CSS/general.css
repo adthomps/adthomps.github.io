@@ -296,6 +296,65 @@ body {
   background-color: var(--bs-body-bg);
 }
 
+.apt-header {
+  border-bottom: 1px solid var(--bs-border-color);
+  padding-bottom: .8rem;
+}
+
+.apt-header-shell {
+  min-height: 3.2rem;
+}
+
+.apt-header-brand-main {
+  color: var(--bs-body-color);
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.05;
+}
+
+.apt-header-brand-sub {
+  color: var(--bs-secondary-color);
+  font-size: .74rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.apt-header-nav {
+  gap: .25rem;
+}
+
+.apt-header-nav .nav-link {
+  color: var(--bs-secondary-color);
+  border-radius: .5rem;
+  padding: .45rem .68rem;
+  transition: color .16s ease, background-color .16s ease;
+}
+
+.apt-header-nav .nav-link:hover,
+.apt-header-nav .nav-link:focus,
+.apt-header-nav .show > .nav-link {
+  color: var(--bs-body-color);
+  background-color: var(--bs-secondary-bg);
+}
+
+.apt-header-profile {
+  position: relative;
+  color: var(--bs-secondary-color);
+}
+
+.apt-header-profile:hover,
+.apt-header-profile:focus {
+  color: var(--bs-body-color);
+}
+
+@media (max-width: 991.98px) {
+  .apt-header-nav-wrap {
+    width: 100%;
+    order: 3;
+  }
+}
+
 .launch-hero {
   border-bottom: 1px solid var(--bs-border-color);
   margin-bottom: 2rem;
