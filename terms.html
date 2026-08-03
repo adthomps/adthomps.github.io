@@ -1,191 +1,36 @@
 <!doctype html>
-<html lang="en" data-bs-theme="auto">
-
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="APT Portfolio - Bootstrap">
-  <meta name="author" content="APT">
-
-  <!-- Favicon -->
-  <link rel="icon" href="images/icons/profile.jpg" type="image/x-icon">
-
-  <!-- Title -->
-  <title>APT Portfolio - Bootstrap</title>
-
-  <!-- CSS - Universal -->
-  <link href="scripts/CSS/general.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-  <!-- CSS - Custom Color Selector -->
-  <link href="scripts/CSS/custom-colors.css" rel="stylesheet">
-
-  <!-- Preload fonts -->
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/fonts/bootstrap-icons.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <meta name="description" content="Terms for the basic Applied Practical Thinking static gateway.">
+  <title>Terms | Applied Practical Thinking Gateway</title>
+  <style>
+    :root { color-scheme: dark; --bg: #0b1020; --text: #eef4ff; --muted: #9fb0c8; --line: #2b3855; --link: #78a8ff; }
+    body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
+    main { width: min(820px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0; }
+    h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.08; }
+    h2 { margin: 30px 0 8px; font-size: 1.15rem; }
+    p, li { color: var(--muted); }
+    a { color: var(--link); }
+    .back { display: inline-block; margin-bottom: 28px; }
+    footer { margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--line); }
+  </style>
 </head>
-
 <body>
-
-  <!-- Theme Color Icons Start -->
-  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-    <symbol id="check2" viewBox="0 0 16 16">
-      <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-    </symbol>
-    <symbol id="circle-half" viewBox="0 0 16 16">
-      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
-    </symbol>
-    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-      <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
-      <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
-    </symbol>
-    <symbol id="sun-fill" viewBox="0 0 16 16">
-      <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
-    </symbol>
-  </svg>
-  <!-- Theme Color Icons End -->
-
-  <!-- Theme Code Start -->
-  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
-      data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
-      <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
-        <use href="#circle-half"></use>
-      </svg>
-      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-    </button>
-    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-      <li>
-        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
-          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-            <use href="#sun-fill"></use>
-          </svg>
-          Light
-          <svg class="bi ms-auto d-none" width="1em" height="1em">
-            <use href="#check2"></use>
-          </svg>
-        </button>
-      </li>
-      <li>
-        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
-          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-            <use href="#moon-stars-fill"></use>
-          </svg>
-          Dark
-          <svg class="bi ms-auto d-none" width="1em" height="1em">
-            <use href="#check2"></use>
-          </svg>
-        </button>
-      </li>
-      <li>
-        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto">
-          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-            <use href="#circle-half"></use>
-          </svg>
-          Auto
-          <svg class="bi ms-auto d-none" width="1em" height="1em">
-            <use href="#check2"></use>
-          </svg>
-        </button>
-      </li>
-    </ul>
-  </div>
-  <!-- Theme Code End -->
-
   <main>
-
-    <div class="container">
-
-      <!-- Header File Load-->
-      <header>
-        <div id="header"></div>
-      </header>
-
-      <div class="container">
-
-        <br>
-        <p><strong>Effective Date:</strong> <span id="currentDate"></span></p>
-
-        <script>
-          // Get the current date
-          const currentDate = new Date();
-
-          // Extract the month, day, and year
-          const month = currentDate.getMonth() + 1; // Add 1 because getMonth() returns 0-based month index
-          const day = currentDate.getDate();
-          const year = currentDate.getFullYear();
-
-          // Create a formatted date string
-          const formattedDate = `${month}/${day}/${year}`;
-
-          // Display the formatted date in the specified span
-          document.getElementById("currentDate").textContent = `${formattedDate}`;
-        </script>
-
-        <h1>Terms and Conditions</h1>
-
-        <br />
-
-        <h2>1. Acceptance of Terms</h2>
-        <p>By using this website, you agree to be bound by these Terms and Conditions, our Privacy Policy, and any other
-          applicable policies and guidelines. If you do not agree to these Terms and Conditions, please do not use this
-          website.</p>
-
-        <h2>2. Use of the Website</h2>
-        <p>You agree to use this website for lawful purposes only. You may not use this website in any way that could
-          damage, disable, overburden, or impair our services or interfere with any other party's use of the website.
-        </p>
-
-        <h2>3. Intellectual Property</h2>
-        <p>All content on this website, including text, graphics, logos, images, and software, is the property of [Your
-          Company] and is protected by copyright and other intellectual property laws. You may not reproduce, modify,
-          distribute, or republish any content from this website without our prior written consent.</p>
-
-        <h2>4. Limitation of Liability</h2>
-        <p>We shall not be liable for any direct, indirect, incidental, special, or consequential damages arising out of
-          or in any way connected with the use of this website, including but not limited to any errors, omissions,
-          viruses, or the use of information presented on this website.</p>
-
-        <h2>5. Governing Law</h2>
-        <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of [Your
-          Jurisdiction]. Any disputes arising under or in connection with these Terms and Conditions shall be subject to
-          the exclusive jurisdiction of the courts of [Your Jurisdiction].</p>
-
-        <h2>6. Changes to Terms and Conditions</h2>
-        <p>We reserve the right to modify or revise these Terms and Conditions at any time. Please check this page
-          periodically for any changes. Your continued use of the website after the posting of changes constitutes your
-          acceptance of those changes.</p>
-
-        <h2>7. Contact Us</h2>
-        <p>If you have any questions or concerns regarding these Terms and Conditions, please contact us at <a
-            href="mailto:contact@example.com">contact@example.com</a>.</p>
-
-        <br />
-
-        <p>These Terms and Conditions were last updated on October 1, 2023.</p>
-
-      </div>
-
-      <!-- Footer File Load-->
-      <footer>
-        <div id="footer"></div>
-      </footer>
-
-    </div>
-
+    <a class="back" href="index.html">Back to home</a>
+    <h1>Terms</h1>
+    <p>This site is a small static gateway to maintained Applied Practical Thinking destinations. It is provided for navigation and reference only.</p>
+    <h2>No Local Product Service</h2>
+    <p>This repository does not provide a production application, payment service, support portal, or documentation platform. Linked destinations own their own terms, behavior, and support boundaries.</p>
+    <h2>No Payment Processing</h2>
+    <p>This site does not process, store, or transmit payment credentials. Any payment demo links are outbound links to maintained project surfaces.</p>
+    <h2>Use At Your Own Risk</h2>
+    <p>Content is provided as-is. Do not treat demo or reference material as legal, financial, security, or production integration advice without independent review.</p>
+    <footer>
+      <p>Last updated: August 2026.</p>
+    </footer>
   </main>
-
-  <!-- JS - Universal -->
-  <script src="scripts/JS/color-modes.js" async></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" async></script>
-  <script src="scripts/JS/loadHeaderFooter_v3.js" async></script>
-  
-  <!-- JS - Page Specific -->
-
-
-
 </body>
-
 </html>

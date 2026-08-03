@@ -1,6 +1,6 @@
 # Basic Static Gateway
 
-This repository is a plain GitHub Pages static site. It is being condensed to a small set of basic pages that point to maintained destinations instead of hosting a large demo, docs, product, or support tree.
+This repository is a plain GitHub Pages static site. It has been condensed to a small set of basic pages that point to maintained destinations instead of hosting a large demo, docs, product, or support tree.
 
 ## Retained Role
 
@@ -18,7 +18,7 @@ This repository is a plain GitHub Pages static site. It is being condensed to a 
 
 ## Consolidation Direction
 
-Old local payment and integration demos should not be rebuilt here. This cleanup plan does not require changes in `../apt-anet-integration-toolbox`.
+Old local payment and integration demos should not be rebuilt here. This cleanup did not require changes in `../apt-anet-integration-toolbox`.
 
 Public portfolio or visual material should live in `../applied-practical-thinking` if still useful.
 

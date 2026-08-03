@@ -11,8 +11,8 @@
 - **Manual validation**: Open retained pages locally and check the browser console for missing local CSS, JavaScript, image, or template-loader references.
 
 ## Folder conventions
-- `images/`: Retain only assets used by the basic pages or staged for migration.
-- `templates/`: Historical fragments. Keep only if retained pages still load them.
+- Do not recreate `images/` or `templates/` unless a retained page has a clear need for a specific asset or fragment.
+- Keep retained pages self-contained unless a shared asset clearly reduces maintenance without rebuilding the old site tree.
 
 ## Validation
 - No schema validation is enforced; all HTML/JS is manually tested in browser.
