@@ -3,23 +3,20 @@
 ## Architecture & Guardrails
 
 - **Static only**: No server-side code, no build step, no frameworks. All files are served as-is from the repo.
-- **Templates**: All global navigation, header, and footer HTML lives in `templates/` and is injected at runtime by loader scripts in `scripts/JS/`.
-- **Loader pattern**: Pages that use templates must include `<div id="header"></div>` and `<div id="footer"></div>`. Loader scripts must always call `adjustLinks()` after fragment insertion.
+- **Basic page set**: The retained site should stay limited to `index.html`, `privacy.html`, `terms.html`, and `404.html` unless a new page has a clear GitHub Pages-only reason.
+- **No duplicate product surface**: Do not rebuild payment demos here or assign cleanup work to `../apt-anet-integration-toolbox`; public APT portfolio/proof/visual material belongs in `../applied-practical-thinking`; reusable standards belong in `../apt-principles-agents`.
 - **No secrets in repo**: Never commit API keys, transaction keys, or other secrets. Only public test keys (e.g., Accept.js `clientKey`) are allowed in client code.
-- **No duplicate templates**: Update only the files in `templates/` for global navigation/footer/sidebar changes.
-- **No deletion of loader scripts**: Never remove any `scripts/JS/loadHeaderFooter_*` files; they are used by different pages.
-- **Relative path logic**: Loader scripts must compute depth using `window.location.pathname.split("/")` and adjust links accordingly.
-- **Assets**: All images in `images/`, CSS in `scripts/CSS/`, JS in `scripts/JS/`.
-- **Sitemap**: Update `sitemap.txt` by running `generate_sitemap.bat` (Windows) or the Python snippet inside it (other OS).
+- **Avoid stale loaders**: Do not rely on template-loader scripts unless the corresponding files exist and are used by all retained pages.
+- **Assets**: Keep only images and static assets referenced by retained pages or explicitly held for migration to another repo.
+- **Manual validation**: Open retained pages locally and check the browser console for missing local CSS, JavaScript, image, or template-loader references.
 
 ## Folder conventions
-- `anet/`, `cybs/`, `vap/`: Payment and integration demos. See per-folder README for details.
-- `developer/`, `support/`, `product/`, `techprojects/`: Section-specific content.
-- `templates/`: Only place to edit global navigation/footer/sidebar.
+- `images/`: Retain only assets used by the basic pages or staged for migration.
+- `templates/`: Historical fragments. Keep only if retained pages still load them.
 
 ## Validation
 - No schema validation is enforced; all HTML/JS is manually tested in browser.
 - If adding validation, centralize logic in a single JS file per form/feature.
 
 ---
-_Last updated: January 2026_
+_Last updated: August 2026_
