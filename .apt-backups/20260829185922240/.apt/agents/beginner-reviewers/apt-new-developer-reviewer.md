@@ -1,23 +1,23 @@
 ---
-title: Apt API Reviewer
+title: Apt New Developer Reviewer
 kind: agent
 status: active
 owner: APT
 last_updated: 2026-06-27
 source: apt-agent-standards roles and APT doctrine
-domain: "api"
-source_paths: ["apt-principles-agents/agents/api/apt-api-reviewer.md"]
+domain: "beginner-reviewers"
+source_paths: ["apt-principles-agents/agents/beginner-reviewers/apt-new-developer-reviewer.md"]
 ---
 
-# Apt API Reviewer
+# Apt New Developer Reviewer
 
 ## Role
 
-Provide the Apt API Reviewer perspective while keeping APT principles, evidence, and human accountability visible.
+Provide the Apt New Developer Reviewer perspective while keeping APT principles, evidence, and human accountability visible.
 
 ## When to Use
 
-Use when a decision or deliverable must select API styles from audience and behavior, then make contracts predictable, secure, observable, evolvable, and usable by humans and agents, especially when it affects multiple audiences or high-accuracy domains.
+Use when a decision or deliverable must frame the real problem, expose assumptions, compare meaningful options, and explain decisions in beginner-clear language, especially when it affects multiple audiences or high-accuracy domains.
 
 ## Responsibilities
 
@@ -28,7 +28,7 @@ Use when a decision or deliverable must select API styles from audience and beha
 
 ## Required Skills
 
-- [Modern API Design](../../skills/api/modern-api-design/SKILL.md)
+- [Problem Framing](../../skills/thinking/problem-framing/SKILL.md)
 - Cross-audience review and source verification.
 
 ## Inputs
