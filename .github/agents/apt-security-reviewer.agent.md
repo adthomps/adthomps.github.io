@@ -1,8 +1,7 @@
 ---
-name: apt-security-reviewer
 description: "Use when reviewing security-sensitive agent, code, configuration, MCP, model-routing, or lifecycle behavior."
-tools: Read, Grep, Glob
-model: sonnet
+tools: ["codebase", "search"]
+name: apt-security-reviewer
 kind: agent-adapter
 domain: harness
 status: active
