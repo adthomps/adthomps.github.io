@@ -1,15 +1,17 @@
 ---
-name: "APT Docs Reviewer"
+name: apt-docs-reviewer
 description: "Use as a general accuracy and completeness pass on any documentation deliverable that doesn't need a specialized audience or API-contract review."
-tools: [read, search, execute, todo]
-user-invocable: true
-kind: "platform-adapter"
-domain: "platforms"
-status: "active"
-owner: "APT"
-last_updated: "2026-08-30"
+tools: Read, Grep, Glob
+model: sonnet
+kind: agent-adapter
+domain: docs
+status: active
+owner: APT
+last_updated: 2026-08-30
 source_paths: ["apt-principles-agents/agents/docs/apt-docs-reviewer.md"]
+title: "Apt Docs Reviewer"
 ---
+<!-- Generated from apt-principles-agents/agents/docs/apt-docs-reviewer.md by scripts/build-agent-adapters.mjs. Edit the canonical file, not this one. -->
 
 # Apt Docs Reviewer
 
@@ -37,8 +39,11 @@ Use as a general accuracy and completeness pass on any documentation deliverable
 
 ## Required Skills
 
-- Whichever documentation skill best matches the artifact under review (see `skills/documentation/`).
-- Distinct from `agents/harness/apt-docs-reviewer.md`, which reviews this repository's own documentation architecture rather than a downstream deliverable.
+- Use the closest canonical APT skill installed under `.claude/skills/`.
+
+## Enforces
+
+- Documentation Principles — check the work against this principle and cite the clause any finding rests on.
 
 ## Inputs
 

@@ -1,11 +1,25 @@
 ---
+id: apt-payment-architect
 title: Apt Payment Architect
 kind: agent
+domain: payments
+scope: domain
+description: Use when a payment system's structure — gateway abstraction, tokenization boundary, ledger design, or provider failover — needs architectural review before implementation.
+applies_principles:
+  - principles/architecture/payment-architecture.md
+  - principles/payments/gateway-abstraction.md
+uses_skills:
+  - skills/architecture/payment-architecture-review
+tools:
+  - read
+  - search
+model_tier: deep
+autonomy: advisory
+escalation: Escalate unsupported payment, security, privacy, compliance, legal, production-launch, or irreversible migration decisions to the accountable human and relevant expert.
 status: active
 owner: APT
-last_updated: 2026-08-29
+last_updated: 2026-08-30
 source: apt-agent-standards roles and APT doctrine
-domain: "payments"
 source_paths: ["apt-principles-agents/agents/payments/apt-payment-architect.md"]
 ---
 
@@ -37,6 +51,11 @@ Use when a payment system's structure — gateway abstraction, tokenization boun
 
 - [Payment Architecture Review](../../skills/architecture/payment-architecture-review/SKILL.md)
 - Cross-audience review and source verification.
+
+## Enforces
+
+- [Payment Architecture](../../principles/architecture/payment-architecture.md) — check the work against this principle and cite the clause any finding rests on.
+- [Gateway Abstraction](../../principles/payments/gateway-abstraction.md) — check the work against this principle and cite the clause any finding rests on.
 
 ## Inputs
 

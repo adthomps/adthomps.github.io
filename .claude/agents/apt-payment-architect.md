@@ -1,15 +1,17 @@
 ---
-name: "APT Payment Architect"
+name: apt-payment-architect
 description: "Use when a payment system's structure — gateway abstraction, tokenization boundary, ledger design, or provider failover — needs architectural review before implementation."
-tools: [read, search, execute, todo]
-user-invocable: true
-kind: "platform-adapter"
-domain: "platforms"
-status: "active"
-owner: "APT"
-last_updated: "2026-08-30"
+tools: Read, Grep, Glob
+model: opus
+kind: agent-adapter
+domain: payments
+status: active
+owner: APT
+last_updated: 2026-08-30
 source_paths: ["apt-principles-agents/agents/payments/apt-payment-architect.md"]
+title: "Apt Payment Architect"
 ---
+<!-- Generated from apt-principles-agents/agents/payments/apt-payment-architect.md by scripts/build-agent-adapters.mjs. Edit the canonical file, not this one. -->
 
 # Apt Payment Architect
 
@@ -37,8 +39,12 @@ Use when a payment system's structure — gateway abstraction, tokenization boun
 
 ## Required Skills
 
-- [Payment Architecture Review](../../skills/architecture/payment-architecture-review/SKILL.md)
-- Cross-audience review and source verification.
+- `payment-architecture-review` — installed under `.claude/skills/payment-architecture-review/`.
+
+## Enforces
+
+- Payment Architecture — check the work against this principle and cite the clause any finding rests on.
+- Gateway Abstraction — check the work against this principle and cite the clause any finding rests on.
 
 ## Inputs
 

@@ -1,15 +1,17 @@
 ---
-name: "APT Crypto Payment Risk Reviewer"
+name: apt-crypto-payment-risk-reviewer
 description: "Use when a payment flow accepts or settles in cryptocurrency and needs review for custody, volatility, and settlement risk."
-tools: [read, search, execute, todo]
-user-invocable: true
-kind: "platform-adapter"
-domain: "platforms"
-status: "active"
-owner: "APT"
-last_updated: "2026-08-30"
+tools: Read, Grep, Glob
+model: sonnet
+kind: agent-adapter
+domain: payments
+status: active
+owner: APT
+last_updated: 2026-08-30
 source_paths: ["apt-principles-agents/agents/payments/apt-crypto-payment-risk-reviewer.md"]
+title: "Apt Crypto Payment Risk Reviewer"
 ---
+<!-- Generated from apt-principles-agents/agents/payments/apt-crypto-payment-risk-reviewer.md by scripts/build-agent-adapters.mjs. Edit the canonical file, not this one. -->
 
 # Apt Crypto Payment Risk Reviewer
 
@@ -37,8 +39,12 @@ Use when a payment flow accepts or settles in cryptocurrency and needs review fo
 
 ## Required Skills
 
-- [Crypto Payment Risk Review](../../skills/stablecoin-crypto/crypto-payment-risk-review/SKILL.md)
-- Cross-audience review and source verification.
+- `crypto-payment-risk-review` — installed under `.claude/skills/crypto-payment-risk-review/`.
+
+## Enforces
+
+- Digital Asset Risk — check the work against this principle and cite the clause any finding rests on.
+- Crypto Payment Review — check the work against this principle and cite the clause any finding rests on.
 
 ## Inputs
 

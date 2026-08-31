@@ -1,15 +1,17 @@
 ---
-name: "APT Gateway Migration Reviewer"
+name: apt-gateway-migration-reviewer
 description: "Use when a merchant, platform, or integration is migrating from one payment gateway or processor to another, and payment continuity during the cutover is at risk."
-tools: [read, search, execute, todo]
-user-invocable: true
-kind: "platform-adapter"
-domain: "platforms"
-status: "active"
-owner: "APT"
-last_updated: "2026-08-30"
+tools: Read, Grep, Glob
+model: sonnet
+kind: agent-adapter
+domain: payments
+status: active
+owner: APT
+last_updated: 2026-08-30
 source_paths: ["apt-principles-agents/agents/payments/apt-gateway-migration-reviewer.md"]
+title: "Apt Gateway Migration Reviewer"
 ---
+<!-- Generated from apt-principles-agents/agents/payments/apt-gateway-migration-reviewer.md by scripts/build-agent-adapters.mjs. Edit the canonical file, not this one. -->
 
 # Apt Gateway Migration Reviewer
 
@@ -37,8 +39,12 @@ Use when a merchant, platform, or integration is migrating from one payment gate
 
 ## Required Skills
 
-- [Gateway Design](../../skills/payments/gateway-design/SKILL.md)
-- Cross-audience review and source verification.
+- `gateway-design` — installed under `.claude/skills/gateway-design/`.
+
+## Enforces
+
+- Gateway Abstraction — check the work against this principle and cite the clause any finding rests on.
+- API Facade Design — check the work against this principle and cite the clause any finding rests on.
 
 ## Inputs
 

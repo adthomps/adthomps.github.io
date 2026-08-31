@@ -1,15 +1,17 @@
 ---
-name: "APT Commerce Experience Reviewer"
+name: apt-commerce-experience-reviewer
 description: "Use when reviewing the broader shopping experience — browsing, cart, post-purchase — beyond the checkout transaction itself."
-tools: [read, search, execute, todo]
-user-invocable: true
-kind: "platform-adapter"
-domain: "platforms"
-status: "active"
-owner: "APT"
-last_updated: "2026-08-30"
+tools: Read, Grep, Glob
+model: sonnet
+kind: agent-adapter
+domain: ecommerce
+status: active
+owner: APT
+last_updated: 2026-08-30
 source_paths: ["apt-principles-agents/agents/ecommerce/apt-commerce-experience-reviewer.md"]
+title: "Apt Commerce Experience Reviewer"
 ---
+<!-- Generated from apt-principles-agents/agents/ecommerce/apt-commerce-experience-reviewer.md by scripts/build-agent-adapters.mjs. Edit the canonical file, not this one. -->
 
 # Apt Commerce Experience Reviewer
 
@@ -37,8 +39,11 @@ Use when reviewing the broader shopping experience — browsing, cart, post-purc
 
 ## Required Skills
 
-- [Customer Journey Mapping](../../skills/design/customer-journey-mapping/SKILL.md)
-- Distinct from `agents/ecommerce/apt-checkout-reviewer.md`, which reviews the checkout transaction itself rather than the surrounding experience.
+- `customer-journey-mapping` — installed under `.claude/skills/customer-journey-mapping/`.
+
+## Enforces
+
+- Customer Payment Experience — check the work against this principle and cite the clause any finding rests on.
 
 ## Inputs
 

@@ -1,11 +1,25 @@
 ---
+id: apt-gateway-migration-reviewer
 title: Apt Gateway Migration Reviewer
 kind: agent
+domain: payments
+scope: domain
+description: Use when a merchant, platform, or integration is migrating from one payment gateway or processor to another, and payment continuity during the cutover is at risk.
+applies_principles:
+  - principles/payments/gateway-abstraction.md
+  - principles/modernization/api-facade-design.md
+uses_skills:
+  - skills/payments/gateway-design
+tools:
+  - read
+  - search
+model_tier: standard
+autonomy: advisory
+escalation: Escalate unsupported payment, security, privacy, compliance, legal, production-launch, or irreversible migration decisions to the accountable human and relevant expert.
 status: active
 owner: APT
-last_updated: 2026-08-29
+last_updated: 2026-08-30
 source: apt-agent-standards roles and APT doctrine
-domain: "payments"
 source_paths: ["apt-principles-agents/agents/payments/apt-gateway-migration-reviewer.md"]
 ---
 
@@ -37,6 +51,11 @@ Use when a merchant, platform, or integration is migrating from one payment gate
 
 - [Gateway Design](../../skills/payments/gateway-design/SKILL.md)
 - Cross-audience review and source verification.
+
+## Enforces
+
+- [Gateway Abstraction](../../principles/payments/gateway-abstraction.md) — check the work against this principle and cite the clause any finding rests on.
+- [API Facade Design](../../principles/modernization/api-facade-design.md) — check the work against this principle and cite the clause any finding rests on.
 
 ## Inputs
 

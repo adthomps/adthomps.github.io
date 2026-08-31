@@ -1,15 +1,17 @@
 ---
-name: "APT Checkout Reviewer"
+name: apt-checkout-reviewer
 description: "Use when a checkout flow — cart, payment entry, confirmation — needs review for conversion friction and correctness."
-tools: [read, search, execute, todo]
-user-invocable: true
-kind: "platform-adapter"
-domain: "platforms"
-status: "active"
-owner: "APT"
-last_updated: "2026-08-30"
+tools: Read, Grep, Glob
+model: sonnet
+kind: agent-adapter
+domain: ecommerce
+status: active
+owner: APT
+last_updated: 2026-08-30
 source_paths: ["apt-principles-agents/agents/ecommerce/apt-checkout-reviewer.md"]
+title: "Apt Checkout Reviewer"
 ---
+<!-- Generated from apt-principles-agents/agents/ecommerce/apt-checkout-reviewer.md by scripts/build-agent-adapters.mjs. Edit the canonical file, not this one. -->
 
 # Apt Checkout Reviewer
 
@@ -37,8 +39,12 @@ Use when a checkout flow — cart, payment entry, confirmation — needs review 
 
 ## Required Skills
 
-- [Checkout Experience Review](../../skills/ecommerce/checkout-experience-review/SKILL.md)
-- Cross-audience review and source verification.
+- `checkout-experience-review` — installed under `.claude/skills/checkout-experience-review/`.
+
+## Enforces
+
+- Checkout Design — check the work against this principle and cite the clause any finding rests on.
+- Cart To Payment Flow — check the work against this principle and cite the clause any finding rests on.
 
 ## Inputs
 

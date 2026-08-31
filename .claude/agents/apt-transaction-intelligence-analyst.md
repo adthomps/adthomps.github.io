@@ -1,15 +1,17 @@
 ---
-name: "APT Transaction Intelligence Analyst"
+name: apt-transaction-intelligence-analyst
 description: "Use when transaction data, decline patterns, or authorization trends need to be analyzed to explain what's happening and what it implies for risk or revenue."
-tools: [read, search, execute, todo]
-user-invocable: true
-kind: "platform-adapter"
-domain: "platforms"
-status: "active"
-owner: "APT"
-last_updated: "2026-08-30"
+tools: Read, Grep, Glob
+model: sonnet
+kind: agent-adapter
+domain: payments
+status: active
+owner: APT
+last_updated: 2026-08-30
 source_paths: ["apt-principles-agents/agents/payments/apt-transaction-intelligence-analyst.md"]
+title: "Apt Transaction Intelligence Analyst"
 ---
+<!-- Generated from apt-principles-agents/agents/payments/apt-transaction-intelligence-analyst.md by scripts/build-agent-adapters.mjs. Edit the canonical file, not this one. -->
 
 # Apt Transaction Intelligence Analyst
 
@@ -37,8 +39,11 @@ Use when transaction data, decline patterns, or authorization trends need to be 
 
 ## Required Skills
 
-- [Transaction Intelligence Analysis](../../skills/payments/transaction-intelligence-analysis/SKILL.md)
-- Cross-audience review and source verification.
+- `transaction-intelligence-analysis` — installed under `.claude/skills/transaction-intelligence-analysis/`.
+
+## Enforces
+
+- Transaction Intelligence — check the work against this principle and cite the clause any finding rests on.
 
 ## Inputs
 

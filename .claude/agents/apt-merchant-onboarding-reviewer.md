@@ -1,15 +1,17 @@
 ---
-name: "APT Merchant Onboarding Reviewer"
+name: apt-merchant-onboarding-reviewer
 description: "Use when a merchant onboarding flow — signup through first live transaction — needs review for completeness and time-to-first-sale."
-tools: [read, search, execute, todo]
-user-invocable: true
-kind: "platform-adapter"
-domain: "platforms"
-status: "active"
-owner: "APT"
-last_updated: "2026-08-30"
+tools: Read, Grep, Glob
+model: sonnet
+kind: agent-adapter
+domain: ecommerce
+status: active
+owner: APT
+last_updated: 2026-08-30
 source_paths: ["apt-principles-agents/agents/ecommerce/apt-merchant-onboarding-reviewer.md"]
+title: "Apt Merchant Onboarding Reviewer"
 ---
+<!-- Generated from apt-principles-agents/agents/ecommerce/apt-merchant-onboarding-reviewer.md by scripts/build-agent-adapters.mjs. Edit the canonical file, not this one. -->
 
 # Apt Merchant Onboarding Reviewer
 
@@ -37,8 +39,11 @@ Use when a merchant onboarding flow — signup through first live transaction �
 
 ## Required Skills
 
-- [Merchant Onboarding Review](../../skills/ecommerce/merchant-onboarding-review/SKILL.md)
-- Cross-audience review and source verification.
+- `merchant-onboarding-review` — installed under `.claude/skills/merchant-onboarding-review/`.
+
+## Enforces
+
+- Merchant Onboarding — check the work against this principle and cite the clause any finding rests on.
 
 ## Inputs
 

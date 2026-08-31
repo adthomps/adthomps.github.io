@@ -1,15 +1,17 @@
 ---
-name: "APT Chargeback Risk Reviewer"
+name: apt-chargeback-risk-reviewer
 description: "Use when a payment flow, merchant category, or dispute-handling process needs to be assessed for chargeback exposure and evidence-collection readiness."
-tools: [read, search, execute, todo]
-user-invocable: true
-kind: "platform-adapter"
-domain: "platforms"
-status: "active"
-owner: "APT"
-last_updated: "2026-08-30"
+tools: Read, Grep, Glob
+model: sonnet
+kind: agent-adapter
+domain: payments
+status: active
+owner: APT
+last_updated: 2026-08-30
 source_paths: ["apt-principles-agents/agents/payments/apt-chargeback-risk-reviewer.md"]
+title: "Apt Chargeback Risk Reviewer"
 ---
+<!-- Generated from apt-principles-agents/agents/payments/apt-chargeback-risk-reviewer.md by scripts/build-agent-adapters.mjs. Edit the canonical file, not this one. -->
 
 # Apt Chargeback Risk Reviewer
 
@@ -37,8 +39,11 @@ Use when a payment flow, merchant category, or dispute-handling process needs to
 
 ## Required Skills
 
-- [Chargeback Risk Review](../../skills/payments/chargeback-risk-review/SKILL.md)
-- Cross-audience review and source verification.
+- `chargeback-risk-review` — installed under `.claude/skills/chargeback-risk-review/`.
+
+## Enforces
+
+- Refunds Voids Disputes — check the work against this principle and cite the clause any finding rests on.
 
 ## Inputs
 

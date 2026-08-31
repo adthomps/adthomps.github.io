@@ -1,11 +1,25 @@
 ---
+id: apt-fraud-risk-reviewer
 title: Apt Fraud Risk Reviewer
 kind: agent
+domain: payments
+scope: domain
+description: Use when a payment flow, fraud rule set, or decline-handling process needs to be assessed for fraud exposure without unnecessarily blocking legitimate transactions.
+applies_principles:
+  - principles/payments/fraud-risk.md
+  - principles/security-risk/fraud-risk-review.md
+uses_skills:
+  - skills/payments/fraud-rule-review
+tools:
+  - read
+  - search
+model_tier: standard
+autonomy: advisory
+escalation: Escalate unsupported payment, security, privacy, compliance, legal, production-launch, or irreversible migration decisions to the accountable human and relevant expert.
 status: active
 owner: APT
-last_updated: 2026-08-29
+last_updated: 2026-08-30
 source: apt-agent-standards roles and APT doctrine
-domain: "payments"
 source_paths: ["apt-principles-agents/agents/payments/apt-fraud-risk-reviewer.md"]
 ---
 
@@ -37,6 +51,11 @@ Use when a payment flow, fraud rule set, or decline-handling process needs to be
 
 - [Fraud Rule Review](../../skills/payments/fraud-rule-review/SKILL.md)
 - Cross-audience review and source verification.
+
+## Enforces
+
+- [Fraud Risk](../../principles/payments/fraud-risk.md) — check the work against this principle and cite the clause any finding rests on.
+- [Fraud Risk Review](../../principles/security-risk/fraud-risk-review.md) — check the work against this principle and cite the clause any finding rests on.
 
 ## Inputs
 

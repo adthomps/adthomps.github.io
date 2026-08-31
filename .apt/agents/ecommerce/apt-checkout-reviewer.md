@@ -1,11 +1,25 @@
 ---
+id: apt-checkout-reviewer
 title: Apt Checkout Reviewer
 kind: agent
+domain: ecommerce
+scope: domain
+description: Use when a checkout flow — cart, payment entry, confirmation — needs review for conversion friction and correctness.
+applies_principles:
+  - principles/ecommerce/checkout-design.md
+  - principles/ecommerce/cart-to-payment-flow.md
+uses_skills:
+  - skills/ecommerce/checkout-experience-review
+tools:
+  - read
+  - search
+model_tier: standard
+autonomy: advisory
+escalation: Escalate unsupported payment, security, privacy, compliance, legal, production-launch, or irreversible migration decisions to the accountable human and relevant expert.
 status: active
 owner: APT
-last_updated: 2026-08-29
+last_updated: 2026-08-30
 source: apt-agent-standards roles and APT doctrine
-domain: "ecommerce"
 source_paths: ["apt-principles-agents/agents/ecommerce/apt-checkout-reviewer.md"]
 ---
 
@@ -37,6 +51,11 @@ Use when a checkout flow — cart, payment entry, confirmation — needs review 
 
 - [Checkout Experience Review](../../skills/ecommerce/checkout-experience-review/SKILL.md)
 - Cross-audience review and source verification.
+
+## Enforces
+
+- [Checkout Design](../../principles/ecommerce/checkout-design.md) — check the work against this principle and cite the clause any finding rests on.
+- [Cart To Payment Flow](../../principles/ecommerce/cart-to-payment-flow.md) — check the work against this principle and cite the clause any finding rests on.
 
 ## Inputs
 

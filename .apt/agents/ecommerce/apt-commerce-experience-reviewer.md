@@ -1,11 +1,24 @@
 ---
+id: apt-commerce-experience-reviewer
 title: Apt Commerce Experience Reviewer
 kind: agent
+domain: ecommerce
+scope: domain
+description: Use when reviewing the broader shopping experience — browsing, cart, post-purchase — beyond the checkout transaction itself.
+applies_principles:
+  - principles/ecommerce/customer-payment-experience.md
+uses_skills:
+  - skills/design/customer-journey-mapping
+tools:
+  - read
+  - search
+model_tier: standard
+autonomy: advisory
+escalation: Escalate unsupported payment, security, privacy, compliance, legal, production-launch, or irreversible migration decisions to the accountable human and relevant expert.
 status: active
 owner: APT
-last_updated: 2026-08-29
+last_updated: 2026-08-30
 source: apt-agent-standards roles and APT doctrine
-domain: "ecommerce"
 source_paths: ["apt-principles-agents/agents/ecommerce/apt-commerce-experience-reviewer.md"]
 ---
 
@@ -37,6 +50,10 @@ Use when reviewing the broader shopping experience — browsing, cart, post-purc
 
 - [Customer Journey Mapping](../../skills/design/customer-journey-mapping/SKILL.md)
 - Distinct from `agents/ecommerce/apt-checkout-reviewer.md`, which reviews the checkout transaction itself rather than the surrounding experience.
+
+## Enforces
+
+- [Customer Payment Experience](../../principles/ecommerce/customer-payment-experience.md) — check the work against this principle and cite the clause any finding rests on.
 
 ## Inputs
 

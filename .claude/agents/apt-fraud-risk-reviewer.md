@@ -1,15 +1,17 @@
 ---
-name: "APT Fraud Risk Reviewer"
+name: apt-fraud-risk-reviewer
 description: "Use when a payment flow, fraud rule set, or decline-handling process needs to be assessed for fraud exposure without unnecessarily blocking legitimate transactions."
-tools: [read, search, execute, todo]
-user-invocable: true
-kind: "platform-adapter"
-domain: "platforms"
-status: "active"
-owner: "APT"
-last_updated: "2026-08-30"
+tools: Read, Grep, Glob
+model: sonnet
+kind: agent-adapter
+domain: payments
+status: active
+owner: APT
+last_updated: 2026-08-30
 source_paths: ["apt-principles-agents/agents/payments/apt-fraud-risk-reviewer.md"]
+title: "Apt Fraud Risk Reviewer"
 ---
+<!-- Generated from apt-principles-agents/agents/payments/apt-fraud-risk-reviewer.md by scripts/build-agent-adapters.mjs. Edit the canonical file, not this one. -->
 
 # Apt Fraud Risk Reviewer
 
@@ -37,8 +39,12 @@ Use when a payment flow, fraud rule set, or decline-handling process needs to be
 
 ## Required Skills
 
-- [Fraud Rule Review](../../skills/payments/fraud-rule-review/SKILL.md)
-- Cross-audience review and source verification.
+- `fraud-rule-review` — installed under `.claude/skills/fraud-rule-review/`.
+
+## Enforces
+
+- Fraud Risk — check the work against this principle and cite the clause any finding rests on.
+- Fraud Risk Review — check the work against this principle and cite the clause any finding rests on.
 
 ## Inputs
 
