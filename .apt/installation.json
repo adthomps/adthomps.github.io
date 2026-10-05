@@ -3,7 +3,7 @@
   "source": {
     "repository": "apt-principles-agents",
     "version": "1.0.0",
-    "commit": "bfde6014df5916d690d8eed53eae79197f0655b9"
+    "commit": "27126709d12a223de3c3217ad2b5b8ce52e8a78b"
   },
   "manifests": [
     "core",
@@ -2010,7 +2010,7 @@
       "source": "platforms/claude/source/agents/apt-router.md",
       "target": ".claude/agents/apt-router.md",
       "kind": "platform-agent",
-      "sha256": "055785a4ea099c9413ecea96f489323f23d3923549949687e6c36e52b5b5101c"
+      "sha256": "7853cea8a1e26918be644ccd78c9287ecbb6a78e0fbc3f4371f7444b3bec733d"
     },
     {
       "source": "platforms/claude/source/agents/harness/apt-security-reviewer.md",
@@ -2850,7 +2850,7 @@
       "source": "platforms/codex/source/agents/apt-router.md",
       "target": ".codex/agents/apt-router.md",
       "kind": "platform-agent",
-      "sha256": "399021295e0d2cb34ce2c79548e802b784e6e07175fcaae4be7ecf85a21074e1"
+      "sha256": "3c13379fead42d6fee2c2e94c6c775bc7ead37a58d57f0cd78205d21a5db193a"
     },
     {
       "source": "platforms/codex/source/agents/harness/apt-security-reviewer.md",
@@ -3486,7 +3486,7 @@
       "source": "platforms/cursor/source/agents/apt-router.mdc",
       "target": ".cursor/agents/apt-router.mdc",
       "kind": "platform-agent",
-      "sha256": "298beb03eb9d4b7e88629a82acd7b58a571c34726102715dd37cc06a8021ce54"
+      "sha256": "4a29184c77b2c1e6ae4eb32389b85da97ac429201b74b1d0df796dc382330bf8"
     },
     {
       "source": "platforms/cursor/source/agents/apt-thinking-lead.mdc",
@@ -4026,7 +4026,7 @@
       "source": "platforms/github-copilot/source/agents/generated/apt-router.agent.md",
       "target": ".github/agents/apt-router.agent.md",
       "kind": "platform-agent",
-      "sha256": "a1e94d815959d9f49a431d1cbde012a8022b34b79296b12cf613c9146ec6cc78"
+      "sha256": "98e203de7af7ef6ce64a96e2c2390c43505e499cf169b88dfaf5f33ff8eb781b"
     },
     {
       "source": "platforms/github-copilot/source/agents/generated/harness/apt-security-reviewer.agent.md",
@@ -4770,6 +4770,6 @@
   "localContext": "docs/project-context.md",
   "lastOperation": {
     "type": "sync",
-    "at": "2026-10-04T14:17:28.452Z"
+    "at": "2026-10-04T18:00:59.110Z"
   }
 }
