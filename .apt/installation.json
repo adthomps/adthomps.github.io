@@ -3,7 +3,7 @@
   "source": {
     "repository": "apt-principles-agents",
     "version": "1.0.0",
-    "commit": "57a60ce7c12e3c0582b0951f97faf2612e91a3dd"
+    "commit": "8d6ecd41060b00a9e9bf98b51075e286c0e8a402"
   },
   "manifests": [
     "core",
@@ -336,7 +336,7 @@
       "source": "checklists/design-review-checklist.md",
       "target": ".apt/checklists/design-review-checklist.md",
       "kind": "canonical",
-      "sha256": "9764cf2746b70be97c7be1ee146d5a4ffb38723382bc5894c42972cdbf95f663"
+      "sha256": "dc32a89a632bda6d05cd18fc3b89cf43250b384cad4e4233724761c4bd6b55f3"
     },
     {
       "source": "checklists/documentation-checklist.md",
@@ -636,7 +636,7 @@
       "source": "principles/design/README.md",
       "target": ".apt/principles/design/README.md",
       "kind": "canonical",
-      "sha256": "8bae16a923d8ca48cbd856ecc40c63cfe221136d55477c4f47d95718b47608c9"
+      "sha256": "cc61a30f979fc611a2e343f014b0a22dab079963a1a8d6a27d2da8815d94c9b8"
     },
     {
       "source": "principles/design/role-based-experience.md",
@@ -1176,7 +1176,7 @@
       "source": "skills/design/apt-contrast-check/check-contrast.mjs",
       "target": ".apt/skills/design/apt-contrast-check/check-contrast.mjs",
       "kind": "canonical",
-      "sha256": "a344feefeed5d32d7b8bd74a194a2dcfd77ac614281a80d924c02bd5d3c79db3"
+      "sha256": "61e94f405c00683eb970d71960210367e54f3228e6de9711d137868c4efc8607"
     },
     {
       "source": "skills/design/apt-contrast-check/SKILL.md",
@@ -2328,7 +2328,7 @@
       "source": "skills/design/apt-contrast-check/check-contrast.mjs",
       "target": ".claude/skills/design/apt-contrast-check/check-contrast.mjs",
       "kind": "platform",
-      "sha256": "a344feefeed5d32d7b8bd74a194a2dcfd77ac614281a80d924c02bd5d3c79db3"
+      "sha256": "61e94f405c00683eb970d71960210367e54f3228e6de9711d137868c4efc8607"
     },
     {
       "source": "skills/design/apt-contrast-check/SKILL.md",
@@ -3168,7 +3168,7 @@
       "source": "skills/design/apt-contrast-check/check-contrast.mjs",
       "target": ".codex/skills/design/apt-contrast-check/check-contrast.mjs",
       "kind": "platform",
-      "sha256": "a344feefeed5d32d7b8bd74a194a2dcfd77ac614281a80d924c02bd5d3c79db3"
+      "sha256": "61e94f405c00683eb970d71960210367e54f3228e6de9711d137868c4efc8607"
     },
     {
       "source": "skills/design/apt-contrast-check/SKILL.md",
@@ -4032,7 +4032,7 @@
       "source": "skills/design/apt-contrast-check/check-contrast.mjs",
       "target": ".cursor/skills/design/apt-contrast-check/check-contrast.mjs",
       "kind": "platform",
-      "sha256": "a344feefeed5d32d7b8bd74a194a2dcfd77ac614281a80d924c02bd5d3c79db3"
+      "sha256": "61e94f405c00683eb970d71960210367e54f3228e6de9711d137868c4efc8607"
     },
     {
       "source": "skills/design/apt-contrast-check/SKILL.md",
@@ -5112,7 +5112,7 @@
       "source": "skills/design/apt-contrast-check/check-contrast.mjs",
       "target": ".github/skills/design/apt-contrast-check/check-contrast.mjs",
       "kind": "platform",
-      "sha256": "a344feefeed5d32d7b8bd74a194a2dcfd77ac614281a80d924c02bd5d3c79db3"
+      "sha256": "61e94f405c00683eb970d71960210367e54f3228e6de9711d137868c4efc8607"
     },
     {
       "source": "skills/design/apt-contrast-check/SKILL.md",
@@ -5538,6 +5538,6 @@
   "localContext": "docs/project-context.md",
   "lastOperation": {
     "type": "sync",
-    "at": "2026-10-05T14:14:00.669Z"
+    "at": "2026-10-11T15:24:37.523Z"
   }
 }
