@@ -24,3 +24,11 @@ This repository owns `index.html`, `privacy.html`, `terms.html`, and `404.html`.
 - Do not rebuild payment or integration demos here.
 - Send public APT material to `applied-practical-thinking` and reusable standards to `apt-principles-agents`.
 - Ask before implementing when the page or destination is unclear.
+
+## Local Cloudflare
+
+Status: Not a Cloudflare app.
+
+Local command: open `index.html` in a browser. This is a GitHub Pages static site with no build step.
+
+Fix: none.
