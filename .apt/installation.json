@@ -3,7 +3,7 @@
   "source": {
     "repository": "apt-principles-agents",
     "version": "1.0.0",
-    "commit": "8d6ecd41060b00a9e9bf98b51075e286c0e8a402"
+    "commit": "47bf67556d0a5a33aee8f1fd968ebdb73d6f144b"
   },
   "manifests": [
     "core",
@@ -321,6 +321,12 @@
       "sha256": "de33465b9ce97886b3111e12b70c55077debb0796a5e29ae0b6f5c77d82fbc76"
     },
     {
+      "source": "bin/apt-check-shim.mjs",
+      "target": ".apt/bin/apt-check.mjs",
+      "kind": "apt-check",
+      "sha256": "50b81f505b6db29ddbb04b2fdfd708051bf59931b72836695ae6e864c3f70015"
+    },
+    {
       "source": "checklists/api-standards-checklist.md",
       "target": ".apt/checklists/api-standards-checklist.md",
       "kind": "canonical",
@@ -336,7 +342,7 @@
       "source": "checklists/design-review-checklist.md",
       "target": ".apt/checklists/design-review-checklist.md",
       "kind": "canonical",
-      "sha256": "dc32a89a632bda6d05cd18fc3b89cf43250b384cad4e4233724761c4bd6b55f3"
+      "sha256": "1e25aff8cd53e806a805517703695f754a3a5d72f02b92be678994288c8356a6"
     },
     {
       "source": "checklists/documentation-checklist.md",
@@ -403,6 +409,12 @@
       "target": ".apt/context/security/README.md",
       "kind": "canonical",
       "sha256": "5669397b95d536ffca144267e16f329161d81c9ae252fa217788d2e759d04187"
+    },
+    {
+      "source": "git-hooks/pre-push",
+      "target": ".apt/git-hooks/pre-push",
+      "kind": "git-hook",
+      "sha256": "ed412626b6a52a64aecda847eadb4ef2b82f80ff040c10220b57f619bd55f9bd"
     },
     {
       "source": "knowledge/okf/decisions/okf-adoption.md",
@@ -570,7 +582,7 @@
       "source": "principles/architecture/cloudflare-hono-architecture.md",
       "target": ".apt/principles/architecture/cloudflare-hono-architecture.md",
       "kind": "canonical",
-      "sha256": "bdf40f37a531e3dca752cbe6dc8a9a521847c7adcb1c5d84466254d45613f94f"
+      "sha256": "6c013bc04d38b0c54e39d5f6cbf43f6ad66136341babee3e8acfd7e6d8c08709"
     },
     {
       "source": "principles/architecture/event-driven-architecture.md",
@@ -600,7 +612,7 @@
       "source": "principles/architecture/README.md",
       "target": ".apt/principles/architecture/README.md",
       "kind": "canonical",
-      "sha256": "f83602b0a4f992459136ca75d08ab2aa5d06e24a960f87a3399b10a5e0fcb4e2"
+      "sha256": "b5d8c56c09558c3299019e6fb505625c33b0be80757ddbd19503d032788c7c72"
     },
     {
       "source": "principles/architecture/system-architecture.md",
@@ -636,7 +648,7 @@
       "source": "principles/design/README.md",
       "target": ".apt/principles/design/README.md",
       "kind": "canonical",
-      "sha256": "cc61a30f979fc611a2e343f014b0a22dab079963a1a8d6a27d2da8815d94c9b8"
+      "sha256": "5b631df9a3477b0006914311963db44e2be49a87be352aebabd2b034847982e4"
     },
     {
       "source": "principles/design/role-based-experience.md",
@@ -774,7 +786,7 @@
       "source": "principles/execution/quality-and-testing.md",
       "target": ".apt/principles/execution/quality-and-testing.md",
       "kind": "canonical",
-      "sha256": "5b599ff465f6dc998d241cabfa966cd4ce4d7f9add5f3809fa2ade3ccc9a0607"
+      "sha256": "b22c944eaa79109fb34db135be6b840be194f3b9c934e7429114c318677d9fb9"
     },
     {
       "source": "principles/execution/README.md",
@@ -786,7 +798,7 @@
       "source": "principles/execution/release-and-change-management.md",
       "target": ".apt/principles/execution/release-and-change-management.md",
       "kind": "canonical",
-      "sha256": "23fd88ba91985039e84de0924257b3f6f80eace97547973c6bb78301c1ef69a5"
+      "sha256": "b986fc0555b26444db1b5be2281097783037613a2411694ce76456064e2d8d95"
     },
     {
       "source": "principles/execution/working-backwards.md",
@@ -1065,6 +1077,12 @@
       "sha256": "f40d2a7a1df7a60fa7a0b3b8302ab2ac41ab776eca638867cd847568f91c4096"
     },
     {
+      "source": "references/apt.schema.json",
+      "target": ".apt/references/apt.schema.json",
+      "kind": "apt-check",
+      "sha256": "b321b567ee3a5e731b048f1d8dc39bcae092a7dde12a740c8f2ca2e680ed2142"
+    },
+    {
       "source": "skills/api/ai-consumable-api-design/SKILL.md",
       "target": ".apt/skills/api/ai-consumable-api-design/SKILL.md",
       "kind": "canonical",
@@ -1152,7 +1170,7 @@
       "source": "skills/architecture/cloudflare-hono-architecture/SKILL.md",
       "target": ".apt/skills/architecture/cloudflare-hono-architecture/SKILL.md",
       "kind": "canonical",
-      "sha256": "2daa4ce4241ad3e5238a608e58c3d1baa0787f5939ef5c582a7b1d2b80bb4221"
+      "sha256": "70c790fa7331d4e0c2cc5872b237cbc6c97f27263cd105f719268c90c2d578c4"
     },
     {
       "source": "skills/architecture/integration-architecture-review/SKILL.md",
@@ -1176,7 +1194,7 @@
       "source": "skills/design/apt-contrast-check/check-contrast.mjs",
       "target": ".apt/skills/design/apt-contrast-check/check-contrast.mjs",
       "kind": "canonical",
-      "sha256": "61e94f405c00683eb970d71960210367e54f3228e6de9711d137868c4efc8607"
+      "sha256": "4513557f1fb2ff67cd9cde3a800b916c946ee647881095e1b30c61cefef4568b"
     },
     {
       "source": "skills/design/apt-contrast-check/SKILL.md",
@@ -2118,7 +2136,7 @@
       "source": "platforms/claude/source/agents/drack.md",
       "target": ".claude/agents/drack.md",
       "kind": "platform-agent",
-      "sha256": "814209462c5c7d9f40df520d5d74e4b2ae86414027add843f98057887c03a250"
+      "sha256": "c5309d43e655308eeeabfc84ef23d0b5b851aae5b6889408a370d38f7fa0308f"
     },
     {
       "source": "platforms/claude/source/agents/glyph.md",
@@ -2304,7 +2322,7 @@
       "source": "skills/architecture/cloudflare-hono-architecture/SKILL.md",
       "target": ".claude/skills/architecture/cloudflare-hono-architecture/SKILL.md",
       "kind": "platform",
-      "sha256": "2daa4ce4241ad3e5238a608e58c3d1baa0787f5939ef5c582a7b1d2b80bb4221"
+      "sha256": "70c790fa7331d4e0c2cc5872b237cbc6c97f27263cd105f719268c90c2d578c4"
     },
     {
       "source": "skills/architecture/integration-architecture-review/SKILL.md",
@@ -2328,7 +2346,7 @@
       "source": "skills/design/apt-contrast-check/check-contrast.mjs",
       "target": ".claude/skills/design/apt-contrast-check/check-contrast.mjs",
       "kind": "platform",
-      "sha256": "61e94f405c00683eb970d71960210367e54f3228e6de9711d137868c4efc8607"
+      "sha256": "4513557f1fb2ff67cd9cde3a800b916c946ee647881095e1b30c61cefef4568b"
     },
     {
       "source": "skills/design/apt-contrast-check/SKILL.md",
@@ -3000,7 +3018,7 @@
       "source": "platforms/codex/source/agents/drack.md",
       "target": ".codex/agents/drack.md",
       "kind": "platform-agent",
-      "sha256": "8623c04698bbea25d6b9a668428e59f63a433c726cc1bddcab90f9cd080e59de"
+      "sha256": "62dc553f956521bbbddeee2de3f8deb4bc38e33b4c57e9297c72ce2cc32015fb"
     },
     {
       "source": "platforms/codex/source/agents/glyph.md",
@@ -3144,7 +3162,7 @@
       "source": "skills/architecture/cloudflare-hono-architecture/SKILL.md",
       "target": ".codex/skills/architecture/cloudflare-hono-architecture/SKILL.md",
       "kind": "platform",
-      "sha256": "2daa4ce4241ad3e5238a608e58c3d1baa0787f5939ef5c582a7b1d2b80bb4221"
+      "sha256": "70c790fa7331d4e0c2cc5872b237cbc6c97f27263cd105f719268c90c2d578c4"
     },
     {
       "source": "skills/architecture/integration-architecture-review/SKILL.md",
@@ -3168,7 +3186,7 @@
       "source": "skills/design/apt-contrast-check/check-contrast.mjs",
       "target": ".codex/skills/design/apt-contrast-check/check-contrast.mjs",
       "kind": "platform",
-      "sha256": "61e94f405c00683eb970d71960210367e54f3228e6de9711d137868c4efc8607"
+      "sha256": "4513557f1fb2ff67cd9cde3a800b916c946ee647881095e1b30c61cefef4568b"
     },
     {
       "source": "skills/design/apt-contrast-check/SKILL.md",
@@ -3840,7 +3858,7 @@
       "source": "platforms/cursor/source/agents/drack.mdc",
       "target": ".cursor/agents/drack.mdc",
       "kind": "platform-agent",
-      "sha256": "680f990d0ade8279e6114863906d05a2d15d14c1d312f79cb6fe0053fc6bc703"
+      "sha256": "1521ba098f3a0a19b3c83db6815983e3f47d85b6b4b2d26f5504fe82a3f06b5a"
     },
     {
       "source": "platforms/cursor/source/agents/glyph.mdc",
@@ -4002,7 +4020,7 @@
       "source": "skills/architecture/cloudflare-hono-architecture/SKILL.md",
       "target": ".cursor/skills/architecture/cloudflare-hono-architecture/SKILL.md",
       "kind": "platform",
-      "sha256": "2daa4ce4241ad3e5238a608e58c3d1baa0787f5939ef5c582a7b1d2b80bb4221"
+      "sha256": "70c790fa7331d4e0c2cc5872b237cbc6c97f27263cd105f719268c90c2d578c4"
     },
     {
       "source": "skills/architecture/integration-architecture-review/SKILL.md",
@@ -4032,7 +4050,7 @@
       "source": "skills/design/apt-contrast-check/check-contrast.mjs",
       "target": ".cursor/skills/design/apt-contrast-check/check-contrast.mjs",
       "kind": "platform",
-      "sha256": "61e94f405c00683eb970d71960210367e54f3228e6de9711d137868c4efc8607"
+      "sha256": "4513557f1fb2ff67cd9cde3a800b916c946ee647881095e1b30c61cefef4568b"
     },
     {
       "source": "skills/design/apt-contrast-check/SKILL.md",
@@ -4824,7 +4842,7 @@
       "source": "platforms/github-copilot/source/agents/generated/drack.agent.md",
       "target": ".github/agents/drack.agent.md",
       "kind": "platform-agent",
-      "sha256": "bc595d449e87c54b299f54f4676b909a429355955d1d3a7203cf8b0b6ff9490b"
+      "sha256": "97c28e209caa44834bbefe023c97dd227d202fbefbf49689938a9f858c9894f2"
     },
     {
       "source": "platforms/github-copilot/source/agents/generated/glyph.agent.md",
@@ -5088,7 +5106,7 @@
       "source": "skills/architecture/cloudflare-hono-architecture/SKILL.md",
       "target": ".github/skills/architecture/cloudflare-hono-architecture/SKILL.md",
       "kind": "platform",
-      "sha256": "2daa4ce4241ad3e5238a608e58c3d1baa0787f5939ef5c582a7b1d2b80bb4221"
+      "sha256": "70c790fa7331d4e0c2cc5872b237cbc6c97f27263cd105f719268c90c2d578c4"
     },
     {
       "source": "skills/architecture/integration-architecture-review/SKILL.md",
@@ -5112,7 +5130,7 @@
       "source": "skills/design/apt-contrast-check/check-contrast.mjs",
       "target": ".github/skills/design/apt-contrast-check/check-contrast.mjs",
       "kind": "platform",
-      "sha256": "61e94f405c00683eb970d71960210367e54f3228e6de9711d137868c4efc8607"
+      "sha256": "4513557f1fb2ff67cd9cde3a800b916c946ee647881095e1b30c61cefef4568b"
     },
     {
       "source": "skills/design/apt-contrast-check/SKILL.md",
@@ -5517,6 +5535,12 @@
       "sha256": "1923860b5b40b65e01e0520218b933f96f22c5ea9d9ccb887f234fd10ace86a5"
     },
     {
+      "source": "templates/ci/apt-check.yml",
+      "target": ".github/workflows/apt-check.yml",
+      "kind": "ci",
+      "sha256": "600fce2897649764318006a33d9750068a79c17d8b9a54b4d7de69aae6c39163"
+    },
+    {
       "source": "CLAUDE.md",
       "target": "CLAUDE.md",
       "kind": "instruction",
@@ -5538,6 +5562,6 @@
   "localContext": "docs/project-context.md",
   "lastOperation": {
     "type": "sync",
-    "at": "2026-10-11T15:24:37.523Z"
+    "at": "2026-10-19T04:10:47.882Z"
   }
 }
