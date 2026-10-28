@@ -1,0 +1,181 @@
+{
+  "inventory_version": 2,
+  "project": "adthomps.github.io",
+  "purpose": "Small GitHub Pages static gateway that keeps a launch page and legal/support pages and points traffic at maintained destinations instead of hosting product, docs, or demo trees.",
+  "description": "A legacy portfolio repository condensed to four self-contained static HTML pages (index.html, privacy.html, terms.html, 404.html) served as-is by GitHub Pages. There is no package.json, build system, framework, server-side code, or local CSS/JavaScript dependency.",
+  "audience": [
+    "visitors arriving at the legacy adthomps.github.io address",
+    "APT maintainers",
+    "AI coding agents"
+  ],
+  "adoption_mode": "apply",
+  "principles_demonstrated": ["documentation"],
+  "repository_type": "other",
+  "ownership": {
+    "owner": "APT",
+    "profile_maintainer": "Legacy portfolio maintainers"
+  },
+  "architecture": {
+    "summary": "Four self-contained static HTML pages with inline styling and no loaders; the launch page and 404 page link out to the maintained APT site, the Authorize.Net integration toolbox, and GitHub.",
+    "components": [
+      "index.html is the launch page with links to appliedpracticalthinking.com, https://apt-anet-integration-toolbox.pages.dev/, and https://github.com/adthomps.",
+      "privacy.html and terms.html are static legal/support pages kept while the site remains public.",
+      "404.html is the static GitHub Pages fallback and links back to index.html and the maintained destinations."
+    ],
+    "runtime_model": "Static files served as-is by GitHub Pages in the visitor's browser; there is no server-side code, build output, or runtime dependency.",
+    "deployment_model": "GitHub Pages publishes the repository root from the main branch; pushing to main updates the live site. The only workflow is the APT check (.github/workflows/apt-check.yml)."
+  },
+  "runtime": {
+    "summary": "No install or build. Open the retained pages directly or serve the repository root with any simple static server, and check the browser console for missing local CSS, JavaScript, image, or template-loader references.",
+    "requirements": [
+      {
+        "name": "Web browser",
+        "declared": "Not declared; pages are plain HTML",
+        "recommended": "Any current browser with developer tools for console checks",
+        "verified_by": "README.md; PROJECT_RULES.md"
+      },
+      {
+        "name": "Node.js",
+        "declared": "Not declared; only the APT check needs it",
+        "recommended": "Node.js 22, matching the APT check workflow",
+        "verified_by": ".github/workflows/apt-check.yml"
+      }
+    ],
+    "package_manager": "None",
+    "local_server": "None required; open index.html directly or run any simple static server, for example `python -m http.server 8000` from the repository root.",
+    "build": "None",
+    "deployment": "GitHub Pages serves the main branch; there is no deployment command."
+  },
+  "local_cloudflare": {
+    "status": "Not a Cloudflare app.",
+    "local_command": "open `index.html` in a browser. This is a GitHub Pages static site with no build step.",
+    "fix": "none."
+  },
+  "commands": [
+    {
+      "name": "Serve pages locally",
+      "category": "run",
+      "command": "python -m http.server 8000",
+      "purpose": "Serve the repository root at http://localhost:8000 for manual page and console checks; opening the HTML files directly also works.",
+      "mutates": false,
+      "applicability": "applicable"
+    },
+    {
+      "name": "APT check",
+      "category": "validate",
+      "command": "node .apt/bin/apt-check.mjs --mode ci",
+      "purpose": "Validate managed APT assets, this project profile and generated context, and architecture rules, as the APT check workflow does.",
+      "mutates": false,
+      "applicability": "applicable"
+    },
+    {
+      "name": "Manual page validation",
+      "category": "validate",
+      "command": "",
+      "purpose": "Open index.html, privacy.html, terms.html, and 404.html and confirm the browser console has no missing local CSS, JavaScript, image, or template-loader errors. Manual; no command.",
+      "mutates": false,
+      "applicability": "not-applicable"
+    },
+    {
+      "name": "Regenerate project context",
+      "category": "generate",
+      "command": "node .apt/bin/apt-check.mjs --only profile --fix",
+      "purpose": "Render docs/project-context.md from this profile.",
+      "mutates": true,
+      "applicability": "applicable"
+    },
+    {
+      "name": "Build",
+      "category": "build",
+      "command": "",
+      "purpose": "Not applicable; pages are served as-is with no build step.",
+      "mutates": false,
+      "applicability": "not-applicable"
+    },
+    {
+      "name": "Deploy",
+      "category": "deploy",
+      "command": "",
+      "purpose": "Not applicable; GitHub Pages publishes the main branch on push.",
+      "mutates": false,
+      "applicability": "not-applicable"
+    }
+  ],
+  "structure": [
+    {
+      "path": "index.html privacy.html terms.html 404.html",
+      "purpose": "The retained, self-contained static page set served by GitHub Pages.",
+      "authority": "canonical",
+      "maintenance": "authored"
+    },
+    {
+      "path": "README.md PROJECT_RULES.md CLEANUP_OPTIMIZATION_PLAN.md",
+      "purpose": "Retained role, guardrails, and the implemented 2026-08-03 cleanup plan.",
+      "authority": "local",
+      "maintenance": "authored"
+    },
+    {
+      "path": "docs/",
+      "purpose": "Project identity, this profile, and the generated project context.",
+      "authority": "supporting",
+      "maintenance": "mixed"
+    },
+    {
+      "path": ".apt/ .claude/ .codex/ .cursor/ .gemini/ .github/ AGENTS.md CLAUDE.md CODEX.md GEMINI.md",
+      "purpose": "Managed APT assets, tool adapters, agent guidance, and the APT check workflow.",
+      "authority": "adapter",
+      "maintenance": "tool-managed"
+    },
+    {
+      "path": ".apt-backups/",
+      "purpose": "Ignored backups written by apt-assets sync/repair; recoverable from git history.",
+      "authority": "archived",
+      "maintenance": "tool-managed"
+    }
+  ],
+  "integrations": [
+    "GitHub Pages hosts the site from the main branch.",
+    "Links out to appliedpracticalthinking.com for public APT portfolio, proof, and visual-gallery traffic.",
+    "Links out to https://apt-anet-integration-toolbox.pages.dev/ for Authorize.Net and payment-demo traffic, without changing that repository.",
+    "apt-principles-agents supplies managed APT assets and the apt-check tooling."
+  ],
+  "source_boundaries": {
+    "canonical": [
+      "index.html, privacy.html, terms.html, and 404.html are owned here.",
+      "README.md, PROJECT_RULES.md, and CLEANUP_OPTIMIZATION_PLAN.md own the local role and guardrails.",
+      "Authorize.Net toolbox demos belong to apt-anet-integration-toolbox, public APT portfolio content to applied-practical-thinking, and canonical doctrine and reusable payment, API, documentation, support, or agent standards to apt-principles-agents; none of them are owned here."
+    ],
+    "generated": [
+      ".apt/ and platform folders are installed by apt-principles-agents; do not edit them here.",
+      "docs/project-context.md is generated from this profile."
+    ],
+    "archived": [
+      ".apt-backups/ holds recoverable managed-asset backups and is not active source."
+    ]
+  },
+  "constraints": [
+    "Static only: no server-side code, no build step, no frameworks; files are served as-is.",
+    "Keep the page set limited to index.html, privacy.html, terms.html, and 404.html unless a new page has a clear GitHub Pages-only reason.",
+    "Do not rebuild payment or integration demos here, and do not assign cleanup work to apt-anet-integration-toolbox.",
+    "Send public APT portfolio, proof, and visual material to applied-practical-thinking and reusable standards to apt-principles-agents.",
+    "Keep retained pages self-contained; do not reintroduce template loaders, images/, or templates/ unless a retained page clearly needs them.",
+    "Never commit API keys, transaction keys, or other secrets; only public test keys are allowed in client code.",
+    "Ask before implementing when the page or destination is unclear.",
+    "No AI agents or agentic automation are used in the site; document the contract in AGENTS.md before adding any."
+  ],
+  "evidence": [
+    { "path": "README.md", "supports": "Retained role, current page set, consolidation direction, and manual validation." },
+    { "path": "PROJECT_RULES.md", "supports": "Static-only guardrails, page-set limit, secrets rule, and manual validation." },
+    { "path": "CLEANUP_OPTIMIZATION_PLAN.md", "supports": "Implemented cleanup, removed loaders and folders, and the toolbox link." },
+    { "path": "index.html", "supports": "Launch page links to the APT site, the toolbox, and GitHub." },
+    { "path": "AGENTS.md", "supports": "No agent code or AI automation in the site." },
+    { "path": "docs/project-identity.md", "supports": "Project name and legacy status." },
+    { "path": ".github/workflows/apt-check.yml", "supports": "The only CI workflow: the APT check on Node.js 22." }
+  ],
+  "last_verified": "2026-10-22",
+  "maturity": "active",
+  "showcase": {
+    "include": false,
+    "summary": "Legacy GitHub Pages gateway that points to the maintained APT site and integration toolbox."
+  }
+}
